@@ -11,7 +11,7 @@
 
   <!-- 🎵 Música de fondo (2 rutas por si cambiaste carpetas) -->
   <audio id="bgMusic" loop preload="auto">
-    <source src="musica/Mitad.mp3" type="audio/mpeg" />
+    <source src="Imagenes/musica/Mitad.mp3" type="audio/mpeg" />
     <source src="musica/Mitad.mp3" type="audio/mpeg" />
     Tu navegador no soporta audio HTML5.
   </audio>
@@ -122,7 +122,6 @@
     <!-- ========== NUESTRA BODA SE ACERCA ========== -->
     <section class="story" id="wedding-info">
       <div class="story__container">
-
         <div class="story__photo">
           <img src="Imagenes/Nosotros2.jpg" alt="Alejandro y Sarahi">
         </div>
@@ -147,7 +146,6 @@
             Gracias por acompañarnos a comenzar esta nueva etapa como esposos.
           </p>
         </div>
-
       </div>
     </section>
 
@@ -215,6 +213,11 @@
   </div>
 
   <script>
+    // =========================
+    // CONFIG
+    // =========================
+    const RSVP_API = "https://script.google.com/macros/s/AKfycbwOmp53Z-pqXqyF7bodiD3E-Cynh1eFVXcjbWuG6ETOMycYHpRWLR6VA8O2zb4wzDVR/exec";
+
     // --- Navbar scroll effect ---
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -284,129 +287,124 @@
     }
 
     // =========================
-    // RSVP (Google Sheets / Apps Script)
+    // RSVP LOGIC
     // =========================
-    const API_BASE = "https://script.google.com/macros/s/AKfycbwOmp53Z-pqXqyF7bodiD3E-Cynh1eFVXcjbWuG6ETOMycYHpRWLR6VA8O2zb4wzDVR/exec";
+    const $guest = document.getElementById("rsvpGuest");
+    const $count = document.getElementById("rsvpCount");
+    const $msg = document.getElementById("rsvpMsg");
+    const $btn = document.getElementById("rsvpBtn");
+    const $status = document.getElementById("rsvpStatus");
 
-    function getTokenFromUrl(){
-      const url = new URL(window.location.href);
-      return (url.searchParams.get("t") || url.searchParams.get("token") || "").trim();
+    function getTokenFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return (params.get("t") || "").trim();
     }
 
-    function setStatus(msg, isError=false){
-      const el = document.getElementById("rsvpStatus");
-      if (!el) return;
-      el.textContent = msg || "";
-      el.style.color = isError ? "#8b2d2d" : "#3a2f20";
+    function setStatus(text, isError=false) {
+      if (!$status) return;
+      $status.textContent = text || "";
+      $status.style.color = isError ? "#b42318" : "";
     }
 
-    function fillSelect(max){
-      const sel = document.getElementById("rsvpCount");
-      if (!sel) return;
-      sel.innerHTML = "";
-
-      for(let i=0;i<=max;i++){
+    function fillSelect(max, selected=0) {
+      if (!$count) return;
+      $count.innerHTML = "";
+      for (let i = 0; i <= max; i++) {
         const opt = document.createElement("option");
         opt.value = String(i);
         opt.textContent = i === 0 ? "0 (No asistiremos)" : String(i);
-        sel.appendChild(opt);
+        if (i === selected) opt.selected = true;
+        $count.appendChild(opt);
       }
     }
 
-    async function loadInvitado(){
-      const token = getTokenFromUrl();
+    async function loadInvite(token) {
+      if (!$guest || !$count || !$btn) return;
 
-      const guestEl = document.getElementById("rsvpGuest");
-      const btn = document.getElementById("rsvpBtn");
-      const sel = document.getElementById("rsvpCount");
-
-      if (!guestEl || !btn || !sel) return;
-
-      if(!token){
-        guestEl.textContent = "Esta invitación no tiene token (link incompleto).";
+      if (!token) {
+        $guest.textContent = "Esta invitación no tiene token (link incompleto).";
+        fillSelect(0, 0);
+        $count.disabled = true;
+        $btn.disabled = true;
         setStatus("Pídele a Alejandro el link correcto 😊", true);
         return;
       }
 
-      guestEl.textContent = "Cargando invitado...";
+      $guest.textContent = "Validando invitación...";
       setStatus("");
 
-      try{
-        const r = await fetch(`${API_BASE}?t=${encodeURIComponent(token)}`);
-        const data = await r.json();
+      const url = `${RSVP_API}?t=${encodeURIComponent(token)}`;
 
-        if(!data.ok){
-          guestEl.textContent = "Invitación inválida.";
-          setStatus(data.error || "Token inválido", true);
-          return;
-        }
+      const res = await fetch(url, { method: "GET" });
+      const data = await res.json();
 
-        guestEl.textContent = `${data.nombre} — Máximo ${data.max_personas} personas`;
-        fillSelect(data.restantes);
-        sel.disabled = false;
-        btn.disabled = false;
+      if (!data.ok) {
+        $guest.textContent = "Invitación no válida.";
+        fillSelect(0, 0);
+        $count.disabled = true;
+        $btn.disabled = true;
+        setStatus(data.error || "Token inválido.", true);
+        return;
+      }
 
-        if(data.restantes === 0){
-          setStatus("Este invitado ya alcanzó su máximo de confirmaciones ✅");
-        }
-      }catch(err){
-        guestEl.textContent = "No se pudo cargar el invitado.";
-        setStatus("Error de conexión con el servidor de RSVP.", true);
+      $guest.textContent = `Invitación para: ${data.nombre} (máx. ${data.max_personas})`;
+
+      fillSelect(Number(data.max_personas || 0), Number(data.confirmados_actuales || 0));
+
+      // Si ya está lleno, deshabilitamos
+      const restantes = Number(data.restantes || 0);
+      $count.disabled = false;
+      $btn.disabled = false;
+
+      if (restantes <= 0) {
+        setStatus("Esta invitación ya llegó al máximo permitido ✅");
       }
     }
 
-    async function enviarRSVP(){
-      const token = getTokenFromUrl();
-      const sel = document.getElementById("rsvpCount");
-      const msg = document.getElementById("rsvpMsg");
-      const btn = document.getElementById("rsvpBtn");
+    async function submitRsvp(token) {
+      if (!token) return;
 
-      if (!sel || !btn) return;
+      const personas_confirmadas = Number($count?.value || 0);
+      const mensaje = ($msg?.value || "").trim();
 
-      btn.disabled = true;
+      $btn.disabled = true;
       setStatus("Enviando confirmación...");
 
-      const payload = {
-        token,
-        personas_confirmadas: Number(sel.value || 0),
-        mensaje: (msg?.value || "")
-      };
+      // Importante: text/plain para evitar preflight CORS
+      const res = await fetch(RSVP_API, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ token, personas_confirmadas, mensaje })
+      });
 
-      try{
-        // ⚠️ Importante: text/plain para evitar preflight CORS
-        const r = await fetch(API_BASE, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(payload)
-        });
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch(e) { data = { ok:false, error: text }; }
 
-        const data = await r.json();
-
-        if(!data.ok){
-          setStatus(data.error || "No se pudo guardar la confirmación.", true);
-          btn.disabled = false;
-          return;
-        }
-
-        setStatus(`Listo ✅ Confirmaste ${data.personas_confirmadas}. Restantes: ${data.restantes}`);
-        fillSelect(data.restantes);
-        btn.disabled = false;
-
-      }catch(err){
-        setStatus("Error enviando la confirmación. Intenta de nuevo.", true);
-        btn.disabled = false;
+      if (!data.ok) {
+        setStatus(data.error || "No se pudo guardar la confirmación.", true);
+        $btn.disabled = false;
+        return;
       }
+
+      setStatus(`Listo ✅ Confirmados: ${data.personas_confirmadas}. Restantes: ${data.restantes}`);
+      // Opcional: bloquear para que no lo cambien
+      // $count.disabled = true; $btn.disabled = true;
+      $btn.disabled = false;
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      loadInvitado();
+    (function initRsvp(){
+      const token = getTokenFromUrl();
+      loadInvite(token);
 
-      const btn = document.getElementById("rsvpBtn");
-      if (btn) btn.addEventListener("click", enviarRSVP);
-    });
+      if ($btn) {
+        $btn.addEventListener("click", () => {
+          const token2 = getTokenFromUrl();
+          submitRsvp(token2);
+        });
+      }
+    })();
   </script>
 
 </body>
-
 </html>
-
