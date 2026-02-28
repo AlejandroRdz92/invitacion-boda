@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alejandro & Sarahi — Nuestra Boda</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+
+  <!-- 🎵 Música de fondo (2 rutas por si cambiaste carpetas) -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="Imagenes/musica/Mitad.mp3" type="audio/mpeg" />
+    <source src="musica/Mitad.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <!-- =========================
+       LOBBY (PORTADA)
+       ========================= -->
+  <section id="lobby" class="lobby" aria-label="Portada invitación">
+    <div class="lobby__layout">
+
+      <header class="lobby__top">
+        <h1 class="lobby__names">Alejandro &amp; Sarahi</h1>
+        <p class="lobby__date">03 / 10 / 26</p>
+      </header>
+
+      <main class="lobby__center">
+        <div class="lobby__stage" aria-label="Sobre de invitación">
+
+          <!-- Sobre PNG -->
+          <img
+            class="lobby__envelope"
+            src="Imagenes/Sobre2.png"
+            alt="Sobre de invitación"
+            draggable="false"
+          />
+
+          <!-- Hotspot SOLO en el sello -->
+          <button
+            id="openInvite"
+            class="seal-hotspot"
+            type="button"
+            aria-label="Abrir invitación"
+            title="Abrir invitación"
+          ></button>
+
+          <span class="seal-ring" aria-hidden="true"></span>
+
+        </div>
+      </main>
+
+      <footer class="lobby__bottom">
+        <p class="lobby__hint">Toca el sello para abrir</p>
+      </footer>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       CONTENIDO REAL DEL SITIO
+       ========================= -->
+  <div id="site" class="site is-hidden">
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+      <!--<a href="#" class="navbar__logo">A&amp;S</a> -->
+      <div class="navbar__actions"></div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <!-- Countdown -->
+        <div class="countdown" id="countdown">
+          <div class="countdown__block">
+            <div class="countdown__number" id="days">00</div>
+            <div class="countdown__label">Días</div>
+          </div>
+          <span class="countdown__separator">:</span>
+          <div class="countdown__block">
+            <div class="countdown__number" id="hours">00</div>
+            <div class="countdown__label">Horas</div>
+          </div>
+          <span class="countdown__separator">:</span>
+          <div class="countdown__block">
+            <div class="countdown__number" id="minutes">00</div>
+            <div class="countdown__label">Minutos</div>
+          </div>
+          <span class="countdown__separator">:</span>
+          <div class="countdown__block">
+            <div class="countdown__number" id="seconds">00</div>
+            <div class="countdown__label">Segundos</div>
+          </div>
+        </div>
+
+        <!-- Names -->
+        <h1 class="hero__names">
+          <span>Alejandro</span>
+          <span>&amp; Sarahi</span>
+        </h1>
+
+        <!-- Info Card -->
+        <div class="hero__info-card">
+          <div class="hero__info-item">
+            <div class="hero__info-primary">Sábado,</div>
+            <div class="hero__info-secondary">Oct. 03 , 2026</div>
+          </div>
+          <div class="hero__info-item">
+            <div class="hero__info-primary">Fábrica Antigua</div>
+            <div class="hero__info-secondary">Santa Catarina, Nuevo León</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== NUESTRA BODA SE ACERCA ========== -->
+    <section class="story" id="wedding-info">
+      <div class="story__container">
+
+        <div class="story__photo">
+          <img src="Imagenes/Nosotros2.jpg" alt="Alejandro y Sarahi">
+        </div>
+
+        <div class="story__text">
+          <h2>Estamos encantados de invitarte a celebrar nuestro matrimonio</h2>
+
+          <p>
+            Nuestra historia comenzó con algo muy simple: dos personas que
+            disfrutaban platicar, reír y compartir los pequeños momentos.
+            Sin darnos cuenta, esas conversaciones se volvieron costumbre
+            y esa costumbre se convirtió en amor.
+          </p>
+
+          <p>
+            Hemos celebrado cada mes juntos, aprendido uno del otro
+            y construido sueños en equipo.
+            Hoy damos este paso con el corazón lleno de ilusión.
+          </p>
+
+          <p class="story__highlight">
+            Gracias por acompañarnos a comenzar esta nueva etapa como esposos.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== CEREMONIAS & RECEPCIÓN ========== -->
+    <section class="venues" id="venues">
+      <div class="venues__grid">
+        <div class="venue-card">
+          <div class="venue-card__image-wrapper">
+            <img class="venue-card__image"
+              src="Imagenes/Iglesia.jpg"
+              alt="Iglesia para la ceremonia" />
+          </div>
+          <h3 class="venue-card__title">Ceremonia</h3>
+          <p class="venue-card__name">Parroquia San Vicente</p>
+          <p class="venue-card__address"> 📍C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina</p>
+          <p class="venue-card__time">🕒Sábado, Oct. 03 — 5:00 PM</p>
+          <a href="https://maps.app.goo.gl/fkywo6uM5qZ5dG6s8"
+            target="_blank"
+            class="venue-card__map">
+            Abrir en Google Maps
+          </a>
+        </div>
+
+        <div class="venue-card">
+          <div class="venue-card__image-wrapper">
+            <img class="venue-card__image"
+              src="Imagenes/Lugar.jpg"
+              alt="Jardín para la recepción" />
+          </div>
+          <h3 class="venue-card__title">Recepción</h3>
+          <p class="venue-card__name">Fábrica Antigua</p>
+          <p class="venue-card__address">📍Santa Catarina, Nuevo León</p>
+          <p class="venue-card__time">🕒Sábado, Oct. 03 — 8:00 PM</p>
+          <a href="https://maps.app.goo.gl/s5L6F8tQgJQv8H8Y8"
+            target="_blank"
+            class="venue-card__map">
+            Abrir en Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RSVP ========== -->
+    <section class="rsvp" id="rsvp">
+      <div class="rsvp__card">
+        <h2 class="rsvp__title">Confirmar asistencia</h2>
+        <p class="rsvp__subtitle" id="rsvpGuest">Cargando invitación...</p>
+
+        <div class="rsvp__row">
+          <label class="rsvp__label" for="rsvpCount">¿Cuántas personas asistirán?</label>
+          <select id="rsvpCount" class="rsvp__select" disabled></select>
+        </div>
+
+        <div class="rsvp__row">
+          <label class="rsvp__label" for="rsvpMsg">Mensaje (opcional)</label>
+          <textarea id="rsvpMsg" class="rsvp__textarea" rows="3" placeholder="Ej. ¡Nos vemos ese día!"></textarea>
+        </div>
+
+        <button id="rsvpBtn" class="rsvp__btn" disabled>Confirmar</button>
+
+        <p id="rsvpStatus" class="rsvp__status"></p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // --- Navbar scroll effect ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (!navbar) return;
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // --- Countdown ---
+    const weddingDate = new Date('2026-10-03T16:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
+
+      const dd = document.getElementById('days');
+      const hh = document.getElementById('hours');
+      const mm = document.getElementById('minutes');
+      const ss = document.getElementById('seconds');
+
+      if (!dd || !hh || !mm || !ss) return;
+
+      if (diff <= 0) {
+        dd.textContent = '00';
+        hh.textContent = '00';
+        mm.textContent = '00';
+        ss.textContent = '00';
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      dd.textContent = String(d).padStart(2, '0');
+      hh.textContent = String(h).padStart(2, '0');
+      mm.textContent = String(m).padStart(2, '0');
+      ss.textContent = String(s).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // --- Lobby: abrir invitación + reproducir música ---
+    const lobby = document.getElementById('lobby');
+    const openInvite = document.getElementById('openInvite');
+    const site = document.getElementById('site');
+    const bgMusic = document.getElementById('bgMusic');
+
+    if (openInvite && lobby && site) {
+      openInvite.addEventListener('click', async () => {
+        lobby.classList.add('lobby--open');
+
+        try {
+          if (bgMusic) {
+            bgMusic.volume = 0.50;
+            await bgMusic.play();
+          }
+        } catch (e) {}
+
+        setTimeout(() => {
+          lobby.classList.add('is-hidden');
+          site.classList.remove('is-hidden');
+          window.scrollTo(0, 0);
+        }, 520);
+      });
+    }
+
+    // =========================
+    // RSVP (Google Sheets / Apps Script)
+    // =========================
+    const API_BASE = "https://script.google.com/macros/s/AKfycbwOmp53Z-pqXqyF7bodiD3E-Cynh1eFVXcjbWuG6ETOMycYHpRWLR6VA8O2zb4wzDVR/exec";
+
+    function getTokenFromUrl(){
+      const url = new URL(window.location.href);
+      return (url.searchParams.get("t") || url.searchParams.get("token") || "").trim();
+    }
+
+    function setStatus(msg, isError=false){
+      const el = document.getElementById("rsvpStatus");
+      if (!el) return;
+      el.textContent = msg || "";
+      el.style.color = isError ? "#8b2d2d" : "#3a2f20";
+    }
+
+    function fillSelect(max){
+      const sel = document.getElementById("rsvpCount");
+      if (!sel) return;
+      sel.innerHTML = "";
+
+      for(let i=0;i<=max;i++){
+        const opt = document.createElement("option");
+        opt.value = String(i);
+        opt.textContent = i === 0 ? "0 (No asistiremos)" : String(i);
+        sel.appendChild(opt);
+      }
+    }
+
+    async function loadInvitado(){
+      const token = getTokenFromUrl();
+
+      const guestEl = document.getElementById("rsvpGuest");
+      const btn = document.getElementById("rsvpBtn");
+      const sel = document.getElementById("rsvpCount");
+
+      if (!guestEl || !btn || !sel) return;
+
+      if(!token){
+        guestEl.textContent = "Esta invitación no tiene token (link incompleto).";
+        setStatus("Pídele a Alejandro el link correcto 😊", true);
+        return;
+      }
+
+      guestEl.textContent = "Cargando invitado...";
+      setStatus("");
+
+      try{
+        const r = await fetch(`${API_BASE}?t=${encodeURIComponent(token)}`);
+        const data = await r.json();
+
+        if(!data.ok){
+          guestEl.textContent = "Invitación inválida.";
+          setStatus(data.error || "Token inválido", true);
+          return;
+        }
+
+        guestEl.textContent = `${data.nombre} — Máximo ${data.max_personas} personas`;
+        fillSelect(data.restantes);
+        sel.disabled = false;
+        btn.disabled = false;
+
+        if(data.restantes === 0){
+          setStatus("Este invitado ya alcanzó su máximo de confirmaciones ✅");
+        }
+      }catch(err){
+        guestEl.textContent = "No se pudo cargar el invitado.";
+        setStatus("Error de conexión con el servidor de RSVP.", true);
+      }
+    }
+
+    async function enviarRSVP(){
+      const token = getTokenFromUrl();
+      const sel = document.getElementById("rsvpCount");
+      const msg = document.getElementById("rsvpMsg");
+      const btn = document.getElementById("rsvpBtn");
+
+      if (!sel || !btn) return;
+
+      btn.disabled = true;
+      setStatus("Enviando confirmación...");
+
+      const payload = {
+        token,
+        personas_confirmadas: Number(sel.value || 0),
+        mensaje: (msg?.value || "")
+      };
+
+      try{
+        // ⚠️ Importante: text/plain para evitar preflight CORS
+        const r = await fetch(API_BASE, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await r.json();
+
+        if(!data.ok){
+          setStatus(data.error || "No se pudo guardar la confirmación.", true);
+          btn.disabled = false;
+          return;
+        }
+
+        setStatus(`Listo ✅ Confirmaste ${data.personas_confirmadas}. Restantes: ${data.restantes}`);
+        fillSelect(data.restantes);
+        btn.disabled = false;
+
+      }catch(err){
+        setStatus("Error enviando la confirmación. Intenta de nuevo.", true);
+        btn.disabled = false;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadInvitado();
+
+      const btn = document.getElementById("rsvpBtn");
+      if (btn) btn.addEventListener("click", enviarRSVP);
+    });
+  </script>
+
+</body>
+</html>
