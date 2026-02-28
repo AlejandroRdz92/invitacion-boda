@@ -162,11 +162,15 @@
           <p class="venue-card__name">Parroquia San Vicente</p>
           <p class="venue-card__address"> 📍C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina</p>
           <p class="venue-card__time">🕒Sábado, Oct. 03 — 5:00 PM</p>
-          <a href="https://maps.app.goo.gl/2L92a5VHLpbeFkFH6"
-            target="_blank"
-            class="venue-card__map">
-            Abrir en Google Maps
-          </a>
+        <button
+  type="button"
+  class="venue-card__map"
+  data-map
+  data-title="Ceremonia — Parroquia San Vicente"
+  data-address="C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina, N.L."
+>
+  Abrir en Google Maps
+</button>
         </div>
 
         <div class="venue-card">
@@ -179,11 +183,15 @@
           <p class="venue-card__name">Fábrica Antigua</p>
           <p class="venue-card__address">📍Santa Catarina, Nuevo León</p>
           <p class="venue-card__time">🕒Sábado, Oct. 03 — 8:00 PM</p>
-          <a href="https://maps.app.goo.gl/itNAVAMpTB92FmLw6"
-            target="_blank"
-            class="venue-card__map">
-            Abrir en Google Maps
-          </a>
+         <button
+  type="button"
+  class="venue-card__map"
+  data-map
+  data-title="Recepción — Fábrica Antigua"
+  data-address="Fábrica Antigua, Santa Catarina, Nuevo León"
+>
+  Abrir en Google Maps
+</button>
         </div>
       </div>
     </section>
@@ -404,9 +412,140 @@
         });
       }
     })();
+    
   </script>
 
+<script>
+  // ... tu código actual arriba ...
+
+  // =========================
+  // MAP MODAL LOGIC
+  // =========================
+  const mapModal = document.getElementById('mapModal');
+  const mapModalFrame = document.getElementById('mapModalFrame');
+  const mapModalTitle = document.getElementById('mapModalTitle');
+  const mapModalSubtitle = document.getElementById('mapModalSubtitle');
+  const mapModalOpen = document.getElementById('mapModalOpen');
+  const mapModalCopy = document.getElementById('mapModalCopy');
+  const mapModalStatus = document.getElementById('mapModalStatus');
+
+  function encodeQ(v) {
+    return encodeURIComponent((v || '').trim());
+  }
+
+  function openMapModal({ title, address }) {
+    if (!mapModal) return;
+
+    const q = encodeQ(address);
+    const iframeUrl = `https://www.google.com/maps?q=${q}&output=embed`;
+    const openUrl = `https://www.google.com/maps/search/?api=1&query=${q}`;
+
+    mapModalTitle.textContent = title || 'Ubicación';
+    mapModalSubtitle.textContent = address || '';
+    mapModalFrame.src = iframeUrl;
+    mapModalOpen.href = openUrl;
+    mapModalStatus.textContent = '';
+
+    mapModal.classList.remove('is-hidden');
+    mapModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeMapModal() {
+    if (!mapModal) return;
+    mapModal.classList.add('is-hidden');
+    mapModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+
+    // Limpia el iframe (para que no siga “vivo”)
+    if (mapModalFrame) mapModalFrame.src = '';
+  }
+
+  // Abre modal cuando das click a cualquier botón con data-map
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('[data-map]');
+    if (btn) {
+      e.preventDefault();
+      openMapModal({
+        title: btn.getAttribute('data-title'),
+        address: btn.getAttribute('data-address')
+      });
+      return;
+    }
+
+    // Cerrar por backdrop o X
+    if (e.target.matches('[data-close]')) {
+      e.preventDefault();
+      closeMapModal();
+    }
+  });
+
+  // Copiar dirección
+  if (mapModalCopy) {
+    mapModalCopy.addEventListener('click', async () => {
+      const text = (mapModalSubtitle?.textContent || '').trim();
+      if (!text) return;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        mapModalStatus.textContent = 'Dirección copiada ✅';
+      } catch (err) {
+        // Fallback
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        mapModalStatus.textContent = 'Dirección copiada ✅';
+      }
+    });
+  }
+
+  // Cerrar con ESC
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mapModal && !mapModal.classList.contains('is-hidden')) {
+      closeMapModal();
+    }
+  });
+</script>
+
+  
+  <!-- =========================
+     MAP MODAL (PREVIEW)
+     ========================= -->
+<div id="mapModal" class="mapmodal is-hidden" aria-hidden="true">
+  <div class="mapmodal__backdrop" data-close></div>
+
+  <div class="mapmodal__card" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
+    <button class="mapmodal__close" type="button" aria-label="Cerrar" data-close>✕</button>
+
+    <h3 id="mapModalTitle" class="mapmodal__title">Ubicación</h3>
+    <p id="mapModalSubtitle" class="mapmodal__subtitle"></p>
+
+    <div class="mapmodal__frame">
+      <iframe
+        id="mapModalFrame"
+        title="Mapa"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src=""
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="mapmodal__actions">
+      <a id="mapModalOpen" class="mapmodal__btn" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      <button id="mapModalCopy" class="mapmodal__btn mapmodal__btn--ghost" type="button">Copiar dirección</button>
+    </div>
+
+    <p id="mapModalStatus" class="mapmodal__status"></p>
+  </div>
+</div>
+
+  
 </body>
 </html>
+
 
 
