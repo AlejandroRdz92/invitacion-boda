@@ -658,4 +658,97 @@ body{
   min-height: 22px;
   font-size: .98rem;
   opacity:.85;
+
+}
+
+/* =========================
+   MAP MODAL
+   ========================= */
+.no-scroll { overflow: hidden; }
+
+.mapmodal.is-hidden { display: none; }
+
+.mapmodal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.mapmodal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+}
+
+.mapmodal__card {
+  position: relative;
+  width: min(900px, calc(100% - 24px));
+  margin: 24px auto;
+  background: #f7f1e9;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.mapmodal__close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: .7;
+}
+.mapmodal__close:hover { opacity: 1; }
+
+.mapmodal__title {
+  margin: 2px 0 4px;
+}
+
+.mapmodal__subtitle {
+  margin: 0 0 12px;
+  opacity: .75;
+}
+
+.mapmodal__frame {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #eee;
+  aspect-ratio: 16 / 9;
+}
+
+.mapmodal__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.mapmodal__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.mapmodal__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,.15);
+  background: white;
+  cursor: pointer;
+}
+
+.mapmodal__btn--ghost {
+  background: transparent;
+}
+
+.mapmodal__status {
+  margin: 10px 0 0;
+  font-size: 14px;
+  opacity: .8;
 }
