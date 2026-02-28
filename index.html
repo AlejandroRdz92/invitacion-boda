@@ -220,6 +220,40 @@
 
   </div>
 
+  
+  <!-- =========================
+     MAP MODAL (PREVIEW)
+     ========================= -->
+<div id="mapModal" class="mapmodal is-hidden" aria-hidden="true">
+  <div class="mapmodal__backdrop" data-close></div>
+
+  <div class="mapmodal__card" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
+    <button class="mapmodal__close" type="button" aria-label="Cerrar" data-close>✕</button>
+
+    <h3 id="mapModalTitle" class="mapmodal__title">Ubicación</h3>
+    <p id="mapModalSubtitle" class="mapmodal__subtitle"></p>
+
+    <div class="mapmodal__frame">
+      <iframe
+        id="mapModalFrame"
+        title="Mapa"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src=""
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="mapmodal__actions">
+      <a id="mapModalOpen" class="mapmodal__btn" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      <button id="mapModalCopy" class="mapmodal__btn mapmodal__btn--ghost" type="button">Copiar dirección</button>
+    </div>
+
+    <p id="mapModalStatus" class="mapmodal__status"></p>
+  </div>
+</div>
+
+  
   <script>
     // =========================
     // CONFIG
@@ -509,41 +543,9 @@
 </script>
 
   
-  <!-- =========================
-     MAP MODAL (PREVIEW)
-     ========================= -->
-<div id="mapModal" class="mapmodal is-hidden" aria-hidden="true">
-  <div class="mapmodal__backdrop" data-close></div>
-
-  <div class="mapmodal__card" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
-    <button class="mapmodal__close" type="button" aria-label="Cerrar" data-close>✕</button>
-
-    <h3 id="mapModalTitle" class="mapmodal__title">Ubicación</h3>
-    <p id="mapModalSubtitle" class="mapmodal__subtitle"></p>
-
-    <div class="mapmodal__frame">
-      <iframe
-        id="mapModalFrame"
-        title="Mapa"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        src=""
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <div class="mapmodal__actions">
-      <a id="mapModalOpen" class="mapmodal__btn" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
-      <button id="mapModalCopy" class="mapmodal__btn mapmodal__btn--ghost" type="button">Copiar dirección</button>
-    </div>
-
-    <p id="mapModalStatus" class="mapmodal__status"></p>
-  </div>
-</div>
-
-  
 </body>
 </html>
+
 
 
 
