@@ -5,9 +5,9 @@
   --text: #3a2f20;
 
   /* =====================
-     ✅ CONTROL GLOBAL DE ESPACIADO ENTRE SECCIONES (MÁS PEQUEÑO)
+     ✅ CONTROL GLOBAL DE ESPACIADO ENTRE SECCIONES (AÚN MÁS PEQUEÑO)
      ===================== */
-  --section-pad-y: clamp(38px, 4.6vw, 62px);  /* ⬅️ antes se veía como 90-100px */
+  --section-pad-y: clamp(28px, 3.8vw, 50px);  /* ⬅️ antes clamp(38px, 4.6vw, 62px) */
   --section-pad-x: 20px;
 
   /* =====================
@@ -15,8 +15,8 @@
      - PC: un poco más pequeño
      - Móvil: un poco más grande
      ===================== */
-  --envelope-max: 560px;   /* ⬅️ PC más pequeño */
-  --envelope-vw: 60vw;     /* ⬅️ PC más pequeño, basado en ancho */
+  --envelope-max: 560px;
+  --envelope-vw: 60vw;
 
   /* Hotspot del sello (% sobre el sobre) */
   --seal-x: 50%;
@@ -26,18 +26,20 @@
 
 *{ box-sizing:border-box; }
 
+/* ✅ evita “espacios fantasmas” por márgenes default */
+h1,h2,h3,p{ margin:0; }
+p + p{ margin-top: 12px; }
+
 html, body{
   height:100%;
   width:100%;
-  overflow-x:hidden; /* ✅ evita corte horizontal en móvil */
+  overflow-x:hidden;
 }
 
 body{
   margin:0;
   color:var(--text);
   font-family:'Jost', sans-serif;
-
-  /* ✅ sin fixed para evitar bugs en móvil */
   background: var(--bg) url("Imagenes/Fondo1.png") center/cover no-repeat;
 }
 
@@ -48,12 +50,12 @@ body{
    ========================= */
 
 .lobby{
-  height: 100vh;     /* fallback */
-  height: 100svh;    /* viewport real en móvil */
+  height: 100vh;
+  height: 100svh;
   min-height: 100vh;
   min-height: 100svh;
 
-  padding: 0;        /* ✅ el padding se mueve al layout */
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +63,7 @@ body{
   text-align: center;
   position: relative;
 
-  overflow: hidden;  /* ✅ mata micro-scroll por sombras/1px */
+  overflow: hidden;
 }
 
 .lobby__layout{
@@ -77,16 +79,13 @@ body{
 }
 
 /* Top */
-.lobby__top{
-  text-align:center;
-}
+.lobby__top{ text-align:center; }
 
 .lobby__names{
   margin:0;
   font-family:'Cormorant Garamond', serif;
   font-weight:400;
   letter-spacing:.02em;
-
   font-size: clamp(2.0rem, 4.2vw, 4.0rem);
   line-height:1.05;
 }
@@ -109,7 +108,6 @@ body{
 /* Stage */
 .lobby__stage{
   position:relative;
-
   width: min(var(--envelope-vw), var(--envelope-max));
 
   max-height: calc(100vh - 230px);
@@ -127,10 +125,9 @@ body{
   width:100%;
   height:auto;
   display:block;
-
   user-select:none;
   -webkit-user-drag:none;
-  pointer-events:none; /* clicks solo al hotspot */
+  pointer-events:none;
 }
 
 /* Botón invisible SOLO sobre el sello */
@@ -180,9 +177,7 @@ body{
 }
 
 /* Bottom */
-.lobby__bottom{
-  text-align:center;
-}
+.lobby__bottom{ text-align:center; }
 
 .lobby__hint{
   margin:0;
@@ -192,9 +187,7 @@ body{
 }
 
 /* Animación de salida del lobby */
-.lobby--open{
-  animation: lobbyOut .52s ease forwards;
-}
+.lobby--open{ animation: lobbyOut .52s ease forwards; }
 @keyframes lobbyOut{
   to { opacity:0; transform: translateY(-6px); }
 }
@@ -332,7 +325,7 @@ body{
 ====================== */
 
 .story{
-  padding: var(--section-pad-y) var(--section-pad-x); /* ✅ antes 100px */
+  padding: var(--section-pad-y) var(--section-pad-x);
   background:#f5efe6;
 }
 
@@ -355,14 +348,14 @@ body{
 .story__text h2{
   font-family:'Cormorant Garamond', serif;
   font-size:2.2rem;
-  margin-bottom:20px;
+  margin-bottom:14px; /* ⬅️ antes 20px */
 }
 
 .story__text p{
   font-size:1.05rem;
   line-height:1.8;
   opacity:.8;
-  margin-bottom:18px;
+  margin-bottom:14px; /* ⬅️ antes 18px */
 }
 
 .story__highlight{
@@ -373,9 +366,7 @@ body{
 
 /* MOBILE */
 @media(max-width:900px){
-  .story__container{
-    grid-template-columns:1fr;
-  }
+  .story__container{ grid-template-columns:1fr; }
 }
 
 /* ======================
@@ -383,19 +374,19 @@ body{
 ====================== */
 
 .timeline{
-  padding: var(--section-pad-y) var(--section-pad-x); /* ✅ antes 90px */
+  padding: var(--section-pad-y) var(--section-pad-x);
   background:#f5efe6;
 }
 
 .timeline__container{
   max-width: 980px;
-  margin: 0 auto;       /* ✅ centra */
+  margin: 0 auto;
   width: 100%;
 }
 
 .timeline__header{
   text-align:center;
-  margin-bottom: 34px;
+  margin-bottom: 22px; /* ⬅️ antes 34px */
 }
 
 .timeline__title{
@@ -415,7 +406,7 @@ body{
 .timeline__list{
   position: relative;
   display: grid;
-  gap: 18px;
+  gap: 14px; /* ⬅️ antes 18px */
 }
 
 /* Línea vertical central */
@@ -434,7 +425,7 @@ body{
   display:grid;
   grid-template-columns: 90px 56px 1fr;
   align-items:center;
-  gap: 14px;
+  gap: 12px; /* ⬅️ antes 14px */
   position: relative;
 }
 
@@ -457,7 +448,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow: 0 0 0 8px rgba(58,47,32,.08);
+  box-shadow: 0 0 0 7px rgba(58,47,32,.08); /* ⬅️ antes 8px */
 }
 
 .timeline__icon{
@@ -469,7 +460,7 @@ body{
 .timeline__card{
   background:#fffaf2;
   border-radius: 18px;
-  padding: 16px 18px;
+  padding: 14px 16px; /* ⬅️ antes 16px 18px */
   box-shadow: 0 16px 34px rgba(0,0,0,.08);
   border: 1px solid rgba(58,47,32,.08);
   transition: transform .2s ease, box-shadow .2s ease;
@@ -497,13 +488,9 @@ body{
 
 /* MOBILE */
 @media(max-width: 640px){
-  .timeline{
-    padding: calc(var(--section-pad-y) * .9) 16px;
-  }
+  .timeline{ padding: calc(var(--section-pad-y) * .88) 16px; }
 
-  .timeline__list::before{
-    left: 18px;
-  }
+  .timeline__list::before{ left: 18px; }
 
   .timeline__item{
     grid-template-columns: 1fr;
@@ -521,13 +508,11 @@ body{
   .timeline__dot{
     position:absolute;
     left: 18px;
-    top: 16px;
+    top: 14px;
     transform: translateX(-50%);
   }
 
-  .timeline__card{
-    padding: 14px 16px;
-  }
+  .timeline__card{ padding: 14px 16px; }
 }
 
 /* =========================
@@ -535,7 +520,7 @@ body{
    ========================= */
 
 .venues{
-  padding: calc(var(--section-pad-y) * .85) var(--section-pad-x) var(--section-pad-y); /* ✅ antes 40/90 */
+  padding: calc(var(--section-pad-y) * .72) var(--section-pad-x) calc(var(--section-pad-y) * .85); /* ⬅️ más compacto */
   background:#f5efe6;
 }
 
@@ -560,10 +545,7 @@ body{
   box-shadow:0 25px 55px rgba(0,0,0,.12);
 }
 
-.venue-card__image-wrapper{
-  height:240px;
-  overflow:hidden;
-}
+.venue-card__image-wrapper{ height:240px; overflow:hidden; }
 
 .venue-card__image{
   width:100%;
@@ -610,8 +592,8 @@ body{
     --envelope-vw: 92vw;
     --envelope-max: 620px;
 
-    /* ✅ un pelín menos sección en móvil */
-    --section-pad-y: clamp(34px, 6.2vw, 54px);
+    /* ✅ aún más compacto en móvil */
+    --section-pad-y: clamp(24px, 5.2vw, 44px);
     --section-pad-x: 16px;
   }
 
@@ -636,12 +618,10 @@ body{
   height:100%;
   object-fit:cover;
   transition: transform .6s ease;
-  transform: scale(1.22); /* MÁS cerca al inicio */
+  transform: scale(1.22);
 }
 
-.venue-card:hover .venue-card__image{
-  transform: scale(0.99);
-}
+.venue-card:hover .venue-card__image{ transform: scale(0.99); }
 
 .venue-card{
   transition: transform .25s ease, box-shadow .25s ease;
@@ -681,7 +661,7 @@ body{
    RSVP
    ========================= */
 .rsvp{
-  padding: var(--section-pad-y) var(--section-pad-x); /* ✅ antes 70/90 */
+  padding: var(--section-pad-y) var(--section-pad-x);
   background:#f5efe6;
 }
 
@@ -708,9 +688,7 @@ body{
   font-size:1.05rem;
 }
 
-.rsvp__row{
-  margin-top: 14px;
-}
+.rsvp__row{ margin-top: 14px; }
 
 .rsvp__label{
   display:block;
@@ -809,9 +787,7 @@ body{
 }
 .mapmodal__close:hover { opacity: 1; }
 
-.mapmodal__title {
-  margin: 2px 0 4px;
-}
+.mapmodal__title { margin: 2px 0 4px; }
 
 .mapmodal__subtitle {
   margin: 0 0 12px;
@@ -850,9 +826,7 @@ body{
   cursor: pointer;
 }
 
-.mapmodal__btn--ghost {
-  background: transparent;
-}
+.mapmodal__btn--ghost { background: transparent; }
 
 .mapmodal__status {
   margin: 10px 0 0;
@@ -865,18 +839,14 @@ body{
    ========================= */
 @media (max-height: 780px) and (max-width: 520px){
 
-  .lobby{
-    padding: 0;
-  }
+  .lobby{ padding: 0; }
 
   .lobby__layout{
     padding: 12px 14px;
     gap: 8px;
   }
 
-  .lobby__names{
-    font-size: 1.85rem;
-  }
+  .lobby__names{ font-size: 1.85rem; }
 
   .lobby__date{
     margin-top: 6px;
@@ -924,16 +894,16 @@ body{
 }
 
 /* =========================
-   SEPARADOR ELEGANTE (A&S)
+   SEPARADOR ELEGANTE (A&S) — MÁS CORTO
    ========================= */
 
 .sep{
   width: min(980px, calc(100% - 40px));
-  margin: 54px auto;
+  margin: 18px auto; /* ⬅️ antes 54px */
   display:flex;
   align-items:center;
   justify-content:center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .sep__line{
@@ -951,7 +921,7 @@ body{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding: 8px 14px;
+  padding: 7px 12px; /* ⬅️ un poco más chico */
   border-radius: 999px;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
@@ -967,11 +937,11 @@ body{
 @media (max-width: 520px){
   .sep{
     width: calc(100% - 28px);
-    margin: 40px auto;
-    gap: 12px;
+    margin: 14px auto; /* ⬅️ antes 40px */
+    gap: 10px;
   }
   .sep__badge{
-    padding: 7px 12px;
+    padding: 6px 11px;
     letter-spacing: .10em;
   }
 }
