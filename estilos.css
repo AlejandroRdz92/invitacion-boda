@@ -325,7 +325,7 @@ body{
 ====================== */
 
 .story{
-  padding-top: calc(var(--section-pad-y) + 10px);
+  padding-top: calc(var(--section-pad-y) + 30px);
 }
 
 .story__container{
@@ -944,4 +944,5 @@ body{
     letter-spacing: .10em;
   }
 }
+
 
