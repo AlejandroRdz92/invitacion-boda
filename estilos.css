@@ -556,6 +556,150 @@ body{
   }
 }
 
+  /* ======================
+   TIMELINE DEL DÍA
+====================== */
+
+.timeline{
+  padding: 90px 20px;
+  background:#f5efe6;
+}
+
+.timeline__container{
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.timeline__header{
+  text-align:center;
+  margin-bottom: 34px;
+}
+
+.timeline__title{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:400;
+  font-size: 2.4rem;
+  margin: 0 0 6px;
+  color:#3a2f20;
+}
+
+.timeline__subtitle{
+  margin: 0;
+  opacity:.78;
+  font-size: 1.05rem;
+}
+
+.timeline__list{
+  position: relative;
+  display: grid;
+  gap: 18px;
+}
+
+/* Línea vertical central */
+.timeline__list::before{
+  content:"";
+  position:absolute;
+  left: 118px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: rgba(58,47,32,.18);
+  border-radius: 2px;
+}
+
+.timeline__item{
+  display:grid;
+  grid-template-columns: 90px 56px 1fr;
+  align-items:center;
+  gap: 14px;
+  position: relative;
+}
+
+.timeline__time{
+  text-align:right;
+  font-size: 1rem;
+  letter-spacing:.08em;
+  opacity:.8;
+  color:#3a2f20;
+  white-space: nowrap;
+}
+
+.timeline__dot{
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #3a2f20;
+  opacity: .75;
+  justify-self: center;
+  box-shadow: 0 0 0 7px rgba(58,47,32,.08);
+}
+
+.timeline__card{
+  background:#fffaf2;
+  border-radius: 18px;
+  padding: 16px 18px;
+  box-shadow: 0 16px 34px rgba(0,0,0,.08);
+  border: 1px solid rgba(58,47,32,.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.timeline__card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.10);
+}
+
+.timeline__cardTitle{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:400;
+  font-size: 1.45rem;
+  margin: 0 0 6px;
+  color:#3a2f20;
+}
+
+.timeline__cardText{
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  opacity: .78;
+}
+
+/* MOBILE */
+@media(max-width: 640px){
+  .timeline{
+    padding: 70px 16px;
+  }
+
+  .timeline__list::before{
+    left: 18px;
+  }
+
+  .timeline__item{
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 10px;
+    padding-left: 34px;
+  }
+
+  .timeline__time{
+    text-align:left;
+    font-size: .98rem;
+    opacity: .82;
+  }
+
+  .timeline__dot{
+    position:absolute;
+    left: 18px;
+    top: 18px;
+    transform: translateX(-50%);
+  }
+
+  .timeline__card{
+    padding: 14px 16px;
+  }
+}
+
+
+
 /* ======================
    BOTÓN GOOGLE MAPS
 ====================== */
@@ -803,3 +947,4 @@ body{
     padding-bottom: 2px;
   }
 }
+
