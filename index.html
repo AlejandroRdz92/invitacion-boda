@@ -284,6 +284,103 @@
   <span class="sep__line"></span>
 </div>
 
+<!-- ========== GALERÍA PRO (PREMIUM) ========== -->
+<section class="gallery" id="gallery">
+  <div class="gallery__container">
+
+    <header class="gallery__header reveal" data-reveal>
+      <h2 class="gallery__title">Nuestra historia en fotos</h2>
+      <p class="gallery__subtitle">Momentos que nos trajeron hasta aquí ✨</p>
+    </header>
+
+    <div class="gallery__grid">
+      <!-- Tile grande (premium) -->
+      <button class="gallery__item gallery__item--hero reveal" data-reveal
+        type="button"
+        data-full="Imagenes/galeria/01.jpg"
+        aria-label="Abrir foto 1">
+        <img src="Imagenes/galeria/01.jpg" alt="Alejandro y Sarahi — Foto 1">
+        <span class="gallery__veil" aria-hidden="true"></span>
+        <span class="gallery__cap" aria-hidden="true">
+          <span class="gallery__capTitle">A&amp;S</span>
+          <span class="gallery__capText">Un momento que recordaremos siempre</span>
+        </span>
+      </button>
+
+      <button class="gallery__item reveal" data-reveal
+        type="button"
+        data-full="Imagenes/galeria/02.jpg"
+        aria-label="Abrir foto 2">
+        <img src="Imagenes/galeria/02.jpg" alt="Alejandro y Sarahi — Foto 2">
+        <span class="gallery__veil" aria-hidden="true"></span>
+      </button>
+
+      <button class="gallery__item reveal" data-reveal
+        type="button"
+        data-full="Imagenes/galeria/03.jpg"
+        aria-label="Abrir foto 3">
+        <img src="Imagenes/galeria/03.jpg" alt="Alejandro y Sarahi — Foto 3">
+        <span class="gallery__veil" aria-hidden="true"></span>
+      </button>
+
+      <button class="gallery__item reveal" data-reveal
+        type="button"
+        data-full="Imagenes/galeria/04.jpg"
+        aria-label="Abrir foto 4">
+        <img src="Imagenes/galeria/04.jpg" alt="Alejandro y Sarahi — Foto 4">
+        <span class="gallery__veil" aria-hidden="true"></span>
+      </button>
+
+      <button class="gallery__item reveal" data-reveal
+        type="button"
+        data-full="Imagenes/galeria/05.jpg"
+        aria-label="Abrir foto 5">
+        <img src="Imagenes/galeria/05.jpg" alt="Alejandro y Sarahi — Foto 5">
+        <span class="gallery__veil" aria-hidden="true"></span>
+      </button>
+
+      <button class="gallery__item reveal" data-reveal
+        type="button"
+        data-full="Imagenes/galeria/06.jpg"
+        aria-label="Abrir foto 6">
+        <img src="Imagenes/galeria/06.jpg" alt="Alejandro y Sarahi — Foto 6">
+        <span class="gallery__veil" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <p class="gallery__note reveal" data-reveal>
+      Tip: puedes agregar más fotos duplicando un <code>&lt;button class="gallery__item"&gt;</code>.
+    </p>
+
+  </div>
+</section>
+
+<!-- ========== LIGHTBOX (MODAL PREMIUM) ========== -->
+<div id="lightbox" class="lightbox is-hidden" aria-hidden="true">
+  <div class="lightbox__backdrop" data-lb-close></div>
+
+  <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Vista de foto">
+    <button class="lightbox__close" type="button" aria-label="Cerrar" data-lb-close>✕</button>
+
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Anterior" data-lb-prev>‹</button>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Siguiente" data-lb-next>›</button>
+
+    <div class="lightbox__frame">
+      <img id="lightboxImg" class="lightbox__img" src="" alt="">
+    </div>
+
+    <div class="lightbox__meta">
+      <span id="lightboxCount" class="lightbox__count">1 / 1</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SEPARATOR ========== -->
+<div class="sep reveal" data-reveal aria-hidden="true">
+  <span class="sep__line"></span>
+  <span class="sep__badge">A&amp;S</span>
+  <span class="sep__line"></span>
+</div>
     
     <!-- ========== RSVP ========== -->
     <section class="rsvp" id="rsvp">
@@ -658,6 +755,7 @@
   
 </body>
 </html>
+
 
 
 
