@@ -923,3 +923,56 @@ body{
     transition: none;
   }
 }
+
+/* =========================
+   SEPARADOR ELEGANTE (A&S)
+   ========================= */
+
+.sep{
+  width: min(980px, calc(100% - 40px));
+  margin: 54px auto;               /* espacio arriba/abajo */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 14px;
+}
+
+.sep__line{
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(58,47,32,.28),
+    transparent
+  );
+}
+
+.sep__badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: .12em;
+  color: rgba(58,47,32,.92);
+  border: 1px solid rgba(58,47,32,.16);
+  background: rgba(255,255,255,.35);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+/* Mobile */
+@media (max-width: 520px){
+  .sep{
+    width: calc(100% - 28px);
+    margin: 40px auto;
+    gap: 12px;
+  }
+  .sep__badge{
+    padding: 7px 12px;
+    letter-spacing: .10em;
+  }
+}
