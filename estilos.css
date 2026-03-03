@@ -808,3 +808,55 @@ body{
     padding-bottom: 2px;
   }
 }
+
+/* =========================
+   FLECHA INDICADORA DEL SELLO
+   ========================= */
+
+.seal-arrow{
+  position:absolute;
+  left: calc(var(--seal-x) + 70px);
+  top: calc(var(--seal-y) - 70px);
+  transform: translate(-50%, -50%);
+  pointer-events:none;
+  text-align:center;
+  animation: arrowFloat 2s ease-in-out infinite;
+}
+
+/* Línea curva elegante */
+.seal-arrow::before{
+  content:"";
+  position:absolute;
+  left:-65px;
+  top:45px;
+  width:70px;
+  height:70px;
+  border-left:2px solid rgba(58,47,32,.75);
+  border-bottom:2px solid rgba(58,47,32,.75);
+  border-radius:0 0 0 70px;
+  transform: rotate(-25deg);
+}
+
+/* Texto */
+.seal-arrow span{
+  font-family:'Cormorant Garamond', serif;
+  font-size:1rem;
+  letter-spacing:.06em;
+  color:rgba(58,47,32,.9);
+  opacity:.9;
+}
+
+/* Animación flotante suave */
+@keyframes arrowFloat{
+  0%{ transform: translate(-50%, -50%) translateY(0); }
+  50%{ transform: translate(-50%, -50%) translateY(-6px); }
+  100%{ transform: translate(-50%, -50%) translateY(0); }
+}
+
+/* Ajuste móvil */
+@media(max-width:520px){
+  .seal-arrow{
+    left: calc(var(--seal-x) + 50px);
+    top: calc(var(--seal-y) - 60px);
+  }
+}
