@@ -5,6 +5,12 @@
   --text: #3a2f20;
 
   /* =====================
+     ✅ CONTROL GLOBAL DE ESPACIADO ENTRE SECCIONES (MÁS PEQUEÑO)
+     ===================== */
+  --section-pad-y: clamp(38px, 4.6vw, 62px);  /* ⬅️ antes se veía como 90-100px */
+  --section-pad-x: 20px;
+
+  /* =====================
      LOBBY: tamaños RESPONSIVE (ajuste final)
      - PC: un poco más pequeño
      - Móvil: un poco más grande
@@ -42,7 +48,6 @@ body{
    ========================= */
 
 .lobby{
-  /* ✅ NO apilar 100vh + padding (causaba overflow) */
   height: 100vh;     /* fallback */
   height: 100svh;    /* viewport real en móvil */
   min-height: 100vh;
@@ -60,16 +65,13 @@ body{
 }
 
 .lobby__layout{
-  /* ✅ ya NO 100vh (eso duplicaba la altura) */
   height: 100%;
   width:100%;
   display:grid;
 
-  /* ✅ 3 filas controladas */
   grid-template-rows: auto 1fr auto;
   align-items:center;
 
-  /* ✅ aquí va el padding real */
   padding: clamp(14px, 2.2vh, 26px) clamp(16px, 3vw, 32px);
   gap: clamp(8px, 1.6vh, 14px);
 }
@@ -108,10 +110,8 @@ body{
 .lobby__stage{
   position:relative;
 
-  /* ✅ ancho responsive con tope */
   width: min(var(--envelope-vw), var(--envelope-max));
 
-  /* ✅ limita por alto disponible (fallback + svh) */
   max-height: calc(100vh - 230px);
   max-height: calc(100svh - 230px);
 
@@ -139,7 +139,6 @@ body{
   left: var(--seal-x);
   top: var(--seal-y);
 
-  /* ✅ porcentaje del contenedor */
   width: var(--seal-size);
   aspect-ratio: 1 / 1;
 
@@ -333,7 +332,7 @@ body{
 ====================== */
 
 .story{
-  padding:100px 20px;
+  padding: var(--section-pad-y) var(--section-pad-x); /* ✅ antes 100px */
   background:#f5efe6;
 }
 
@@ -384,7 +383,7 @@ body{
 ====================== */
 
 .timeline{
-  padding: 90px 20px;
+  padding: var(--section-pad-y) var(--section-pad-x); /* ✅ antes 90px */
   background:#f5efe6;
 }
 
@@ -499,7 +498,7 @@ body{
 /* MOBILE */
 @media(max-width: 640px){
   .timeline{
-    padding: 70px 16px;
+    padding: calc(var(--section-pad-y) * .9) 16px;
   }
 
   .timeline__list::before{
@@ -536,7 +535,7 @@ body{
    ========================= */
 
 .venues{
-  padding:40px 20px 90px;
+  padding: calc(var(--section-pad-y) * .85) var(--section-pad-x) var(--section-pad-y); /* ✅ antes 40/90 */
   background:#f5efe6;
 }
 
@@ -608,9 +607,12 @@ body{
     --seal-size: 16%;
     --seal-y: 57%;
 
-    /* ✅ móvil: sobre MÁS GRANDE */
     --envelope-vw: 92vw;
     --envelope-max: 620px;
+
+    /* ✅ un pelín menos sección en móvil */
+    --section-pad-y: clamp(34px, 6.2vw, 54px);
+    --section-pad-x: 16px;
   }
 
   .lobby__stage{
@@ -623,14 +625,12 @@ body{
    EFECTO DINÁMICO EN VENUES
    ========================= */
 
-/* Wrapper */
 .venue-card__image-wrapper{
   overflow:hidden;
   border-top-left-radius:14px;
   border-top-right-radius:14px;
 }
 
-/* Imagen inicia un poco ampliada */
 .venue-card__image{
   width:100%;
   height:100%;
@@ -640,10 +640,9 @@ body{
 }
 
 .venue-card:hover .venue-card__image{
-  transform: scale(0.99); /* tamaño casi real */
+  transform: scale(0.99);
 }
 
-/* Tarjeta flotante */
 .venue-card{
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -682,7 +681,7 @@ body{
    RSVP
    ========================= */
 .rsvp{
-  padding: 70px 20px 90px;
+  padding: var(--section-pad-y) var(--section-pad-x); /* ✅ antes 70/90 */
   background:#f5efe6;
 }
 
@@ -867,7 +866,7 @@ body{
 @media (max-height: 780px) and (max-width: 520px){
 
   .lobby{
-    padding: 0; /* ✅ el padding lo controla lobby__layout */
+    padding: 0;
   }
 
   .lobby__layout{
@@ -930,7 +929,7 @@ body{
 
 .sep{
   width: min(980px, calc(100% - 40px));
-  margin: 54px auto;               /* espacio arriba/abajo */
+  margin: 54px auto;
   display:flex;
   align-items:center;
   justify-content:center;
