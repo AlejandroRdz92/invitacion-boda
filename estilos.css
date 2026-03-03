@@ -42,18 +42,26 @@ body{
    ========================= */
 
 .lobby{
+  /* ✅ NO apilar 100vh + padding (causaba overflow) */
+  height: 100vh;     /* fallback */
+  height: 100svh;    /* viewport real en móvil */
   min-height: 100vh;
-  padding: 40px 20px 30px;
+  min-height: 100svh;
+
+  padding: 0;        /* ✅ el padding se mueve al layout */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
+
+  overflow: hidden;  /* ✅ mata micro-scroll por sombras/1px */
 }
 
 .lobby__layout{
-  height:100vh;
+  /* ✅ ya NO 100vh (eso duplicaba la altura) */
+  height: 100%;
   width:100%;
   display:grid;
 
@@ -61,6 +69,7 @@ body{
   grid-template-rows: auto 1fr auto;
   align-items:center;
 
+  /* ✅ aquí va el padding real */
   padding: clamp(14px, 2.2vh, 26px) clamp(16px, 3vw, 32px);
   gap: clamp(8px, 1.6vh, 14px);
 }
@@ -102,8 +111,9 @@ body{
   /* ✅ ancho responsive con tope */
   width: min(var(--envelope-vw), var(--envelope-max));
 
-  /* ✅ limita por alto disponible */
+  /* ✅ limita por alto disponible (fallback + svh) */
   max-height: calc(100vh - 230px);
+  max-height: calc(100svh - 230px);
 
   display:flex;
   justify-content:center;
@@ -457,6 +467,7 @@ body{
 
   .lobby__stage{
     max-height: calc(100vh - 200px);
+    max-height: calc(100svh - 200px);
   }
 }
 
@@ -483,8 +494,6 @@ body{
 .venue-card:hover .venue-card__image{
   transform: scale(0.99); /* tamaño casi real */
 }
-
-
 
 /* Tarjeta flotante */
 .venue-card{
@@ -661,7 +670,6 @@ body{
   min-height: 22px;
   font-size: .98rem;
   opacity:.85;
-
 }
 
 /* =========================
@@ -756,7 +764,7 @@ body{
   opacity: .8;
 }
 
-* =========================
+/* =========================
    FIX: Samsung / pantallas "chaparras"
    - Evita scroll en portada y muestra el hint
    ========================= */
@@ -764,7 +772,7 @@ body{
 
   .lobby{
     /* menos aire arriba/abajo */
-    padding: 18px 14px 16px;
+    padding: 0; /* ✅ el padding lo controla lobby__layout */
   }
 
   .lobby__layout{
@@ -790,9 +798,9 @@ body{
   }
 
   .lobby__stage{
-    /* baja el límite del alto del sobre para liberar espacio abajo */
-    max-height: calc(100svh - 330px);
+    /* libera espacio abajo (fallback + svh) */
     max-height: calc(100vh - 330px);
+    max-height: calc(100svh - 330px);
   }
 
   .lobby__hint{
@@ -800,4 +808,3 @@ body{
     padding-bottom: 2px;
   }
 }
-
