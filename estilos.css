@@ -756,3 +756,48 @@ body{
   opacity: .8;
 }
 
+* =========================
+   FIX: Samsung / pantallas "chaparras"
+   - Evita scroll en portada y muestra el hint
+   ========================= */
+@media (max-height: 780px) and (max-width: 520px){
+
+  .lobby{
+    /* menos aire arriba/abajo */
+    padding: 18px 14px 16px;
+  }
+
+  .lobby__layout{
+    /* menos padding interno y menos separación entre filas */
+    padding: 12px 14px;
+    gap: 8px;
+  }
+
+  .lobby__names{
+    /* un pelín más compacto */
+    font-size: 1.85rem;
+  }
+
+  .lobby__date{
+    margin-top: 6px;
+    font-size: .88rem;
+  }
+
+  :root{
+    /* reduce un poco el sobre para que quepa el hint */
+    --envelope-vw: 88vw;
+    --seal-size: 15%;
+  }
+
+  .lobby__stage{
+    /* baja el límite del alto del sobre para liberar espacio abajo */
+    max-height: calc(100svh - 330px);
+    max-height: calc(100vh - 330px);
+  }
+
+  .lobby__hint{
+    font-size: .90rem;
+    padding-bottom: 2px;
+  }
+}
+
