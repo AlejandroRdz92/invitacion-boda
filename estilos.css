@@ -771,18 +771,15 @@ body{
 @media (max-height: 780px) and (max-width: 520px){
 
   .lobby{
-    /* menos aire arriba/abajo */
     padding: 0; /* ✅ el padding lo controla lobby__layout */
   }
 
   .lobby__layout{
-    /* menos padding interno y menos separación entre filas */
     padding: 12px 14px;
     gap: 8px;
   }
 
   .lobby__names{
-    /* un pelín más compacto */
     font-size: 1.85rem;
   }
 
@@ -792,13 +789,11 @@ body{
   }
 
   :root{
-    /* reduce un poco el sobre para que quepa el hint */
     --envelope-vw: 88vw;
     --seal-size: 15%;
   }
 
   .lobby__stage{
-    /* libera espacio abajo (fallback + svh) */
     max-height: calc(100vh - 330px);
     max-height: calc(100svh - 330px);
   }
@@ -810,53 +805,73 @@ body{
 }
 
 /* =========================
-   FLECHA INDICADORA DEL SELLO
+   FLECHA INDICADORA DEL SELLO (VISIBLE)
    ========================= */
 
 .seal-arrow{
   position:absolute;
-  left: calc(var(--seal-x) + 70px);
-  top: calc(var(--seal-y) - 70px);
+  left: calc(var(--seal-x) + 95px);
+  top: calc(var(--seal-y) - 55px);
   transform: translate(-50%, -50%);
   pointer-events:none;
   text-align:center;
+  z-index: 20; /* ✅ arriba del sobre */
   animation: arrowFloat 2s ease-in-out infinite;
 }
 
-/* Línea curva elegante */
+/* Línea curva + flecha */
 .seal-arrow::before{
   content:"";
   position:absolute;
-  left:-65px;
-  top:45px;
-  width:70px;
+  left:-110px;
+  top:38px;
+  width:110px;
   height:70px;
-  border-left:2px solid rgba(58,47,32,.75);
-  border-bottom:2px solid rgba(58,47,32,.75);
-  border-radius:0 0 0 70px;
-  transform: rotate(-25deg);
+
+  border-left:3px solid rgba(58,47,32,.95);
+  border-bottom:3px solid rgba(58,47,32,.95);
+  border-radius:0 0 0 90px;
+
+  transform: rotate(-18deg);
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,.10));
 }
 
-/* Texto */
+/* Punta de flecha */
+.seal-arrow::after{
+  content:"";
+  position:absolute;
+  left:-15px;
+  top:64px;
+  width:10px;
+  height:10px;
+  border-right:3px solid rgba(58,47,32,.95);
+  border-top:3px solid rgba(58,47,32,.95);
+  transform: rotate(35deg);
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,.10));
+}
+
 .seal-arrow span{
   font-family:'Cormorant Garamond', serif;
-  font-size:1rem;
+  font-size:1.05rem;
   letter-spacing:.06em;
-  color:rgba(58,47,32,.9);
-  opacity:.9;
+  color:rgba(58,47,32,.95);
+  opacity:.95;
+  display:inline-block;
+  background: rgba(255,255,255,.35);
+  padding: 6px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(2px);
 }
 
-/* Animación flotante suave */
 @keyframes arrowFloat{
   0%{ transform: translate(-50%, -50%) translateY(0); }
   50%{ transform: translate(-50%, -50%) translateY(-6px); }
   100%{ transform: translate(-50%, -50%) translateY(0); }
 }
 
-/* Ajuste móvil */
 @media(max-width:520px){
   .seal-arrow{
-    left: calc(var(--seal-x) + 50px);
-    top: calc(var(--seal-y) - 60px);
+    left: calc(var(--seal-x) + 70px);
+    top: calc(var(--seal-y) - 55px);
   }
 }
