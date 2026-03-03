@@ -42,11 +42,14 @@ body{
    ========================= */
 
 .lobby{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100vh;
-  overflow:hidden;
+  min-height: 100vh;
+  padding: 40px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
 
 .lobby__layout{
@@ -752,3 +755,4 @@ body{
   font-size: 14px;
   opacity: .8;
 }
+
