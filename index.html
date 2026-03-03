@@ -749,12 +749,75 @@
   els.forEach(el => io.observe(el));
 })();
 
+// =========================
+// GALERÍA LIGHTBOX (PRO)
+// =========================
+(function initGalleryLightbox(){
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbCount = document.getElementById('lightboxCount');
+
+  const items = Array.from(document.querySelectorAll('.gallery__item[data-full]'));
+  if (!lb || !lbImg || items.length === 0) return;
+
+  let index = 0;
+
+  function setNoScroll(on){
+    document.body.classList.toggle('no-scroll', !!on);
+  }
+
+  function openAt(i){
+    index = (i + items.length) % items.length;
+    const full = items[index].getAttribute('data-full');
+    const alt = items[index].querySelector('img')?.getAttribute('alt') || 'Foto';
+
+    lbImg.src = full;
+    lbImg.alt = alt;
+    lbCount.textContent = `${index + 1} / ${items.length}`;
+
+    lb.classList.remove('is-hidden');
+    lb.setAttribute('aria-hidden','false');
+    setNoScroll(true);
+  }
+
+  function close(){
+    lb.classList.add('is-hidden');
+    lb.setAttribute('aria-hidden','true');
+    setNoScroll(false);
+    lbImg.src = '';
+  }
+
+  function next(){ openAt(index + 1); }
+  function prev(){ openAt(index - 1); }
+
+  // Abrir por click
+  items.forEach((btn, i) => {
+    btn.addEventListener('click', () => openAt(i));
+  });
+
+  // Controles
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('[data-lb-close]')) close();
+    if (e.target.matches('[data-lb-next]')) next();
+    if (e.target.matches('[data-lb-prev]')) prev();
+  });
+
+  // Teclas
+  window.addEventListener('keydown', (e) => {
+    if (lb.classList.contains('is-hidden')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+})();
+    
     
 </script>
 
   
 </body>
 </html>
+
 
 
 
