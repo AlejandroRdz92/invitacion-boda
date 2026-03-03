@@ -217,7 +217,7 @@ body{
   color:#fff;
   overflow:hidden;
 
-  /* ✅ AJUSTE: un poquito de aire abajo del hero */
+  /* ✅ un poquito de aire abajo del hero */
   padding-bottom: var(--after-hero-gap);
 }
 
@@ -288,8 +288,6 @@ body{
 .story{
   padding: var(--section-pad-y) var(--section-pad-x);
   background:#f5efe6;
-
-  /* ✅ AJUSTE: aire extra SOLO arriba de story (transición hero->story) */
   padding-top: calc(var(--section-pad-y) + var(--after-hero-gap));
 }
 
@@ -349,7 +347,7 @@ body{
 
 .timeline__header{
   text-align:center;
-  margin-bottom: 28px; /* ✅ antes 34 (un pelín menos) */
+  margin-bottom: 28px;
 }
 
 .timeline__title{
@@ -369,7 +367,7 @@ body{
 .timeline__list{
   position: relative;
   display: grid;
-  gap: 14px; /* ✅ antes 18 (menos aire entre items) */
+  gap: 14px;
 }
 
 .timeline__list::before{
@@ -549,7 +547,6 @@ body{
     --section-pad-y: clamp(34px, 6.2vw, 54px);
     --section-pad-x: 16px;
 
-    /* ✅ en móvil, un aire leve extra pero controlado */
     --after-hero-gap: clamp(12px, 3.2vw, 18px);
   }
 
@@ -608,7 +605,7 @@ body{
 }
 
 /* =========================
-   RSVP (CONFIRMAR ASISTENCIA) — PRO
+   RSVP (CONFIRMAR ASISTENCIA) — ARREGLADO (NO “CHUECO”)
    ========================= */
 
 .rsvp{
@@ -626,35 +623,43 @@ body{
   border: 1px solid rgba(58,47,32,.08);
 }
 
+/* Títulos */
 .rsvp__title{
   font-family:'Cormorant Garamond', serif;
   font-weight:400;
   font-size:2.3rem;
-  margin:0 0 8px;
+  margin:0 0 10px;
   color:#3a2f20;
 }
 
 .rsvp__subtitle{
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   opacity:.78;
-  font-size:1.05rem;
-  line-height: 1.5;
+  font-size:1.03rem;
+  line-height: 1.55;
 }
 
+/* ✅ AQUÍ estaba lo “raro”: forzamos layout en columna SIEMPRE */
 .rsvp__row{
   margin-top: 16px;
+  display:flex;
+  flex-direction:column;
+  gap: 8px;
 }
 
+/* Labels */
 .rsvp__label{
   display:block;
   font-size:.95rem;
   opacity:.88;
-  margin-bottom:8px;
 }
 
+/* Inputs */
 .rsvp__select,
 .rsvp__textarea{
-  width:100%;
+  display:block;              /* ✅ evita que se quede “inline” */
+  width:100% !important;      /* ✅ refuerzo para casos de disabled/browser */
+  max-width:100%;
   border:1px solid rgba(58,47,32,.18);
   border-radius: 14px;
   padding: 12px 14px;
@@ -666,6 +671,20 @@ body{
   transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 
+.rsvp__select{
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(58,47,32,.65) 50%),
+    linear-gradient(135deg, rgba(58,47,32,.65) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 40px; /* espacio flechita */
+}
+
 .rsvp__select:focus,
 .rsvp__textarea:focus{
   border-color: rgba(58,47,32,.35);
@@ -674,9 +693,10 @@ body{
 
 .rsvp__textarea{
   resize: vertical;
-  min-height: 92px;
+  min-height: 96px;
 }
 
+/* Botón */
 .rsvp__btn{
   margin-top: 18px;
   border:1px solid rgba(58,47,32,.24);
@@ -695,9 +715,7 @@ body{
   background: #fffdf8;
 }
 
-.rsvp__btn:active{
-  transform: translateY(0px);
-}
+.rsvp__btn:active{ transform: translateY(0px); }
 
 .rsvp__btn:disabled{
   opacity:.45;
@@ -706,6 +724,7 @@ body{
   box-shadow:none;
 }
 
+/* Status */
 .rsvp__status{
   margin-top: 12px;
   min-height: 22px;
@@ -713,10 +732,8 @@ body{
   opacity:.9;
 }
 
-/* ✅ Si sale el texto en rojo por JS, se verá más pro */
-.rsvp__status[style*="b42318"]{
-  font-weight: 500;
-}
+/* ✅ Si sale el texto en rojo por JS */
+.rsvp__status[style*="b42318"]{ font-weight: 500; }
 
 /* MOBILE */
 @media (max-width: 520px){
@@ -724,9 +741,7 @@ body{
     padding: 22px;
     border-radius: 18px;
   }
-  .rsvp__title{
-    font-size: 2.05rem;
-  }
+  .rsvp__title{ font-size: 2.05rem; }
 }
 
 /* MAP MODAL */
@@ -761,10 +776,8 @@ body{
 
 /* =========================
    REVEAL (FADE + SLIDE PRO)
-   ✅ AJUSTE: no ocultar cuando el site estaba hidden, se activa al mostrar
    ========================= */
 
-/* Por defecto NO escondemos nada hasta que el sitio sea visible */
 .reveal{
   opacity: 1;
   transform: none;
@@ -796,7 +809,7 @@ body{
    ========================= */
 .sep{
   width: min(980px, calc(100% - 40px));
-  margin: 28px auto; /* ✅ antes 54: más compacto */
+  margin: 28px auto;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -834,4 +847,3 @@ body{
   .sep{ width: calc(100% - 28px); margin: 22px auto; gap: 12px; }
   .sep__badge{ padding: 7px 12px; letter-spacing: .10em; }
 }
-
