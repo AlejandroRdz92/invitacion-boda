@@ -607,7 +607,10 @@ body{
   box-shadow:0 8px 18px rgba(0,0,0,.15);
 }
 
-/* RSVP */
+/* =========================
+   RSVP (CONFIRMAR ASISTENCIA) — PRO
+   ========================= */
+
 .rsvp{
   padding: var(--section-pad-y) var(--section-pad-x);
   background:#f5efe6;
@@ -617,9 +620,113 @@ body{
   max-width: 860px;
   margin: 0 auto;
   background:#fffaf2;
-  border-radius: 18px;
-  box-shadow: 0 16px 34px rgba(0,0,0,.08);
-  padding: 28px;
+  border-radius: 22px;
+  box-shadow: 0 18px 44px rgba(0,0,0,.08);
+  padding: 34px;
+  border: 1px solid rgba(58,47,32,.08);
+}
+
+.rsvp__title{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:400;
+  font-size:2.3rem;
+  margin:0 0 8px;
+  color:#3a2f20;
+}
+
+.rsvp__subtitle{
+  margin: 0 0 20px;
+  opacity:.78;
+  font-size:1.05rem;
+  line-height: 1.5;
+}
+
+.rsvp__row{
+  margin-top: 16px;
+}
+
+.rsvp__label{
+  display:block;
+  font-size:.95rem;
+  opacity:.88;
+  margin-bottom:8px;
+}
+
+.rsvp__select,
+.rsvp__textarea{
+  width:100%;
+  border:1px solid rgba(58,47,32,.18);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-family: 'Jost', sans-serif;
+  font-size:1rem;
+  background:#fff;
+  color:#3a2f20;
+  outline:none;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.rsvp__select:focus,
+.rsvp__textarea:focus{
+  border-color: rgba(58,47,32,.35);
+  box-shadow: 0 0 0 6px rgba(58,47,32,.08);
+}
+
+.rsvp__textarea{
+  resize: vertical;
+  min-height: 92px;
+}
+
+.rsvp__btn{
+  margin-top: 18px;
+  border:1px solid rgba(58,47,32,.24);
+  background:#fff;
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor:pointer;
+  font-size:1rem;
+  letter-spacing: .02em;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease, background .2s ease;
+}
+
+.rsvp__btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(0,0,0,.08);
+  background: #fffdf8;
+}
+
+.rsvp__btn:active{
+  transform: translateY(0px);
+}
+
+.rsvp__btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+  transform:none;
+  box-shadow:none;
+}
+
+.rsvp__status{
+  margin-top: 12px;
+  min-height: 22px;
+  font-size: .98rem;
+  opacity:.9;
+}
+
+/* ✅ Si sale el texto en rojo por JS, se verá más pro */
+.rsvp__status[style*="b42318"]{
+  font-weight: 500;
+}
+
+/* MOBILE */
+@media (max-width: 520px){
+  .rsvp__card{
+    padding: 22px;
+    border-radius: 18px;
+  }
+  .rsvp__title{
+    font-size: 2.05rem;
+  }
 }
 
 /* MAP MODAL */
@@ -727,3 +834,4 @@ body{
   .sep{ width: calc(100% - 28px); margin: 22px auto; gap: 12px; }
   .sep__badge{ padding: 7px 12px; letter-spacing: .10em; }
 }
+
