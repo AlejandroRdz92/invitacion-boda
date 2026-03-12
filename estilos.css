@@ -215,7 +215,7 @@ body{
 /* Móvil normal */
 @media (max-width: 480px){
   :root{
-    --envelope-vw: 88vw;
+    --envelope-vw: 96vw;
     --envelope-max: 420px;
     --seal-size: 15%;
   }
@@ -224,7 +224,7 @@ body{
 /* Móvil pequeño (iPhone SE, Galaxy A) */
 @media (max-width: 390px){
   :root{
-    --envelope-vw: 90vw;
+    --envelope-vw: 98vw;
     --envelope-max: 360px;
   }
   .lobby__names{ font-size: 1.75rem; }
@@ -1167,3 +1167,4 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
