@@ -255,8 +255,8 @@ body{
 /* ── Teléfono chico ─────────────────────────────── */
 @media (max-width: 400px){
   :root{
-    --envelope-vw: 116vw;
-    --envelope-max: 440px;
+    --envelope-vw: 118vw;
+    --envelope-max: 490px;
     --seal-size: 18%;
     --seal-y: 51%;
   }
@@ -1205,3 +1205,4 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
