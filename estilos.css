@@ -764,7 +764,7 @@ body{
   .lobby__date{ margin-top: 6px; font-size: .88rem; }
 
   :root{
-    --envelope-vw: 116vw;
+    --envelope-vw: 126vw;
     --envelope-max: 780px;
     --seal-size: 15%;
     --seal-y: 57%;
@@ -1125,4 +1125,5 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
 
