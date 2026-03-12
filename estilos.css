@@ -548,7 +548,7 @@ body{
 
   :root{
     --seal-size: 16%;
-    --seal-y: 55.1%;
+    --seal-y: 50.1%;
     --envelope-vw: 120vw;
     --envelope-max: 740px;
 
@@ -1147,6 +1147,7 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
 
 
 
