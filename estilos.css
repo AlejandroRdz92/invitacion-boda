@@ -548,7 +548,7 @@ body{
   :root{
     --seal-size: 16%;
     --seal-y: 55.1%;
-    --envelope-vw: 108vw;
+    --envelope-vw: 114vw;
     --envelope-max: 740px;
 
     --section-pad-y: clamp(34px, 6.2vw, 54px);
@@ -563,7 +563,7 @@ body{
   }
 
   .lobby__envelope{
-    transform: translateX(-4.5%);
+    transform: translateX(-5%);
   }
 
   .lobby__top,
@@ -780,7 +780,7 @@ body{
   .lobby__date{ margin-top: 6px; font-size: .88rem; }
 
   :root{
-    --envelope-vw: 108vw;
+    --envelope-vw: 114vw;
     --envelope-max: 740px;
     --seal-size: 15%;
     --seal-y: 55.1%;
@@ -793,7 +793,7 @@ body{
   }
 
   .lobby__envelope{
-    transform: translateX(-4.5%);
+    transform: translateX(-5%);
   }
 
   .lobby__top,
@@ -1156,4 +1156,5 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
 
