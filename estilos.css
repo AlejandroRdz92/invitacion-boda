@@ -558,8 +558,8 @@ body{
   }
 
   .lobby__stage{
-    max-height: calc(100vh - 210px);
-    max-height: calc(100svh - 210px);
+   max-height: calc(100vh - 170px);
+  max-height: calc(100svh - 170px);
   }
 
   .lobby__top,
@@ -783,8 +783,8 @@ body{
   }
 
   .lobby__stage{
-    max-height: calc(100vh - 300px);
-    max-height: calc(100svh - 300px);
+    max-height: calc(100vh - 250px);
+    max-height: calc(100svh - 250px);
   }
 
   .lobby__top,
@@ -1147,6 +1147,7 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
 
 
 
