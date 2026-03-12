@@ -563,7 +563,7 @@ body{
   }
 
   .lobby__envelope{
-    transform: translateX(-4%);
+    transform: translateX(-6%);
   }
 
   .lobby__top,
@@ -793,7 +793,7 @@ body{
   }
 
   .lobby__envelope{
-    transform: translateX(-4%);
+    transform: translateX(-6%);
   }
 }
 
@@ -1157,6 +1157,7 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
 
 
 
