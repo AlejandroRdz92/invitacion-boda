@@ -4,14 +4,14 @@
   --bg: #efe7db;
   --text: #3a2f20;
 
-  /* ✅ CONTROL GLOBAL DE ESPACIADO ENTRE SECCIONES (MÁS PEQUEÑO) */
+  /* ✅ CONTROL GLOBAL DE ESPACIADO ENTRE SECCIONES */
   --section-pad-y: clamp(38px, 4.6vw, 62px);
   --section-pad-x: 20px;
 
   /* ✅ AJUSTE FINO: aire extra entre HERO -> primera sección */
   --after-hero-gap: clamp(18px, 2.2vw, 30px);
 
-  /* ✅ SOBRE EN COMPUTADORA: REGRESA A COMO ESTABA */
+  /* ✅ SOBRE EN COMPUTADORA */
   --envelope-max: 560px;
   --envelope-vw: 60vw;
 
@@ -55,7 +55,6 @@ body{
   justify-content: center;
   text-align: center;
   position: relative;
-
   overflow: hidden;
 }
 
@@ -63,15 +62,16 @@ body{
   height: 100%;
   width:100%;
   display:grid;
-
   grid-template-rows: auto 1fr auto;
   align-items:center;
-
   padding: clamp(14px, 2.2vh, 26px) clamp(16px, 3vw, 32px);
   gap: clamp(8px, 1.6vh, 14px);
 }
 
-.lobby__top{ text-align:center; }
+.lobby__top{
+  text-align:center;
+  width:100%;
+}
 
 .lobby__names{
   margin:0;
@@ -94,20 +94,19 @@ body{
   justify-content:center;
   align-items:center;
   min-height:0;
+  width:100%;
   overflow: visible;
 }
 
 .lobby__stage{
   position:relative;
   width: min(var(--envelope-vw), var(--envelope-max));
-
   max-height: calc(100vh - 230px);
   max-height: calc(100svh - 230px);
-
   display:flex;
   justify-content:center;
   align-items:center;
-
+  margin: 0 auto;
   overflow: visible;
   filter: drop-shadow(0 18px 26px rgba(0,0,0,.18));
 }
@@ -161,7 +160,10 @@ body{
   100%{ transform: translate(-50%, -50%) scale(1); opacity:.9; }
 }
 
-.lobby__bottom{ text-align:center; }
+.lobby__bottom{
+  text-align:center;
+  width:100%;
+}
 
 .lobby__hint{
   margin:0;
@@ -171,7 +173,10 @@ body{
 }
 
 .lobby--open{ animation: lobbyOut .52s ease forwards; }
-@keyframes lobbyOut{ to { opacity:0; transform: translateY(-6px); } }
+
+@keyframes lobbyOut{
+  to { opacity:0; transform: translateY(-6px); }
+}
 
 /* =========================
    SITIO
@@ -263,6 +268,7 @@ body{
   line-height:1.05;
   margin:0 auto 26px;
 }
+
 .hero__names span{ display:block; }
 
 .hero__info-card{
@@ -276,6 +282,7 @@ body{
   overflow:hidden;
   box-shadow:0 10px 24px rgba(0,0,0,.18);
 }
+
 .hero__info-item{ flex:1; padding:18px 20px; }
 .hero__info-item + .hero__info-item{ border-left:1px solid rgba(58,47,32,.12); }
 .hero__info-primary{ font-size:1rem; }
@@ -531,7 +538,7 @@ body{
   .venues__grid{ grid-template-columns: 1fr; }
 }
 
-/* ✅ MÓVIL NORMAL: el sobre sí crece */
+/* ✅ MÓVIL NORMAL: sobre más grande, pero centrado */
 @media (max-width: 520px){
   .navbar{ padding:14px 18px; }
   .hero__names{ font-size:3rem; }
@@ -542,18 +549,23 @@ body{
   :root{
     --seal-size: 16%;
     --seal-y: 57%;
-    --envelope-vw: 108vw;
-    --envelope-max: 720px;
+    --envelope-vw: 100vw;
+    --envelope-max: 700px;
 
     --section-pad-y: clamp(34px, 6.2vw, 54px);
     --section-pad-x: 16px;
-
     --after-hero-gap: clamp(12px, 3.2vw, 18px);
   }
 
   .lobby__stage{
-    max-height: calc(100vh - 180px);
-    max-height: calc(100svh - 180px);
+    max-height: calc(100vh - 210px);
+    max-height: calc(100svh - 210px);
+  }
+
+  .lobby__top,
+  .lobby__bottom{
+    width:100%;
+    text-align:center;
   }
 }
 
@@ -606,7 +618,7 @@ body{
 }
 
 /* =========================
-   RSVP (CONFIRMAR ASISTENCIA)
+   RSVP
    ========================= */
 
 .rsvp{
@@ -756,7 +768,7 @@ body{
 .mapmodal__frame { border-radius: 14px; overflow: hidden; background: #eee; aspect-ratio: 16 / 9; }
 .mapmodal__frame iframe { width: 100%; height: 100%; border: 0; }
 
-/* ✅ MÓVIL CHAPARRO: también crece, pero sin romper layout */
+/* ✅ MÓVIL CHAPARRO: grande pero centrado */
 @media (max-height: 780px) and (max-width: 520px){
   .lobby{ padding: 0; }
   .lobby__layout{ padding: 12px 14px; gap: 8px; }
@@ -764,22 +776,31 @@ body{
   .lobby__date{ margin-top: 6px; font-size: .88rem; }
 
   :root{
-    --envelope-vw: 126vw;
-    --envelope-max: 780px;
+    --envelope-vw: 98vw;
+    --envelope-max: 690px;
     --seal-size: 15%;
     --seal-y: 57%;
   }
 
   .lobby__stage{
-    max-height: calc(100vh - 285px);
-    max-height: calc(100svh - 285px);
+    max-height: calc(100vh - 300px);
+    max-height: calc(100svh - 300px);
   }
 
-  .lobby__hint{ font-size: .90rem; padding-bottom: 2px; }
+  .lobby__top,
+  .lobby__bottom{
+    width:100%;
+    text-align:center;
+  }
+
+  .lobby__hint{
+    font-size: .90rem;
+    padding-bottom: 2px;
+  }
 }
 
 /* =========================
-   REVEAL (FADE + SLIDE PRO)
+   REVEAL
    ========================= */
 
 .reveal{
@@ -810,6 +831,7 @@ body{
 /* =========================
    SEPARADOR
    ========================= */
+
 .sep{
   width: min(980px, calc(100% - 40px));
   margin: 28px auto;
@@ -852,7 +874,7 @@ body{
 }
 
 /* =========================
-   GALERÍA CARRUSEL (PREMIUM)
+   GALERÍA CARRUSEL
    ========================= */
 
 .gallery--carousel{
@@ -1125,6 +1147,3 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
-
-
-
