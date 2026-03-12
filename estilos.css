@@ -11,7 +11,7 @@
   /* ✅ AJUSTE FINO: aire extra entre HERO -> primera sección */
   --after-hero-gap: clamp(18px, 2.2vw, 30px);
 
-  /* LOBBY */
+  /* ✅ SOBRE EN COMPUTADORA: REGRESA A COMO ESTABA */
   --envelope-max: 560px;
   --envelope-vw: 60vw;
 
@@ -94,6 +94,7 @@ body{
   justify-content:center;
   align-items:center;
   min-height:0;
+  overflow: visible;
 }
 
 .lobby__stage{
@@ -107,6 +108,7 @@ body{
   justify-content:center;
   align-items:center;
 
+  overflow: visible;
   filter: drop-shadow(0 18px 26px rgba(0,0,0,.18));
 }
 
@@ -117,7 +119,6 @@ body{
   user-select:none;
   -webkit-user-drag:none;
   pointer-events:none;
-
 }
 
 .seal-hotspot{
@@ -217,8 +218,6 @@ body{
   justify-content:center;
   color:#fff;
   overflow:hidden;
-
-  /* ✅ un poquito de aire abajo del hero */
   padding-bottom: var(--after-hero-gap);
 }
 
@@ -532,6 +531,7 @@ body{
   .venues__grid{ grid-template-columns: 1fr; }
 }
 
+/* ✅ MÓVIL NORMAL: el sobre sí crece */
 @media (max-width: 520px){
   .navbar{ padding:14px 18px; }
   .hero__names{ font-size:3rem; }
@@ -542,8 +542,8 @@ body{
   :root{
     --seal-size: 16%;
     --seal-y: 57%;
-    --envelope-vw: 105vw;
-    --envelope-max: 720px;
+    --envelope-vw: 112vw;
+    --envelope-max: 820px;
 
     --section-pad-y: clamp(34px, 6.2vw, 54px);
     --section-pad-x: 16px;
@@ -552,8 +552,8 @@ body{
   }
 
   .lobby__stage{
-    max-height: calc(100vh - 200px);
-    max-height: calc(100svh - 200px);
+    max-height: calc(100vh - 180px);
+    max-height: calc(100svh - 180px);
   }
 }
 
@@ -606,7 +606,7 @@ body{
 }
 
 /* =========================
-   RSVP (CONFIRMAR ASISTENCIA) — ARREGLADO (NO “CHUECO”)
+   RSVP (CONFIRMAR ASISTENCIA)
    ========================= */
 
 .rsvp{
@@ -624,7 +624,6 @@ body{
   border: 1px solid rgba(58,47,32,.08);
 }
 
-/* Títulos */
 .rsvp__title{
   font-family:'Cormorant Garamond', serif;
   font-weight:400;
@@ -640,7 +639,6 @@ body{
   line-height: 1.55;
 }
 
-/* ✅ AQUÍ estaba lo “raro”: forzamos layout en columna SIEMPRE */
 .rsvp__row{
   margin-top: 16px;
   display:flex;
@@ -648,18 +646,16 @@ body{
   gap: 8px;
 }
 
-/* Labels */
 .rsvp__label{
   display:block;
   font-size:.95rem;
   opacity:.88;
 }
 
-/* Inputs */
 .rsvp__select,
 .rsvp__textarea{
-  display:block;              /* ✅ evita que se quede “inline” */
-  width:100% !important;      /* ✅ refuerzo para casos de disabled/browser */
+  display:block;
+  width:100% !important;
   max-width:100%;
   border:1px solid rgba(58,47,32,.18);
   border-radius: 14px;
@@ -683,7 +679,7 @@ body{
     calc(100% - 12px) calc(50% - 3px);
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
-  padding-right: 40px; /* espacio flechita */
+  padding-right: 40px;
 }
 
 .rsvp__select:focus,
@@ -697,7 +693,6 @@ body{
   min-height: 96px;
 }
 
-/* Botón */
 .rsvp__btn{
   margin-top: 18px;
   border:1px solid rgba(58,47,32,.24);
@@ -725,7 +720,6 @@ body{
   box-shadow:none;
 }
 
-/* Status */
 .rsvp__status{
   margin-top: 12px;
   min-height: 22px;
@@ -733,10 +727,8 @@ body{
   opacity:.9;
 }
 
-/* ✅ Si sale el texto en rojo por JS */
 .rsvp__status[style*="b42318"]{ font-weight: 500; }
 
-/* MOBILE */
 @media (max-width: 520px){
   .rsvp__card{
     padding: 22px;
@@ -764,7 +756,7 @@ body{
 .mapmodal__frame { border-radius: 14px; overflow: hidden; background: #eee; aspect-ratio: 16 / 9; }
 .mapmodal__frame iframe { width: 100%; height: 100%; border: 0; }
 
-/* FIX Samsung chaparras */
+/* ✅ MÓVIL CHAPARRO: también crece, pero sin romper layout */
 @media (max-height: 780px) and (max-width: 520px){
   .lobby{ padding: 0; }
   .lobby__layout{ padding: 12px 14px; gap: 8px; }
@@ -772,15 +764,15 @@ body{
   .lobby__date{ margin-top: 6px; font-size: .88rem; }
 
   :root{
-    --envelope-vw: 108vw;   /* antes 88vw */
-    --envelope-max: 760px;  /* agregado */
+    --envelope-vw: 108vw;
+    --envelope-max: 780px;
     --seal-size: 15%;
     --seal-y: 57%;
   }
 
   .lobby__stage{
-    max-height: calc(100vh - 300px);
-    max-height: calc(100svh - 300px);
+    max-height: calc(100vh - 285px);
+    max-height: calc(100svh - 285px);
   }
 
   .lobby__hint{ font-size: .90rem; padding-bottom: 2px; }
@@ -797,7 +789,6 @@ body{
   will-change: opacity, transform;
 }
 
-/* Cuando el site ya está visible, ahora sí usamos reveal */
 .site:not(.is-hidden) .reveal{
   opacity: 0;
   transform: translateY(14px);
@@ -900,7 +891,6 @@ body{
   gap: 10px;
 }
 
-/* Botones prev/next */
 .gallery__nav{
   width: 42px;
   height: 42px;
@@ -925,7 +915,6 @@ body{
   box-shadow:none;
 }
 
-/* Track horizontal */
 .gallery__track{
   flex: 1;
   display:flex;
@@ -934,13 +923,10 @@ body{
   padding: 8px 6px 14px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-
-  /* limpia scrollbars feos */
   scrollbar-width: none;
 }
 .gallery__track::-webkit-scrollbar{ display:none; }
 
-/* Card */
 .gallery__card{
   position:relative;
   border:0;
@@ -948,11 +934,8 @@ body{
   background: transparent;
   cursor:pointer;
   overflow:hidden;
-
-  /* tamaño premium */
   flex: 0 0 clamp(240px, 34vw, 420px);
   aspect-ratio: 4 / 3;
-
   border-radius: 18px;
   scroll-snap-align: center;
   box-shadow: 0 18px 44px rgba(0,0,0,.10);
@@ -970,7 +953,6 @@ body{
   transition: transform .6s ease;
 }
 
-/* overlay suave */
 .gallery__veil{
   position:absolute;
   inset:0;
@@ -982,7 +964,6 @@ body{
   transition: opacity .35s ease;
 }
 
-/* chip numerito */
 .gallery__chip{
   position:absolute;
   left: 12px;
@@ -997,7 +978,6 @@ body{
   backdrop-filter: blur(6px);
 }
 
-/* hover premium */
 .gallery__card:hover{
   transform: translateY(-3px);
   box-shadow: 0 24px 56px rgba(0,0,0,.14);
@@ -1009,7 +989,6 @@ body{
   box-shadow: 0 0 0 6px rgba(58,47,32,.10), 0 24px 56px rgba(0,0,0,.14);
 }
 
-/* Footer */
 .gallery__footer{
   margin-top: 10px;
   text-align:center;
@@ -1021,7 +1000,6 @@ body{
   font-size: .95rem;
 }
 
-/* Progress bar */
 .gallery__progress{
   height: 6px;
   border-radius: 999px;
@@ -1040,7 +1018,6 @@ body{
   transition: width .15s ease;
 }
 
-/* Móvil: ocultar flechas y dejar swipe */
 @media (max-width: 560px){
   .gallery--carousel{ padding: calc(var(--section-pad-y) * .95) 16px; }
   .gallery__nav{ display:none; }
@@ -1140,17 +1117,11 @@ body{
   opacity: .75;
 }
 
-/* Mobile lightbox */
 @media (max-width: 560px){
   .lightbox__dialog{
     margin: 12px auto;
     padding: 12px;
   }
-  .lightbox__nav{ display:none; } /* swipe/scroll natural en móvil */
+  .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
-
-
-
-
-
