@@ -542,8 +542,8 @@ body{
   :root{
     --seal-size: 16%;
     --seal-y: 57%;
-    --envelope-vw: 92vw;
-    --envelope-max: 620px;
+    --envelope-vw: 105vw;
+    --envelope-max: 720px;
 
     --section-pad-y: clamp(34px, 6.2vw, 54px);
     --section-pad-x: 16px;
@@ -1138,6 +1138,7 @@ body{
   .lightbox__nav{ display:none; } /* swipe/scroll natural en móvil */
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
 
 
 
