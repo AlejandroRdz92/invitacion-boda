@@ -43,11 +43,11 @@ body{
    ========================= */
 
 /*
- * 3 zonas 100% independientes — cada una centra su contenido de forma autónoma
+ * 3 zonas 100% independientes
  * ┌──────────────────────────┐
- * │  .lobby__top   (texto)   │  flex, centrado propio
- * │  .lobby__center(imagen)  │  flex 1fr, centrado propio
- * │  .lobby__bottom(hint)    │  flex, centrado propio
+ * │  .lobby__top   (texto)   │
+ * │  .lobby__center(imagen)  │
+ * │  .lobby__bottom(hint)    │
  * └──────────────────────────┘
  */
 
@@ -55,6 +55,8 @@ body{
   width: 100%;
   height: 100vh;
   height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -104,14 +106,11 @@ body{
 
 .lobby__stage{
   position: relative;
-  /* Ancho: el menor entre el % de vw y el máximo absoluto */
   width: min(var(--envelope-vw), var(--envelope-max), 100%);
-  /* Alto: ocupa lo que haya disponible en la zona */
   max-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* SIN transform manual — el flex padre ya centra */
   filter: drop-shadow(0 18px 26px rgba(0,0,0,.18));
 }
 
@@ -182,66 +181,121 @@ body{
 }
 
 @keyframes pulse{
-  0%  { transform: translate(-50%,-50%) scale(1);    opacity: .9;  }
-  50% { transform: translate(-50%,-50%) scale(1.06); opacity: .55; }
-  100%{ transform: translate(-50%,-50%) scale(1);    opacity: .9;  }
+  0%  { transform: translate(-50%, -50%) scale(1); opacity: .9; }
+  50% { transform: translate(-50%, -50%) scale(1.06); opacity: .55; }
+  100%{ transform: translate(-50%, -50%) scale(1); opacity: .9; }
 }
 
 /* ── Animación de salida ────────────────────────── */
-.lobby--open{ animation: lobbyOut .52s ease forwards; }
+.lobby--open{
+  animation: lobbyOut .52s ease forwards;
+}
 
 @keyframes lobbyOut{
   to { opacity: 0; transform: translateY(-6px); }
 }
 
-/* ── Variables por breakpoint (sin transforms manuales) ── */
-
-/* Desktop / tablet landscape */
+/* ── Desktop / laptop ───────────────────────────── */
 @media (min-width: 769px){
   :root{
     --envelope-vw: 55vw;
     --envelope-max: 560px;
+    --seal-size: 18%;
+    --seal-y: 51%;
   }
 }
 
-/* Tablet portrait */
+/* ── Tablet portrait ────────────────────────────── */
 @media (max-width: 768px){
   :root{
-    --envelope-vw: 75vw;
-    --envelope-max: 500px;
-  }
-}
-
-/* Móvil normal */
-@media (max-width: 480px){
-  :root{
-    --envelope-vw: 96vw;
-    --envelope-max: 420px;
+    --envelope-vw: 82vw;
+    --envelope-max: 560px;
     --seal-size: 18%;
+    --seal-y: 51%;
   }
 }
 
-/* Móvil pequeño (iPhone SE, Galaxy A) */
-@media (max-width: 490px){
+/* ── Teléfono normal / grande ───────────────────── */
+@media (max-width: 520px){
   :root{
-    --envelope-vw: 98vw;
-    --envelope-max: 360px;
+    --envelope-vw: 112vw;
+    --envelope-max: 470px;
+    --seal-size: 18%;
+    --seal-y: 51%;
+    --section-pad-y: clamp(34px, 6.2vw, 54px);
+    --section-pad-x: 16px;
+    --after-hero-gap: clamp(12px, 3.2vw, 18px);
   }
-  .lobby__names{ font-size: 1.75rem; }
+
+  .navbar{ padding:14px 18px; }
+  .hero__names{ font-size:3rem; }
+  .countdown{ gap:12px; }
+  .countdown__number{ font-size:1.6rem; }
+  .hero__info-card{ max-width:92vw; }
+
+  .lobby__top{
+    padding-top: 18px;
+    padding-bottom: 8px;
+  }
+
+  .lobby__bottom{
+    padding-top: 8px;
+    padding-bottom: 18px;
+  }
+
+  .lobby__names{
+    font-size: 1.95rem;
+  }
+
+  .lobby__date{
+    font-size: .9rem;
+  }
 }
 
-/* Móvil chaparro (alto < 700px) */
+/* ── Teléfono chico ─────────────────────────────── */
+@media (max-width: 400px){
+  :root{
+    --envelope-vw: 116vw;
+    --envelope-max: 440px;
+    --seal-size: 18%;
+    --seal-y: 51%;
+  }
+
+  .lobby__names{
+    font-size: 1.78rem;
+  }
+
+  .lobby__date{
+    font-size: .84rem;
+  }
+}
+
+/* ── Teléfono chaparro ──────────────────────────── */
 @media (max-height: 700px) and (max-width: 520px){
+  :root{
+    --envelope-vw: 114vw;
+    --envelope-max: 430px;
+    --seal-size: 18%;
+    --seal-y: 51%;
+  }
+
   .lobby__top{
-    padding-top: 12px;
+    padding-top: 10px;
     padding-bottom: 4px;
   }
+
   .lobby__bottom{
     padding-top: 4px;
     padding-bottom: 10px;
   }
-  .lobby__names{ font-size: 1.7rem; }
-  .lobby__date{ font-size: .82rem; }
+
+  .lobby__names{
+    font-size: 1.68rem;
+  }
+
+  .lobby__date{
+    font-size: .8rem;
+  }
 }
 
 /* =========================
@@ -604,21 +658,6 @@ body{
   .venues__grid{ grid-template-columns: 1fr; }
 }
 
-/* ✅ MÓVIL NORMAL: sobre más grande y corregido */
-@media (max-width: 520px){
-  .navbar{ padding:14px 18px; }
-  .hero__names{ font-size:3rem; }
-  .countdown{ gap:12px; }
-  .countdown__number{ font-size:1.6rem; }
-  .hero__info-card{ max-width:92vw; }
-
-  :root{
-    --section-pad-y: clamp(34px, 6.2vw, 54px);
-    --section-pad-x: 16px;
-    --after-hero-gap: clamp(12px, 3.2vw, 18px);
-  }
-}
-
 /* Efecto dinámico venues */
 .venue-card__image-wrapper{
   overflow:hidden;
@@ -817,7 +856,6 @@ body{
 .mapmodal__close:hover { opacity: 1; }
 .mapmodal__frame { border-radius: 14px; overflow: hidden; background: #eee; aspect-ratio: 16 / 9; }
 .mapmodal__frame iframe { width: 100%; height: 100%; border: 0; }
-
 
 /* =========================
    REVEAL
@@ -1167,5 +1205,3 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
-
-
