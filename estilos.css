@@ -117,6 +117,8 @@ body{
   user-select:none;
   -webkit-user-drag:none;
   pointer-events:none;
+
+   transform: scale(1.25); /* 25% más grande */
 }
 
 .seal-hotspot{
@@ -1137,4 +1139,5 @@ body{
   .lightbox__nav{ display:none; } /* swipe/scroll natural en móvil */
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
 
