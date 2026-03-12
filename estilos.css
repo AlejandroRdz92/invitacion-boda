@@ -1148,6 +1148,37 @@ body{
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
 
+/* =========================
+   AJUSTE SOBRE EN TELÉFONOS
+   ========================= */
+
+@media (max-width: 520px){
+
+  .lobby__stage{
+    transform: translateY(-5%);
+  }
+
+  /* centrar mejor el sobre */
+  .lobby__envelope{
+    transform: translateX(-3%);
+  }
+
+}
+
+/* teléfonos chaparros */
+
+@media (max-height: 780px) and (max-width: 520px){
+
+  .lobby__stage{
+    transform: translateY(-5%);
+  }
+
+  .lobby__envelope{
+    transform: translateX(-3%);
+  }
+
+}
+
 
 
 
