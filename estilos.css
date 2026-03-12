@@ -42,139 +42,206 @@ body{
    LOBBY
    ========================= */
 
+/*
+ * 3 zonas 100% independientes — cada una centra su contenido de forma autónoma
+ * ┌──────────────────────────┐
+ * │  .lobby__top   (texto)   │  flex, centrado propio
+ * │  .lobby__center(imagen)  │  flex 1fr, centrado propio
+ * │  .lobby__bottom(hint)    │  flex, centrado propio
+ * └──────────────────────────┘
+ */
+
 .lobby{
+  width: 100%;
   height: 100vh;
   height: 100svh;
-  min-height: 100vh;
-  min-height: 100svh;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── ZONA 1: Texto ──────────────────────────────── */
+.lobby__top{
+  flex: 0 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.lobby__layout{
-  height: 100%;
-  width:100%;
-  display:grid;
-  grid-template-rows: auto 1fr auto;
-  align-items:center;
-  padding: clamp(14px, 2.2vh, 26px) clamp(16px, 3vw, 32px);
-  gap: clamp(8px, 1.6vh, 14px);
-}
-
-.lobby__top{
-  text-align:center;
-  width:100%;
+  padding: clamp(20px, 4vh, 40px) 16px clamp(6px, 1.2vh, 14px);
 }
 
 .lobby__names{
-  margin:0;
-  font-family:'Cormorant Garamond', serif;
-  font-weight:400;
-  letter-spacing:.02em;
-  font-size: clamp(2.0rem, 4.2vw, 4.0rem);
-  line-height:1.05;
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: .02em;
+  font-size: clamp(1.9rem, 6vw, 4.0rem);
+  line-height: 1.05;
 }
 
 .lobby__date{
-  margin: clamp(6px, 1vh, 10px) 0 0;
-  font-size: clamp(.92rem, 1.2vw, 1.12rem);
-  letter-spacing:.35em;
-  opacity:.75;
+  margin: clamp(4px, 1vh, 10px) 0 0;
+  font-size: clamp(.86rem, 2.8vw, 1.1rem);
+  letter-spacing: .35em;
+  opacity: .75;
 }
 
+/* ── ZONA 2: Imagen ─────────────────────────────── */
 .lobby__center{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:0;
-  width:100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
   overflow: visible;
 }
 
 .lobby__stage{
-  position:relative;
-  width: min(var(--envelope-vw), var(--envelope-max));
-  max-height: calc(100vh - 230px);
-  max-height: calc(100svh - 230px);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin: 0 auto;
-  overflow: visible;
+  position: relative;
+  /* Ancho: el menor entre el % de vw y el máximo absoluto */
+  width: min(var(--envelope-vw), var(--envelope-max), 100%);
+  /* Alto: ocupa lo que haya disponible en la zona */
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* SIN transform manual — el flex padre ya centra */
   filter: drop-shadow(0 18px 26px rgba(0,0,0,.18));
 }
 
 .lobby__envelope{
-  width:100%;
-  height:auto;
-  display:block;
-  user-select:none;
-  -webkit-user-drag:none;
-  pointer-events:none;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
+/* ── ZONA 3: Hint ───────────────────────────────── */
+.lobby__bottom{
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(6px, 1.2vh, 14px) 16px clamp(16px, 3vh, 32px);
+}
+
+.lobby__hint{
+  margin: 0;
+  font-size: clamp(.86rem, 2.6vw, 1.05rem);
+  opacity: .75;
+  letter-spacing: .08em;
+}
+
+/* ── Hotspot del sello ──────────────────────────── */
 .seal-hotspot{
-  position:absolute;
+  position: absolute;
   left: var(--seal-x);
   top: var(--seal-y);
   width: var(--seal-size);
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
-  border:none;
-  background:transparent;
-  border-radius:999px;
-  cursor:pointer;
-  outline:none;
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  outline: none;
+  z-index: 2;
 }
 
 .seal-ring{
-  position:absolute;
+  position: absolute;
   left: var(--seal-x);
   top: var(--seal-y);
   width: calc(var(--seal-size) * 1.35);
   aspect-ratio: 1 / 1;
   transform: translate(-50%, -50%);
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.45);
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.45);
   box-shadow: 0 0 0 10px rgba(255,255,255,.08);
-  opacity:0;
-  pointer-events:none;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .seal-hotspot:hover + .seal-ring,
 .seal-hotspot:focus-visible + .seal-ring{
-  opacity:1;
+  opacity: 1;
   animation: pulse 1.25s ease-in-out infinite;
 }
 
 @keyframes pulse{
-  0%{ transform: translate(-50%, -50%) scale(1); opacity:.9; }
-  50%{ transform: translate(-50%, -50%) scale(1.06); opacity:.55; }
-  100%{ transform: translate(-50%, -50%) scale(1); opacity:.9; }
+  0%  { transform: translate(-50%,-50%) scale(1);    opacity: .9;  }
+  50% { transform: translate(-50%,-50%) scale(1.06); opacity: .55; }
+  100%{ transform: translate(-50%,-50%) scale(1);    opacity: .9;  }
 }
 
-.lobby__bottom{
-  text-align:center;
-  width:100%;
-}
-
-.lobby__hint{
-  margin:0;
-  font-size: clamp(.92rem, 1.1vw, 1.05rem);
-  opacity:.75;
-  letter-spacing:.08em;
-}
-
+/* ── Animación de salida ────────────────────────── */
 .lobby--open{ animation: lobbyOut .52s ease forwards; }
 
 @keyframes lobbyOut{
-  to { opacity:0; transform: translateY(-6px); }
+  to { opacity: 0; transform: translateY(-6px); }
+}
+
+/* ── Variables por breakpoint (sin transforms manuales) ── */
+
+/* Desktop / tablet landscape */
+@media (min-width: 769px){
+  :root{
+    --envelope-vw: 55vw;
+    --envelope-max: 560px;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px){
+  :root{
+    --envelope-vw: 75vw;
+    --envelope-max: 500px;
+  }
+}
+
+/* Móvil normal */
+@media (max-width: 480px){
+  :root{
+    --envelope-vw: 88vw;
+    --envelope-max: 420px;
+    --seal-size: 15%;
+  }
+}
+
+/* Móvil pequeño (iPhone SE, Galaxy A) */
+@media (max-width: 390px){
+  :root{
+    --envelope-vw: 90vw;
+    --envelope-max: 360px;
+  }
+  .lobby__names{ font-size: 1.75rem; }
+}
+
+/* Móvil chaparro (alto < 700px) */
+@media (max-height: 700px) and (max-width: 520px){
+  .lobby__top{
+    padding-top: 12px;
+    padding-bottom: 4px;
+  }
+  .lobby__bottom{
+    padding-top: 4px;
+    padding-bottom: 10px;
+  }
+  .lobby__names{ font-size: 1.7rem; }
+  .lobby__date{ font-size: .82rem; }
 }
 
 /* =========================
@@ -546,30 +613,9 @@ body{
   .hero__info-card{ max-width:92vw; }
 
   :root{
-    --seal-size: 16%;
-    --seal-y: 55.1%;
-    --envelope-vw: 110vw;
-    --envelope-max: 740px;
-
     --section-pad-y: clamp(34px, 6.2vw, 54px);
     --section-pad-x: 16px;
     --after-hero-gap: clamp(12px, 3.2vw, 18px);
-  }
-
-  .lobby__stage{
-    max-height: calc(100vh - 170px);
-    max-height: calc(100svh - 170px);
-    transform: translateY(-5%);
-  }
-
-  .lobby__envelope{
-    transform: translateX(-7%);
-  }
-
-  .lobby__top,
-  .lobby__bottom{
-    width:100%;
-    text-align:center;
   }
 }
 
@@ -772,42 +818,6 @@ body{
 .mapmodal__frame { border-radius: 14px; overflow: hidden; background: #eee; aspect-ratio: 16 / 9; }
 .mapmodal__frame iframe { width: 100%; height: 100%; border: 0; }
 
-/* ✅ MÓVIL CHAPARRO: centrado y un poco arriba */
-@media (max-height: 780px) and (max-width: 520px){
-  .lobby{ padding: 0; }
-  .lobby__layout{ padding: 12px 14px; gap: 8px; }
-  .lobby__names{ font-size: 1.85rem; }
-  .lobby__date{ margin-top: 6px; font-size: .88rem; }
-
-  :root{
-    --envelope-vw: 110vw;
-    --envelope-max: 740px;
-    --seal-size: 15%;
-    --seal-y: 55.1%;
-  }
-
-  .lobby__stage{
-    max-height: calc(100vh - 250px);
-    max-height: calc(100svh - 250px);
-    transform: translateY(-5%);
-  }
-
-  .lobby__envelope{
-    transform: translateX(-7%);
-  }
-}
-
-  .lobby__top,
-  .lobby__bottom{
-    width:100%;
-    text-align:center;
-  }
-
-  .lobby__hint{
-    font-size: .90rem;
-    padding-bottom: 2px;
-  }
-}
 
 /* =========================
    REVEAL
@@ -1157,9 +1167,3 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
-
-
-
-
-
-
