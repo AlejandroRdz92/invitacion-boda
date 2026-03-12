@@ -550,7 +550,7 @@ body{
     --seal-size: 16%;
     --seal-y: 57%;
     --envelope-vw: 120vw;
-    --envelope-max: 700px;
+    --envelope-max: 740px;
 
     --section-pad-y: clamp(34px, 6.2vw, 54px);
     --section-pad-x: 16px;
@@ -1147,5 +1147,6 @@ body{
   .lightbox__nav{ display:none; }
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
 
 
