@@ -770,8 +770,19 @@ body{
   .lobby__layout{ padding: 12px 14px; gap: 8px; }
   .lobby__names{ font-size: 1.85rem; }
   .lobby__date{ margin-top: 6px; font-size: .88rem; }
-  :root{ --envelope-vw: 88vw; --seal-size: 15%; }
-  .lobby__stage{ max-height: calc(100vh - 330px); max-height: calc(100svh - 330px); }
+
+  :root{
+    --envelope-vw: 108vw;   /* antes 88vw */
+    --envelope-max: 760px;  /* agregado */
+    --seal-size: 15%;
+    --seal-y: 57%;
+  }
+
+  .lobby__stage{
+    max-height: calc(100vh - 300px);
+    max-height: calc(100svh - 300px);
+  }
+
   .lobby__hint{ font-size: .90rem; padding-bottom: 2px; }
 }
 
@@ -1138,6 +1149,7 @@ body{
   .lightbox__nav{ display:none; } /* swipe/scroll natural en móvil */
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
+
 
 
 
