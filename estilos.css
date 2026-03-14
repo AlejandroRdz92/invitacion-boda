@@ -137,10 +137,10 @@ body{
 }
 
 .lobby__hint{
-  margin: 0;
-  font-size: clamp(.86rem, 2.6vw, 1.05rem);
+  font-size: clamp(.86rem, 2.6vw, 1rem);
   opacity: .75;
   letter-spacing: .08em;
+  margin-bottom: 40px;
 }
 
 /* ── Hotspot del sello ──────────────────────────── */
@@ -218,9 +218,9 @@ body{
 /* ── Teléfono normal / grande ───────────────────── */
 @media (max-width: 520px){
   :root{
-    --envelope-vw: 118vw;
-    --envelope-max: 500px;
-    --seal-size: 18%;
+    --envelope-vw: 122vw;
+    --envelope-max: 550px;
+    --seal-size: 17%;
     --seal-y: 51%;
     --section-pad-y: clamp(34px, 6.2vw, 54px);
     --section-pad-x: 16px;
@@ -245,6 +245,7 @@ body{
 
   .lobby__names{
     font-size: 1.95rem;
+    margin-top: 30px;
   }
 
   .lobby__date{
@@ -263,6 +264,7 @@ body{
 
   .lobby__names{
     font-size: 1.78rem;
+    margin-top: 30px;
   }
 
   .lobby__date{
@@ -291,6 +293,7 @@ body{
 
   .lobby__names{
     font-size: 1.68rem;
+    margin-top: 30px;
   }
 
   .lobby__date{
