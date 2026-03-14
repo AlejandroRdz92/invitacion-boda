@@ -33,7 +33,7 @@ body{
   margin:0;
   color:var(--text);
   font-family:'Jost', sans-serif;
-  background: var(--bg) url("Imagenes/Fondo1.png") center/cover no-repeat;
+  background: var(--bg) url("Imagenes/Fondo2.png") center/cover no-repeat;
 }
 
 .is-hidden{ display:none !important; }
