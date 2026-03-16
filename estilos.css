@@ -1863,62 +1863,70 @@ body{
 }
 
 /* =========================
-   DRESS CODE + REGALOS
+   DRESS CODE
 ========================= */
 
-.section--soft{
-  background: linear-gradient(180deg, rgba(255,255,255,.28), rgba(255,255,255,.12));
+.dress{
+  padding: var(--section-pad-y) var(--section-pad-x);
+  background:#f5efe6;
 }
 
-.section__inner{
+.dress__wrap{
   width:min(1100px, calc(100% - 40px));
   margin:0 auto;
 }
 
-.section__eyebrow{
+.dress__header{
+  text-align:center;
+  margin-bottom:34px;
+}
+
+.dress__eyebrow{
   margin:0 0 10px;
   text-transform:uppercase;
   letter-spacing:.24em;
-  font-size:.92rem;
+  font-size:.9rem;
   color:rgba(74,58,40,.62);
 }
 
-.section__title{
+.dress__title{
   margin:0;
+  font-family:'Cormorant Garamond', serif;
+  font-weight:400;
+  font-size:2.6rem;
+  color:#4b3b29;
 }
 
-.section__subtitle{
+.dress__subtitle{
   max-width:760px;
-  margin:18px auto 0;
+  margin:16px auto 0;
   line-height:1.75;
   color:rgba(74,58,40,.82);
+  font-size:1.04rem;
 }
 
-/* DRESS CODE */
-.dresscode{
-  padding-top:88px;
-  padding-bottom:88px;
-}
-
-.dresscode__grid{
-  margin-top:34px;
+.dress__grid{
   display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
+  grid-template-columns:repeat(2, minmax(0,1fr));
   gap:22px;
 }
 
-.dresscard{
+.dress__card{
   position:relative;
   padding:28px 26px;
   border-radius:28px;
-  background:rgba(255,255,255,.55);
+  background:rgba(255,255,255,.58);
   border:1px solid rgba(130,113,89,.12);
   box-shadow:0 14px 34px rgba(71,53,31,.08);
   backdrop-filter: blur(8px);
   text-align:left;
 }
 
-.dresscard__icon{
+.dress__card--note{
+  background:linear-gradient(180deg, rgba(244,248,255,.58), rgba(255,255,255,.5));
+}
+
+.dress__icon{
   width:42px;
   height:42px;
   border-radius:999px;
@@ -1931,37 +1939,71 @@ body{
   font-size:1rem;
 }
 
-.dresscard h3{
+.dress__cardTitle{
   margin:0 0 10px;
-  font-family:"Cormorant Garamond", serif;
+  font-family:'Cormorant Garamond', serif;
   font-size:2rem;
   color:#4b3b29;
+  font-weight:400;
 }
 
-.dresscard p{
+.dress__cardText{
   margin:0;
   line-height:1.8;
   color:rgba(74,58,40,.86);
+  font-size:1rem;
 }
 
-.dresscard--note{
-  background:linear-gradient(180deg, rgba(244,248,255,.58), rgba(255,255,255,.5));
-}
+/* =========================
+   MESA DE REGALOS
+========================= */
 
-/* GIFTS */
 .gifts{
-  padding-top:88px;
-  padding-bottom:88px;
+  padding: var(--section-pad-y) var(--section-pad-x);
+  background:#f5efe6;
+}
+
+.gifts__wrap{
+  width:min(1100px, calc(100% - 40px));
+  margin:0 auto;
+}
+
+.gifts__header{
+  text-align:center;
+  margin-bottom:34px;
+}
+
+.gifts__eyebrow{
+  margin:0 0 10px;
+  text-transform:uppercase;
+  letter-spacing:.24em;
+  font-size:.9rem;
+  color:rgba(74,58,40,.62);
+}
+
+.gifts__title{
+  margin:0;
+  font-family:'Cormorant Garamond', serif;
+  font-weight:400;
+  font-size:2.6rem;
+  color:#4b3b29;
+}
+
+.gifts__subtitle{
+  max-width:760px;
+  margin:16px auto 0;
+  line-height:1.75;
+  color:rgba(74,58,40,.82);
+  font-size:1.04rem;
 }
 
 .gifts__grid{
-  margin-top:34px;
   display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
+  grid-template-columns:repeat(2, minmax(0,1fr));
   gap:22px;
 }
 
-.giftcard{
+.gifts__card{
   padding:28px 26px;
   border-radius:30px;
   background:rgba(255,255,255,.56);
@@ -1970,43 +2012,38 @@ body{
   text-align:left;
 }
 
-.giftcard--secondary{
-  background:linear-gradient(180deg, rgba(255,255,255,.48), rgba(248,245,240,.7));
+.gifts__card--primary{
+  background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(248,245,240,.92));
 }
 
-.giftcard__top{
-  margin-bottom:14px;
-}
-
-.giftcard__badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:34px;
-  padding:0 14px;
+.gifts__cardIcon{
+  width:44px;
+  height:44px;
   border-radius:999px;
-  background:rgba(255,255,255,.72);
-  border:1px solid rgba(130,113,89,.15);
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-size:.72rem;
-  color:#7b6851;
+  display:grid;
+  place-items:center;
+  margin-bottom:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(245,239,230,.75));
+  border:1px solid rgba(130,113,89,.14);
+  color:#7c684f;
+  font-size:1rem;
 }
 
-.giftcard h3{
-  margin:14px 0 0;
-  font-family:"Cormorant Garamond", serif;
+.gifts__cardTitle{
+  margin:0 0 10px;
+  font-family:'Cormorant Garamond', serif;
   font-size:2rem;
   color:#4b3b29;
+  font-weight:400;
 }
 
-.giftcard__text{
+.gifts__cardText{
   margin:0;
   line-height:1.8;
   color:rgba(74,58,40,.84);
 }
 
-.giftcard__btn{
+.gifts__btn{
   margin-top:22px;
   border:none;
   border-radius:999px;
@@ -2021,27 +2058,23 @@ body{
   transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
 }
 
-.giftcard__btn:hover{
+.gifts__btn:hover{
   transform:translateY(-2px);
   box-shadow:0 16px 30px rgba(77,104,147,.28);
 }
 
-.giftcard__btn:active{
-  transform:translateY(0);
+/* =========================
+   GIFT MODAL
+========================= */
+
+.giftmodal.is-hidden{
+  display:none;
 }
 
-/* MODAL */
 .giftmodal{
   position:fixed;
   inset:0;
-  display:none;
-  align-items:center;
-  justify-content:center;
   z-index:1200;
-}
-
-.giftmodal.is-open{
-  display:flex;
 }
 
 .giftmodal__backdrop{
@@ -2051,27 +2084,16 @@ body{
   backdrop-filter: blur(6px);
 }
 
-.giftmodal__dialog{
+.giftmodal__card{
   position:relative;
   z-index:1;
   width:min(620px, calc(100% - 28px));
+  margin:40px auto;
   border-radius:30px;
   background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(250,246,240,.98));
   border:1px solid rgba(130,113,89,.12);
   box-shadow:0 28px 70px rgba(30,24,20,.22);
   padding:30px 24px 24px;
-  animation:giftModalIn .24s ease;
-}
-
-@keyframes giftModalIn{
-  from{
-    opacity:0;
-    transform:translateY(10px) scale(.985);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1);
-  }
 }
 
 .giftmodal__close{
@@ -2100,59 +2122,87 @@ body{
 .giftmodal__title{
   margin:0;
   font-family:"Cormorant Garamond", serif;
-  font-size:2.4rem;
+  font-size:2.35rem;
   color:#463624;
+  font-weight:400;
 }
 
-.giftmodal__copy{
+.giftmodal__subtitle{
   margin:12px 0 0;
   line-height:1.75;
   color:rgba(74,58,40,.82);
 }
 
-.giftmodal__card{
+.giftmodal__bank{
   margin-top:22px;
   padding:18px;
   border-radius:22px;
   background:rgba(255,255,255,.74);
   border:1px solid rgba(130,113,89,.12);
-}
-
-.giftmodal__row{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
   gap:14px;
-  padding:12px 0;
-  border-bottom:1px solid rgba(130,113,89,.10);
+  align-items:center;
 }
 
-.giftmodal__row:last-child{
-  border-bottom:none;
+.giftmodal__bankBadge{
+  min-width:72px;
+  height:72px;
+  border-radius:20px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg, #708db7, #58759f);
+  color:#fff;
+  font-weight:600;
+  letter-spacing:.08em;
 }
 
-.giftmodal__row--stack{
-  align-items:flex-start;
-  flex-direction:column;
+.giftmodal__bankLabel{
+  display:block;
+  font-size:.82rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(74,58,40,.54);
+  margin-bottom:6px;
+}
+
+.giftmodal__bankValue{
+  color:#4a3a28;
+  font-size:1rem;
+}
+
+.giftmodal__details{
+  margin-top:18px;
+  display:grid;
+  gap:14px;
+}
+
+.giftmodal__detail{
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.68);
+  border:1px solid rgba(130,113,89,.10);
 }
 
 .giftmodal__label{
-  font-size:.92rem;
-  letter-spacing:.06em;
+  display:block;
+  font-size:.82rem;
+  letter-spacing:.14em;
   text-transform:uppercase;
   color:rgba(74,58,40,.54);
+  margin-bottom:8px;
+}
+
+.giftmodal__valueRow{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
 }
 
 .giftmodal__value{
-  color:#4a3a28;
-  text-align:right;
-}
-
-.giftmodal__clabe{
-  width:100%;
   display:block;
-  padding:14px 16px;
-  border-radius:16px;
+  padding:12px 14px;
+  border-radius:14px;
   background:#f6f2ec;
   border:1px solid rgba(130,113,89,.10);
   font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -2161,103 +2211,93 @@ body{
   overflow-wrap:anywhere;
 }
 
-.giftmodal__actions{
-  margin-top:18px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.giftmodal__action{
+.giftmodal__copy{
   border:none;
   border-radius:999px;
-  min-height:46px;
-  padding:0 18px;
+  min-height:42px;
+  padding:0 16px;
   background:#6d86ad;
   color:#fff;
   cursor:pointer;
-  box-shadow:0 10px 22px rgba(77,104,147,.22);
 }
 
-.giftmodal__foot{
+.giftmodal__valueText{
+  margin:0;
+  color:#4a3a28;
+  line-height:1.7;
+}
+
+.giftmodal__helper{
   margin:16px 0 0;
   line-height:1.7;
   color:rgba(74,58,40,.72);
 }
 
-/* REVEAL */
-.reveal{
-  opacity:0;
-  transform:translateY(18px);
-  transition:opacity .65s ease, transform .65s ease;
+.giftmodal__status{
+  margin:8px 0 0;
+  min-height:22px;
+  font-size:.95rem;
+  color:#3a2f20;
+  opacity:.86;
 }
 
-.reveal.is-visible{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* MOBILE */
 @media (max-width: 900px){
-  .dresscode__grid,
+  .dress__grid,
   .gifts__grid{
     grid-template-columns:1fr;
   }
 }
 
 @media (max-width: 640px){
-  .dresscode,
-  .gifts{
-    padding-top:72px;
-    padding-bottom:72px;
+  .dress__wrap,
+  .gifts__wrap{
+    width:min(calc(100% - 20px), 1000px);
   }
 
-  .section__inner{
-    width:min(100% - 20px, 1000px);
-  }
-
-  .section__subtitle{
-    margin-top:14px;
-    font-size:1rem;
-    line-height:1.7;
-  }
-
-  .dresscard,
-  .giftcard{
+  .dress__card,
+  .gifts__card{
     padding:22px 18px;
     border-radius:24px;
   }
 
-  .dresscard h3,
-  .giftcard h3{
+  .dress__title,
+  .gifts__title{
+    font-size:2.1rem;
+  }
+
+  .dress__cardTitle,
+  .gifts__cardTitle{
     font-size:1.8rem;
   }
 
-  .giftcard__btn{
+  .gifts__btn{
     width:100%;
   }
 
   .giftmodal{
+    display:flex;
     align-items:flex-end;
   }
 
-  .giftmodal__dialog{
+  .giftmodal__card{
     width:100%;
+    margin:0;
     max-width:none;
     border-radius:26px 26px 0 0;
     padding:26px 18px 20px;
   }
 
-  .giftmodal__row{
-    flex-direction:column;
+  .giftmodal__bank{
     align-items:flex-start;
+    flex-direction:column;
   }
 
-  .giftmodal__value{
-    text-align:left;
+  .giftmodal__valueRow{
+    flex-direction:column;
+    align-items:stretch;
   }
 
-  .giftmodal__action{
+  .giftmodal__copy{
     width:100%;
   }
 }
