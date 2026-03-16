@@ -108,7 +108,7 @@
         <div class="hero__info-card">
           <div class="hero__info-item">
             <div class="hero__info-primary">Sábado,</div>
-            <div class="hero__info-secondary">Oct. 03 , 2026</div>
+            <div class="hero__info-secondary">03 de octubre de 2026</div>
           </div>
           <div class="hero__info-item">
             <div class="hero__info-primary">Fábrica Antigua</div>
@@ -240,7 +240,7 @@
           <h3 class="venue-card__title">Ceremonia</h3>
           <p class="venue-card__name">Parroquia San Vicente</p>
           <p class="venue-card__address"> 📍C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina</p>
-          <p class="venue-card__time">🕒Sábado, Oct. 03 — 5:00 PM</p>
+          <p class="venue-card__time">🕒Sábado, 03 de octubre — 6:30 PM</p>
         <button
   type="button"
   class="venue-card__map"
@@ -261,7 +261,7 @@
           <h3 class="venue-card__title">Recepción</h3>
           <p class="venue-card__name">Fábrica Antigua</p>
           <p class="venue-card__address">📍Santa Catarina, Nuevo León</p>
-          <p class="venue-card__time">🕒Sábado, Oct. 03 — 8:00 PM</p>
+          <p class="venue-card__time">🕒Sábado, 03 de octubre — 7:30 PM</p>
          <button
   type="button"
   class="venue-card__map"
@@ -297,37 +297,37 @@
       <div class="gallery__track" data-gtrack>
         <!-- Cada tarjeta -->
         <button class="gallery__card" type="button" data-full="Imagenes/galeria/01.jpg" aria-label="Abrir foto 1">
-          <img src="Imagenes/Iglesia.jpg" alt="Alejandro y Sarahi — Foto 1">
+          <img src="Imagenes/galeria/01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">01</span>
         </button>
 
         <button class="gallery__card" type="button" data-full="Imagenes/galeria/02.jpg" aria-label="Abrir foto 2">
-          <img src="Imagenes/Lugar.jpg" alt="Alejandro y Sarahi — Foto 2">
+          <img src="Imagenes/galeria/02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">02</span>
         </button>
 
         <button class="gallery__card" type="button" data-full="Imagenes/galeria/03.jpg" aria-label="Abrir foto 3">
-          <img src="Imagenes/Nosotros1.jpg" alt="Alejandro y Sarahi — Foto 3">
+          <img src="Imagenes/galeria/03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">03</span>
         </button>
 
         <button class="gallery__card" type="button" data-full="Imagenes/galeria/04.jpg" aria-label="Abrir foto 4">
-          <img src="Imagenes/Nosotros1.jpg" alt="Alejandro y Sarahi — Foto 4">
+          <img src="Imagenes/galeria/04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">04</span>
         </button>
 
         <button class="gallery__card" type="button" data-full="Imagenes/galeria/05.jpg" aria-label="Abrir foto 5">
-          <img src="Imagenes/Nosotros2.jpg" alt="Alejandro y Sarahi — Foto 5">
+          <img src="Imagenes/galeria/05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">05</span>
         </button>
 
         <button class="gallery__card" type="button" data-full="Imagenes/galeria/06.jpg" aria-label="Abrir foto 6">
-          <img src="Imagenes/Nosotros1.jpg" alt="Alejandro y Sarahi — Foto 6">
+          <img src="Imagenes/galeria/06.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">06</span>
         </button>
@@ -377,7 +377,7 @@
     <section class="rsvp" id="rsvp">
       <div class="rsvp__card">
         <h2 class="rsvp__title">Confirmar asistencia</h2>
-        <p class="rsvp__subtitle" id="rsvpGuest">Cargando invitación...</p>
+        <p class="rsvp__subtitle" id="rsvpGuest">Cargando tu invitación…</p>
 
         <div class="rsvp__row">
           <label class="rsvp__label" for="rsvpCount">¿Cuántas personas asistirán?</label>
@@ -519,15 +519,24 @@
       return (params.get("t") || "").trim();
     }
 
-    function setStatus(text, isError=false) {
+    function setStatus(text, type = "info") {
       if (!$status) return;
       $status.textContent = text || "";
-      $status.style.color = isError ? "#b42318" : "";
+      $status.classList.remove("is-error", "is-success", "is-loading");
+      if (type) $status.classList.add(`is-${type}`);
     }
 
-    function fillSelect(max, selected=0) {
+    function setButtonLoading(isLoading) {
+      if (!$btn) return;
+      $btn.disabled = !!isLoading;
+      $btn.textContent = isLoading ? "Enviando..." : "Confirmar";
+      $btn.classList.toggle("is-loading", !!isLoading);
+    }
+
+    function fillSelect(max, selected = 0) {
       if (!$count) return;
       $count.innerHTML = "";
+
       for (let i = 0; i <= max; i++) {
         const opt = document.createElement("option");
         opt.value = String(i);
@@ -544,75 +553,98 @@
         $guest.textContent = "Esta invitación no tiene token (link incompleto).";
         fillSelect(0, 0);
         $count.disabled = true;
+        setButtonLoading(false);
         $btn.disabled = true;
-        setStatus("Pídele a Alejandro el link correcto 😊", true);
+        setStatus("Pídele a Alejandro el link correcto 😊", "error");
         return;
       }
 
       $guest.textContent = "Validando invitación...";
-      setStatus("");
+      $count.disabled = true;
+      setButtonLoading(true);
+      setStatus("Consultando datos de tu invitación…", "loading");
 
-      const url = `${RSVP_API}?t=${encodeURIComponent(token)}`;
+      try {
+        const url = `${RSVP_API}?t=${encodeURIComponent(token)}`;
+        const res = await fetch(url, { method: "GET" });
+        const data = await res.json();
 
-      const res = await fetch(url, { method: "GET" });
-      const data = await res.json();
+        if (!data.ok) {
+          $guest.textContent = "Invitación no válida.";
+          fillSelect(0, 0);
+          $count.disabled = true;
+          $btn.disabled = true;
+          setStatus(data.error || "Token inválido.", "error");
+          return;
+        }
 
-      if (!data.ok) {
-        $guest.textContent = "Invitación no válida.";
+        const maxPersonas = Number(data.max_personas || 0);
+        const confirmados = Number(data.confirmados_actuales || 0);
+        const restantes = Number(data.restantes || 0);
+
+        $guest.textContent = `Invitación para: ${data.nombre} · Máximo ${maxPersonas} persona${maxPersonas === 1 ? "" : "s"}`;
+        fillSelect(maxPersonas, confirmados);
+
+        $count.disabled = false;
+        setButtonLoading(false);
+
+        if (restantes <= 0) {
+          $btn.disabled = true;
+          setStatus("Esta invitación ya llegó al máximo permitido ✅", "success");
+        } else if (confirmados > 0) {
+          setStatus(`Ya tienes ${confirmados} lugar${confirmados === 1 ? "" : "es"} confirmado${confirmados === 1 ? "" : "s"}. Puedes actualizarlo.`, "success");
+        } else {
+          setStatus("Todo listo para confirmar tu asistencia ✨", "success");
+        }
+      } catch (error) {
         fillSelect(0, 0);
         $count.disabled = true;
         $btn.disabled = true;
-        setStatus(data.error || "Token inválido.", true);
-        return;
-      }
-
-      $guest.textContent = `Invitación para: ${data.nombre} (máx. ${data.max_personas})`;
-
-      fillSelect(Number(data.max_personas || 0), Number(data.confirmados_actuales || 0));
-
-      // Si ya está lleno, deshabilitamos
-      const restantes = Number(data.restantes || 0);
-      $count.disabled = false;
-      $btn.disabled = false;
-
-      if (restantes <= 0) {
-        setStatus("Esta invitación ya llegó al máximo permitido ✅");
+        $guest.textContent = "No fue posible cargar la invitación.";
+        setStatus("Ocurrió un problema al validar el enlace. Intenta de nuevo más tarde.", "error");
       }
     }
 
     async function submitRsvp(token) {
-      if (!token) return;
+      if (!token || !$count) return;
 
-      const personas_confirmadas = Number($count?.value || 0);
+      const personas_confirmadas = Number($count.value || 0);
       const mensaje = ($msg?.value || "").trim();
 
-      $btn.disabled = true;
-      setStatus("Enviando confirmación...");
+      setButtonLoading(true);
+      setStatus("Enviando confirmación…", "loading");
 
-      // Importante: text/plain para evitar preflight CORS
-      const res = await fetch(RSVP_API, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({ token, personas_confirmadas, mensaje })
-      });
+      try {
+        const res = await fetch(RSVP_API, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify({ token, personas_confirmadas, mensaje })
+        });
 
-      const text = await res.text();
-      let data;
-      try { data = JSON.parse(text); } catch(e) { data = { ok:false, error: text }; }
+        const text = await res.text();
+        let data;
 
-      if (!data.ok) {
-        setStatus(data.error || "No se pudo guardar la confirmación.", true);
-        $btn.disabled = false;
-        return;
+        try {
+          data = JSON.parse(text);
+        } catch (e) {
+          data = { ok: false, error: text };
+        }
+
+        if (!data.ok) {
+          setStatus(data.error || "No se pudo guardar la confirmación.", "error");
+          setButtonLoading(false);
+          return;
+        }
+
+        setStatus(`Listo ✅ Confirmados: ${data.personas_confirmadas}. Restantes: ${data.restantes}`, "success");
+        setButtonLoading(false);
+      } catch (error) {
+        setStatus("No se pudo enviar la confirmación. Revisa tu conexión e intenta de nuevo.", "error");
+        setButtonLoading(false);
       }
-
-      setStatus(`Listo ✅ Confirmados: ${data.personas_confirmadas}. Restantes: ${data.restantes}`);
-      // Opcional: bloquear para que no lo cambien
-      // $count.disabled = true; $btn.disabled = true;
-      $btn.disabled = false;
     }
 
-    (function initRsvp(){
+    (function initRsvp() {
       const token = getTokenFromUrl();
       loadInvite(token);
 
@@ -623,100 +655,99 @@
         });
       }
     })();
-    
- 
-  // ... tu código actual arriba ...
 
-  // =========================
-  // MAP MODAL LOGIC
-  // =========================
-  const mapModal = document.getElementById('mapModal');
-  const mapModalFrame = document.getElementById('mapModalFrame');
-  const mapModalTitle = document.getElementById('mapModalTitle');
-  const mapModalSubtitle = document.getElementById('mapModalSubtitle');
-  const mapModalOpen = document.getElementById('mapModalOpen');
-  const mapModalCopy = document.getElementById('mapModalCopy');
-  const mapModalStatus = document.getElementById('mapModalStatus');
+    // =========================
+    // MAP MODAL LOGIC
+    // =========================
+    const mapModal = document.getElementById('mapModal');
+    const mapModalFrame = document.getElementById('mapModalFrame');
+    const mapModalTitle = document.getElementById('mapModalTitle');
+    const mapModalSubtitle = document.getElementById('mapModalSubtitle');
+    const mapModalOpen = document.getElementById('mapModalOpen');
+    const mapModalCopy = document.getElementById('mapModalCopy');
+    const mapModalStatus = document.getElementById('mapModalStatus');
 
-  function encodeQ(v) {
-    return encodeURIComponent((v || '').trim());
-  }
-
-  function openMapModal({ title, address }) {
-    if (!mapModal) return;
-
-    const q = encodeQ(address);
-    const iframeUrl = `https://www.google.com/maps?q=${q}&output=embed`;
-    const openUrl = `https://www.google.com/maps/search/?api=1&query=${q}`;
-
-    mapModalTitle.textContent = title || 'Ubicación';
-    mapModalSubtitle.textContent = address || '';
-    mapModalFrame.src = iframeUrl;
-    mapModalOpen.href = openUrl;
-    mapModalStatus.textContent = '';
-
-    mapModal.classList.remove('is-hidden');
-    mapModal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('no-scroll');
-  }
-
-  function closeMapModal() {
-    if (!mapModal) return;
-    mapModal.classList.add('is-hidden');
-    mapModal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('no-scroll');
-
-    // Limpia el iframe (para que no siga “vivo”)
-    if (mapModalFrame) mapModalFrame.src = '';
-  }
-
-  // Abre modal cuando das click a cualquier botón con data-map
-  document.addEventListener('click', async (e) => {
-    const btn = e.target.closest('[data-map]');
-    if (btn) {
-      e.preventDefault();
-      openMapModal({
-        title: btn.getAttribute('data-title'),
-        address: btn.getAttribute('data-address')
-      });
-      return;
+    function encodeQ(v) {
+      return encodeURIComponent((v || '').trim());
     }
 
-    // Cerrar por backdrop o X
-    if (e.target.matches('[data-close]')) {
-      e.preventDefault();
-      closeMapModal();
+    function openMapModal({ title, address }) {
+      if (!mapModal || !mapModalFrame) return;
+
+      const q = encodeQ(address);
+      const iframeUrl = `https://www.google.com/maps?q=${q}&output=embed`;
+      const openUrl = `https://www.google.com/maps/search/?api=1&query=${q}`;
+
+      mapModalTitle.textContent = title || 'Ubicación';
+      mapModalSubtitle.textContent = address || '';
+      mapModalFrame.src = iframeUrl;
+      mapModalOpen.href = openUrl;
+      mapModalStatus.textContent = '';
+      mapModalStatus.className = 'mapmodal__status';
+
+      mapModal.classList.remove('is-hidden');
+      mapModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('no-scroll');
     }
-  });
 
-  // Copiar dirección
-  if (mapModalCopy) {
-    mapModalCopy.addEventListener('click', async () => {
-      const text = (mapModalSubtitle?.textContent || '').trim();
-      if (!text) return;
+    function closeMapModal() {
+      if (!mapModal) return;
 
-      try {
-        await navigator.clipboard.writeText(text);
-        mapModalStatus.textContent = 'Dirección copiada ✅';
-      } catch (err) {
-        // Fallback
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        mapModalStatus.textContent = 'Dirección copiada ✅';
+      mapModal.classList.add('is-hidden');
+      mapModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('no-scroll');
+
+      if (mapModalFrame) mapModalFrame.src = '';
+      if (mapModalStatus) {
+        mapModalStatus.textContent = '';
+        mapModalStatus.className = 'mapmodal__status';
+      }
+    }
+
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('[data-map]');
+      if (btn) {
+        e.preventDefault();
+        openMapModal({
+          title: btn.getAttribute('data-title'),
+          address: btn.getAttribute('data-address')
+        });
+        return;
+      }
+
+      if (e.target.matches('[data-close]')) {
+        e.preventDefault();
+        closeMapModal();
       }
     });
-  }
 
-  // Cerrar con ESC
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mapModal && !mapModal.classList.contains('is-hidden')) {
-      closeMapModal();
+    if (mapModalCopy) {
+      mapModalCopy.addEventListener('click', async () => {
+        const text = (mapModalSubtitle?.textContent || '').trim();
+        if (!text) return;
+
+        try {
+          await navigator.clipboard.writeText(text);
+          mapModalStatus.textContent = 'Dirección copiada ✅';
+          mapModalStatus.classList.add('is-success');
+        } catch (err) {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          mapModalStatus.textContent = 'Dirección copiada ✅';
+          mapModalStatus.classList.add('is-success');
+        }
+      });
     }
-  });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mapModal && !mapModal.classList.contains('is-hidden')) {
+        closeMapModal();
+      }
+    });
 
 // =========================
 // REVEAL ON SCROLL (fade + slide)
@@ -748,7 +779,7 @@
   const lbImg = document.getElementById('lightboxImg');
   const lbCount = document.getElementById('lightboxCount');
 
-  const items = Array.from(document.querySelectorAll('.gallery__item[data-full]'));
+  const items = Array.from(document.querySelectorAll('.gallery__card[data-full]'));
   if (!lb || !lbImg || items.length === 0) return;
 
   let index = 0;
