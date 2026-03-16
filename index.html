@@ -74,22 +74,14 @@
       <div class="hero__bg"></div>
       <div class="hero__overlay"></div>
 
-      <div class="hero__flowers" aria-hidden="true">
-        <span class="gerbera g1"></span>
-        <span class="gerbera g2"></span>
-        <span class="gerbera g3"></span>
-        <span class="gerbera g4"></span>
-        <span class="gerbera g5"></span>
-        <span class="gerbera g6"></span>
-        <span class="gerbera g7"></span>
-        <span class="gerbera g8"></span>
-        <span class="gerbera g9"></span>
-        <span class="gerbera g10"></span>
+      <div class="hero__petals" aria-hidden="true">
+        <div class="hero__petal-sheen"></div>
       </div>
 
-      <div class="hero__content reveal is-visible" data-reveal data-reveal-delay="0">
+      <div class="hero__content">
         <p class="hero__eyebrow">Nuestra boda</p>
 
+        <!-- Countdown -->
         <div class="countdown" id="countdown">
           <div class="countdown__block">
             <div class="countdown__number" id="days">00</div>
@@ -112,11 +104,15 @@
           </div>
         </div>
 
+        <!-- Names -->
         <h1 class="hero__names">
           <span>Alejandro</span>
           <span>&amp; Sarahi</span>
         </h1>
 
+        <p class="hero__kicker">Con la bendición de Dios y el amor que nos ha unido, queremos compartir contigo este día inolvidable.</p>
+
+        <!-- Info Card -->
         <div class="hero__info-card">
           <div class="hero__info-item">
             <div class="hero__info-primary">Sábado</div>
@@ -128,7 +124,7 @@
           </div>
         </div>
 
-        <a href="#wedding-info" class="hero__scrollCue" aria-label="Bajar a la siguiente sección">
+        <a class="hero__scroll" href="#wedding-info" aria-label="Ir a la siguiente sección">
           <span class="hero__scrollText">Desliza para descubrir</span>
           <span class="hero__scrollIcon"></span>
         </a>
@@ -139,13 +135,13 @@
 
     
     <!-- ========== NUESTRA BODA SE ACERCA ========== -->
-    <section class="story" id="wedding-info">
-      <div class="story__container reveal" data-reveal data-reveal-delay="80">
-        <div class="story__photo reveal" data-reveal data-reveal-delay="120">
+    <section class="story reveal" data-reveal id="wedding-info">
+      <div class="story__container">
+        <div class="story__photo reveal" data-reveal>
           <img src="Imagenes/Nosotros2.jpg" alt="Alejandro y Sarahi">
         </div>
 
-        <div class="story__text reveal" data-reveal data-reveal-delay="200">
+        <div class="story__text reveal" data-reveal>
           <h2>Estamos encantados de invitarte a celebrar nuestro matrimonio</h2>
 
           <p>
@@ -246,56 +242,48 @@
 
     
     <!-- ========== CEREMONIAS & RECEPCIÓN ========== -->
-    <section class="venues" id="venues">
-      <div class="venues__intro reveal" data-reveal data-reveal-delay="0">
-        <p class="venues__eyebrow">Acompáñanos</p>
-        <h2 class="venues__title">Ceremonia &amp; Recepción</h2>
-        <p class="venues__subtitle">Cada lugar fue elegido para compartir con ustedes uno de los días más felices de nuestra vida.</p>
-      </div>
-
+    <section class="venues reveal" data-reveal id="venues">
       <div class="venues__grid">
-        <div class="venue-card reveal" data-reveal data-reveal-delay="90">
+        <div class="venue-card reveal" data-reveal>
           <div class="venue-card__image-wrapper">
             <img class="venue-card__image"
               src="Imagenes/Iglesia.jpg"
               alt="Iglesia para la ceremonia" />
-            <span class="venue-card__badge">Ceremonia</span>
           </div>
-          <h3 class="venue-card__title">Parroquia San Vicente</h3>
-          <p class="venue-card__name">Un momento íntimo para comenzar nuestro “sí” para siempre.</p>
-          <p class="venue-card__address">📍 C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina</p>
-          <p class="venue-card__time">🕒 Sábado, 03 de octubre — 6:30 PM</p>
-          <button
-            type="button"
-            class="venue-card__map"
-            data-map
-            data-title="Ceremonia — Parroquia San Vicente"
-            data-address="C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina, N.L."
-          >
-            Ver ubicación
-          </button>
+          <h3 class="venue-card__title">Ceremonia</h3>
+          <p class="venue-card__name">Parroquia San Vicente</p>
+          <p class="venue-card__address"> 📍C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina</p>
+          <p class="venue-card__time">🕒Sábado, 03 de octubre — 6:30 PM</p>
+        <button
+  type="button"
+  class="venue-card__map"
+  data-map
+  data-title="Ceremonia — Parroquia San Vicente"
+  data-address="C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina, N.L."
+>
+  Abrir en Google Maps
+</button>
         </div>
 
-        <div class="venue-card reveal" data-reveal data-reveal-delay="170">
+        <div class="venue-card reveal" data-reveal data-reveal-delay="120">
           <div class="venue-card__image-wrapper">
             <img class="venue-card__image"
               src="Imagenes/Lugar.jpg"
               alt="Jardín para la recepción" />
-            <span class="venue-card__badge">Recepción</span>
           </div>
-          <h3 class="venue-card__title">Fábrica Antigua</h3>
-          <p class="venue-card__name">Brindis, cena, música y una noche para celebrar junto a ustedes.</p>
-          <p class="venue-card__address">📍 Benito Juárez 308, La Fama, 66100 Cdad. Santa Catarina, N.L.</p>
-          <p class="venue-card__time">🕒 Sábado, 03 de octubre — 7:30 PM</p>
-          <button
-            type="button"
-            class="venue-card__map"
-            data-map
-            data-title="Recepción — Fábrica Antigua"
-            data-address="Benito Juárez 308, La Fama, 66100 Cdad. Santa Catarina, N.L."
-          >
-            Ver ubicación
-          </button>
+          <h3 class="venue-card__title">Recepción</h3>
+          <p class="venue-card__name">Fábrica Antigua</p>
+          <p class="venue-card__address">📍Santa Catarina, Nuevo León</p>
+          <p class="venue-card__time">🕒Sábado, 03 de octubre — 7:30 PM</p>
+         <button
+  type="button"
+  class="venue-card__map"
+  data-map
+  data-title="Recepción — Fábrica Antigua"
+  data-address="Benito Juárez 308, La Fama, 66100 Cdad. Santa Catarina, N.L."
+>
+  Abrir en Google Maps
+</button>
         </div>
       </div>
     </section>
@@ -307,62 +295,67 @@
   <span class="sep__line"></span>
 </div>
 
-<!-- ========== GALERÍA PREMIUM ========== -->
-<section class="gallery gallery--masonry" id="gallery">
+<!-- ========== GALERÍA CARRUSEL (PREMIUM) ========== -->
+<section class="gallery gallery--carousel" id="gallery">
   <div class="gallery__container">
-    <header class="gallery__header reveal" data-reveal data-reveal-delay="0">
-      <p class="gallery__eyebrow">Nuestros recuerdos</p>
+
+    <header class="gallery__header reveal" data-reveal>
       <h2 class="gallery__title">Nuestra historia en fotos</h2>
-      <p class="gallery__subtitle">Un pequeño recorrido por los momentos que nos han traído hasta aquí ✨</p>
+      <p class="gallery__subtitle">Desliza para ver nuestros momentos ✨</p>
     </header>
 
-    <div class="gallery__masonry">
-      <button class="gallery__card gallery__card--tall reveal" type="button" data-full="Imagenes/galeria/01.jpg" aria-label="Abrir foto 1" data-reveal data-reveal-delay="40">
-        <img src="Imagenes/galeria/01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">01</span>
-        <span class="gallery__caption">Momentos que guardamos para siempre</span>
-      </button>
+    <div class="gallery__shell reveal" data-reveal>
+      <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Anterior" data-gprev>‹</button>
 
-      <button class="gallery__card reveal" type="button" data-full="Imagenes/galeria/02.jpg" aria-label="Abrir foto 2" data-reveal data-reveal-delay="80">
-        <img src="Imagenes/galeria/02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">02</span>
-        <span class="gallery__caption">Risas, aventuras y amor</span>
-      </button>
+      <div class="gallery__track" data-gtrack>
+        <!-- Cada tarjeta -->
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/01.jpg" aria-label="Abrir foto 1">
+          <img src="Imagenes/galeria/01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">01</span>
+        </button>
 
-      <button class="gallery__card gallery__card--wide reveal" type="button" data-full="Imagenes/galeria/03.jpg" aria-label="Abrir foto 3" data-reveal data-reveal-delay="120">
-        <img src="Imagenes/galeria/03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">03</span>
-        <span class="gallery__caption">Cada recuerdo nos trajo hasta este día</span>
-      </button>
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/02.jpg" aria-label="Abrir foto 2">
+          <img src="Imagenes/galeria/02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">02</span>
+        </button>
 
-      <button class="gallery__card reveal" type="button" data-full="Imagenes/galeria/04.jpg" aria-label="Abrir foto 4" data-reveal data-reveal-delay="160">
-        <img src="Imagenes/galeria/04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">04</span>
-        <span class="gallery__caption">Un amor que florece</span>
-      </button>
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/03.jpg" aria-label="Abrir foto 3">
+          <img src="Imagenes/galeria/03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">03</span>
+        </button>
 
-      <button class="gallery__card gallery__card--tall reveal" type="button" data-full="Imagenes/galeria/05.jpg" aria-label="Abrir foto 5" data-reveal data-reveal-delay="200">
-        <img src="Imagenes/galeria/05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">05</span>
-        <span class="gallery__caption">La vida se siente más bonita contigo</span>
-      </button>
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/04.jpg" aria-label="Abrir foto 4">
+          <img src="Imagenes/galeria/04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">04</span>
+        </button>
 
-      <button class="gallery__card reveal" type="button" data-full="Imagenes/galeria/06.jpg" aria-label="Abrir foto 6" data-reveal data-reveal-delay="240">
-        <img src="Imagenes/galeria/06.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">06</span>
-        <span class="gallery__caption">Nos vemos en la pista ✨</span>
-      </button>
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/05.jpg" aria-label="Abrir foto 5">
+          <img src="Imagenes/galeria/05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">05</span>
+        </button>
+
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/06.jpg" aria-label="Abrir foto 6">
+          <img src="Imagenes/galeria/06.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">06</span>
+        </button>
+      </div>
+
+      <button class="gallery__nav gallery__nav--next" type="button" aria-label="Siguiente" data-gnext>›</button>
     </div>
 
-    <div class="gallery__footer reveal" data-reveal data-reveal-delay="280">
-      <p class="gallery__hint">Toca cualquier foto para abrirla en grande.</p>
+    <div class="gallery__footer reveal" data-reveal>
+      <div class="gallery__progress">
+        <span class="gallery__bar" data-gbar></span>
+      </div>
+      <p class="gallery__hint">Tip: en PC también puedes arrastrar con el mouse.</p>
     </div>
+
   </div>
 </section>
 
@@ -394,8 +387,8 @@
 </div>
     
     <!-- ========== RSVP ========== -->
-    <section class="rsvp" id="rsvp">
-      <div class="rsvp__card reveal" data-reveal data-reveal-delay="60">
+    <section class="rsvp reveal" data-reveal id="rsvp">
+      <div class="rsvp__card reveal" data-reveal>
         <h2 class="rsvp__title">Confirmar asistencia</h2>
         <p class="rsvp__subtitle" id="rsvpGuest">Cargando tu invitación…</p>
 
@@ -770,16 +763,10 @@
     });
 
 // =========================
-// REVEAL ON SCROLL (fade + slide + delay)
+// REVEAL ON SCROLL (fade + slide)
 // =========================
 (function initReveal(){
   const els = Array.from(document.querySelectorAll('[data-reveal]'));
-
-  els.forEach((el) => {
-    const delay = el.getAttribute('data-reveal-delay');
-    if (delay) el.style.setProperty('--reveal-delay', `${delay}ms`);
-  });
-
   if (!('IntersectionObserver' in window) || els.length === 0) {
     els.forEach(el => el.classList.add('is-visible'));
     return;
@@ -787,11 +774,12 @@
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      io.unobserve(entry.target);
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
     });
-  }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
+  }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
 
   els.forEach(el => io.observe(el));
 })();
@@ -808,7 +796,6 @@
   if (!lb || !lbImg || items.length === 0) return;
 
   let index = 0;
-  let touchStartX = 0;
 
   function setNoScroll(on){
     document.body.classList.toggle('no-scroll', !!on);
@@ -838,28 +825,19 @@
   function next(){ openAt(index + 1); }
   function prev(){ openAt(index - 1); }
 
+  // Abrir por click
   items.forEach((btn, i) => {
     btn.addEventListener('click', () => openAt(i));
   });
 
+  // Controles
   document.addEventListener('click', (e) => {
     if (e.target.matches('[data-lb-close]')) close();
     if (e.target.matches('[data-lb-next]')) next();
     if (e.target.matches('[data-lb-prev]')) prev();
   });
 
-  lb.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0]?.clientX || 0;
-  }, { passive: true });
-
-  lb.addEventListener('touchend', (e) => {
-    const endX = e.changedTouches[0]?.clientX || 0;
-    const delta = endX - touchStartX;
-    if (Math.abs(delta) < 40 || lb.classList.contains('is-hidden')) return;
-    if (delta < 0) next();
-    if (delta > 0) prev();
-  }, { passive: true });
-
+  // Teclas
   window.addEventListener('keydown', (e) => {
     if (lb.classList.contains('is-hidden')) return;
     if (e.key === 'Escape') close();
@@ -931,9 +909,46 @@
   // inicial
   updateProgress();
 })();
+// =========================
+// HERO GERBERAS (premium)
+// =========================
+(function initHeroGerberas(){
+  const wrap = document.querySelector('.hero__petals');
+  if (!wrap) return;
 
-    
-    
+  const COUNT = window.innerWidth <= 640 ? 12 : 18;
+  const palette = [
+    ['#f7f0e7','#d7c1a6'],
+    ['#fff7ef','#b9cde7'],
+    ['#f5efe6','#9fb8da']
+  ];
+
+  for (let i = 0; i < COUNT; i++) {
+    const flower = document.createElement('span');
+    flower.className = 'gerbera';
+    const size = Math.round(22 + Math.random() * 26);
+    const left = Math.random() * 100;
+    const drift = (-70 + Math.random() * 140).toFixed(0) + 'px';
+    const delay = (Math.random() * 12).toFixed(2) + 's';
+    const duration = (12 + Math.random() * 10).toFixed(2) + 's';
+    const rotate = Math.round(Math.random() * 360) + 'deg';
+    const tone = palette[i % palette.length];
+
+    flower.style.left = left + '%';
+    flower.style.width = size + 'px';
+    flower.style.height = size + 'px';
+    flower.style.animationDelay = delay;
+    flower.style.animationDuration = duration;
+    flower.style.setProperty('--drift', drift);
+    flower.style.setProperty('--rot0', rotate);
+    flower.style.setProperty('--petal', tone[0]);
+    flower.style.setProperty('--core', tone[1]);
+
+    wrap.appendChild(flower);
+  }
+})();
+
+
 </script>
 
   
