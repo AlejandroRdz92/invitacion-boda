@@ -1392,6 +1392,14 @@ body{
   margin-bottom: 18px;
 }
 
+.gallery__eyebrow{
+  margin: 0 0 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  color: rgba(58,47,32,.58);
+}
+
 .gallery__title{
   font-family:'Cormorant Garamond', serif;
   font-weight: 400;
@@ -1546,9 +1554,26 @@ body{
 
 @media (max-width: 560px){
   .gallery--carousel{ padding: calc(var(--section-pad-y) * .95) 16px; }
+  .gallery__header{ margin-bottom: 14px; }
+  .gallery__eyebrow{ font-size: .74rem; letter-spacing: .18em; }
+  .gallery__title{ font-size: 2.08rem; }
+  .gallery__subtitle{ font-size: .98rem; line-height: 1.55; max-width: 28rem; margin: 0 auto; }
   .gallery__nav{ display:none; }
-  .gallery__track{ padding: 6px 2px 12px; }
-  .gallery__card{ border-radius: 16px; }
+  .gallery__shell{ gap: 0; }
+  .gallery__track{
+    gap: 12px;
+    padding: 6px 2px 12px;
+    scroll-padding-inline: 10px;
+  }
+  .gallery__card{
+    flex-basis: 84vw;
+    max-width: 84vw;
+    aspect-ratio: 4 / 5;
+    border-radius: 18px;
+  }
+  .gallery__chip{ left: 10px; top: 10px; }
+  .gallery__progress{ width: min(280px, 86%); }
+  .gallery__hint{ font-size: .90rem; }
 }
 
 /* =========================
