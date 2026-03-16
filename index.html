@@ -74,7 +74,13 @@
       <div class="hero__bg"></div>
       <div class="hero__overlay"></div>
 
+      <div class="hero__petals" aria-hidden="true">
+        <div class="hero__petal-sheen"></div>
+      </div>
+
       <div class="hero__content">
+        <p class="hero__eyebrow">Nuestra boda</p>
+
         <!-- Countdown -->
         <div class="countdown" id="countdown">
           <div class="countdown__block">
@@ -104,10 +110,12 @@
           <span>&amp; Sarahi</span>
         </h1>
 
+        <p class="hero__kicker">Con la bendición de Dios y el amor que nos ha unido, queremos compartir contigo este día inolvidable.</p>
+
         <!-- Info Card -->
         <div class="hero__info-card">
           <div class="hero__info-item">
-            <div class="hero__info-primary">Sábado,</div>
+            <div class="hero__info-primary">Sábado</div>
             <div class="hero__info-secondary">03 de octubre de 2026</div>
           </div>
           <div class="hero__info-item">
@@ -115,6 +123,11 @@
             <div class="hero__info-secondary">Santa Catarina, Nuevo León</div>
           </div>
         </div>
+
+        <a class="hero__scroll" href="#wedding-info" aria-label="Ir a la siguiente sección">
+          <span class="hero__scrollText">Desliza para descubrir</span>
+          <span class="hero__scrollIcon"></span>
+        </a>
       </div>
     </section>
 
@@ -122,13 +135,13 @@
 
     
     <!-- ========== NUESTRA BODA SE ACERCA ========== -->
-    <section class="story" id="wedding-info">
+    <section class="story reveal" data-reveal id="wedding-info">
       <div class="story__container">
-        <div class="story__photo">
+        <div class="story__photo reveal" data-reveal>
           <img src="Imagenes/Nosotros2.jpg" alt="Alejandro y Sarahi">
         </div>
 
-        <div class="story__text">
+        <div class="story__text reveal" data-reveal>
           <h2>Estamos encantados de invitarte a celebrar nuestro matrimonio</h2>
 
           <p>
@@ -229,9 +242,9 @@
 
     
     <!-- ========== CEREMONIAS & RECEPCIÓN ========== -->
-    <section class="venues" id="venues">
+    <section class="venues reveal" data-reveal id="venues">
       <div class="venues__grid">
-        <div class="venue-card">
+        <div class="venue-card reveal" data-reveal>
           <div class="venue-card__image-wrapper">
             <img class="venue-card__image"
               src="Imagenes/Iglesia.jpg"
@@ -252,7 +265,7 @@
 </button>
         </div>
 
-        <div class="venue-card">
+        <div class="venue-card reveal" data-reveal data-reveal-delay="120">
           <div class="venue-card__image-wrapper">
             <img class="venue-card__image"
               src="Imagenes/Lugar.jpg"
@@ -374,8 +387,8 @@
 </div>
     
     <!-- ========== RSVP ========== -->
-    <section class="rsvp" id="rsvp">
-      <div class="rsvp__card">
+    <section class="rsvp reveal" data-reveal id="rsvp">
+      <div class="rsvp__card reveal" data-reveal>
         <h2 class="rsvp__title">Confirmar asistencia</h2>
         <p class="rsvp__subtitle" id="rsvpGuest">Cargando tu invitación…</p>
 
@@ -896,9 +909,46 @@
   // inicial
   updateProgress();
 })();
+// =========================
+// HERO GERBERAS (premium)
+// =========================
+(function initHeroGerberas(){
+  const wrap = document.querySelector('.hero__petals');
+  if (!wrap) return;
 
-    
-    
+  const COUNT = window.innerWidth <= 640 ? 12 : 18;
+  const palette = [
+    ['#f7f0e7','#d7c1a6'],
+    ['#fff7ef','#b9cde7'],
+    ['#f5efe6','#9fb8da']
+  ];
+
+  for (let i = 0; i < COUNT; i++) {
+    const flower = document.createElement('span');
+    flower.className = 'gerbera';
+    const size = Math.round(22 + Math.random() * 26);
+    const left = Math.random() * 100;
+    const drift = (-70 + Math.random() * 140).toFixed(0) + 'px';
+    const delay = (Math.random() * 12).toFixed(2) + 's';
+    const duration = (12 + Math.random() * 10).toFixed(2) + 's';
+    const rotate = Math.round(Math.random() * 360) + 'deg';
+    const tone = palette[i % palette.length];
+
+    flower.style.left = left + '%';
+    flower.style.width = size + 'px';
+    flower.style.height = size + 'px';
+    flower.style.animationDelay = delay;
+    flower.style.animationDuration = duration;
+    flower.style.setProperty('--drift', drift);
+    flower.style.setProperty('--rot0', rotate);
+    flower.style.setProperty('--petal', tone[0]);
+    flower.style.setProperty('--core', tone[1]);
+
+    wrap.appendChild(flower);
+  }
+})();
+
+
 </script>
 
   
