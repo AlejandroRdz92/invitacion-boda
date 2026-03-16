@@ -300,9 +300,8 @@
   <div class="gallery__container">
 
     <header class="gallery__header reveal" data-reveal>
-      <p class="gallery__eyebrow">Nuestros recuerdos</p>
       <h2 class="gallery__title">Nuestra historia en fotos</h2>
-      <p class="gallery__subtitle">Un pequeño recorrido por los momentos que nos han traído hasta aquí ✨</p>
+      <p class="gallery__subtitle">Desliza para ver nuestros momentos ✨</p>
     </header>
 
     <div class="gallery__shell reveal" data-reveal>
@@ -380,13 +379,83 @@
   </div>
 </div>
 
+
+<!-- ========== DRESS CODE ========== -->
+<section class="dress reveal" data-reveal id="dress-code">
+  <div class="dress__wrap">
+    <header class="dress__header">
+      <p class="dress__eyebrow">Detalles</p>
+      <h2 class="dress__title">Dress Code</h2>
+      <p class="dress__subtitle">Nos encantará celebrar contigo en un ambiente elegante, romántico y muy especial.</p>
+    </header>
+
+    <div class="dress__grid">
+      <article class="dress__card dress__card--main reveal" data-reveal>
+        <span class="dress__icon" aria-hidden="true">✦</span>
+        <h3 class="dress__cardTitle">Formal elegante</h3>
+        <p class="dress__cardText">
+          Agradecemos que nos acompañen con atuendo formal para celebrar este día tan especial con nosotros.
+        </p>
+      </article>
+
+      <article class="dress__card dress__card--note reveal" data-reveal data-reveal-delay="100">
+        <span class="dress__icon" aria-hidden="true">♡</span>
+        <h3 class="dress__cardTitle">Nota especial</h3>
+        <p class="dress__cardText">
+          Les pedimos amablemente evitar el color rojo, ya que la ambientación de nuestra celebración estará enfocada en tonos blanco y azul.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ========== SEPARATOR ========== -->
 <div class="sep reveal" data-reveal aria-hidden="true">
   <span class="sep__line"></span>
   <span class="sep__badge">A&amp;S</span>
   <span class="sep__line"></span>
 </div>
-    
+
+<!-- ========== MESA DE REGALOS ========== -->
+<section class="gifts reveal" data-reveal id="mesa-regalos">
+  <div class="gifts__wrap">
+    <header class="gifts__header">
+      <p class="gifts__eyebrow">Con cariño</p>
+      <h2 class="gifts__title">Mesa de Regalos</h2>
+      <p class="gifts__subtitle">
+        Su presencia es nuestro mejor regalo, pero si desean tener un detalle con nosotros,
+        podrán hacerlo mediante transferencia bancaria o en sobre el día del evento.
+      </p>
+    </header>
+
+    <div class="gifts__grid">
+      <article class="gifts__card reveal" data-reveal>
+        <div class="gifts__cardIcon" aria-hidden="true">✉</div>
+        <h3 class="gifts__cardTitle">Sobre el día del evento</h3>
+        <p class="gifts__cardText">
+          Si lo prefieren, también habrá un espacio para recibir sobres físicamente durante la celebración.
+        </p>
+      </article>
+
+      <article class="gifts__card gifts__card--primary reveal" data-reveal data-reveal-delay="100">
+        <div class="gifts__cardIcon" aria-hidden="true">⌁</div>
+        <h3 class="gifts__cardTitle">Transferencia bancaria</h3>
+        <p class="gifts__cardText">
+          Hemos preparado una opción discreta y práctica para compartir nuestra cuenta CLABE.
+        </p>
+        <button class="gifts__btn" type="button" id="openGiftModal">Ver datos para transferencia</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SEPARATOR ========== -->
+<div class="sep reveal" data-reveal aria-hidden="true">
+  <span class="sep__line"></span>
+  <span class="sep__badge">A&amp;S</span>
+  <span class="sep__line"></span>
+</div>
+
     <!-- ========== RSVP ========== -->
     <section class="rsvp reveal" data-reveal id="rsvp">
       <div class="rsvp__card reveal" data-reveal>
@@ -464,6 +533,54 @@
 </div>
 
   
+  
+<!-- =========================
+     GIFT MODAL
+     ========================= -->
+<div id="giftModal" class="giftmodal is-hidden" aria-hidden="true">
+  <div class="giftmodal__backdrop" data-gift-close></div>
+
+  <div class="giftmodal__card" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
+    <button class="giftmodal__close" type="button" aria-label="Cerrar" data-gift-close>✕</button>
+
+    <p class="giftmodal__eyebrow">Mesa de Regalos</p>
+    <h3 id="giftModalTitle" class="giftmodal__title">Datos para transferencia</h3>
+    <p class="giftmodal__subtitle">Gracias por acompañarnos con tanto cariño en este momento tan especial.</p>
+
+    <div class="giftmodal__bank">
+      <div class="giftmodal__bankBadge">BBVA</div>
+      <div class="giftmodal__bankMeta">
+        <span class="giftmodal__bankLabel">Titular</span>
+        <strong class="giftmodal__bankValue">Oscar Alejandro Rodriguez Rodriguez</strong>
+      </div>
+    </div>
+
+    <div class="giftmodal__details">
+      <div class="giftmodal__detail">
+        <span class="giftmodal__label">Cuenta CLABE</span>
+        <div class="giftmodal__valueRow">
+          <code id="giftClabe" class="giftmodal__value">PENDIENTE_AGREGAR_CLABE</code>
+          <button id="giftCopyClabe" class="giftmodal__copy" type="button">Copiar</button>
+        </div>
+      </div>
+
+      <div class="giftmodal__detail">
+        <span class="giftmodal__label">Para</span>
+        <p class="giftmodal__valueText">Sarahi y Alejandro</p>
+      </div>
+
+      <div class="giftmodal__detail">
+        <span class="giftmodal__label">Referencia sugerida</span>
+        <p class="giftmodal__valueText">Boda A&amp;S</p>
+      </div>
+    </div>
+
+    <p class="giftmodal__helper">Puedes reemplazar la CLABE cuando ya tengas el número final.</p>
+    <p id="giftModalStatus" class="giftmodal__status"></p>
+  </div>
+</div>
+
+
   <script>
     // =========================
     // CONFIG
@@ -781,6 +898,79 @@
         closeMapModal();
       }
     });
+
+
+// =========================
+// GIFT MODAL LOGIC
+// =========================
+const giftModal = document.getElementById('giftModal');
+const openGiftModalBtn = document.getElementById('openGiftModal');
+const giftCopyClabe = document.getElementById('giftCopyClabe');
+const giftClabe = document.getElementById('giftClabe');
+const giftModalStatus = document.getElementById('giftModalStatus');
+
+function openGiftModal() {
+  if (!giftModal) return;
+  giftModal.classList.remove('is-hidden');
+  giftModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('no-scroll');
+  if (giftModalStatus) {
+    giftModalStatus.textContent = '';
+    giftModalStatus.className = 'giftmodal__status';
+  }
+}
+
+function closeGiftModal() {
+  if (!giftModal) return;
+  giftModal.classList.add('is-hidden');
+  giftModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('no-scroll');
+  if (giftModalStatus) {
+    giftModalStatus.textContent = '';
+    giftModalStatus.className = 'giftmodal__status';
+  }
+}
+
+if (openGiftModalBtn) {
+  openGiftModalBtn.addEventListener('click', openGiftModal);
+}
+
+document.addEventListener('click', async (e) => {
+  if (e.target.matches('[data-gift-close]')) {
+    e.preventDefault();
+    closeGiftModal();
+    return;
+  }
+});
+
+if (giftCopyClabe && giftClabe) {
+  giftCopyClabe.addEventListener('click', async () => {
+    const text = (giftClabe.textContent || '').trim();
+    if (!text) return;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      giftModalStatus.textContent = 'CLABE copiada ✅';
+      giftModalStatus.classList.add('is-success');
+    } catch (err) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      giftModalStatus.textContent = 'CLABE copiada ✅';
+      giftModalStatus.classList.add('is-success');
+    }
+  });
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && giftModal && !giftModal.classList.contains('is-hidden')) {
+    closeGiftModal();
+  }
+});
+
 
 // =========================
 // REVEAL ON SCROLL (fade + slide)
