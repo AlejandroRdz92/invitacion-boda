@@ -295,67 +295,58 @@
   <span class="sep__line"></span>
 </div>
 
-<!-- ========== GALERÍA CARRUSEL (PREMIUM) ========== -->
-<section class="gallery gallery--carousel" id="gallery">
+<!-- ========== GALERÍA PREMIUM (MOBILE FIRST) ========== -->
+<section class="gallery gallery--masonry" id="gallery">
   <div class="gallery__container">
-
-    <header class="gallery__header reveal" data-reveal>
+    <header class="gallery__header reveal" data-reveal data-reveal-delay="0">
+      <p class="gallery__eyebrow">Nuestros recuerdos</p>
       <h2 class="gallery__title">Nuestra historia en fotos</h2>
-      <p class="gallery__subtitle">Desliza para ver nuestros momentos ✨</p>
+      <p class="gallery__subtitle">Un pequeño recorrido por los momentos que nos han traído hasta aquí ✨</p>
     </header>
 
-    <div class="gallery__shell reveal" data-reveal>
-      <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Anterior" data-gprev>‹</button>
+    <div class="gallery__masonry">
+      <button class="gallery__card gallery__card--tall reveal" type="button" data-full="Imagenes/galeria/01.jpg" aria-label="Abrir foto 1" data-reveal data-reveal-delay="40">
+        <img src="Imagenes/galeria/01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
+        <span class="gallery__veil" aria-hidden="true"></span>
+        <span class="gallery__chip" aria-hidden="true">01</span>
+        <span class="gallery__caption">Momentos que guardamos para siempre</span>
+      </button>
 
-      <div class="gallery__track" data-gtrack>
-        <!-- Cada tarjeta -->
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria/01.jpg" aria-label="Abrir foto 1">
-          <img src="Imagenes/galeria/01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">01</span>
-        </button>
+      <button class="gallery__card reveal" type="button" data-full="Imagenes/galeria/02.jpg" aria-label="Abrir foto 2" data-reveal data-reveal-delay="80">
+        <img src="Imagenes/galeria/02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
+        <span class="gallery__veil" aria-hidden="true"></span>
+        <span class="gallery__chip" aria-hidden="true">02</span>
+        <span class="gallery__caption">Risas, aventuras y amor</span>
+      </button>
 
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria/02.jpg" aria-label="Abrir foto 2">
-          <img src="Imagenes/galeria/02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">02</span>
-        </button>
+      <button class="gallery__card gallery__card--wide reveal" type="button" data-full="Imagenes/galeria/03.jpg" aria-label="Abrir foto 3" data-reveal data-reveal-delay="120">
+        <img src="Imagenes/galeria/03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
+        <span class="gallery__veil" aria-hidden="true"></span>
+        <span class="gallery__chip" aria-hidden="true">03</span>
+        <span class="gallery__caption">Cada recuerdo nos trajo hasta este día</span>
+      </button>
 
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria/03.jpg" aria-label="Abrir foto 3">
-          <img src="Imagenes/galeria/03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">03</span>
-        </button>
+      <button class="gallery__card reveal" type="button" data-full="Imagenes/galeria/04.jpg" aria-label="Abrir foto 4" data-reveal data-reveal-delay="160">
+        <img src="Imagenes/galeria/04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
+        <span class="gallery__veil" aria-hidden="true"></span>
+        <span class="gallery__chip" aria-hidden="true">04</span>
+        <span class="gallery__caption">Un amor que florece</span>
+      </button>
 
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria/04.jpg" aria-label="Abrir foto 4">
-          <img src="Imagenes/galeria/04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">04</span>
-        </button>
+      <button class="gallery__card gallery__card--tall reveal" type="button" data-full="Imagenes/galeria/05.jpg" aria-label="Abrir foto 5" data-reveal data-reveal-delay="200">
+        <img src="Imagenes/galeria/05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
+        <span class="gallery__veil" aria-hidden="true"></span>
+        <span class="gallery__chip" aria-hidden="true">05</span>
+        <span class="gallery__caption">La vida se siente más bonita contigo</span>
+      </button>
 
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria/05.jpg" aria-label="Abrir foto 5">
-          <img src="Imagenes/galeria/05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">05</span>
-        </button>
-
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria/06.jpg" aria-label="Abrir foto 6">
-          <img src="Imagenes/galeria/06.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">06</span>
-        </button>
-      </div>
-
-      <button class="gallery__nav gallery__nav--next" type="button" aria-label="Siguiente" data-gnext>›</button>
+      <button class="gallery__card reveal" type="button" data-full="Imagenes/galeria/06.jpg" aria-label="Abrir foto 6" data-reveal data-reveal-delay="240">
+        <img src="Imagenes/galeria/06.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
+        <span class="gallery__veil" aria-hidden="true"></span>
+        <span class="gallery__chip" aria-hidden="true">06</span>
+        <span class="gallery__caption">Nuestro para siempre comienza aquí</span>
+      </button>
     </div>
-
-    <div class="gallery__footer reveal" data-reveal>
-      <div class="gallery__progress">
-        <span class="gallery__bar" data-gbar></span>
-      </div>
-      <p class="gallery__hint">Tip: en PC también puedes arrastrar con el mouse.</p>
-    </div>
-
   </div>
 </section>
 
