@@ -1861,3 +1861,403 @@ body{
     opacity:.72;
   }
 }
+
+/* =========================
+   DRESS CODE + REGALOS
+========================= */
+
+.section--soft{
+  background: linear-gradient(180deg, rgba(255,255,255,.28), rgba(255,255,255,.12));
+}
+
+.section__inner{
+  width:min(1100px, calc(100% - 40px));
+  margin:0 auto;
+}
+
+.section__eyebrow{
+  margin:0 0 10px;
+  text-transform:uppercase;
+  letter-spacing:.24em;
+  font-size:.92rem;
+  color:rgba(74,58,40,.62);
+}
+
+.section__title{
+  margin:0;
+}
+
+.section__subtitle{
+  max-width:760px;
+  margin:18px auto 0;
+  line-height:1.75;
+  color:rgba(74,58,40,.82);
+}
+
+/* DRESS CODE */
+.dresscode{
+  padding-top:88px;
+  padding-bottom:88px;
+}
+
+.dresscode__grid{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:22px;
+}
+
+.dresscard{
+  position:relative;
+  padding:28px 26px;
+  border-radius:28px;
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(130,113,89,.12);
+  box-shadow:0 14px 34px rgba(71,53,31,.08);
+  backdrop-filter: blur(8px);
+  text-align:left;
+}
+
+.dresscard__icon{
+  width:42px;
+  height:42px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  margin-bottom:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(245,239,230,.75));
+  border:1px solid rgba(130,113,89,.14);
+  color:#7c684f;
+  font-size:1rem;
+}
+
+.dresscard h3{
+  margin:0 0 10px;
+  font-family:"Cormorant Garamond", serif;
+  font-size:2rem;
+  color:#4b3b29;
+}
+
+.dresscard p{
+  margin:0;
+  line-height:1.8;
+  color:rgba(74,58,40,.86);
+}
+
+.dresscard--note{
+  background:linear-gradient(180deg, rgba(244,248,255,.58), rgba(255,255,255,.5));
+}
+
+/* GIFTS */
+.gifts{
+  padding-top:88px;
+  padding-bottom:88px;
+}
+
+.gifts__grid{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:22px;
+}
+
+.giftcard{
+  padding:28px 26px;
+  border-radius:30px;
+  background:rgba(255,255,255,.56);
+  border:1px solid rgba(130,113,89,.12);
+  box-shadow:0 16px 38px rgba(71,53,31,.08);
+  text-align:left;
+}
+
+.giftcard--secondary{
+  background:linear-gradient(180deg, rgba(255,255,255,.48), rgba(248,245,240,.7));
+}
+
+.giftcard__top{
+  margin-bottom:14px;
+}
+
+.giftcard__badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:0 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(130,113,89,.15);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:.72rem;
+  color:#7b6851;
+}
+
+.giftcard h3{
+  margin:14px 0 0;
+  font-family:"Cormorant Garamond", serif;
+  font-size:2rem;
+  color:#4b3b29;
+}
+
+.giftcard__text{
+  margin:0;
+  line-height:1.8;
+  color:rgba(74,58,40,.84);
+}
+
+.giftcard__btn{
+  margin-top:22px;
+  border:none;
+  border-radius:999px;
+  min-height:50px;
+  padding:0 22px;
+  background:linear-gradient(135deg, #708db7, #58759f);
+  color:#fff;
+  font-weight:500;
+  letter-spacing:.03em;
+  cursor:pointer;
+  box-shadow:0 12px 26px rgba(77,104,147,.24);
+  transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+
+.giftcard__btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 30px rgba(77,104,147,.28);
+}
+
+.giftcard__btn:active{
+  transform:translateY(0);
+}
+
+/* MODAL */
+.giftmodal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1200;
+}
+
+.giftmodal.is-open{
+  display:flex;
+}
+
+.giftmodal__backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(22,18,15,.46);
+  backdrop-filter: blur(6px);
+}
+
+.giftmodal__dialog{
+  position:relative;
+  z-index:1;
+  width:min(620px, calc(100% - 28px));
+  border-radius:30px;
+  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(250,246,240,.98));
+  border:1px solid rgba(130,113,89,.12);
+  box-shadow:0 28px 70px rgba(30,24,20,.22);
+  padding:30px 24px 24px;
+  animation:giftModalIn .24s ease;
+}
+
+@keyframes giftModalIn{
+  from{
+    opacity:0;
+    transform:translateY(10px) scale(.985);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+.giftmodal__close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:999px;
+  background:rgba(245,239,230,.9);
+  color:#5f4c36;
+  font-size:1.6rem;
+  line-height:1;
+  cursor:pointer;
+}
+
+.giftmodal__eyebrow{
+  margin:0 0 10px;
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:.82rem;
+  color:rgba(74,58,40,.58);
+}
+
+.giftmodal__title{
+  margin:0;
+  font-family:"Cormorant Garamond", serif;
+  font-size:2.4rem;
+  color:#463624;
+}
+
+.giftmodal__copy{
+  margin:12px 0 0;
+  line-height:1.75;
+  color:rgba(74,58,40,.82);
+}
+
+.giftmodal__card{
+  margin-top:22px;
+  padding:18px;
+  border-radius:22px;
+  background:rgba(255,255,255,.74);
+  border:1px solid rgba(130,113,89,.12);
+}
+
+.giftmodal__row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(130,113,89,.10);
+}
+
+.giftmodal__row:last-child{
+  border-bottom:none;
+}
+
+.giftmodal__row--stack{
+  align-items:flex-start;
+  flex-direction:column;
+}
+
+.giftmodal__label{
+  font-size:.92rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(74,58,40,.54);
+}
+
+.giftmodal__value{
+  color:#4a3a28;
+  text-align:right;
+}
+
+.giftmodal__clabe{
+  width:100%;
+  display:block;
+  padding:14px 16px;
+  border-radius:16px;
+  background:#f6f2ec;
+  border:1px solid rgba(130,113,89,.10);
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:1rem;
+  color:#3f3124;
+  overflow-wrap:anywhere;
+}
+
+.giftmodal__actions{
+  margin-top:18px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.giftmodal__action{
+  border:none;
+  border-radius:999px;
+  min-height:46px;
+  padding:0 18px;
+  background:#6d86ad;
+  color:#fff;
+  cursor:pointer;
+  box-shadow:0 10px 22px rgba(77,104,147,.22);
+}
+
+.giftmodal__foot{
+  margin:16px 0 0;
+  line-height:1.7;
+  color:rgba(74,58,40,.72);
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .65s ease, transform .65s ease;
+}
+
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+@media (max-width: 900px){
+  .dresscode__grid,
+  .gifts__grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 640px){
+  .dresscode,
+  .gifts{
+    padding-top:72px;
+    padding-bottom:72px;
+  }
+
+  .section__inner{
+    width:min(100% - 20px, 1000px);
+  }
+
+  .section__subtitle{
+    margin-top:14px;
+    font-size:1rem;
+    line-height:1.7;
+  }
+
+  .dresscard,
+  .giftcard{
+    padding:22px 18px;
+    border-radius:24px;
+  }
+
+  .dresscard h3,
+  .giftcard h3{
+    font-size:1.8rem;
+  }
+
+  .giftcard__btn{
+    width:100%;
+  }
+
+  .giftmodal{
+    align-items:flex-end;
+  }
+
+  .giftmodal__dialog{
+    width:100%;
+    max-width:none;
+    border-radius:26px 26px 0 0;
+    padding:26px 18px 20px;
+  }
+
+  .giftmodal__row{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .giftmodal__value{
+    text-align:left;
+  }
+
+  .giftmodal__action{
+    width:100%;
+  }
+}
