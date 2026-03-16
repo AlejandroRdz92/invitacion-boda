@@ -1484,9 +1484,18 @@ body{
 }
 
 .gerbera{
+  --x: 50%;
+  --size: 26px;
+  --dur: 18s;
+  --delay: 0s;
+  --drift: 18px;
   position:absolute;
+  top:-14vh;
+  left:var(--x);
+  width:var(--size);
+  height:var(--size);
   border-radius:50%;
-  opacity:.78;
+  opacity:0;
   filter: drop-shadow(0 2px 8px rgba(255,255,255,.10));
   background:
     radial-gradient(circle at center, #f4efe7 0 18%, #b89347 19% 34%, transparent 35%),
@@ -1495,26 +1504,44 @@ body{
       #f6f1ea 0deg 8deg,
       #b9c7d8 8deg 16deg
     );
-  animation: gerberaFloat linear infinite;
+  animation: gerberaFall var(--dur) linear infinite;
+  animation-delay: var(--delay);
 }
 
-.g1{ top:6%;  left:4%;   width:24px; height:24px; animation-duration:20s; animation-delay:-2s; }
-.g2{ top:18%; left:13%;  width:34px; height:34px; animation-duration:26s; animation-delay:-8s; }
-.g3{ top:10%; left:38%;  width:22px; height:22px; animation-duration:18s; animation-delay:-5s; }
-.g4{ top:30%; left:62%;  width:26px; height:26px; animation-duration:24s; animation-delay:-11s; }
-.g5{ top:14%; left:84%;  width:20px; height:20px; animation-duration:19s; animation-delay:-6s; }
-.g6{ top:48%; left:8%;   width:36px; height:36px; animation-duration:28s; animation-delay:-14s; }
-.g7{ top:64%; left:18%;  width:28px; height:28px; animation-duration:23s; animation-delay:-9s; }
-.g8{ top:42%; left:68%;  width:22px; height:22px; animation-duration:21s; animation-delay:-4s; }
-.g9{ top:52%; left:87%;  width:38px; height:38px; animation-duration:30s; animation-delay:-15s; }
-.g10{ top:22%; left:92%; width:26px; height:26px; animation-duration:22s; animation-delay:-7s; }
+.g1{  --x: 4%;  --size: 24px; --dur: 16s; --delay: -1s;  --drift: 18px; }
+.g2{  --x: 13%; --size: 34px; --dur: 21s; --delay: -9s;  --drift: 28px; }
+.g3{  --x: 38%; --size: 22px; --dur: 15s; --delay: -5s;  --drift: 14px; }
+.g4{  --x: 62%; --size: 26px; --dur: 18s; --delay: -12s; --drift: 22px; }
+.g5{  --x: 84%; --size: 20px; --dur: 14s; --delay: -7s;  --drift: 12px; }
+.g6{  --x: 8%;  --size: 36px; --dur: 23s; --delay: -15s; --drift: 30px; }
+.g7{  --x: 18%; --size: 28px; --dur: 19s; --delay: -10s; --drift: 20px; }
+.g8{  --x: 68%; --size: 22px; --dur: 16s; --delay: -3s;  --drift: 16px; }
+.g9{  --x: 87%; --size: 38px; --dur: 24s; --delay: -18s; --drift: 32px; }
+.g10{ --x: 92%; --size: 26px; --dur: 17s; --delay: -8s;  --drift: 20px; }
 
-@keyframes gerberaFloat{
-  0%   { transform: translate3d(0,0,0) rotate(0deg) scale(1); }
-  25%  { transform: translate3d(4px,-8px,0) rotate(12deg) scale(1.02); }
-  50%  { transform: translate3d(-3px,6px,0) rotate(-10deg) scale(.98); }
-  75%  { transform: translate3d(5px,-4px,0) rotate(8deg) scale(1.01); }
-  100% { transform: translate3d(0,0,0) rotate(0deg) scale(1); }
+@keyframes gerberaFall{
+  0%{
+    transform: translate3d(0, -10vh, 0) rotate(0deg) scale(.96);
+    opacity: 0;
+  }
+  10%{
+    opacity: .72;
+  }
+  35%{
+    transform: translate3d(calc(var(--drift) * -0.35), 28vh, 0) rotate(55deg) scale(1);
+    opacity: .68;
+  }
+  65%{
+    transform: translate3d(var(--drift), 68vh, 0) rotate(132deg) scale(1.02);
+    opacity: .62;
+  }
+  88%{
+    opacity: .34;
+  }
+  100%{
+    transform: translate3d(calc(var(--drift) * -0.45), 118vh, 0) rotate(210deg) scale(.98);
+    opacity: 0;
+  }
 }
 
 .story__container,
