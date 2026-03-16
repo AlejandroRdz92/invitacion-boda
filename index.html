@@ -295,58 +295,67 @@
   <span class="sep__line"></span>
 </div>
 
-<!-- ========== GALERÍA PREMIUM (MOBILE FIRST) ========== -->
-<section class="gallery gallery--masonry" id="gallery">
+<!-- ========== GALERÍA CARRUSEL (PREMIUM) ========== -->
+<section class="gallery gallery--carousel" id="gallery">
   <div class="gallery__container">
-    <header class="gallery__header reveal" data-reveal data-reveal-delay="0">
-      <p class="gallery__eyebrow">Nuestros recuerdos</p>
+
+    <header class="gallery__header reveal" data-reveal>
       <h2 class="gallery__title">Nuestra historia en fotos</h2>
-      <p class="gallery__subtitle">Un pequeño recorrido por los momentos que nos han traído hasta aquí ✨</p>
+      <p class="gallery__subtitle">Desliza para ver nuestros momentos ✨</p>
     </header>
 
-    <div class="gallery__masonry">
-      <button class="gallery__card gallery__card--tall reveal" type="button" data-full="Imagenes/galeria/01.jpg" aria-label="Abrir foto 1" data-reveal data-reveal-delay="40">
-        <img src="Imagenes/galeria/01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">01</span>
-        <span class="gallery__caption">Momentos que guardamos para siempre</span>
-      </button>
+    <div class="gallery__shell reveal" data-reveal>
+      <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Anterior" data-gprev>‹</button>
 
-      <button class="gallery__card reveal" type="button" data-full="Imagenes/galeria/02.jpg" aria-label="Abrir foto 2" data-reveal data-reveal-delay="80">
-        <img src="Imagenes/galeria/02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">02</span>
-        <span class="gallery__caption">Risas, aventuras y amor</span>
-      </button>
+      <div class="gallery__track" data-gtrack>
+        <!-- Cada tarjeta -->
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/01.jpg" aria-label="Abrir foto 1">
+          <img src="Imagenes/galeria/01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">01</span>
+        </button>
 
-      <button class="gallery__card gallery__card--wide reveal" type="button" data-full="Imagenes/galeria/03.jpg" aria-label="Abrir foto 3" data-reveal data-reveal-delay="120">
-        <img src="Imagenes/galeria/03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">03</span>
-        <span class="gallery__caption">Cada recuerdo nos trajo hasta este día</span>
-      </button>
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/02.jpg" aria-label="Abrir foto 2">
+          <img src="Imagenes/galeria/02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">02</span>
+        </button>
 
-      <button class="gallery__card reveal" type="button" data-full="Imagenes/galeria/04.jpg" aria-label="Abrir foto 4" data-reveal data-reveal-delay="160">
-        <img src="Imagenes/galeria/04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">04</span>
-        <span class="gallery__caption">Un amor que florece</span>
-      </button>
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/03.jpg" aria-label="Abrir foto 3">
+          <img src="Imagenes/galeria/03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">03</span>
+        </button>
 
-      <button class="gallery__card gallery__card--tall reveal" type="button" data-full="Imagenes/galeria/05.jpg" aria-label="Abrir foto 5" data-reveal data-reveal-delay="200">
-        <img src="Imagenes/galeria/05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">05</span>
-        <span class="gallery__caption">La vida se siente más bonita contigo</span>
-      </button>
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/04.jpg" aria-label="Abrir foto 4">
+          <img src="Imagenes/galeria/04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">04</span>
+        </button>
 
-      <button class="gallery__card reveal" type="button" data-full="Imagenes/galeria/06.jpg" aria-label="Abrir foto 6" data-reveal data-reveal-delay="240">
-        <img src="Imagenes/galeria/06.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
-        <span class="gallery__veil" aria-hidden="true"></span>
-        <span class="gallery__chip" aria-hidden="true">06</span>
-        <span class="gallery__caption">Nuestro para siempre comienza aquí</span>
-      </button>
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/05.jpg" aria-label="Abrir foto 5">
+          <img src="Imagenes/galeria/05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">05</span>
+        </button>
+
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria/06.jpg" aria-label="Abrir foto 6">
+          <img src="Imagenes/galeria/06.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">06</span>
+        </button>
+      </div>
+
+      <button class="gallery__nav gallery__nav--next" type="button" aria-label="Siguiente" data-gnext>›</button>
     </div>
+
+    <div class="gallery__footer reveal" data-reveal>
+      <div class="gallery__progress">
+        <span class="gallery__bar" data-gbar></span>
+      </div>
+      <p class="gallery__hint">Tip: en PC también puedes arrastrar con el mouse.</p>
+    </div>
+
   </div>
 </section>
 
@@ -380,20 +389,35 @@
     <!-- ========== RSVP ========== -->
     <section class="rsvp reveal" data-reveal id="rsvp">
       <div class="rsvp__card reveal" data-reveal>
-        <h2 class="rsvp__title">Confirmar asistencia</h2>
-        <p class="rsvp__subtitle" id="rsvpGuest">Cargando tu invitación…</p>
+        <div class="rsvp__header">
+          <div class="rsvp__intro">
+            <p class="rsvp__eyebrow">Acompáñanos</p>
+            <h2 class="rsvp__title">Confirmar asistencia</h2>
+            <p class="rsvp__subtitle">Nos haría muchísima ilusión contar contigo en este día tan especial. Por favor confirma tu asistencia para poder prepararlo todo con cariño.</p>
+          </div>
 
-        <div class="rsvp__row">
-          <label class="rsvp__label" for="rsvpCount">¿Cuántas personas asistirán?</label>
-          <select id="rsvpCount" class="rsvp__select" disabled></select>
+          <div class="rsvp__guestbox">
+            <span class="rsvp__guestlabel">Invitación</span>
+            <p id="rsvpGuest" class="rsvp__guest">Cargando tu invitación…</p>
+          </div>
         </div>
 
-        <div class="rsvp__row">
-          <label class="rsvp__label" for="rsvpMsg">Mensaje (opcional)</label>
-          <textarea id="rsvpMsg" class="rsvp__textarea" rows="3" placeholder="Ej. ¡Nos vemos ese día!"></textarea>
-        </div>
+        <div class="rsvp__formbox">
+          <div class="rsvp__row">
+            <label class="rsvp__label" for="rsvpCount">¿Cuántas personas asistirán?</label>
+            <select id="rsvpCount" class="rsvp__select" disabled></select>
+          </div>
 
-        <button id="rsvpBtn" class="rsvp__btn" disabled>Confirmar</button>
+          <div class="rsvp__row">
+            <label class="rsvp__label" for="rsvpMsg">Mensaje para los novios (opcional)</label>
+            <textarea id="rsvpMsg" class="rsvp__textarea" rows="3" placeholder="Ej. ¡Nos vemos ese día! Qué emoción celebrar con ustedes."></textarea>
+          </div>
+
+          <div class="rsvp__actions">
+            <button id="rsvpBtn" class="rsvp__btn" disabled>Confirmar asistencia</button>
+            <p class="rsvp__note">Si abres esta invitación desde tu celular, puedes confirmar aquí mismo en unos segundos.</p>
+          </div>
+        </div>
 
         <p id="rsvpStatus" class="rsvp__status"></p>
       </div>
@@ -411,18 +435,21 @@
   <div class="mapmodal__card" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
     <button class="mapmodal__close" type="button" aria-label="Cerrar" data-close>✕</button>
 
+    <p class="mapmodal__eyebrow">Ubicación</p>
     <h3 id="mapModalTitle" class="mapmodal__title">Ubicación</h3>
     <p id="mapModalSubtitle" class="mapmodal__subtitle"></p>
 
-    <div class="mapmodal__frame">
-      <iframe
-        id="mapModalFrame"
-        title="Mapa"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        src=""
-        allowfullscreen>
-      </iframe>
+    <div class="mapmodal__framewrap">
+      <div class="mapmodal__frame">
+        <iframe
+          id="mapModalFrame"
+          title="Mapa"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src=""
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
 
     <div class="mapmodal__actions">
@@ -430,6 +457,7 @@
       <button id="mapModalCopy" class="mapmodal__btn mapmodal__btn--ghost" type="button">Copiar dirección</button>
     </div>
 
+    <p class="mapmodal__helper">Tip: si vas desde el celular, puedes abrir la ruta directamente en Google Maps.</p>
     <p id="mapModalStatus" class="mapmodal__status"></p>
   </div>
 </div>
