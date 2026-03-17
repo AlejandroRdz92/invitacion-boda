@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alejandro & Sarahi — Nuestra Boda</title>
+  <title>Alejandro &amp; Sarahi — Nuestra Boda</title>
+  <meta name="description" content="Acompáñanos a celebrar nuestra boda el 03 de octubre de 2026 en Santa Catarina, Nuevo León." />
+  <meta property="og:title" content="Alejandro &amp; Sarahi" />
+  <meta property="og:description" content="Nuestra boda — 03 de octubre de 2026" />
+  <meta property="og:image" content="Imagenes/preview.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alejandrorrdz92.github.io/invitacion-boda/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alejandro &amp; Sarahi" />
+  <meta name="twitter:description" content="Nuestra boda — 03 de octubre de 2026" />
+  <meta name="twitter:image" content="Imagenes/preview.jpg" />
   <link rel="stylesheet" href="estilos.css" />
 </head>
 
@@ -300,67 +310,49 @@
   <div class="gallery__container">
 
     <header class="gallery__header reveal" data-reveal>
-      <span class="gallery__badge">A&amp;S</span>
       <h2 class="gallery__title">Nuestra historia en fotos</h2>
-      <p class="gallery__subtitle">Algunos recuerdos que nos han traído hasta aquí ✨</p>
+      <p class="gallery__subtitle">Desliza para ver nuestros momentos ✨</p>
     </header>
 
     <div class="gallery__shell reveal" data-reveal>
       <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Anterior" data-gprev>‹</button>
 
       <div class="gallery__track" data-gtrack>
+        <!-- Cada tarjeta -->
         <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 1">
           <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">01</span>
-          <span class="gallery__meta">
-            <span class="gallery__caption">Nuestro comienzo</span>
-          </span>
         </button>
 
         <button class="gallery__card" type="button" data-full="Imagenes/galeria02.jpg" aria-label="Abrir foto 2">
           <img src="Imagenes/galeria02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">02</span>
-          <span class="gallery__meta">
-            <span class="gallery__caption">Momentos que abrazamos</span>
-          </span>
         </button>
 
         <button class="gallery__card" type="button" data-full="Imagenes/galeria03.jpg" aria-label="Abrir foto 3">
           <img src="Imagenes/galeria03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">03</span>
-          <span class="gallery__meta">
-            <span class="gallery__caption">Risas que guardamos</span>
-          </span>
         </button>
 
         <button class="gallery__card" type="button" data-full="Imagenes/galeria04.jpg" aria-label="Abrir foto 4">
           <img src="Imagenes/galeria04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">04</span>
-          <span class="gallery__meta">
-            <span class="gallery__caption">Detalles de nuestra historia</span>
-          </span>
         </button>
 
         <button class="gallery__card" type="button" data-full="Imagenes/galeria05.jpg" aria-label="Abrir foto 5">
           <img src="Imagenes/galeria05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">05</span>
-          <span class="gallery__meta">
-            <span class="gallery__caption">Caminos compartidos</span>
-          </span>
         </button>
 
         <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 6">
           <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
           <span class="gallery__veil" aria-hidden="true"></span>
           <span class="gallery__chip" aria-hidden="true">06</span>
-          <span class="gallery__meta">
-            <span class="gallery__caption">Un recuerdo más para siempre</span>
-          </span>
         </button>
       </div>
 
@@ -371,8 +363,9 @@
       <div class="gallery__progress">
         <span class="gallery__bar" data-gbar></span>
       </div>
-      <p class="gallery__hint">Desliza para seguir recorriendo nuestros recuerdos.</p>
+      <p class="gallery__hint">Tip: en PC también puedes arrastrar con el mouse.</p>
     </div>
+
   </div>
 </section>
 
@@ -485,6 +478,7 @@
             <p class="rsvp__eyebrow">Acompáñanos</p>
             <h2 class="rsvp__title">Confirmar asistencia</h2>
             <p class="rsvp__subtitle">Nos haría muchísima ilusión contar contigo en este día tan especial. Por favor confirma tu asistencia para poder prepararlo todo con cariño.</p>
+            <p class="rsvp__deadline">Favor de confirmar antes del <strong>15 de septiembre de 2026</strong>.</p>
           </div>
 
           <div class="rsvp__guestbox">
@@ -513,6 +507,40 @@
         <p id="rsvpStatus" class="rsvp__status"></p>
       </div>
     </section>
+
+    <!-- ========== SEPARATOR ========== -->
+    <div class="sep reveal" data-reveal aria-hidden="true">
+      <span class="sep__line"></span>
+      <span class="sep__badge">A&amp;S</span>
+      <span class="sep__line"></span>
+    </div>
+
+    <!-- ========== CIERRE FINAL ========== -->
+    <section class="closing reveal" data-reveal id="cierre">
+      <div class="closing__wrap">
+        <p class="closing__eyebrow">Gracias por acompañarnos</p>
+        <h2 class="closing__title">Nos hará muy felices compartir este día contigo</h2>
+        <p class="closing__text">
+          Gracias por formar parte de nuestra historia y acompañarnos en el inicio de esta nueva etapa.
+          Esperamos celebrar juntos un día inolvidable.
+        </p>
+
+        <div class="closing__signature">
+          <span class="closing__monogram">A&amp;S</span>
+          <p class="closing__names">Alejandro &amp; Sarahi</p>
+          <p class="closing__date">03 de octubre de 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer reveal" data-reveal>
+      <div class="footer__wrap">
+        <span class="footer__line"></span>
+        <span class="footer__brand">A&amp;S</span>
+        <span class="footer__line"></span>
+      </div>
+    </footer>
 
   </div>
 
