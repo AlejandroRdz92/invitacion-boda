@@ -515,11 +515,6 @@ body{
   object-fit:cover;
 }
 
-.story__text h2{
-  font-family:'Cormorant Garamond', serif;
-  font-size:2.2rem;
-  margin-bottom:20px;
-}
 
 .story__text p{
   font-size:1.05rem;
