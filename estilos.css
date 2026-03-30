@@ -357,15 +357,18 @@ body{
 
 /* HERO */
 .hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  overflow:hidden;
-  padding: clamp(90px, 11vh, 120px) 0 var(--after-hero-gap);
-  isolation:isolate;
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+  padding: 0;
+  isolation: isolate;
 }
 
 .hero__bg{
@@ -440,14 +443,15 @@ body{
   position: relative;
   z-index: 2;
   width: min(980px, calc(100% - 26px));
-  min-height: 100vh;
-  padding: 0 20px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 18px;
+  padding: 40px 20px 110px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .hero__eyebrow{
@@ -526,13 +530,14 @@ body{
   bottom: 28px;
   transform: translateX(-50%);
   width: fit-content;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-  text-decoration:none;
-  color:#fff;
-  opacity:.92;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  opacity: .92;
+  margin: 0;
 }
 
 .hero__scrollText{
@@ -1835,16 +1840,19 @@ body{
 }
 
 @media (max-width: 700px){
-  .hero{
-    min-height:100svh;
-    padding-top: 92px;
-  }
-  .hero__content{
-    width:min(100%, calc(100% - 18px));
-    min-height: 100svh;
-    padding: 0 10px 90px;
-    gap: 12px;
-  }
+ .hero{
+  height: 100svh;
+  min-height: 100svh;
+  padding-top: 0;
+}
+ .hero__content{
+  width:min(100%, calc(100% - 18px));
+  height: 100%;
+  min-height: 0;
+  padding: 0 10px 90px;
+  gap: 12px;
+}
+  
   .hero__eyebrow{
     font-size:.74rem;
     letter-spacing:.30em;
@@ -1863,16 +1871,6 @@ body{
   .countdown__label{ font-size: .64rem; letter-spacing: .14em; }
 
 
-
-
-
-  .gerbera{
-    opacity:.72;
-  }
-
-  .hero__scroll{
-    bottom: 18px;
-  }
 
   .hero__scrollText{
     font-size: .76rem;
