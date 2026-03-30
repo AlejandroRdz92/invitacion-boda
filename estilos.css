@@ -488,50 +488,7 @@ body{
   animation: scrollCue 1.8s ease-in-out infinite;
 }
 
-/* ======================
-   STORY
-====================== */
-
-.story{
-  padding: var(--section-pad-y) var(--section-pad-x);
-  background:#f5efe6;
-  padding-top: calc(var(--section-pad-y) + var(--after-hero-gap));
-}
-
-.story__container{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-  padding: 0 20px;
-}
-
-.story__photo img{
-  width:100%;
-  border-radius:18px;
-  box-shadow:0 20px 40px rgba(0,0,0,.12);
-  object-fit:cover;
-}
-
-
-.story__text p{
-  font-size:1.05rem;
-  line-height:1.8;
-  opacity:.8;
-  margin-bottom:18px;
-}
-
-.story__highlight{
-  font-weight:600;
-  font-size:1.1rem;
-  opacity:1;
-}
-
-@media(max-width:900px){
-  .story__container{ grid-template-columns:1fr; }
-}
+ STORY / INVITACIÓN
 
 /* ======================
    TIMELINE
