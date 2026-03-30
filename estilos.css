@@ -437,6 +437,30 @@ body{
 .countdown__label{ font-size:.72rem; letter-spacing:.24em; opacity:.9; text-transform:uppercase; }
 .countdown__separator{ font-size:1.15rem; opacity:.58; transform: translateY(-8px); }
 
+.hero__scroll{
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  opacity: .92;
+  margin: 0;
+}
+
+.hero__scroll:link,
+.hero__scroll:visited,
+.hero__scroll:hover,
+.hero__scroll:active{
+  color:#fff;
+  text-decoration:none;
+}
+
 .hero__scrollText{
   font-size:.82rem;
   letter-spacing:.26em;
