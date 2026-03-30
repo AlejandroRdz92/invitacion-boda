@@ -234,9 +234,10 @@ body{
   .countdown__number{ font-size:1.6rem; }
   .hero__info-card{ max-width:92vw; }
 
+  /* 🔽 BAJAR BLOQUE COMPLETO */
   .lobby__top{
-    padding-top: 8px;
-    padding-bottom: 2px;
+    padding-top: 40px;
+    padding-bottom: 4px;
   }
 
   .lobby__bottom{
@@ -244,13 +245,16 @@ body{
     padding-bottom: 8px;
   }
 
-  .lobby__names{
-    font-size: 1.95rem;
-    margin-top: 52px;
-  }
+  /* 🔼 NOMBRE +30% aprox */
+ .lobby__names{
+  font-size: clamp(2.3rem, 7vw, 2.8rem);
+  margin-top: 12vh;   /* esto lo baja proporcional a la altura del celular */
+}
 
+  /* 🔼 FECHA proporcional */
   .lobby__date{
-    font-size: .9rem;
+    font-size: 1.15rem;  /* antes .9rem */
+    margin-top: 8px;
   }
 }
 
