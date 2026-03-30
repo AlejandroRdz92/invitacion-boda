@@ -229,10 +229,8 @@ body{
   }
 
   .navbar{ padding:14px 18px; }
-  .hero__names{ font-size:3rem; }
   .countdown{ gap:12px; }
   .countdown__number{ font-size:1.6rem; }
-  .hero__info-card{ max-width:92vw; }
 
   /* 🔽 BAJAR BLOQUE COMPLETO */
   .lobby__top{
@@ -438,65 +436,6 @@ body{
 .countdown__number{ font-size:1.9rem; font-weight:300; letter-spacing:.08em; text-shadow:0 2px 10px rgba(0,0,0,.24); }
 .countdown__label{ font-size:.72rem; letter-spacing:.24em; opacity:.9; text-transform:uppercase; }
 .countdown__separator{ font-size:1.15rem; opacity:.58; transform: translateY(-8px); }
-
-.hero__names{
-  font-family:'Cormorant Garamond', serif;
-  font-weight:400;
-  font-size: clamp(3.6rem, 8.4vw, 6.2rem);
-  line-height: .98;
-  margin:0 auto 16px;
-  text-shadow: 0 8px 22px rgba(0,0,0,.28);
-}
-
-.hero__names span{ display:block; }
-
-.hero__kicker{
-  width:min(760px, 100%);
-  margin:0 auto 24px;
-  font-size: clamp(1rem, 2.15vw, 1.12rem);
-  line-height:1.75;
-  color: rgba(255,255,255,.92);
-  text-shadow:0 3px 12px rgba(0,0,0,.22);
-}
-
-.hero__info-card{
-  display:flex;
-  justify-content:center;
-  background: linear-gradient(180deg, rgba(247,241,233,.97), rgba(241,234,224,.94));
-  color:#3a2f20;
-  border-radius:22px;
-  max-width:620px;
-  margin:0 auto;
-  overflow:hidden;
-  box-shadow:0 20px 48px rgba(0,0,0,.22);
-  border: 1px solid rgba(255,255,255,.28);
-  backdrop-filter: blur(10px);
-}
-
-.hero__info-item{ flex:1; padding:20px 22px; }
-.hero__info-item + .hero__info-item{ border-left:1px solid rgba(58,47,32,.10); }
-.hero__info-primary{
-  font-family:'Cormorant Garamond', serif;
-  font-size:1.35rem;
-  line-height:1.1;
-}
-.hero__info-secondary{ font-size:.92rem; opacity:.78; margin-top:6px; line-height:1.5; }
-
-.hero__scroll{
-  position: absolute;
-  left: 50%;
-  bottom: 28px;
-  transform: translateX(-50%);
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: #fff;
-  opacity: .92;
-  margin: 0;
-}
 
 .hero__scrollText{
   font-size:.82rem;
@@ -771,7 +710,6 @@ body{
 .venue-card__time{ padding-bottom:20px; }
 
 @media (max-width: 900px){
-  .hero__names{ font-size:3.6rem; }
   .venues__grid{ grid-template-columns: 1fr; }
 }
 
@@ -1666,7 +1604,6 @@ body{
   .lightbox__frame{ aspect-ratio: 4 / 3; }
 }
 
-
 /* =========================
    PREMIUM GERBERA / HERO OVERRIDES
    ========================= */
@@ -1770,31 +1707,12 @@ body{
 .reveal[data-reveal-delay="120"]{ transition-delay: .12s; }
 .reveal[data-reveal-delay="180"]{ transition-delay: .18s; }
 
-@keyframes gerberaFall{
-  0%{
-    transform: translate3d(0,-14vh,0) rotate(var(--rot0)) scale(.86);
-    opacity:0;
-  }
-  10%{ opacity:.9; }
-  50%{
-    transform: translate3d(var(--drift), 48vh, 0) rotate(calc(var(--rot0) + 180deg)) scale(1);
-    opacity:.92;
-  }
-  100%{
-    transform: translate3d(calc(var(--drift) * .4), 112vh, 0) rotate(calc(var(--rot0) + 360deg)) scale(.92);
-    opacity:0;
-  }
-}
-
 @keyframes scrollCue{
   0%, 100%{ transform: translate(-50%, 0); opacity:1; }
   60%{ transform: translate(-50%, 10px); opacity:.35; }
 }
 
 @media (max-width: 900px){
-  .hero__info-card{
-    max-width: 560px;
-  }
 }
 
 @media (max-width: 700px){
@@ -1827,8 +1745,6 @@ body{
   .countdown__block{ min-width: 58px; }
   .countdown__number{ font-size: clamp(1.8rem, 7vw, 2.3rem); }
   .countdown__label{ font-size: .64rem; letter-spacing: .14em; }
-
-
 
   .hero__scrollText{
     font-size: .76rem;
@@ -2342,7 +2258,6 @@ body{
     width:100%;
   }
 }
-
 
 /* =========================
    RSVP DETALLES FINALES
