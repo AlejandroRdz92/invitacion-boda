@@ -228,35 +228,53 @@ body{
     --after-hero-gap: clamp(12px, 3.2vw, 18px);
   }
 
+  /* 🔥 CENTRAR TODO EL CONJUNTO */
+  .lobby{
+    justify-content: center;
+  }
+
   .navbar{ padding:14px 18px; }
   .hero__names{ font-size:3rem; }
   .countdown{ gap:12px; }
   .countdown__number{ font-size:1.6rem; }
   .hero__info-card{ max-width:92vw; }
 
-  /* 🔽 BAJAR BLOQUE COMPLETO */
+  /* 🔽 Menos aire arriba para que todo quede más centrado */
   .lobby__top{
-    padding-top: 70px;
+    padding-top: 18px;
     padding-bottom: 4px;
   }
 
-  .lobby__bottom{
-    padding-top: 2px;
-    padding-bottom: 8px;
+  /* 🔽 Ajuste del bloque del sobre */
+  .lobby__center{
+    flex: 0 0 auto;
+    min-height: auto;
+    padding: 8px 8px 0;
   }
 
-  /* 🔼 NOMBRE MÁS GRANDE Y MÁS ABAJO */
+  .lobby__bottom{
+    padding-top: 10px;
+    padding-bottom: 18px;
+  }
+
+  /* 🔼 Nombre grande y más integrado al sobre */
   .lobby__names{
-    font-size: clamp(2.8rem, 9vw, 3.4rem);
-    margin-top: 16vh;
+    font-size: clamp(2.85rem, 9.8vw, 3.45rem);
+    margin-top: 4vh;
     line-height: 1.05;
   }
 
-  /* 🔼 FECHA PROPORCIONAL */
+  /* 🔼 Fecha proporcional, sin separar demasiado */
   .lobby__date{
-    font-size: clamp(1.1rem, 4vw, 1.35rem);
+    font-size: clamp(1.08rem, 4vw, 1.28rem);
     margin-top: 10px;
     letter-spacing: .35em;
+  }
+
+  /* 🔽 Hint un poco más arriba y limpio */
+  .lobby__hint{
+    margin-bottom: 0;
+    font-size: clamp(.92rem, 2.8vw, 1rem);
   }
 }
 
@@ -269,21 +287,40 @@ body{
     --seal-y: 51%;
   }
 
+  .lobby{
+    justify-content: center;
+  }
+
   .lobby__top{
-    padding-top: 60px;
+    padding-top: 14px;
     padding-bottom: 4px;
   }
 
+  .lobby__center{
+    flex: 0 0 auto;
+    min-height: auto;
+    padding: 8px 6px 0;
+  }
+
+  .lobby__bottom{
+    padding-top: 10px;
+    padding-bottom: 16px;
+  }
+
   .lobby__names{
-    font-size: clamp(2.5rem, 8.8vw, 3rem);
-    margin-top: 15vh;
+    font-size: clamp(2.55rem, 9.2vw, 3.05rem);
+    margin-top: 3vh;
     line-height: 1.05;
   }
 
   .lobby__date{
-    font-size: clamp(1rem, 3.8vw, 1.2rem);
+    font-size: clamp(1rem, 3.8vw, 1.18rem);
     margin-top: 8px;
     letter-spacing: .32em;
+  }
+
+  .lobby__hint{
+    margin-bottom: 0;
   }
 }
 
@@ -296,26 +333,41 @@ body{
     --seal-y: 51%;
   }
 
+  .lobby{
+    justify-content: center;
+  }
+
   .lobby__top{
-    padding-top: 38px;
+    padding-top: 10px;
     padding-bottom: 2px;
   }
 
+  .lobby__center{
+    flex: 0 0 auto;
+    min-height: auto;
+    padding: 4px 6px 0;
+  }
+
   .lobby__bottom{
-    padding-top: 2px;
-    padding-bottom: 6px;
+    padding-top: 8px;
+    padding-bottom: 10px;
   }
 
   .lobby__names{
-    font-size: clamp(2.2rem, 8vw, 2.8rem);
-    margin-top: 10vh;
+    font-size: clamp(2.2rem, 8.2vw, 2.75rem);
+    margin-top: 1.5vh;
     line-height: 1.05;
   }
 
   .lobby__date{
-    font-size: clamp(.95rem, 3.4vw, 1.08rem);
+    font-size: clamp(.95rem, 3.4vw, 1.06rem);
     margin-top: 6px;
     letter-spacing: .28em;
+  }
+
+  .lobby__hint{
+    margin-bottom: 0;
+    font-size: .9rem;
   }
 }
 
