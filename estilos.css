@@ -1770,88 +1770,78 @@ body{
     height: 34px;
   }
 }
+
 /* =========================
-   DRESS CODE VISUAL
+   DRESS CODE MINIMAL
 ========================= */
 
 .dress{
   padding: var(--section-pad-y) var(--section-pad-x);
   background:#f5efe6;
+  text-align:center;
 }
 
 .dress__wrap{
-  width:min(980px, calc(100% - 40px));
+  width:min(900px, calc(100% - 40px));
   margin:0 auto;
 }
 
 .dress__header{
-  text-align:center;
-  margin-bottom:28px;
+  margin-bottom:40px;
 }
 
 .dress__eyebrow{
   margin:0 0 10px;
   text-transform:uppercase;
-  letter-spacing:.24em;
-  font-size:.88rem;
-  color:rgba(74,58,40,.58);
+  letter-spacing:.25em;
+  font-size:.8rem;
+  color:rgba(74,58,40,.55);
 }
 
 .dress__title{
   margin:0;
   font-family:'Cormorant Garamond', serif;
   font-weight:400;
-  font-size:2.7rem;
+  font-size:2.8rem;
   color:#4b3b29;
 }
 
 .dress__subtitle{
-  max-width:620px;
+  max-width:520px;
   margin:14px auto 0;
-  line-height:1.75;
-  color:rgba(74,58,40,.78);
-  font-size:1.02rem;
+  line-height:1.7;
+  color:rgba(74,58,40,.75);
+  font-size:1rem;
 }
 
-.dress__visual{
-  margin:0 auto;
-  max-width:760px;
-  text-align:center;
-  padding:34px 26px 30px;
-  border-radius:32px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.62), rgba(248,245,240,.86));
-  border:1px solid rgba(130,113,89,.10);
-  box-shadow:0 20px 44px rgba(71,53,31,.08);
+.dress__content{
+  margin-top:20px;
 }
 
 .dress__badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:48px;
-  padding:0 22px;
+  display:inline-block;
+  padding:10px 26px;
   border-radius:999px;
-  background:rgba(255,255,255,.76);
-  border:1px solid rgba(130,113,89,.14);
+  background:rgba(255,255,255,.7);
+  border:1px solid rgba(130,113,89,.2);
   color:#4b3b29;
   font-family:'Cormorant Garamond', serif;
-  font-size:1.55rem;
-  letter-spacing:.02em;
-  box-shadow:0 8px 22px rgba(71,53,31,.06);
+  font-size:1.6rem;
+  margin-bottom:26px;
 }
 
 .dress__illustration{
-  margin:24px auto 18px;
-  width:min(280px, 70%);
+  width:260px;
+  margin:0 auto 26px;
+  padding:18px;
+  border-radius:20px;
+  background:rgba(255,255,255,.5);
 }
 
 .dress__illustration img{
-  display:block;
   width:100%;
   height:auto;
-  object-fit:contain;
-  filter: grayscale(100%) contrast(1.05) opacity(.88);
+  filter: grayscale(100%) contrast(1.05) opacity(.9);
 }
 
 .dress__notes{
@@ -1859,75 +1849,40 @@ body{
   gap:12px;
   justify-content:center;
   flex-wrap:wrap;
-  margin-top:8px;
 }
 
 .dress__pill{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:40px;
-  padding:0 16px;
+  padding:8px 16px;
   border-radius:999px;
   background:#6d86ad;
   color:#fff;
-  font-size:.95rem;
-  letter-spacing:.02em;
-  box-shadow:0 10px 22px rgba(77,104,147,.18);
+  font-size:.9rem;
 }
 
 .dress__pill--soft{
-  background:rgba(255,255,255,.82);
+  background:rgba(255,255,255,.8);
   color:#5b4a36;
-  border:1px solid rgba(130,113,89,.12);
-  box-shadow:none;
+  border:1px solid rgba(130,113,89,.15);
 }
 
 .dress__pill--light{
-  background:#f8f6f2;
-  color:#6b5e52;
-  border:1px solid #e6dfd6;
-  box-shadow:none;
+  background:#8fa4c3;
+  color:#fff;
 }
 
-@media (max-width: 640px){
-  .dress__wrap{
-    width:min(calc(100% - 20px), 980px);
-  }
-
+/* MOBILE */
+@media (max-width:640px){
   .dress__title{
     font-size:2.2rem;
   }
 
-  .dress__subtitle{
-    font-size:.98rem;
-    line-height:1.68;
-  }
-
-  .dress__visual{
-    padding:26px 16px 22px;
-    border-radius:24px;
-  }
-
-  .dress__badge{
-    font-size:1.32rem;
-    min-height:44px;
-    padding:0 18px;
-  }
-
   .dress__illustration{
-    width:min(240px, 78%);
-    margin:20px auto 14px;
-  }
-
-  .dress__notes{
-    gap:10px;
+    width:200px;
   }
 
   .dress__pill{
     width:100%;
-    min-height:42px;
-    font-size:.94rem;
+    text-align:center;
   }
 }
 
