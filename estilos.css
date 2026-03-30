@@ -1773,7 +1773,6 @@ body{
     height: 34px;
   }
 }
-
 /* =========================
    DRESS CODE VISUAL
 ========================= */
@@ -1887,6 +1886,13 @@ body{
   box-shadow:none;
 }
 
+.dress__pill--light{
+  background:#f8f6f2;
+  color:#6b5e52;
+  border:1px solid #e6dfd6;
+  box-shadow:none;
+}
+
 @media (max-width: 640px){
   .dress__wrap{
     width:min(calc(100% - 20px), 980px);
@@ -1927,6 +1933,7 @@ body{
     font-size:.94rem;
   }
 }
+
 
 /* =========================
    MESA DE REGALOS
