@@ -2457,3 +2457,15 @@ body{
     width:min(calc(100% - 20px), 760px);
   }
 }
+
+
+/* ===== TITULO SECCION HISTORIA ===== */
+.story__title{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  text-align: center;
+  color: #3e372f;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  padding: 0 20px;
+}
