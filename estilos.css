@@ -397,48 +397,6 @@ body{
     linear-gradient(180deg, rgba(5,10,16,.48) 0%, rgba(8,16,27,.34) 38%, rgba(18,24,35,.50) 100%);
 }
 
-.hero__petals{
-  position:absolute;
-  inset:0;
-  z-index:1;
-  overflow:hidden;
-  pointer-events:none;
-}
-
-.hero__petal-sheen{
-  position:absolute;
-  inset:-10% -12% auto;
-  height:58%;
-  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.26), transparent 58%);
-  opacity:.55;
-}
-
-.gerbera{
-  --petal:#f6efe5;
-  --core:#b9cde7;
-  --drift: 20px;
-  --rot0: 0deg;
-  position:absolute;
-  top:-12%;
-  display:block;
-  border-radius:50%;
-  opacity:.85;
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,.16));
-  background:
-    radial-gradient(circle at center, var(--core) 0 16%, transparent 17%),
-    repeating-conic-gradient(from 0deg, var(--petal) 0 10deg, transparent 10deg 22.5deg);
-  animation: gerberaFall linear infinite;
-}
-
-.gerbera::before{
-  content:"";
-  position:absolute;
-  inset:18%;
-  border-radius:50%;
-  background: radial-gradient(circle at center, rgba(255,255,255,.72), transparent 60%);
-  opacity:.66;
-}
-
 .hero__content{
   position: relative;
   z-index: 2;
