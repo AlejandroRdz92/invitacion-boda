@@ -84,10 +84,6 @@
       <div class="hero__bg"></div>
       <div class="hero__overlay"></div>
 
-      <div class="hero__petals" aria-hidden="true">
-        <div class="hero__petal-sheen"></div>
-      </div>
-
       <div class="hero__content">
         <p class="hero__eyebrow">Nuestra boda</p>
 
@@ -1171,41 +1167,6 @@ window.addEventListener('keydown', (e) => {
 // =========================
 // HERO GERBERAS (premium)
 // =========================
-(function initHeroGerberas(){
-  const wrap = document.querySelector('.hero__petals');
-  if (!wrap) return;
-
-  const COUNT = window.innerWidth <= 640 ? 12 : 18;
-  const palette = [
-    ['#f7f0e7','#d7c1a6'],
-    ['#fff7ef','#b9cde7'],
-    ['#f5efe6','#9fb8da']
-  ];
-
-  for (let i = 0; i < COUNT; i++) {
-    const flower = document.createElement('span');
-    flower.className = 'gerbera';
-    const size = Math.round(22 + Math.random() * 26);
-    const left = Math.random() * 100;
-    const drift = (-70 + Math.random() * 140).toFixed(0) + 'px';
-    const delay = (Math.random() * 12).toFixed(2) + 's';
-    const duration = (12 + Math.random() * 10).toFixed(2) + 's';
-    const rotate = Math.round(Math.random() * 360) + 'deg';
-    const tone = palette[i % palette.length];
-
-    flower.style.left = left + '%';
-    flower.style.width = size + 'px';
-    flower.style.height = size + 'px';
-    flower.style.animationDelay = delay;
-    flower.style.animationDuration = duration;
-    flower.style.setProperty('--drift', drift);
-    flower.style.setProperty('--rot0', rotate);
-    flower.style.setProperty('--petal', tone[0]);
-    flower.style.setProperty('--core', tone[1]);
-
-    wrap.appendChild(flower);
-  }
-})();
 
 
 </script>
