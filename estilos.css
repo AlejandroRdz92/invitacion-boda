@@ -446,6 +446,7 @@ body{
     linear-gradient(180deg, rgba(5,10,16,.48) 0%, rgba(8,16,27,.34) 38%, rgba(18,24,35,.50) 100%);
 }
 
+
 .hero__content{
   position:relative;
   z-index:2;
@@ -1808,6 +1809,7 @@ body{
 .reveal[data-reveal-delay="120"]{ transition-delay: .12s; }
 .reveal[data-reveal-delay="180"]{ transition-delay: .18s; }
 
+
 @keyframes scrollCue{
   0%, 100%{ transform: translate(-50%, 0); opacity:1; }
   60%{ transform: translate(-50%, 10px); opacity:.35; }
@@ -1867,8 +1869,9 @@ body{
   .hero__scroll{
     margin-top: 20px;
   }
+}
 
-  /* =========================
+/* =========================
    DRESS CODE VISUAL
 ========================= */
 
