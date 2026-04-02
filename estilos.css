@@ -1475,102 +1475,164 @@ body{
 }
 
 /* =========================
-   DRESS CODE
+   DRESS CODE PREMIUM MINIMAL
    ========================= */
 
 .dress{
   padding: var(--section-pad-y) var(--section-pad-x);
-  background:#f5efe6;
-  text-align:center;
+  background:
+    radial-gradient(circle at top center, rgba(255,255,255,.38), transparent 34%),
+    linear-gradient(180deg, #f5efe6 0%, #f2ebdf 100%);
 }
 
 .dress__wrap{
-  width:min(900px, calc(100% - 40px));
-  margin:0 auto;
+  width: min(920px, calc(100% - 24px));
+  margin: 0 auto;
 }
 
 .dress__header{
-  margin-bottom:40px;
+  text-align: center;
+  margin-bottom: 34px;
 }
 
 .dress__eyebrow{
-  margin:0 0 10px;
-  text-transform:uppercase;
-  letter-spacing:.25em;
-  font-size:.8rem;
-  color:rgba(74,58,40,.55);
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  font-size: .8rem;
+  color: rgba(74,58,40,.55);
 }
 
 .dress__title{
-  margin:0;
+  margin: 0;
   font-family:'Cormorant Garamond', serif;
-  font-weight:400;
-  font-size:2.8rem;
-  color:#4b3b29;
+  font-weight: 400;
+  font-size: clamp(2.3rem, 4.4vw, 3.3rem);
+  color: #4b3b29;
+  line-height: 1.05;
 }
 
 .dress__subtitle{
-  max-width:520px;
-  margin:14px auto 0;
-  line-height:1.7;
-  color:rgba(74,58,40,.75);
-  font-size:1rem;
+  max-width: 520px;
+  margin: 14px auto 0;
+  line-height: 1.75;
+  color: rgba(74,58,40,.74);
+  font-size: 1rem;
 }
 
-.dress__content{
-  margin-top:20px;
+.dress__panel{
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+  padding: 34px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(255,251,245,.88), rgba(255,247,239,.82));
+  border: 1px solid rgba(58,47,32,.08);
+  box-shadow:
+    0 22px 52px rgba(0,0,0,.08),
+    inset 0 1px 0 rgba(255,255,255,.5);
 }
 
-.dress__badge{
-  display:inline-block;
-  padding:10px 26px;
-  border-radius:999px;
-  background:rgba(255,255,255,.7);
-  border:1px solid rgba(130,113,89,.2);
-  color:#4b3b29;
+.dress__figure{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.72), rgba(247,240,231,.86));
+  border: 1px solid rgba(58,47,32,.06);
+  padding: 24px;
+}
+
+.dress__figure img{
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  filter: grayscale(100%) contrast(1.04) opacity(.92);
+}
+
+.dress__details{
+  display: grid;
+  gap: 16px;
+}
+
+.dress__rule{
+  padding: 16px 0 14px;
+  border-bottom: 1px solid rgba(58,47,32,.10);
+}
+
+.dress__rule:first-child{
+  border-top: 1px solid rgba(58,47,32,.10);
+}
+
+.dress__ruleLabel{
+  display: block;
+  margin-bottom: 6px;
+  font-size: .76rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(74,58,40,.52);
+}
+
+.dress__ruleText{
+  margin: 0;
   font-family:'Cormorant Garamond', serif;
-  font-size:1.6rem;
-  margin-bottom:26px;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  color: #4b3b29;
 }
 
-.dress__illustration{
-  width:260px;
-  margin:0 auto 26px;
-  padding:18px;
-  border-radius:20px;
-  background:rgba(255,255,255,.5);
-}
+/* MOBILE */
+@media (max-width: 760px){
+  .dress{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
-.dress__illustration img{
-  width:100%;
-  height:auto;
-  filter: grayscale(100%) contrast(1.05) opacity(.9);
-}
+  .dress__panel{
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
 
-.dress__notes{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
+  .dress__header{
+    margin-bottom: 26px;
+  }
 
-.dress__pill{
-  padding:8px 16px;
-  border-radius:999px;
-  background:#6d86ad;
-  color:#fff;
-  font-size:.9rem;
-}
+  .dress__title{
+    font-size: clamp(2.1rem, 8vw, 2.8rem);
+  }
 
-.dress__pill--soft{
-  background:rgba(255,255,255,.8);
-  color:#5b4a36;
-  border:1px solid rgba(130,113,89,.15);
-}
+  .dress__subtitle{
+    font-size: .98rem;
+    line-height: 1.7;
+    max-width: 320px;
+  }
 
-.dress__pill--light{
-  background:#8fa4c3;
-  color:#fff;
+  .dress__figure{
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .dress__figure img{
+    max-width: 180px;
+  }
+
+  .dress__details{
+    gap: 10px;
+  }
+
+  .dress__rule{
+    padding: 14px 0 12px;
+  }
+
+  .dress__ruleText{
+    font-size: 1.36rem;
+  }
 }
 
 /* =========================
