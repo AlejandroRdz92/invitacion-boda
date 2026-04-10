@@ -1964,21 +1964,6 @@ body{
   gap:8px;
 }
 
-.closing__monogram{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:72px;
-  min-height:72px;
-  padding:0 20px;
-  border-radius:999px;
-  background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(245,239,230,.76));
-  border:1px solid rgba(58,47,32,.12);
-  box-shadow:0 12px 30px rgba(0,0,0,.07);
-  font-family:'Cormorant Garamond', serif;
-  font-size:1.7rem;
-  color:#4b3b29;
-}
 
 .closing__names{
   margin:0;
