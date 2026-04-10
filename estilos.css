@@ -182,8 +182,8 @@ body{
    ========================= */
 
 .site{
-  background:#f5efe6;
-  min-height:100vh;
+  background:
+    linear-gradient(180deg, #6f8fbf 0%, #f7f1e8 18%, #efe6d8 100%);
 }
 
 /* NAV */
