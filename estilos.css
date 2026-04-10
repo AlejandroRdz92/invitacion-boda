@@ -1731,181 +1731,68 @@ body{
 }
 
 /* =========================
-   GIFT MODAL
+   GIFT MODAL - MOBILE FIX
    ========================= */
+@media (max-width: 768px){
 
-.giftmodal.is-hidden{
-  display:none;
-}
+  .giftmodal{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
 
-.giftmodal{
-  position:fixed;
-  inset:0;
-  z-index:1200;
-}
+  .giftmodal__card{
+    position: relative;
+    width: 100%;
+    margin: 0;
+    max-width: none;
 
-.giftmodal__backdrop{
-  position:absolute;
-  inset:0;
-  background:rgba(22,18,15,.46);
-  backdrop-filter: blur(6px);
-}
+    border-radius: 26px 26px 0 0;
+    padding: 26px 18px 20px;
 
-.giftmodal__card{
-  position:relative;
-  z-index:1;
-  width:min(620px, calc(100% - 28px));
-  margin:40px auto;
-  border-radius:30px;
-  background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(250,246,240,.98));
-  border:1px solid rgba(130,113,89,.12);
-  box-shadow:0 28px 70px rgba(30,24,20,.22);
-  padding:30px 24px 24px;
-}
+    /* 🔥 CLAVE: evita que se corte */
+    max-height: min(90svh, 90vh);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 
-.giftmodal__close{
-  position:absolute;
-  top:14px;
-  right:14px;
-  width:40px;
-  height:40px;
-  border:none;
-  border-radius:999px;
-  background:rgba(245,239,230,.9);
-  color:#5f4c36;
-  font-size:1.6rem;
-  line-height:1;
-  cursor:pointer;
-}
+    box-shadow: 0 -10px 40px rgba(0,0,0,.25);
+  }
 
-.giftmodal__eyebrow{
-  margin:0 0 10px;
-  text-transform:uppercase;
-  letter-spacing:.22em;
-  font-size:.82rem;
-  color:rgba(74,58,40,.58);
-}
+  .giftmodal__close{
+    position: sticky;
+    top: 0;
+    right: 0;
 
-.giftmodal__title{
-  margin:0;
-  font-family:"Cormorant Garamond", serif;
-  font-size:2.35rem;
-  color:#463624;
-  font-weight:400;
-}
+    margin-left: auto;
+    z-index: 5;
 
-.giftmodal__subtitle{
-  margin:12px 0 0;
-  line-height:1.75;
-  color:rgba(74,58,40,.82);
-}
+    background: rgba(255,255,255,.9);
+    backdrop-filter: blur(6px);
+  }
 
-.giftmodal__bank{
-  margin-top:22px;
-  padding:18px;
-  border-radius:22px;
-  background:rgba(255,255,255,.74);
-  border:1px solid rgba(130,113,89,.12);
-  display:flex;
-  gap:14px;
-  align-items:center;
-}
+  .giftmodal__bank{
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
 
-.giftmodal__bankBadge{
-  min-width:72px;
-  height:72px;
-  border-radius:20px;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(135deg, #708db7, #58759f);
-  color:#fff;
-  font-weight:600;
-  letter-spacing:.08em;
-}
+  .giftmodal__bankBadge{
+    width: 56px;
+    height: 56px;
+    font-size: 1rem;
+  }
 
-.giftmodal__bankLabel{
-  display:block;
-  font-size:.82rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:rgba(74,58,40,.54);
-  margin-bottom:6px;
-}
+  .giftmodal__valueRow{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
 
-.giftmodal__bankValue{
-  color:#4a3a28;
-  font-size:1rem;
-}
+  .giftmodal__copy{
+    width: 100%;
+    text-align: center;
+  }
 
-.giftmodal__details{
-  margin-top:18px;
-  display:grid;
-  gap:14px;
-}
-
-.giftmodal__detail{
-  padding:16px 18px;
-  border-radius:18px;
-  background:rgba(255,255,255,.68);
-  border:1px solid rgba(130,113,89,.10);
-}
-
-.giftmodal__label{
-  display:block;
-  font-size:.82rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:rgba(74,58,40,.54);
-  margin-bottom:8px;
-}
-
-.giftmodal__valueRow{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-
-.giftmodal__value{
-  display:block;
-  padding:12px 14px;
-  border-radius:14px;
-  background:#f6f2ec;
-  border:1px solid rgba(130,113,89,.10);
-  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size:1rem;
-  color:#3f3124;
-  overflow-wrap:anywhere;
-}
-
-.giftmodal__copy{
-  border:none;
-  border-radius:999px;
-  min-height:42px;
-  padding:0 16px;
-  background:#6d86ad;
-  color:#fff;
-  cursor:pointer;
-}
-
-.giftmodal__valueText{
-  margin:0;
-  color:#4a3a28;
-  line-height:1.7;
-}
-
-.giftmodal__helper{
-  margin:16px 0 0;
-  line-height:1.7;
-  color:rgba(74,58,40,.72);
-}
-
-.giftmodal__status{
-  margin:8px 0 0;
-  min-height:22px;
-  font-size:.95rem;
-  color:#3a2f20;
-  opacity:.86;
 }
 
 /* =========================
