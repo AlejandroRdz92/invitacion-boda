@@ -58,7 +58,7 @@ body{
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: clamp(20px, 4vh, 40px) 16px clamp(6px, 1.2vh, 14px);
+  padding: clamp(30px, 6vh, 70px) 16px clamp(2px, .8vh, 8px);
 }
 
 .lobby__names{
@@ -66,15 +66,18 @@ body{
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   letter-spacing: .02em;
-  font-size: clamp(1.9rem, 6vw, 4rem);
-  line-height: 1.05;
+  font-size: clamp(2.25rem, 7vw, 4.65rem);
+  line-height: .92;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1px, .45vh, 6px);
 }
 
-.lobby__date{
-  margin: clamp(4px, 1vh, 10px) 0 0;
-  font-size: clamp(.86rem, 2.8vw, 1.1rem);
-  letter-spacing: .35em;
-  opacity: .75;
+.lobby__amp{
+  font-size: .68em;
+  line-height: .78;
+  opacity: .88;
 }
 
 .lobby__center{
@@ -1381,6 +1384,11 @@ body{
   background:#f5efe6;
 }
 
+.closing + .gallery--carousel,
+.closing + .sep + .gallery--carousel{
+  background: linear-gradient(180deg, #f5efe6 0%, #f3ecdf 100%);
+}
+
 .gallery__container{
   max-width: 1100px;
   margin: 0 auto;
@@ -2470,8 +2478,8 @@ body{
   .countdown__number{ font-size:1.6rem; }
 
   .lobby__top{
-    padding-top: 70px;
-    padding-bottom: 4px;
+    padding-top: clamp(44px, 9vh, 76px);
+    padding-bottom: 0;
   }
 
   .lobby__bottom{
@@ -2480,15 +2488,13 @@ body{
   }
 
   .lobby__names{
-    font-size: clamp(2.8rem, 9vw, 3.4rem);
-    margin-top: 16vh;
-    line-height: 1.05;
+    font-size: clamp(2.55rem, 12vw, 3.75rem);
+    margin-top: 8vh;
+    line-height: .9;
   }
 
-  .lobby__date{
-    font-size: clamp(1.1rem, 4vw, 1.35rem);
-    margin-top: 10px;
-    letter-spacing: .35em;
+  .lobby__amp{
+    font-size: .62em;
   }
 
   .rsvp{
@@ -2561,20 +2567,14 @@ body{
   }
 
   .lobby__top{
-    padding-top: 60px;
-    padding-bottom: 4px;
+    padding-top: 54px;
+    padding-bottom: 0;
   }
 
   .lobby__names{
-    font-size: clamp(2.5rem, 8.8vw, 3rem);
-    margin-top: 15vh;
-    line-height: 1.05;
-  }
-
-  .lobby__date{
-    font-size: clamp(1rem, 3.8vw, 1.2rem);
-    margin-top: 8px;
-    letter-spacing: .32em;
+    font-size: clamp(2.65rem, 13vw, 3.55rem);
+    margin-top: 7vh;
+    line-height: .9;
   }
 }
 
@@ -2587,8 +2587,8 @@ body{
   }
 
   .lobby__top{
-    padding-top: 38px;
-    padding-bottom: 2px;
+    padding-top: 32px;
+    padding-bottom: 0;
   }
 
   .lobby__bottom{
@@ -2597,14 +2597,8 @@ body{
   }
 
   .lobby__names{
-    font-size: clamp(2.2rem, 8vw, 2.8rem);
-    margin-top: 10vh;
-    line-height: 1.05;
-  }
-
-  .lobby__date{
-    font-size: clamp(.95rem, 3.4vw, 1.08rem);
-    margin-top: 6px;
-    letter-spacing: .28em;
+    font-size: clamp(2.15rem, 10vw, 3rem);
+    margin-top: 4vh;
+    line-height: .9;
   }
 }
