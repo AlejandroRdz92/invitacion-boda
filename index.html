@@ -19,7 +19,7 @@
 
 <body>
 
-  <!-- 🎵 Música de fondo (2 rutas por si cambiaste carpetas) -->
+  <!-- 🎵 Música de fondo -->
   <audio id="bgMusic" loop preload="auto">
     <source src="musica/Mitad.mp3" type="audio/mpeg" />
     <source src="musica/Mitad.mp3" type="audio/mpeg" />
@@ -31,43 +31,40 @@
        ========================= -->
   <section id="lobby" class="lobby" aria-label="Portada invitación">
 
-      <header class="lobby__top">
-        <h1 class="lobby__names" aria-label="Sarahi y Alejandro">
-          <span>Sarahi</span>
-          <span class="lobby__amp">&amp;</span>
-          <span>Alejandro</span>
-        </h1>
-      </header>
+    <header class="lobby__top">
+      <h1 class="lobby__names" aria-label="Sarahi y Alejandro">
+        <span>Sarahi</span>
+        <span class="lobby__amp">&amp;</span>
+        <span>Alejandro</span>
+      </h1>
+    </header>
 
-      <main class="lobby__center">
-        <div class="lobby__stage" aria-label="Sobre de invitación">
+    <main class="lobby__center">
+      <div class="lobby__stage" aria-label="Sobre de invitación">
 
-          <!-- Sobre PNG -->
-          <img
-            class="lobby__envelope"
-            src="Imagenes/Sobre14.png"
-            alt="Sobre de invitación"
-            draggable="false"
-          />
+        <img
+          class="lobby__envelope"
+          src="Imagenes/Sobre14.png"
+          alt="Sobre de invitación"
+          draggable="false"
+        />
 
-          <!-- Hotspot SOLO en el sello -->
-          <button
-            id="openInvite"
-            class="seal-hotspot"
-            type="button"
-            aria-label="Abrir invitación"
-            title="Abrir invitación"
-          ></button>
+        <button
+          id="openInvite"
+          class="seal-hotspot"
+          type="button"
+          aria-label="Abrir invitación"
+          title="Abrir invitación"
+        ></button>
 
-          <span class="seal-ring" aria-hidden="true"></span>
+        <span class="seal-ring" aria-hidden="true"></span>
 
-          
-        </div>
-      </main>
+      </div>
+    </main>
 
-      <footer class="lobby__bottom">
-        <p class="lobby__hint">Toca el sello para abrir</p>
-      </footer>
+    <footer class="lobby__bottom">
+      <p class="lobby__hint">Toca el sello para abrir</p>
+    </footer>
 
   </section>
 
@@ -78,7 +75,6 @@
 
     <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
-      <!--<a href="#" class="navbar__logo">A&amp;S</a> -->
       <div class="navbar__actions"></div>
     </nav>
 
@@ -117,7 +113,6 @@
 
         <p class="hero__eyebrow">Solo Faltan..</p>
 
-        <!-- Countdown -->
         <div class="countdown" id="countdown">
           <div class="countdown__block">
             <div class="countdown__number" id="days">00</div>
@@ -147,380 +142,504 @@
       </div>
     </section>
 
-<!-- ========== PÁGINA 2: BENDICIÓN DE DIOS Y PADRES ========== -->
-<section class="story blessing reveal" data-reveal id="wedding-info">
-  <div class="story__wrap blessing__wrap">
-    <div class="story__card blessing__card">
+    <!-- ========== PÁGINA 2: BENDICIÓN DE DIOS Y PADRES ========== -->
+    <section class="story blessing reveal" data-reveal id="wedding-info">
+      <div class="story__wrap blessing__wrap">
+        <div class="story__card blessing__card">
 
-      <div class="blessing__ornament blessing__ornament--top reveal" data-reveal aria-hidden="true">
-        <span></span><i>♥</i><span></span>
-      </div>
-
-      <p class="blessing__eyebrow reveal" data-reveal>Con la bendición de</p>
-
-      <h2 class="blessing__title reveal" data-reveal>
-        Dios y de<br>
-        nuestros padres
-      </h2>
-
-      <div class="blessing__divider reveal" data-reveal aria-hidden="true">
-        <span></span><i>♥</i><span></span>
-      </div>
-
-      <figure class="blessing__photo reveal" data-reveal>
-        <img src="Imagenes/Nosotros2.jpg" alt="Sarahi y Alejandro">
-      </figure>
-
-      <div class="blessing__parents reveal" data-reveal>
-        <article class="blessing__side blessing__side--bride">
-          <p class="blessing__role">Novia</p>
-          <div class="blessing__miniLeaf" aria-hidden="true">❧</div>
-
-          <div class="blessing__parent">
-            <h3>Adolfo Perez</h3>
-            <p>Padre</p>
-          </div>
-
-          <div class="blessing__smallDivider" aria-hidden="true">
+          <div class="blessing__ornament blessing__ornament--top reveal" data-reveal aria-hidden="true">
             <span></span><i>♥</i><span></span>
           </div>
 
-          <div class="blessing__parent">
-            <h3>Veronica Cantu</h3>
-            <p>Madre</p>
-          </div>
-        </article>
+          <p class="blessing__eyebrow reveal" data-reveal>Con la bendición de</p>
 
-        <div class="blessing__centerLine" aria-hidden="true"><i>♥</i></div>
+          <h2 class="blessing__title reveal" data-reveal>
+            Dios y de<br>
+            nuestros padres
+          </h2>
 
-        <article class="blessing__side blessing__side--groom">
-          <p class="blessing__role">Novio</p>
-          <div class="blessing__miniLeaf" aria-hidden="true">❧</div>
-
-          <div class="blessing__parent">
-            <h3>Jesus Rodriguez</h3>
-            <p>Padre</p>
-          </div>
-
-          <div class="blessing__smallDivider" aria-hidden="true">
+          <div class="blessing__divider reveal" data-reveal aria-hidden="true">
             <span></span><i>♥</i><span></span>
           </div>
 
-          <div class="blessing__parent">
-            <h3>Isela Donajy</h3>
-            <p>Madre</p>
+          <figure class="blessing__photo reveal" data-reveal>
+            <img src="Imagenes/Nosotros2.jpg" alt="Sarahi y Alejandro">
+          </figure>
+
+          <div class="blessing__parents reveal" data-reveal>
+            <article class="blessing__side blessing__side--bride">
+              <p class="blessing__role">Novia</p>
+              <div class="blessing__miniLeaf" aria-hidden="true">❧</div>
+
+              <div class="blessing__parent">
+                <h3>Adolfo Perez</h3>
+                <p>Padre</p>
+              </div>
+
+              <div class="blessing__smallDivider" aria-hidden="true">
+                <span></span><i>♥</i><span></span>
+              </div>
+
+              <div class="blessing__parent">
+                <h3>Veronica Cantu</h3>
+                <p>Madre</p>
+              </div>
+            </article>
+
+            <div class="blessing__centerLine" aria-hidden="true"><i>♥</i></div>
+
+            <article class="blessing__side blessing__side--groom">
+              <p class="blessing__role">Novio</p>
+              <div class="blessing__miniLeaf" aria-hidden="true">❧</div>
+
+              <div class="blessing__parent">
+                <h3>Jesus Rodriguez</h3>
+                <p>Padre</p>
+              </div>
+
+              <div class="blessing__smallDivider" aria-hidden="true">
+                <span></span><i>♥</i><span></span>
+              </div>
+
+              <div class="blessing__parent">
+                <h3>Isela Donajy</h3>
+                <p>Madre</p>
+              </div>
+            </article>
           </div>
-        </article>
-      </div>
 
-      <div class="blessing__ornament blessing__ornament--bottom reveal" data-reveal aria-hidden="true">
-        <span></span><i>♥</i><span></span>
-      </div>
-
-    </div>
-  </div>
-</section>
-   
-  <!-- ========== SEPARATOR ========== -->
-<div class="sep reveal" data-reveal aria-hidden="true">
-  <span class="sep__line"></span>
-  <span class="sep__badge">A&amp;S</span>
-  <span class="sep__line"></span>
-</div>
-
-<!-- ========== SEPARATOR ========== -->
-<div class="sep reveal" data-reveal aria-hidden="true">
-  <span class="sep__line"></span>
-  <span class="sep__badge">A&amp;S</span>
-  <span class="sep__line"></span>
-</div>
-
-    
-    <!-- ========== CEREMONIAS & RECEPCIÓN ========== -->
-    <section class="venues reveal" data-reveal id="venues">
-      <div class="venues__grid">
-        <div class="venue-card reveal" data-reveal>
-          <div class="venue-card__image-wrapper">
-            <img class="venue-card__image"
-              src="Imagenes/Iglesia.jpg"
-              alt="Iglesia para la ceremonia" />
+          <div class="blessing__ornament blessing__ornament--bottom reveal" data-reveal aria-hidden="true">
+            <span></span><i>♥</i><span></span>
           </div>
-          <h3 class="venue-card__title">Ceremonia</h3>
-          <p class="venue-card__name">Parroquia San Vicente</p>
-          <p class="venue-card__address"> 📍C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina</p>
-          <p class="venue-card__time">🕒Sábado, 03 de octubre — 6:30 PM</p>
-        <button
-  type="button"
-  class="venue-card__map"
-  data-map
-  data-title="Ceremonia — Parroquia San Vicente"
-  data-address="C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina, N.L."
->
-  Abrir en Google Maps
-</button>
-        </div>
 
-        <div class="venue-card reveal" data-reveal data-reveal-delay="120">
-          <div class="venue-card__image-wrapper">
-            <img class="venue-card__image"
-              src="Imagenes/Lugar.jpg"
-              alt="Jardín para la recepción" />
-          </div>
-          <h3 class="venue-card__title">Recepción</h3>
-          <p class="venue-card__name">Fábrica Antigua</p>
-          <p class="venue-card__address">📍Santa Catarina, Nuevo León</p>
-          <p class="venue-card__time">🕒Sábado, 03 de octubre — 7:30 PM</p>
-         <button
-  type="button"
-  class="venue-card__map"
-  data-map
-  data-title="Recepción — Fábrica Antigua"
-  data-address="Benito Juárez 308, La Fama, 66100 Cdad. Santa Catarina, N.L."
->
-  Abrir en Google Maps
-</button>
         </div>
       </div>
     </section>
 
     <!-- ========== SEPARATOR ========== -->
-<div class="sep reveal" data-reveal aria-hidden="true">
-  <span class="sep__line"></span>
-  <span class="sep__badge">A&amp;S</span>
-  <span class="sep__line"></span>
-</div>
-
-          
-<!-- ========== TIMELINE DEL DÍA ========== -->
-<section class="timeline" id="timeline">
-  <div class="timeline__container">
-
-    <header class="timeline__header reveal" data-reveal>
-      <h2 class="timeline__title">Itinerario del día</h2>
-      <p class="timeline__subtitle">Acompáñanos a vivir cada momento ✨</p>
-    </header>
-
-    <div class="timeline__list">
-
-      <article class="timeline__item reveal" data-reveal>
-        <div class="timeline__time">6:30 PM</div>
-        <div class="timeline__dot" aria-hidden="true"><span class="timeline__icon">⛪</span></div>
-        <div class="timeline__card">
-          <h3 class="timeline__cardTitle">Ceremonia Religiosa</h3>
-          <p class="timeline__cardText">Nos vemos en la iglesia para comenzar este día tan especial.</p>
-        </div>
-      </article>
-
-      <article class="timeline__item reveal" data-reveal>
-        <div class="timeline__time">7:30 PM</div>
-        <div class="timeline__dot" aria-hidden="true"><span class="timeline__icon">🥂</span></div>
-        <div class="timeline__card">
-          <h3 class="timeline__cardTitle">Recepción en Salón</h3>
-          <p class="timeline__cardText">Brindis de bienvenida, fotos y comenzamos la celebración.</p>
-        </div>
-      </article>
-
-      <article class="timeline__item reveal" data-reveal>
-        <div class="timeline__time">8:00 PM</div>
-        <div class="timeline__dot" aria-hidden="true"><span class="timeline__icon">📜</span></div>
-        <div class="timeline__card">
-          <h3 class="timeline__cardTitle">Ceremonia Civil</h3>
-          <p class="timeline__cardText">Un momento íntimo para formalizar nuestro “sí” 💍</p>
-        </div>
-      </article>
-
-      <article class="timeline__item reveal" data-reveal>
-        <div class="timeline__time">9:00 PM</div>
-        <div class="timeline__dot" aria-hidden="true"><span class="timeline__icon">🎶</span></div>
-        <div class="timeline__card">
-          <h3 class="timeline__cardTitle">Fiesta</h3>
-          <p class="timeline__cardText">¡Música, baile y a disfrutar!</p>
-        </div>
-      </article>
-
-      <article class="timeline__item reveal" data-reveal>
-        <div class="timeline__time">11:00 PM</div>
-        <div class="timeline__dot" aria-hidden="true"><span class="timeline__icon">🍰</span></div>
-        <div class="timeline__card">
-          <h3 class="timeline__cardTitle">Pastel & Brindis</h3>
-          <p class="timeline__cardText">Compartimos el pastel y un brindis por los nuevos comienzos 🥂</p>
-        </div>
-      </article>
-
+    <div class="sep reveal" data-reveal aria-hidden="true">
+      <span class="sep__line"></span>
+      <span class="sep__badge">A&amp;S</span>
+      <span class="sep__line"></span>
     </div>
-  </div>
-</section>
 
-<!-- ========== SEPARATOR ========== -->
-<div class="sep reveal" data-reveal aria-hidden="true">
-  <span class="sep__line"></span>
-  <span class="sep__badge">A&amp;S</span>
-  <span class="sep__line"></span>
-</div>
-
-<!-- ========== DRESS CODE (PÁGINA 5 / PREMIUM FINAL) ========== -->
-<section class="dress dc5 reveal" data-reveal id="dress-code">
-  <div class="dc5__wrap">
-    <article class="dc5__card reveal" data-reveal>
-
-      <div class="dc5__flourish dc5__flourish--top" aria-hidden="true">
-        <span></span>
-        <svg viewBox="0 0 240 46" role="img" focusable="false">
-          <path d="M120 31c-10-12-22-9-22-18 0-5 5-7 9-5 7 3 10 13 13 23z"/>
-          <path d="M120 31c10-12 22-9 22-18 0-5-5-7-9-5-7 3-10 13-13 23z"/>
-          <path d="M120 31c-7-11-2-23 0-27 2 4 7 16 0 27z"/>
-          <path d="M98 27c-18-1-32-9-45-24M142 27c18-1 32-9 45-24"/>
-          <path d="M78 13c2-8 9-10 15-8-2 7-8 10-15 8zM62 6c-6 2-9 8-8 14 8-1 12-7 8-14zM162 13c-2-8-9-10-15-8 2 7 8 10 15 8zM178 6c6 2 9 8 8 14-8-1-12-7-8-14z"/>
-        </svg>
-        <span></span>
-      </div>
-
-      <header class="dc5__header">
-        <p class="dc5__eyebrow">Código de vestimenta</p>
-        <h2 class="dc5__title">Formal</h2>
-        <div class="dc5__miniSep" aria-hidden="true"><span></span><i>♥</i><span></span></div>
-        <p class="dc5__subtitle">Agradecemos vestir acorde<br>a la ocasión.</p>
-      </header>
-
-      <div class="dc5__guide" aria-label="Guía de código de vestimenta">
-
-        <article class="dc5__item">
-          <div class="dc5__icon" aria-hidden="true">
-            <svg class="dc5__svg dc5__svg--suit" viewBox="0 0 160 160" role="img" focusable="false">
-              <path d="M61 25h38"/>
-              <path d="M62 25c4 14 9 24 18 34 9-10 14-20 18-34"/>
-              <path d="M60 27 35 44l10 31v58h70V75l10-31-25-17"/>
-              <path d="M80 60v73"/>
-              <path d="M60 31 80 64l20-33"/>
-              <path d="M70 58h20"/>
-              <path d="M73 61l-7 44 14 15 14-15-7-44"/>
-              <path d="M51 48l-10 27 24-8"/>
-              <path d="M109 48l10 27-24-8"/>
-              <path d="M51 91h20"/>
-              <path d="M89 91h20"/>
-              <path d="M45 133h70"/>
-              <path d="M36 44c-10 16-14 34-12 58"/>
-              <path d="M124 44c10 16 14 34 12 58"/>
-              <path d="M66 25v22"/>
-              <path d="M94 25v22"/>
-              <path d="M73 31c4 5 10 5 14 0"/>
-            </svg>
-          </div>
-          <h3>Hombres</h3>
-          <p>Traje formal oscuro.<br>Corbata opcional.</p>
-        </article>
-
-        <span class="dc5__divider" aria-hidden="true"></span>
-
-        <article class="dc5__item">
-          <div class="dc5__icon" aria-hidden="true">
-            <svg class="dc5__svg dc5__svg--dress" viewBox="0 0 160 160" role="img" focusable="false">
-              <path d="M63 24c5 9 29 9 34 0"/>
-              <path d="M63 24h34"/>
-              <path d="M65 25c-2 18-9 29-22 40"/>
-              <path d="M95 25c2 18 9 29 22 40"/>
-              <path d="M43 65c15 10 59 10 74 0"/>
-              <path d="M58 66 31 133c25-8 73-8 98 0L102 66"/>
-              <path d="M62 71c12 7 24 7 36 0"/>
-              <path d="M52 90c18 7 38 7 56 0"/>
-              <path d="M43 113c24 8 50 8 74 0"/>
-              <path d="M35 133c30 9 60 9 90 0"/>
-              <path d="M73 25c0 17 2 30 7 41"/>
-              <path d="M87 25c0 17-2 30-7 41"/>
-              <path d="M64 38c9 7 23 7 32 0"/>
-            </svg>
-          </div>
-          <h3>Mujeres</h3>
-          <p>Vestido largo<br>o midi elegante.</p>
-        </article>
-
-        <span class="dc5__divider" aria-hidden="true"></span>
-
-        <article class="dc5__item">
-          <div class="dc5__icon dc5__icon--colors" aria-hidden="true">
-            <span class="dc5__swatch dc5__swatch--ivory"></span>
-            <span class="dc5__swatch dc5__swatch--navy"></span>
-            <span class="dc5__swatch dc5__swatch--blue"></span>
-          </div>
-          <h3>Colores</h3>
-          <p>El blanco es exclusivo para la novia.<br>Evitar rojo.</p>
-        </article>
-      </div>
-
-      <div class="dc5__note">
-        <svg class="dc5__leaf dc5__leaf--left" viewBox="0 0 90 130" aria-hidden="true">
-          <path d="M55 118C42 90 37 58 47 12"/>
-          <path d="M44 78c-20-1-31-13-36-27 18 0 31 10 36 27zM49 60c-17-9-22-24-18-39 15 6 22 20 18 39zM48 96c-16 4-28-2-37-15 16-5 29 1 37 15zM52 43c15-4 27 2 36 14-17 5-29-1-36-14zM55 73c16-5 29 1 36 14-17 6-30-1-36-14z"/>
-        </svg>
-        <p>Agradecemos formar parte de este día tan especial<br>y ayudarnos a que todo sea perfecto.</p>
-        <svg class="dc5__leaf dc5__leaf--right" viewBox="0 0 90 130" aria-hidden="true">
-          <path d="M35 118c13-28 18-60 8-106"/>
-          <path d="M46 78c20-1 31-13 36-27-18 0-31 10-36 27zM41 60c17-9 22-24 18-39-15 6-22 20-18 39zM42 96c16 4 28-2 37-15-16-5-29 1-37 15zM38 43c-15-4-27 2-36 14 17 5 29-1 36-14zM35 73c-16-5-29 1-36 14 17 6 30-1 36-14z"/>
-        </svg>
-      </div>
-
-      <div class="dc5__flourish dc5__flourish--bottom" aria-hidden="true">
-        <span></span>
-        <svg viewBox="0 0 240 46" role="img" focusable="false">
-          <path d="M120 15c-10 12-22 9-22 18 0 5 5 7 9 5 7-3 10-13 13-23z"/>
-          <path d="M120 15c10 12 22 9 22 18 0 5-5 7-9 5-7-3-10-13-13-23z"/>
-          <path d="M120 15c-7 11-2 23 0 27 2-4 7-16 0-27z"/>
-          <path d="M98 19c-18 1-32 9-45 24M142 19c18 1 32 9 45 24"/>
-          <path d="M78 33c2 8 9 10 15 8-2-7-8-10-15-8zM62 40c-6-2-9-8-8-14 8 1 12 7 8 14zM162 33c-2 8-9 10-15 8 2-7 8-10 15-8zM178 40c6-2 9-8 8-14-8 1-12 7-8 14z"/>
-        </svg>
-        <span></span>
-      </div>
-
-      <p class="dc5__brand">A &amp; S</p>
-    </article>
-  </div>
-</section>
     <!-- ========== SEPARATOR ========== -->
-<div class="sep reveal" data-reveal aria-hidden="true">
-  <span class="sep__line"></span>
-  <span class="sep__badge">A&amp;S</span>
-  <span class="sep__line"></span>
-</div>
-
-<!-- ========== MESA DE REGALOS ========== -->
-<section class="gifts reveal" data-reveal id="mesa-regalos">
-  <div class="gifts__wrap">
-    <header class="gifts__header">
-      <p class="gifts__eyebrow">Con cariño</p>
-      <h2 class="gifts__title">Mesa de Regalos</h2>
-      <p class="gifts__subtitle">
-        Su presencia es nuestro mejor regalo, pero si desean tener un detalle con nosotros,
-        podrán hacerlo mediante transferencia bancaria o en sobre el día del evento.
-      </p>
-    </header>
-
-    <div class="gifts__grid">
-      <article class="gifts__card reveal" data-reveal>
-        <div class="gifts__cardIcon" aria-hidden="true">✉</div>
-        <h3 class="gifts__cardTitle">Sobre el día del evento</h3>
-        <p class="gifts__cardText">
-          Si lo prefieren, también habrá un espacio para recibir sobres físicamente durante la celebración.
-        </p>
-      </article>
-
-      <article class="gifts__card gifts__card--primary reveal" data-reveal data-reveal-delay="100">
-        <div class="gifts__cardIcon" aria-hidden="true">⌁</div>
-        <h3 class="gifts__cardTitle">Transferencia bancaria</h3>
-        <p class="gifts__cardText">
-          Hemos preparado una opción discreta y práctica para compartir nuestra cuenta CLABE.
-        </p>
-        <button class="gifts__btn" type="button" id="openGiftModal">Ver datos para transferencia</button>
-      </article>
+    <div class="sep reveal" data-reveal aria-hidden="true">
+      <span class="sep__line"></span>
+      <span class="sep__badge">A&amp;S</span>
+      <span class="sep__line"></span>
     </div>
-  </div>
-</section>
 
-<!-- ========== SEPARATOR ========== -->
-<div class="sep reveal" data-reveal aria-hidden="true">
-  <span class="sep__line"></span>
-  <span class="sep__badge">A&amp;S</span>
-  <span class="sep__line"></span>
-</div>
+    <!-- ========== CEREMONIAS & RECEPCIÓN ========== -->
+    <section class="venues reveal" data-reveal id="venues">
+      <div class="venues__grid">
+
+        <div class="venue-card reveal" data-reveal>
+          <div class="venue-card__image-wrapper">
+            <img
+              class="venue-card__image"
+              src="Imagenes/Iglesia.jpg"
+              alt="Iglesia para la ceremonia"
+            />
+          </div>
+
+          <h3 class="venue-card__title">Ceremonia</h3>
+          <p class="venue-card__name">Parroquia San Vicente</p>
+          <p class="venue-card__address"> 📍C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina</p>
+          <p class="venue-card__time">🕒Sábado, 03 de octubre — 6:30 PM</p>
+
+          <button
+            type="button"
+            class="venue-card__map"
+            data-map
+            data-title="Ceremonia — Parroquia San Vicente"
+            data-address="C. Virgilio C. Guerra #421, La Fama, 66100 Cdad. Santa Catarina, N.L."
+          >
+            Abrir en Google Maps
+          </button>
+        </div>
+
+        <div class="venue-card reveal" data-reveal data-reveal-delay="120">
+          <div class="venue-card__image-wrapper">
+            <img
+              class="venue-card__image"
+              src="Imagenes/Lugar.jpg"
+              alt="Jardín para la recepción"
+            />
+          </div>
+
+          <h3 class="venue-card__title">Recepción</h3>
+          <p class="venue-card__name">Fábrica Antigua</p>
+          <p class="venue-card__address">📍Santa Catarina, Nuevo León</p>
+          <p class="venue-card__time">🕒Sábado, 03 de octubre — 7:30 PM</p>
+
+          <button
+            type="button"
+            class="venue-card__map"
+            data-map
+            data-title="Recepción — Fábrica Antigua"
+            data-address="Benito Juárez 308, La Fama, 66100 Cdad. Santa Catarina, N.L."
+          >
+            Abrir en Google Maps
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== SEPARATOR ========== -->
+    <div class="sep reveal" data-reveal aria-hidden="true">
+      <span class="sep__line"></span>
+      <span class="sep__badge">A&amp;S</span>
+      <span class="sep__line"></span>
+    </div>
+
+    <!-- ========== TIMELINE DEL DÍA ========== -->
+    <section class="timeline" id="timeline">
+      <div class="timeline__container">
+
+        <header class="timeline__header reveal" data-reveal>
+          <h2 class="timeline__title">Itinerario del día</h2>
+          <p class="timeline__subtitle">Acompáñanos a vivir cada momento ✨</p>
+        </header>
+
+        <div class="timeline__list">
+
+          <article class="timeline__item reveal" data-reveal>
+            <div class="timeline__time">6:30 PM</div>
+            <div class="timeline__dot" aria-hidden="true"><span class="timeline__icon">⛪</span></div>
+            <div class="timeline__card">
+              <h3 class="timeline__cardTitle">Ceremonia Religiosa</h3>
+              <p class="timeline__cardText">Nos vemos en la iglesia para comenzar este día tan especial.</p>
+            </div>
+          </article>
+
+          <article class="timeline__item reveal" data-reveal>
+            <div class="timeline__time">7:30 PM</div>
+            <div class="timeline__dot" aria-hidden="true"><span class="timeline__icon">🥂</span></div>
+            <div class="timeline__card">
+              <h3 class="timeline__cardTitle">Recepción en Salón</h3>
+              <p class="timeline__cardText">Brindis de bienvenida, fotos y comenzamos la celebración.</p>
+            </div>
+          </article>
+
+          <article class="timeline__item reveal" data-reveal>
+            <div class="timeline__time">8:00 PM</div>
+            <div class="timeline__dot" aria-hidden="true"><span class="timeline__icon">📜</span></div>
+            <div class="timeline__card">
+              <h3 class="timeline__cardTitle">Ceremonia Civil</h3>
+              <p class="timeline__cardText">Un momento íntimo para formalizar nuestro “sí” 💍</p>
+            </div>
+          </article>
+
+          <article class="timeline__item reveal" data-reveal>
+            <div class="timeline__time">9:00 PM</div>
+            <div class="timeline__dot" aria-hidden="true"><span class="timeline__icon">🎶</span></div>
+            <div class="timeline__card">
+              <h3 class="timeline__cardTitle">Fiesta</h3>
+              <p class="timeline__cardText">¡Música, baile y a disfrutar!</p>
+            </div>
+          </article>
+
+          <article class="timeline__item reveal" data-reveal>
+            <div class="timeline__time">11:00 PM</div>
+            <div class="timeline__dot" aria-hidden="true"><span class="timeline__icon">🍰</span></div>
+            <div class="timeline__card">
+              <h3 class="timeline__cardTitle">Pastel & Brindis</h3>
+              <p class="timeline__cardText">Compartimos el pastel y un brindis por los nuevos comienzos 🥂</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SEPARATOR ========== -->
+    <div class="sep reveal" data-reveal aria-hidden="true">
+      <span class="sep__line"></span>
+      <span class="sep__badge">A&amp;S</span>
+      <span class="sep__line"></span>
+    </div>
+
+    <!-- ========== DRESS CODE ========== -->
+    <section class="dress dc5 reveal" data-reveal id="dress-code">
+      <div class="dc5__wrap">
+        <article class="dc5__card reveal" data-reveal>
+
+          <div class="dc5__flourish dc5__flourish--top" aria-hidden="true">
+            <span></span>
+            <svg viewBox="0 0 240 46" role="img" focusable="false">
+              <path d="M120 31c-10-12-22-9-22-18 0-5 5-7 9-5 7 3 10 13 13 23z"/>
+              <path d="M120 31c10-12 22-9 22-18 0-5-5-7-9-5-7 3-10 13-13 23z"/>
+              <path d="M120 31c-7-11-2-23 0-27 2 4 7 16 0 27z"/>
+              <path d="M98 27c-18-1-32-9-45-24M142 27c18-1 32-9 45-24"/>
+              <path d="M78 13c2-8 9-10 15-8-2 7-8 10-15 8zM62 6c-6 2-9 8-8 14 8-1 12-7 8-14zM162 13c-2-8-9-10-15-8 2 7 8 10 15 8zM178 6c6 2 9 8 8 14-8-1-12-7-8-14z"/>
+            </svg>
+            <span></span>
+          </div>
+
+          <header class="dc5__header">
+            <p class="dc5__eyebrow">Código de vestimenta</p>
+            <h2 class="dc5__title">Formal</h2>
+            <div class="dc5__miniSep" aria-hidden="true"><span></span><i>♥</i><span></span></div>
+            <p class="dc5__subtitle">Agradecemos vestir acorde<br>a la ocasión.</p>
+          </header>
+
+          <div class="dc5__guide" aria-label="Guía de código de vestimenta">
+
+            <article class="dc5__item">
+              <div class="dc5__icon" aria-hidden="true">
+                <svg class="dc5__svg dc5__svg--suit" viewBox="0 0 160 160" role="img" focusable="false">
+                  <path d="M61 25h38"/>
+                  <path d="M62 25c4 14 9 24 18 34 9-10 14-20 18-34"/>
+                  <path d="M60 27 35 44l10 31v58h70V75l10-31-25-17"/>
+                  <path d="M80 60v73"/>
+                  <path d="M60 31 80 64l20-33"/>
+                  <path d="M70 58h20"/>
+                  <path d="M73 61l-7 44 14 15 14-15-7-44"/>
+                  <path d="M51 48l-10 27 24-8"/>
+                  <path d="M109 48l10 27-24-8"/>
+                  <path d="M51 91h20"/>
+                  <path d="M89 91h20"/>
+                  <path d="M45 133h70"/>
+                  <path d="M36 44c-10 16-14 34-12 58"/>
+                  <path d="M124 44c10 16 14 34 12 58"/>
+                  <path d="M66 25v22"/>
+                  <path d="M94 25v22"/>
+                  <path d="M73 31c4 5 10 5 14 0"/>
+                </svg>
+              </div>
+              <h3>Hombres</h3>
+              <p>Traje formal oscuro.<br>Corbata opcional.</p>
+            </article>
+
+            <span class="dc5__divider" aria-hidden="true"></span>
+
+            <article class="dc5__item">
+              <div class="dc5__icon" aria-hidden="true">
+                <svg class="dc5__svg dc5__svg--dress" viewBox="0 0 160 160" role="img" focusable="false">
+                  <path d="M63 24c5 9 29 9 34 0"/>
+                  <path d="M63 24h34"/>
+                  <path d="M65 25c-2 18-9 29-22 40"/>
+                  <path d="M95 25c2 18 9 29 22 40"/>
+                  <path d="M43 65c15 10 59 10 74 0"/>
+                  <path d="M58 66 31 133c25-8 73-8 98 0L102 66"/>
+                  <path d="M62 71c12 7 24 7 36 0"/>
+                  <path d="M52 90c18 7 38 7 56 0"/>
+                  <path d="M43 113c24 8 50 8 74 0"/>
+                  <path d="M35 133c30 9 60 9 90 0"/>
+                  <path d="M73 25c0 17 2 30 7 41"/>
+                  <path d="M87 25c0 17-2 30-7 41"/>
+                  <path d="M64 38c9 7 23 7 32 0"/>
+                </svg>
+              </div>
+              <h3>Mujeres</h3>
+              <p>Vestido largo<br>o midi elegante.</p>
+            </article>
+
+            <span class="dc5__divider" aria-hidden="true"></span>
+
+            <article class="dc5__item">
+              <div class="dc5__icon dc5__icon--colors" aria-hidden="true">
+                <span class="dc5__swatch dc5__swatch--ivory"></span>
+                <span class="dc5__swatch dc5__swatch--navy"></span>
+                <span class="dc5__swatch dc5__swatch--blue"></span>
+              </div>
+              <h3>Colores</h3>
+              <p>El blanco es exclusivo para la novia.<br>Evitar rojo.</p>
+            </article>
+
+          </div>
+
+          <div class="dc5__note">
+            <svg class="dc5__leaf dc5__leaf--left" viewBox="0 0 90 130" aria-hidden="true">
+              <path d="M55 118C42 90 37 58 47 12"/>
+              <path d="M44 78c-20-1-31-13-36-27 18 0 31 10 36 27zM49 60c-17-9-22-24-18-39 15 6 22 20 18 39zM48 96c-16 4-28-2-37-15 16-5 29 1 37 15zM52 43c15-4 27 2 36 14-17 5-29-1-36-14zM55 73c16-5 29 1 36 14-17 6-30-1-36-14z"/>
+            </svg>
+
+            <p>Agradecemos formar parte de este día tan especial<br>y ayudarnos a que todo sea perfecto.</p>
+
+            <svg class="dc5__leaf dc5__leaf--right" viewBox="0 0 90 130" aria-hidden="true">
+              <path d="M35 118c13-28 18-60 8-106"/>
+              <path d="M46 78c20-1 31-13 36-27-18 0-31 10-36 27zM41 60c17-9 22-24 18-39-15 6-22 20-18 39zM42 96c16 4 28-2 37-15-16-5-29 1-37 15zM38 43c-15-4-27 2-36 14 17 5 29-1 36-14zM35 73c-16-5-29 1-36 14 17 6 30-1 36-14z"/>
+            </svg>
+          </div>
+
+          <div class="dc5__flourish dc5__flourish--bottom" aria-hidden="true">
+            <span></span>
+            <svg viewBox="0 0 240 46" role="img" focusable="false">
+              <path d="M120 15c-10 12-22 9-22 18 0 5 5 7 9 5 7-3 10-13 13-23z"/>
+              <path d="M120 15c10 12 22 9 22 18 0 5-5 7-9 5-7-3-10-13-13-23z"/>
+              <path d="M120 15c-7 11-2 23 0 27 2-4 7-16 0-27z"/>
+              <path d="M98 19c-18 1-32 9-45 24M142 19c18 1 32 9 45 24"/>
+              <path d="M78 33c2 8 9 10 15 8-2-7-8-10-15-8zM62 40c-6-2-9-8-8-14 8 1 12 7 8 14zM162 33c-2 7-8 10-15 8 2-7 8-10 15-8zM178 40c6-2 9-8 8-14-8 1-12 7-8 14z"/>
+            </svg>
+            <span></span>
+          </div>
+
+          <p class="dc5__brand">A &amp; S</p>
+
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== SEPARATOR ========== -->
+    <div class="sep reveal" data-reveal aria-hidden="true">
+      <span class="sep__line"></span>
+      <span class="sep__badge">A&amp;S</span>
+      <span class="sep__line"></span>
+    </div>
+
+    <!-- ========== MESA DE REGALOS PREMIUM ========== -->
+    <section class="gifts reveal" data-reveal id="mesa-regalos">
+      <div class="gifts__wrap gifts__wrap--premium">
+        <article class="gifts__card gifts__card--premium">
+
+          <div class="gifts__ornament gifts__ornament--top" aria-hidden="true">
+            <span></span>
+
+            <svg class="gifts__leaf" viewBox="0 0 122 48" focusable="false">
+              <path d="M6 34C27 19 51 12 76 18c17 4 30 13 40 24"/>
+              <path d="M25 25C17 24 9 18 6 9c10 1 17 7 19 16z"/>
+              <path d="M42 18C34 16 28 9 27 1c9 1 15 8 15 17z"/>
+              <path d="M60 16C54 12 51 5 53 0c7 4 10 10 7 16z"/>
+              <path d="M76 18c4-8 12-12 21-10-3 9-11 13-21 10z"/>
+              <path d="M94 27c7-8 16-9 24-5-6 8-14 10-24 5z"/>
+            </svg>
+
+            <i>♡</i>
+
+            <svg class="gifts__leaf gifts__leaf--right" viewBox="0 0 122 48" focusable="false">
+              <path d="M6 34C27 19 51 12 76 18c17 4 30 13 40 24"/>
+              <path d="M25 25C17 24 9 18 6 9c10 1 17 7 19 16z"/>
+              <path d="M42 18C34 16 28 9 27 1c9 1 15 8 15 17z"/>
+              <path d="M60 16C54 12 51 5 53 0c7 4 10 10 7 16z"/>
+              <path d="M76 18c4-8 12-12 21-10-3 9-11 13-21 10z"/>
+              <path d="M94 27c7-8 16-9 24-5-6 8-14 10-24 5z"/>
+            </svg>
+
+            <span></span>
+          </div>
+
+          <header class="gifts__header gifts__header--premium">
+            <p class="gifts__eyebrow">Con cariño</p>
+            <h2 class="gifts__title">Mesa de Regalos</h2>
+
+            <div class="gifts__divider" aria-hidden="true">
+              <span></span>
+              <i>♥</i>
+              <span></span>
+            </div>
+
+            <p class="gifts__subtitle">
+              Su presencia es nuestro mejor regalo, pero si desean tener un detalle con nosotros,
+              podrán hacerlo mediante transferencia bancaria o en sobre el día del evento.
+            </p>
+          </header>
+
+          <div class="gifts__options" aria-label="Opciones de mesa de regalos">
+
+            <article class="gifts__option reveal" data-reveal>
+              <div class="gifts__optionIcon" aria-hidden="true">
+                <svg viewBox="0 0 80 80" focusable="false">
+                  <path d="M17 25h46v32H17z"/>
+                  <path d="M18 27l22 19 22-19"/>
+                  <path d="M18 57l17-17"/>
+                  <path d="M62 57L45 40"/>
+                </svg>
+              </div>
+
+              <div class="gifts__optionSeparator" aria-hidden="true">
+                <span></span>
+                <i>❧</i>
+                <span></span>
+              </div>
+
+              <div class="gifts__optionText">
+                <h3>Sobre el día del evento</h3>
+                <div class="gifts__miniDivider" aria-hidden="true">
+                  <span></span><i>♥</i><span></span>
+                </div>
+              </div>
+            </article>
+
+            <article class="gifts__option reveal" data-reveal data-reveal-delay="120">
+              <div class="gifts__optionIcon" aria-hidden="true">
+                <svg viewBox="0 0 80 80" focusable="false">
+                  <path d="M15 63h50"/>
+                  <path d="M20 55h40"/>
+                  <path d="M23 31h34"/>
+                  <path d="M25 31v24"/>
+                  <path d="M39 31v24"/>
+                  <path d="M55 31v24"/>
+                  <path d="M12 31l28-17 28 17"/>
+                </svg>
+              </div>
+
+              <div class="gifts__optionSeparator" aria-hidden="true">
+                <span></span>
+                <i>❧</i>
+                <span></span>
+              </div>
+
+              <div class="gifts__optionText">
+                <h3>Transferencia bancaria</h3>
+                <div class="gifts__miniDivider" aria-hidden="true">
+                  <span></span><i>♥</i><span></span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="gifts__actions reveal" data-reveal>
+            <button class="gifts__btn gifts__btn--premium" type="button" id="openGiftModal">
+              <svg viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+                <rect x="8" y="16" width="20" height="14" rx="2"/>
+                <path d="M12 16v-5a6 6 0 0 1 12 0v5"/>
+                <path d="M18 22v4"/>
+                <circle cx="18" cy="22" r="1.4"/>
+              </svg>
+              <span>Ver datos para transferencia</span>
+            </button>
+          </div>
+
+          <div class="gifts__ornament gifts__ornament--bottom" aria-hidden="true">
+            <span></span>
+
+            <svg class="gifts__leaf" viewBox="0 0 122 48" focusable="false">
+              <path d="M6 34C27 19 51 12 76 18c17 4 30 13 40 24"/>
+              <path d="M25 25C17 24 9 18 6 9c10 1 17 7 19 16z"/>
+              <path d="M42 18C34 16 28 9 27 1c9 1 15 8 15 17z"/>
+              <path d="M60 16C54 12 51 5 53 0c7 4 10 10 7 16z"/>
+              <path d="M76 18c4-8 12-12 21-10-3 9-11 13-21 10z"/>
+              <path d="M94 27c7-8 16-9 24-5-6 8-14 10-24 5z"/>
+            </svg>
+
+            <i>♡</i>
+
+            <svg class="gifts__leaf gifts__leaf--right" viewBox="0 0 122 48" focusable="false">
+              <path d="M6 34C27 19 51 12 76 18c17 4 30 13 40 24"/>
+              <path d="M25 25C17 24 9 18 6 9c10 1 17 7 19 16z"/>
+              <path d="M42 18C34 16 28 9 27 1c9 1 15 8 15 17z"/>
+              <path d="M60 16C54 12 51 5 53 0c7 4 10 10 7 16z"/>
+              <path d="M76 18c4-8 12-12 21-10-3 9-11 13-21 10z"/>
+              <path d="M94 27c7-8 16-9 24-5-6 8-14 10-24 5z"/>
+            </svg>
+
+            <span></span>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== SEPARATOR ========== -->
+    <div class="sep reveal" data-reveal aria-hidden="true">
+      <span class="sep__line"></span>
+      <span class="sep__badge">A&amp;S</span>
+      <span class="sep__line"></span>
+    </div>
 
     <!-- ========== RSVP ========== -->
     <section class="rsvp reveal" data-reveal id="rsvp">
@@ -584,90 +703,87 @@
       </div>
     </section>
 
-    <!-- ========== GALERÍA FINAL ========== -->
-<!-- ========== GALERÍA CARRUSEL (PREMIUM) ========== -->
-<section class="gallery gallery--carousel" id="gallery">
-  <div class="gallery__container">
+    <!-- ========== GALERÍA CARRUSEL ========== -->
+    <section class="gallery gallery--carousel" id="gallery">
+      <div class="gallery__container">
 
-    <header class="gallery__header reveal" data-reveal>
-      <h2 class="gallery__title">Nuestra historia en fotos</h2>
-      <p class="gallery__subtitle">Desliza para ver nuestros momentos ✨</p>
-    </header>
+        <header class="gallery__header reveal" data-reveal>
+          <h2 class="gallery__title">Nuestra historia en fotos</h2>
+          <p class="gallery__subtitle">Desliza para ver nuestros momentos ✨</p>
+        </header>
 
-    <div class="gallery__shell reveal" data-reveal>
-      <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Anterior" data-gprev>‹</button>
+        <div class="gallery__shell reveal" data-reveal>
+          <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Anterior" data-gprev>‹</button>
 
-      <div class="gallery__track" data-gtrack>
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 1">
-          <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">01</span>
-        </button>
+          <div class="gallery__track" data-gtrack>
+            <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 1">
+              <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
+              <span class="gallery__veil" aria-hidden="true"></span>
+              <span class="gallery__chip" aria-hidden="true">01</span>
+            </button>
 
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria02.jpg" aria-label="Abrir foto 2">
-          <img src="Imagenes/galeria02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">02</span>
-        </button>
+            <button class="gallery__card" type="button" data-full="Imagenes/galeria02.jpg" aria-label="Abrir foto 2">
+              <img src="Imagenes/galeria02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
+              <span class="gallery__veil" aria-hidden="true"></span>
+              <span class="gallery__chip" aria-hidden="true">02</span>
+            </button>
 
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria03.jpg" aria-label="Abrir foto 3">
-          <img src="Imagenes/galeria03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">03</span>
-        </button>
+            <button class="gallery__card" type="button" data-full="Imagenes/galeria03.jpg" aria-label="Abrir foto 3">
+              <img src="Imagenes/galeria03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
+              <span class="gallery__veil" aria-hidden="true"></span>
+              <span class="gallery__chip" aria-hidden="true">03</span>
+            </button>
 
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria04.jpg" aria-label="Abrir foto 4">
-          <img src="Imagenes/galeria04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">04</span>
-        </button>
+            <button class="gallery__card" type="button" data-full="Imagenes/galeria04.jpg" aria-label="Abrir foto 4">
+              <img src="Imagenes/galeria04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
+              <span class="gallery__veil" aria-hidden="true"></span>
+              <span class="gallery__chip" aria-hidden="true">04</span>
+            </button>
 
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria05.jpg" aria-label="Abrir foto 5">
-          <img src="Imagenes/galeria05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">05</span>
-        </button>
+            <button class="gallery__card" type="button" data-full="Imagenes/galeria05.jpg" aria-label="Abrir foto 5">
+              <img src="Imagenes/galeria05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
+              <span class="gallery__veil" aria-hidden="true"></span>
+              <span class="gallery__chip" aria-hidden="true">05</span>
+            </button>
 
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 6">
-          <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">06</span>
-        </button>
+            <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 6">
+              <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
+              <span class="gallery__veil" aria-hidden="true"></span>
+              <span class="gallery__chip" aria-hidden="true">06</span>
+            </button>
+          </div>
+
+          <button class="gallery__nav gallery__nav--next" type="button" aria-label="Siguiente" data-gnext>›</button>
+        </div>
+
+        <div class="gallery__footer reveal" data-reveal>
+          <div class="gallery__progress">
+            <span class="gallery__bar" data-gbar></span>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <button class="gallery__nav gallery__nav--next" type="button" aria-label="Siguiente" data-gnext>›</button>
-    </div>
+    <!-- ========== LIGHTBOX ========== -->
+    <div id="lightbox" class="lightbox is-hidden" aria-hidden="true">
+      <div class="lightbox__backdrop" data-lb-close></div>
 
-    <div class="gallery__footer reveal" data-reveal>
-      <div class="gallery__progress">
-        <span class="gallery__bar" data-gbar></span>
+      <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Vista de foto">
+        <button class="lightbox__close" type="button" aria-label="Cerrar" data-lb-close>✕</button>
+
+        <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Anterior" data-lb-prev>‹</button>
+        <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Siguiente" data-lb-next>›</button>
+
+        <div class="lightbox__frame">
+          <img id="lightboxImg" class="lightbox__img" src="" alt="">
+        </div>
+
+        <div class="lightbox__meta">
+          <span id="lightboxCount" class="lightbox__count">1 / 1</span>
+        </div>
       </div>
     </div>
-
-  </div>
-</section>
-
-
-
-<!-- ========== LIGHTBOX (MODAL PREMIUM) ========== -->
-<div id="lightbox" class="lightbox is-hidden" aria-hidden="true">
-  <div class="lightbox__backdrop" data-lb-close></div>
-
-  <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Vista de foto">
-    <button class="lightbox__close" type="button" aria-label="Cerrar" data-lb-close>✕</button>
-
-    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Anterior" data-lb-prev>‹</button>
-    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Siguiente" data-lb-next>›</button>
-
-    <div class="lightbox__frame">
-      <img id="lightboxImg" class="lightbox__img" src="" alt="">
-    </div>
-
-    <div class="lightbox__meta">
-      <span id="lightboxCount" class="lightbox__count">1 / 1</span>
-    </div>
-  </div>
-</div>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer reveal" data-reveal>
@@ -680,91 +796,91 @@
 
   </div>
 
-  
   <!-- =========================
-     MAP MODAL (PREVIEW)
-     ========================= -->
-<div id="mapModal" class="mapmodal is-hidden" aria-hidden="true">
-  <div class="mapmodal__backdrop" data-close></div>
+       MAP MODAL
+       ========================= -->
+  <div id="mapModal" class="mapmodal is-hidden" aria-hidden="true">
+    <div class="mapmodal__backdrop" data-close></div>
 
-  <div class="mapmodal__card" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
-    <button class="mapmodal__close" type="button" aria-label="Cerrar" data-close>✕</button>
+    <div class="mapmodal__card" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
+      <button class="mapmodal__close" type="button" aria-label="Cerrar" data-close>✕</button>
 
-    <p class="mapmodal__eyebrow">Ubicación</p>
-    <h3 id="mapModalTitle" class="mapmodal__title">Ubicación</h3>
-    <p id="mapModalSubtitle" class="mapmodal__subtitle"></p>
+      <p class="mapmodal__eyebrow">Ubicación</p>
+      <h3 id="mapModalTitle" class="mapmodal__title">Ubicación</h3>
+      <p id="mapModalSubtitle" class="mapmodal__subtitle"></p>
 
-    <div class="mapmodal__framewrap">
-      <div class="mapmodal__frame">
-        <iframe
-          id="mapModalFrame"
-          title="Mapa"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          src=""
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-
-    <div class="mapmodal__actions">
-      <a id="mapModalOpen" class="mapmodal__btn" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
-      <button id="mapModalCopy" class="mapmodal__btn mapmodal__btn--ghost" type="button">Copiar dirección</button>
-    </div>
-
-    <p class="mapmodal__helper">Tip: si vas desde el celular, puedes abrir la ruta directamente en Google Maps.</p>
-    <p id="mapModalStatus" class="mapmodal__status"></p>
-  </div>
-</div>
-
-  
-  
-<!-- =========================
-     GIFT MODAL
-     ========================= -->
-<div id="giftModal" class="giftmodal is-hidden" aria-hidden="true">
-  <div class="giftmodal__backdrop" data-gift-close></div>
-
-  <div class="giftmodal__card" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
-    <button class="giftmodal__close" type="button" aria-label="Cerrar" data-gift-close>✕</button>
-
-    <p class="giftmodal__eyebrow">Mesa de Regalos</p>
-    <h3 id="giftModalTitle" class="giftmodal__title">Datos para transferencia</h3>
-    <p class="giftmodal__subtitle">Gracias por acompañarnos con tanto cariño en este momento tan especial.</p>
-
-    <div class="giftmodal__bank">
-      <div class="giftmodal__bankBadge">BBVA</div>
-      <div class="giftmodal__bankMeta">
-        <span class="giftmodal__bankLabel">Titular</span>
-        <strong class="giftmodal__bankValue">Oscar Alejandro Rodriguez Rodriguez</strong>
-      </div>
-    </div>
-
-    <div class="giftmodal__details">
-      <div class="giftmodal__detail">
-        <span class="giftmodal__label">Cuenta CLABE</span>
-        <div class="giftmodal__valueRow">
-          <code id="giftClabe" class="giftmodal__value">PENDIENTE_AGREGAR_CLABE</code>
-          <button id="giftCopyClabe" class="giftmodal__copy" type="button">Copiar</button>
+      <div class="mapmodal__framewrap">
+        <div class="mapmodal__frame">
+          <iframe
+            id="mapModalFrame"
+            title="Mapa"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src=""
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
 
-      <div class="giftmodal__detail">
-        <span class="giftmodal__label">Para</span>
-        <p class="giftmodal__valueText">Sarahi y Alejandro</p>
+      <div class="mapmodal__actions">
+        <a id="mapModalOpen" class="mapmodal__btn" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        <button id="mapModalCopy" class="mapmodal__btn mapmodal__btn--ghost" type="button">Copiar dirección</button>
       </div>
 
-      <div class="giftmodal__detail">
-        <span class="giftmodal__label">Referencia sugerida</span>
-        <p class="giftmodal__valueText">Boda A&amp;S</p>
-      </div>
+      <p class="mapmodal__helper">Tip: si vas desde el celular, puedes abrir la ruta directamente en Google Maps.</p>
+      <p id="mapModalStatus" class="mapmodal__status"></p>
     </div>
-
-    <p class="giftmodal__helper">Puedes reemplazar la CLABE cuando ya tengas el número final.</p>
-    <p id="giftModalStatus" class="giftmodal__status"></p>
   </div>
-</div>
 
+  <!-- =========================
+       GIFT MODAL PREMIUM
+       ========================= -->
+  <div id="giftModal" class="giftmodal is-hidden" aria-hidden="true">
+    <div class="giftmodal__backdrop" data-gift-close></div>
+
+    <div class="giftmodal__card giftmodal__card--premium" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
+      <button class="giftmodal__close" type="button" aria-label="Cerrar" data-gift-close>✕</button>
+
+      <p class="giftmodal__eyebrow">Mesa de Regalos</p>
+      <h3 id="giftModalTitle" class="giftmodal__title">Datos para transferencia</h3>
+      <p class="giftmodal__subtitle">
+        Gracias por acompañarnos con tanto cariño en este momento tan especial.
+      </p>
+
+      <div class="giftmodal__bank">
+        <div class="giftmodal__bankBadge">BBVA</div>
+
+        <div class="giftmodal__bankMeta">
+          <span class="giftmodal__bankLabel">Titular</span>
+          <strong class="giftmodal__bankValue">Oscar Alejandro Rodriguez Rodriguez</strong>
+        </div>
+      </div>
+
+      <div class="giftmodal__details">
+        <div class="giftmodal__detail">
+          <span class="giftmodal__label">Cuenta CLABE</span>
+
+          <div class="giftmodal__valueRow">
+            <code id="giftClabe" class="giftmodal__value">PENDIENTE_AGREGAR_CLABE</code>
+            <button id="giftCopyClabe" class="giftmodal__copy" type="button">Copiar</button>
+          </div>
+        </div>
+
+        <div class="giftmodal__detail">
+          <span class="giftmodal__label">Para</span>
+          <p class="giftmodal__valueText">Sarahi y Alejandro</p>
+        </div>
+
+        <div class="giftmodal__detail">
+          <span class="giftmodal__label">Referencia sugerida</span>
+          <p class="giftmodal__valueText">Boda A&amp;S</p>
+        </div>
+      </div>
+
+      <p class="giftmodal__helper">Puedes reemplazar la CLABE cuando ya tengas el número final.</p>
+      <p id="giftModalStatus" class="giftmodal__status"></p>
+    </div>
+  </div>
 
   <script>
     // =========================
@@ -774,6 +890,7 @@
 
     // --- Navbar scroll effect ---
     const navbar = document.getElementById('navbar');
+
     window.addEventListener('scroll', () => {
       if (!navbar) return;
       navbar.classList.toggle('scrolled', window.scrollY > 60);
@@ -1041,6 +1158,7 @@
 
     document.addEventListener('click', async (e) => {
       const btn = e.target.closest('[data-map]');
+
       if (btn) {
         e.preventDefault();
         openMapModal({
@@ -1084,233 +1202,238 @@
       }
     });
 
+    // =========================
+    // GIFT MODAL LOGIC
+    // =========================
+    const giftModal = document.getElementById('giftModal');
+    const openGiftModalBtn = document.getElementById('openGiftModal');
+    const giftCopyClabe = document.getElementById('giftCopyClabe');
+    const giftClabe = document.getElementById('giftClabe');
+    const giftModalStatus = document.getElementById('giftModalStatus');
 
-// =========================
-// GIFT MODAL LOGIC
-// =========================
-const giftModal = document.getElementById('giftModal');
-const openGiftModalBtn = document.getElementById('openGiftModal');
-const giftCopyClabe = document.getElementById('giftCopyClabe');
-const giftClabe = document.getElementById('giftClabe');
-const giftModalStatus = document.getElementById('giftModalStatus');
+    function openGiftModal() {
+      if (!giftModal) return;
 
-function openGiftModal() {
-  if (!giftModal) return;
-  giftModal.classList.remove('is-hidden');
-  giftModal.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('no-scroll');
-  if (giftModalStatus) {
-    giftModalStatus.textContent = '';
-    giftModalStatus.className = 'giftmodal__status';
-  }
-}
+      giftModal.classList.remove('is-hidden');
+      giftModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('no-scroll');
 
-function closeGiftModal() {
-  if (!giftModal) return;
-  giftModal.classList.add('is-hidden');
-  giftModal.setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('no-scroll');
-  if (giftModalStatus) {
-    giftModalStatus.textContent = '';
-    giftModalStatus.className = 'giftmodal__status';
-  }
-}
-
-if (openGiftModalBtn) {
-  openGiftModalBtn.addEventListener('click', openGiftModal);
-}
-
-document.addEventListener('click', async (e) => {
-  if (e.target.matches('[data-gift-close]')) {
-    e.preventDefault();
-    closeGiftModal();
-    return;
-  }
-});
-
-if (giftCopyClabe && giftClabe) {
-  giftCopyClabe.addEventListener('click', async () => {
-    const text = (giftClabe.textContent || '').trim();
-    if (!text) return;
-
-    try {
-      await navigator.clipboard.writeText(text);
-      giftModalStatus.textContent = 'CLABE copiada ✅';
-      giftModalStatus.classList.add('is-success');
-    } catch (err) {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      giftModalStatus.textContent = 'CLABE copiada ✅';
-      giftModalStatus.classList.add('is-success');
+      if (giftModalStatus) {
+        giftModalStatus.textContent = '';
+        giftModalStatus.className = 'giftmodal__status';
+      }
     }
-  });
-}
 
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && giftModal && !giftModal.classList.contains('is-hidden')) {
-    closeGiftModal();
-  }
-});
+    function closeGiftModal() {
+      if (!giftModal) return;
 
+      giftModal.classList.add('is-hidden');
+      giftModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('no-scroll');
 
-// =========================
-// REVEAL ON SCROLL (fade + slide)
-// =========================
-(function initReveal(){
-  const els = Array.from(document.querySelectorAll('[data-reveal]'));
-  if (!('IntersectionObserver' in window) || els.length === 0) {
-    els.forEach(el => el.classList.add('is-visible'));
-    return;
-  }
+      if (giftModalStatus) {
+        giftModalStatus.textContent = '';
+        giftModalStatus.className = 'giftmodal__status';
+      }
+    }
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
+    if (openGiftModalBtn) {
+      openGiftModalBtn.addEventListener('click', openGiftModal);
+    }
+
+    document.addEventListener('click', async (e) => {
+      if (e.target.matches('[data-gift-close]')) {
+        e.preventDefault();
+        closeGiftModal();
+        return;
       }
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
 
-  els.forEach(el => io.observe(el));
-})();
+    if (giftCopyClabe && giftClabe) {
+      giftCopyClabe.addEventListener('click', async () => {
+        const text = (giftClabe.textContent || '').trim();
+        if (!text) return;
 
-// =========================
-// GALERÍA LIGHTBOX (PRO)
-// =========================
-(function initGalleryLightbox(){
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  const lbCount = document.getElementById('lightboxCount');
+        try {
+          await navigator.clipboard.writeText(text);
+          giftModalStatus.textContent = 'CLABE copiada ✅';
+          giftModalStatus.classList.add('is-success');
+        } catch (err) {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          giftModalStatus.textContent = 'CLABE copiada ✅';
+          giftModalStatus.classList.add('is-success');
+        }
+      });
+    }
 
-  const items = Array.from(document.querySelectorAll('.gallery__card[data-full]'));
-  if (!lb || !lbImg || items.length === 0) return;
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && giftModal && !giftModal.classList.contains('is-hidden')) {
+        closeGiftModal();
+      }
+    });
 
-  let index = 0;
+    // =========================
+    // REVEAL ON SCROLL
+    // =========================
+    (function initReveal() {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
 
-  function setNoScroll(on){
-    document.body.classList.toggle('no-scroll', !!on);
-  }
+      if (!('IntersectionObserver' in window) || els.length === 0) {
+        els.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
 
-  function openAt(i){
-    index = (i + items.length) % items.length;
-    const full = items[index].getAttribute('data-full');
-    const alt = items[index].querySelector('img')?.getAttribute('alt') || 'Foto';
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -10% 0px"
+      });
 
-    lbImg.src = full;
-    lbImg.alt = alt;
-    lbCount.textContent = `${index + 1} / ${items.length}`;
+      els.forEach(el => io.observe(el));
+    })();
 
-    lb.classList.remove('is-hidden');
-    lb.setAttribute('aria-hidden','false');
-    setNoScroll(true);
-  }
+    // =========================
+    // GALERÍA LIGHTBOX
+    // =========================
+    (function initGalleryLightbox() {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      const lbCount = document.getElementById('lightboxCount');
 
-  function close(){
-    lb.classList.add('is-hidden');
-    lb.setAttribute('aria-hidden','true');
-    setNoScroll(false);
-    lbImg.src = '';
-  }
+      const items = Array.from(document.querySelectorAll('.gallery__card[data-full]'));
+      if (!lb || !lbImg || items.length === 0) return;
 
-  function next(){ openAt(index + 1); }
-  function prev(){ openAt(index - 1); }
+      let index = 0;
 
-  // Abrir por click
-  items.forEach((btn, i) => {
-    btn.addEventListener('click', () => openAt(i));
-  });
+      function setNoScroll(on) {
+        document.body.classList.toggle('no-scroll', !!on);
+      }
 
-  // Controles
-  document.addEventListener('click', (e) => {
-    if (e.target.matches('[data-lb-close]')) close();
-    if (e.target.matches('[data-lb-next]')) next();
-    if (e.target.matches('[data-lb-prev]')) prev();
-  });
+      function openAt(i) {
+        index = (i + items.length) % items.length;
+        const full = items[index].getAttribute('data-full');
+        const alt = items[index].querySelector('img')?.getAttribute('alt') || 'Foto';
 
-  // Teclas
-  window.addEventListener('keydown', (e) => {
-    if (lb.classList.contains('is-hidden')) return;
-    if (e.key === 'Escape') close();
-    if (e.key === 'ArrowRight') next();
-    if (e.key === 'ArrowLeft') prev();
-  });
-})();
+        lbImg.src = full;
+        lbImg.alt = alt;
+        lbCount.textContent = `${index + 1} / ${items.length}`;
 
-// =========================
-// GALERÍA CARRUSEL (PRO)
-// =========================
-(function initGalleryCarousel(){
-  const track = document.querySelector('[data-gtrack]');
-  const btnPrev = document.querySelector('[data-gprev]');
-  const btnNext = document.querySelector('[data-gnext]');
-  const bar = document.querySelector('[data-gbar]');
+        lb.classList.remove('is-hidden');
+        lb.setAttribute('aria-hidden', 'false');
+        setNoScroll(true);
+      }
 
-  if (!track) return;
+      function close() {
+        lb.classList.add('is-hidden');
+        lb.setAttribute('aria-hidden', 'true');
+        setNoScroll(false);
+        lbImg.src = '';
+      }
 
-  function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+      function next() {
+        openAt(index + 1);
+      }
 
-  function updateProgress(){
-    const max = track.scrollWidth - track.clientWidth;
-    const pct = max <= 0 ? 0 : (track.scrollLeft / max) * 100;
-    if (bar) bar.style.width = `${clamp(pct, 0, 100)}%`;
+      function prev() {
+        openAt(index - 1);
+      }
 
-    if (btnPrev) btnPrev.disabled = track.scrollLeft <= 2;
-    if (btnNext) btnNext.disabled = track.scrollLeft >= (max - 2);
-  }
+      items.forEach((btn, i) => {
+        btn.addEventListener('click', () => openAt(i));
+      });
 
-  function scrollByCard(dir){
-    // mueve aprox 1 tarjeta (según ancho visible)
-    const amt = Math.max(260, track.clientWidth * 0.8);
-    track.scrollBy({ left: dir * amt, behavior: 'smooth' });
-  }
+      document.addEventListener('click', (e) => {
+        if (e.target.matches('[data-lb-close]')) close();
+        if (e.target.matches('[data-lb-next]')) next();
+        if (e.target.matches('[data-lb-prev]')) prev();
+      });
 
-  if (btnPrev) btnPrev.addEventListener('click', () => scrollByCard(-1));
-  if (btnNext) btnNext.addEventListener('click', () => scrollByCard(1));
+      window.addEventListener('keydown', (e) => {
+        if (lb.classList.contains('is-hidden')) return;
 
-  track.addEventListener('scroll', updateProgress, { passive:true });
-  window.addEventListener('resize', updateProgress);
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft') prev();
+      });
+    })();
 
-  // Drag con mouse (desktop)
-  let isDown = false;
-  let startX = 0;
-  let startLeft = 0;
+    // =========================
+    // GALERÍA CARRUSEL
+    // =========================
+    (function initGalleryCarousel() {
+      const track = document.querySelector('[data-gtrack]');
+      const btnPrev = document.querySelector('[data-gprev]');
+      const btnNext = document.querySelector('[data-gnext]');
+      const bar = document.querySelector('[data-gbar]');
 
-  track.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX;
-    startLeft = track.scrollLeft;
-    track.style.scrollBehavior = 'auto';
-    track.classList.add('is-dragging');
-  });
+      if (!track) return;
 
-  window.addEventListener('mouseup', () => {
-    if (!isDown) return;
-    isDown = false;
-    track.style.scrollBehavior = '';
-    track.classList.remove('is-dragging');
-  });
+      function clamp(n, a, b) {
+        return Math.max(a, Math.min(b, n));
+      }
 
-  window.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    const dx = e.pageX - startX;
-    track.scrollLeft = startLeft - dx;
-  });
+      function updateProgress() {
+        const max = track.scrollWidth - track.clientWidth;
+        const pct = max <= 0 ? 0 : (track.scrollLeft / max) * 100;
 
-  // inicial
-  updateProgress();
-})();
-// =========================
-// HERO GERBERAS (premium)
-// =========================
+        if (bar) bar.style.width = `${clamp(pct, 0, 100)}%`;
 
+        if (btnPrev) btnPrev.disabled = track.scrollLeft <= 2;
+        if (btnNext) btnNext.disabled = track.scrollLeft >= (max - 2);
+      }
 
-</script>
+      function scrollByCard(dir) {
+        const amt = Math.max(260, track.clientWidth * 0.8);
+        track.scrollBy({ left: dir * amt, behavior: 'smooth' });
+      }
 
-  
+      if (btnPrev) btnPrev.addEventListener('click', () => scrollByCard(-1));
+      if (btnNext) btnNext.addEventListener('click', () => scrollByCard(1));
+
+      track.addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('resize', updateProgress);
+
+      let isDown = false;
+      let startX = 0;
+      let startLeft = 0;
+
+      track.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX;
+        startLeft = track.scrollLeft;
+        track.style.scrollBehavior = 'auto';
+        track.classList.add('is-dragging');
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!isDown) return;
+
+        isDown = false;
+        track.style.scrollBehavior = '';
+        track.classList.remove('is-dragging');
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+
+        const dx = e.pageX - startX;
+        track.scrollLeft = startLeft - dx;
+      });
+
+      updateProgress();
+    })();
+  </script>
+
 </body>
 </html>
