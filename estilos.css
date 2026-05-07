@@ -536,152 +536,360 @@ body{
 }
 
 /* =========================
-   STORY / INVITACIÓN PREMIUM
+   PÁGINA 2 / BENDICIÓN
    ========================= */
 
-.story{
+.story,
+.blessing{
   padding:
     calc(var(--section-pad-y) + var(--after-hero-gap))
     var(--section-pad-x)
     var(--section-pad-y);
   background:
-    radial-gradient(circle at top center, rgba(255,255,255,.45), transparent 40%),
+    radial-gradient(circle at top center, rgba(255,255,255,.68), transparent 42%),
     linear-gradient(180deg, #f5efe6 0%, #f2ebdf 100%);
 }
 
-.story__wrap{
+.story__wrap,
+.blessing__wrap{
   width: min(960px, calc(100% - 24px));
   margin: 0 auto;
 }
 
-.story__card{
+.story__card,
+.blessing__card{
   position: relative;
   text-align: center;
-  padding: clamp(34px, 4vw, 56px) clamp(20px, 3vw, 42px);
+  padding: clamp(34px, 4.4vw, 58px) clamp(20px, 4vw, 54px);
   border-radius: 34px;
   background:
-    linear-gradient(180deg, rgba(255,251,245,.92), rgba(255,248,240,.88));
-  border: 1px solid rgba(58,47,32,.08);
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.82), transparent 48%),
+    linear-gradient(180deg, rgba(255,251,245,.95), rgba(255,248,240,.9));
+  border: 1px solid rgba(181,132,67,.16);
   box-shadow:
-    0 20px 60px rgba(0,0,0,.08),
-    inset 0 1px 0 rgba(255,255,255,.55);
+    0 26px 70px rgba(58,47,32,.10),
+    inset 0 1px 0 rgba(255,255,255,.70);
   overflow: hidden;
 }
 
-.story__card::before{
-  content:"";
-  position:absolute;
-  inset:0 0 auto;
-  height: 120px;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(167,192,228,.16), transparent 62%);
-  pointer-events:none;
-}
-
-.story__card::after{
+.story__card::after,
+.blessing__card::after{
   content:"";
   position:absolute;
   inset:18px;
   border-radius: 26px;
-  border: 1px solid rgba(58,47,32,.05);
+  border: 1px solid rgba(181,132,67,.14);
   pointer-events:none;
 }
 
-.story__eyebrow{
-  position: relative;
-  z-index: 1;
-  margin: 0 0 14px;
-  font-size: .78rem;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: rgba(58,47,32,.56);
+.blessing__card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 0% 42%, rgba(181,132,67,.08), transparent 22%),
+    radial-gradient(circle at 100% 44%, rgba(181,132,67,.08), transparent 22%);
+  pointer-events:none;
 }
 
-.story__title{
+.blessing__card > *{
   position: relative;
   z-index: 1;
+}
+
+.blessing__ornament{
+  width: min(340px, 68vw);
+  margin: 0 auto 26px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 12px;
+  color:#b58443;
+  opacity:.95;
+}
+
+.blessing__ornament span{
+  height:1px;
+  flex:1;
+  background: linear-gradient(to right, transparent, rgba(181,132,67,.70));
+}
+
+.blessing__ornament span:last-child{
+  background: linear-gradient(to left, transparent, rgba(181,132,67,.70));
+}
+
+.blessing__ornament i{
+  font-style: normal;
+  font-size: .92rem;
+  line-height: 1;
+}
+
+.blessing__ornament--bottom{
+  margin: 34px auto 0;
+}
+
+.blessing__eyebrow{
+  margin: 0 0 14px;
+  font-size: clamp(.82rem, 1.3vw, 1rem);
+  letter-spacing: .36em;
+  text-transform: uppercase;
+  color: rgba(58,47,32,.70);
+}
+
+.blessing__title{
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-size: clamp(2.3rem, 5vw, 4rem);
-  line-height: 1.05;
-  color: #3a2f20;
-  text-wrap: balance;
+  font-weight: 400;
+  font-size: clamp(3rem, 8vw, 6.2rem);
+  line-height: .94;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color:#3a2f20;
+  text-shadow: 0 12px 28px rgba(58,47,32,.08);
 }
 
-.story__text{
-  position: relative;
-  z-index: 1;
-  width: min(560px, 100%);
-  margin: 22px auto 34px;
-  font-size: 1.02rem;
-  line-height: 1.95;
-  color: rgba(58,47,32,.78);
+.blessing__divider,
+.blessing__smallDivider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  color:#b58443;
 }
 
-.story__photo{
-  position: relative;
-  z-index: 1;
-  margin: 0 auto;
+.blessing__divider{
+  width: min(190px, 48vw);
+  margin: 26px auto 34px;
 }
 
-.story__photo--featured{
-  width: min(720px, 100%);
+.blessing__divider span,
+.blessing__smallDivider span{
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, transparent, rgba(181,132,67,.68));
 }
 
-.story__photo--featured img{
-  display: block;
-  width: 100%;
-  height: auto;
+.blessing__divider span:last-child,
+.blessing__smallDivider span:last-child{
+  background: linear-gradient(to left, transparent, rgba(181,132,67,.68));
+}
+
+.blessing__divider i,
+.blessing__smallDivider i{
+  font-style: normal;
+  font-size: .9rem;
+  line-height: 1;
+}
+
+.blessing__photo{
+  width: min(760px, 100%);
+  margin: 0 auto 40px;
+}
+
+.blessing__photo img{
+  display:block;
+  width:100%;
+  height:auto;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: 30px;
+  object-position: center;
+  border-radius: 28px;
+  filter: grayscale(1) contrast(.96) brightness(1.06);
   box-shadow:
-    0 26px 56px rgba(0,0,0,.10),
-    0 6px 16px rgba(0,0,0,.04);
-  transform: translateZ(0);
+    0 28px 58px rgba(58,47,32,.14),
+    0 8px 18px rgba(58,47,32,.06);
 }
 
-.story__footer{
-  position: relative;
-  z-index: 1;
-  margin-top: 28px;
+.blessing__parents{
+  width: min(760px, 100%);
+  margin: 0 auto;
+  display:grid;
+  grid-template-columns: minmax(0,1fr) 46px minmax(0,1fr);
+  gap: clamp(18px, 3.4vw, 34px);
+  align-items: stretch;
 }
 
-.story__date{
-  margin: 0 0 16px;
+.blessing__side{
+  padding: 4px 0;
+}
+
+.blessing__role{
+  margin:0 0 12px;
   font-size: .92rem;
-  letter-spacing: .20em;
+  letter-spacing: .42em;
   text-transform: uppercase;
-  color: rgba(58,47,32,.66);
+  color:#b58443;
 }
 
-.story__signature{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin-bottom: 12px;
+.blessing__role::before,
+.blessing__role::after{
+  content:"·";
+  margin: 0 10px;
+  color:#b58443;
 }
 
-.story__signatureLine{
-  width: min(120px, 20vw);
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(58,47,32,.24),
-    transparent
-  );
-}
-
-
-.story__names{
-  margin: 0;
-  font-family: 'Cormorant Garamond', serif;
+.blessing__miniLeaf{
+  color:#b58443;
   font-size: 1.35rem;
-  letter-spacing: .04em;
-  color: #3a2f20;
+  line-height: 1;
+  margin-bottom: 20px;
+  opacity:.9;
+}
+
+.blessing__parent h3{
+  margin:0;
+  font-family:'Cormorant Garamond', serif;
+  font-weight:400;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height:1.08;
+  color:#3a2f20;
+}
+
+.blessing__parent p{
+  margin: 10px 0 0;
+  font-size: .88rem;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: rgba(58,47,32,.68);
+}
+
+.blessing__smallDivider{
+  width: min(110px, 42%);
+  margin: 24px auto 26px;
+}
+
+.blessing__smallDivider i{
+  font-size:.72rem;
+}
+
+.blessing__centerLine{
+  position: relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#b58443;
+}
+
+.blessing__centerLine::before{
+  content:"";
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(181,132,67,.58), transparent);
+}
+
+.blessing__centerLine i{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  border-radius:999px;
+  background: rgba(255,249,241,.96);
+  font-style:normal;
+  font-size:.85rem;
+}
+
+/* Compatibilidad con clases story anteriores */
+.story__eyebrow,
+.story__title,
+.story__text,
+.story__photo,
+.story__footer,
+.story__date,
+.story__signature,
+.story__signatureLine,
+.story__names{
+  position:relative;
+  z-index:1;
+}
+
+@media (max-width: 720px){
+  .story,
+  .blessing{
+    padding: 34px 14px 42px;
+  }
+
+  .story__wrap,
+  .blessing__wrap{
+    width: 100%;
+  }
+
+  .story__card,
+  .blessing__card{
+    padding: 30px 18px 34px;
+    border-radius: 28px;
+  }
+
+  .story__card::after,
+  .blessing__card::after{
+    inset: 12px;
+    border-radius: 22px;
+  }
+
+  .blessing__ornament{
+    margin-bottom: 20px;
+  }
+
+  .blessing__eyebrow{
+    letter-spacing: .26em;
+    font-size: .74rem;
+  }
+
+  .blessing__title{
+    font-size: clamp(2.3rem, 12.2vw, 3.7rem);
+    letter-spacing: .045em;
+  }
+
+  .blessing__divider{
+    margin: 20px auto 26px;
+  }
+
+  .blessing__photo{
+    margin-bottom: 30px;
+  }
+
+  .blessing__photo img{
+    aspect-ratio: 4 / 5;
+    border-radius: 22px;
+  }
+
+  .blessing__parents{
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .blessing__centerLine{
+    height: 1px;
+    width: min(210px, 76%);
+    margin: 0 auto;
+  }
+
+  .blessing__centerLine::before{
+    top: 50%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(181,132,67,.58), transparent);
+  }
+
+  .blessing__role{
+    font-size: .82rem;
+    letter-spacing: .32em;
+  }
+
+  .blessing__parent h3{
+    font-size: 1.85rem;
+  }
+
+  .blessing__parent p{
+    font-size: .78rem;
+  }
 }
 
 /* =========================
