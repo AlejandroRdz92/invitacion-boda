@@ -2046,165 +2046,395 @@ body{
 }
 
 /* =========================
-   DRESS CODE PREMIUM MINIMAL
+   DRESS CODE / PÁGINA 5 PREMIUM
    ========================= */
 
 .dress{
   padding: var(--section-pad-y) var(--section-pad-x);
   background:
-    radial-gradient(circle at top center, rgba(255,255,255,.38), transparent 34%),
-    linear-gradient(180deg, #f5efe6 0%, #f2ebdf 100%);
+    radial-gradient(circle at 16% 24%, rgba(255,255,255,.52), transparent 26%),
+    radial-gradient(circle at 86% 18%, rgba(255,255,255,.36), transparent 28%),
+    linear-gradient(180deg, #f5efe6 0%, #f1e8dc 100%);
 }
 
 .dress__wrap{
-  width: min(920px, calc(100% - 24px));
+  width: min(1180px, calc(100% - 28px));
   margin: 0 auto;
 }
 
-.dress__header{
+.dress__card{
+  position: relative;
+  overflow: hidden;
   text-align: center;
-  margin-bottom: 34px;
+  padding: clamp(38px, 5vw, 72px) clamp(18px, 5vw, 76px) clamp(30px, 4vw, 50px);
+  border-radius: 38px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.76), transparent 44%),
+    linear-gradient(180deg, rgba(255,251,245,.94), rgba(255,247,238,.89));
+  border: 1px solid rgba(183,135,65,.20);
+  box-shadow:
+    0 30px 80px rgba(58,47,32,.12),
+    inset 0 1px 0 rgba(255,255,255,.62);
+}
+
+.dress__card::before{
+  content:"";
+  position:absolute;
+  inset: 18px;
+  border: 1px solid rgba(183,135,65,.16);
+  border-radius: 28px;
+  pointer-events:none;
+}
+
+.dress__card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 0% 58%, rgba(183,135,65,.07), transparent 23%),
+    radial-gradient(circle at 100% 58%, rgba(183,135,65,.07), transparent 23%);
+  pointer-events:none;
+}
+
+.dress__ornament,
+.dress__header,
+.dress__guide,
+.dress__note,
+.dress__brand{
+  position: relative;
+  z-index: 1;
+}
+
+.dress__ornament{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 18px;
+  color:#b78641;
+  margin: 0 auto 30px;
+  opacity:.95;
+}
+
+.dress__ornament span{
+  width: min(140px, 22vw);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(183,134,65,.72));
+}
+
+.dress__ornament span:last-child{
+  background: linear-gradient(90deg, rgba(183,134,65,.72), transparent);
+}
+
+.dress__ornament i{
+  font-style: normal;
+  font-family:'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.dress__ornament--bottom{
+  margin: 30px auto 10px;
 }
 
 .dress__eyebrow{
-  margin: 0 0 10px;
+  margin: 0 0 14px;
   text-transform: uppercase;
-  letter-spacing: .24em;
-  font-size: .8rem;
-  color: rgba(74,58,40,.55);
+  letter-spacing: .32em;
+  font-size: clamp(.72rem, 1.2vw, .86rem);
+  color: #b78641;
 }
 
 .dress__title{
   margin: 0;
   font-family:'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: clamp(2.3rem, 4.4vw, 3.3rem);
-  color: #4b3b29;
-  line-height: 1.05;
+  font-size: clamp(4rem, 8vw, 7.2rem);
+  color: #3a2f20;
+  line-height: .92;
+  letter-spacing: .01em;
+  text-shadow: 0 10px 28px rgba(58,47,32,.10);
+}
+
+.dress__miniSep{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 12px;
+  margin: 24px 0 18px;
+  color:#b78641;
+}
+
+.dress__miniSep span{
+  width: 56px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(183,134,65,.82));
+}
+
+.dress__miniSep span:last-child{
+  background: linear-gradient(90deg, rgba(183,134,65,.82), transparent);
+}
+
+.dress__miniSep i{
+  font-style: normal;
+  font-size: .9rem;
 }
 
 .dress__subtitle{
-  max-width: 520px;
-  margin: 14px auto 0;
-  line-height: 1.75;
-  color: rgba(74,58,40,.74);
-  font-size: 1rem;
+  margin: 0 auto;
+  font-family:'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  line-height: 1.45;
+  letter-spacing: .14em;
+  color: rgba(58,47,32,.82);
 }
 
-.dress__panel{
-  display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
-  gap: 34px;
-  align-items: center;
-  padding: 34px;
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(255,251,245,.88), rgba(255,247,239,.82));
-  border: 1px solid rgba(58,47,32,.08);
-  box-shadow:
-    0 22px 52px rgba(0,0,0,.08),
-    inset 0 1px 0 rgba(255,255,255,.5);
+.dress__guide{
+  margin: clamp(28px, 4vw, 48px) auto 0;
+  display:grid;
+  grid-template-columns: minmax(0,1fr) 1px minmax(0,1fr) 1px minmax(0,1fr);
+  align-items: stretch;
+  gap: clamp(16px, 2.2vw, 34px);
 }
 
-.dress__figure{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-  border-radius: 28px;
-  background: rgba(255,255,255,.38);
-  border: 1px solid rgba(58,47,32,.05);
-  padding: 34px 24px;
+.dress__divider{
+  width:1px;
+  min-height: 150px;
+  background: linear-gradient(to bottom, transparent, rgba(183,134,65,.56), transparent);
+  align-self:center;
 }
 
-.dress__figure img{
-  width: 100%;
-  max-width: 230px;
-  height: auto;
-  display: block;
-  background: transparent;
-  mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1.02) opacity(.88);
-  box-shadow: none;
+.dress__item{
+  min-width: 0;
+  padding: 0 clamp(2px, 1vw, 12px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
-.dress__details{
-  display: grid;
-  gap: 16px;
+.dress__icon{
+  width: clamp(76px, 8vw, 104px);
+  height: clamp(76px, 8vw, 104px);
+  margin: 0 auto 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(183,134,65,.75);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,.24);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.50);
 }
 
-.dress__rule{
-  padding: 16px 0 14px;
-  border-bottom: 1px solid rgba(58,47,32,.10);
+.dress__icon svg{
+  width: 58%;
+  height: 58%;
+  fill: none;
+  stroke: #b78641;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.dress__rule:first-child{
-  border-top: 1px solid rgba(58,47,32,.10);
+.dress__icon--colors{
+  gap: 9px;
 }
 
-.dress__ruleLabel{
-  display: block;
-  margin-bottom: 6px;
-  font-size: .76rem;
-  letter-spacing: .18em;
+.dress__swatch{
+  width: 24px;
+  height: 24px;
+  border-radius:999px;
+  border:1px solid rgba(58,47,32,.18);
+  display:block;
+}
+
+.dress__swatch--cream{ background:#fffaf1; }
+.dress__swatch--blue{ background:#233d64; border-color:rgba(35,61,100,.45); }
+.dress__swatch--sky{ background:#9fb7ce; border-color:rgba(90,113,135,.38); }
+
+.dress__item h3{
+  margin: 0 0 16px;
+  font-size: clamp(.88rem, 1.25vw, 1.05rem);
+  font-weight: 500;
+  letter-spacing: .34em;
   text-transform: uppercase;
-  color: rgba(74,58,40,.52);
+  color: #3a2f20;
 }
 
-.dress__ruleText{
+.dress__item h3::after{
+  content:"";
+  display:block;
+  width: 46px;
+  height: 1px;
+  margin: 12px auto 0;
+  background: rgba(183,134,65,.70);
+}
+
+.dress__item p{
   margin: 0;
   font-family:'Cormorant Garamond', serif;
-  font-size: 1.55rem;
-  line-height: 1.2;
-  color: #4b3b29;
+  font-size: clamp(1.08rem, 1.7vw, 1.45rem);
+  line-height: 1.36;
+  color: rgba(58,47,32,.88);
 }
 
-/* MOBILE */
+.dress__note{
+  width: min(860px, 100%);
+  margin: clamp(30px, 4vw, 46px) auto 0;
+  padding: clamp(18px, 3vw, 28px) clamp(18px, 4vw, 46px);
+  border: 1px solid rgba(183,134,65,.40);
+  border-radius: 24px;
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  align-items:center;
+  gap: 18px;
+  background: rgba(255,255,255,.22);
+}
+
+.dress__note p{
+  margin: 0;
+  font-family:'Cormorant Garamond', serif;
+  font-size: clamp(1.12rem, 1.8vw, 1.42rem);
+  line-height: 1.45;
+  letter-spacing: .10em;
+  color: rgba(58,47,32,.86);
+}
+
+.dress__leaf{
+  color:#b78641;
+  font-size: 2rem;
+  line-height: 1;
+  opacity: .9;
+}
+
+.dress__brand{
+  margin: 14px 0 0;
+  font-family:'Cormorant Garamond', serif;
+  letter-spacing: .22em;
+  color:#b78641;
+  font-size: 1.25rem;
+}
+
 @media (max-width: 760px){
   .dress{
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 34px 10px;
   }
 
-  .dress__panel{
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 24px 18px;
-    border-radius: 24px;
+  .dress__wrap{
+    width: min(100%, 430px);
   }
 
-  .dress__header{
-    margin-bottom: 26px;
+  .dress__card{
+    padding: 34px 13px 26px;
+    border-radius: 28px;
+  }
+
+  .dress__card::before{
+    inset: 10px;
+    border-radius: 22px;
+  }
+
+  .dress__ornament{
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .dress__ornament span{
+    width: 72px;
+  }
+
+  .dress__eyebrow{
+    font-size: .67rem;
+    letter-spacing: .24em;
+    margin-bottom: 10px;
   }
 
   .dress__title{
-    font-size: clamp(2.1rem, 8vw, 2.8rem);
+    font-size: clamp(3rem, 16vw, 4.25rem);
+  }
+
+  .dress__miniSep{
+    margin: 17px 0 13px;
   }
 
   .dress__subtitle{
-    font-size: .98rem;
-    line-height: 1.7;
-    max-width: 320px;
+    font-size: 1.15rem;
+    letter-spacing: .09em;
   }
 
-  .dress__figure{
-    min-height: auto;
-    padding: 22px;
+  .dress__guide{
+    margin-top: 26px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid rgba(183,134,65,.22);
+    border-bottom: 1px solid rgba(183,134,65,.22);
+    padding: 18px 0 16px;
   }
 
-  .dress__figure img{
-    max-width: 180px;
+  .dress__divider{
+    display:none;
   }
 
-  .dress__details{
-    gap: 10px;
+  .dress__item{
+    padding: 0 7px;
+    border-left: 1px solid rgba(183,134,65,.28);
   }
 
-  .dress__rule{
-    padding: 14px 0 12px;
+  .dress__item:first-child{
+    border-left: 0;
   }
 
-  .dress__ruleText{
-    font-size: 1.36rem;
+  .dress__icon{
+    width: 58px;
+    height: 58px;
+    margin-bottom: 12px;
+  }
+
+  .dress__icon--colors{
+    gap: 4px;
+  }
+
+  .dress__swatch{
+    width: 13px;
+    height: 13px;
+  }
+
+  .dress__item h3{
+    font-size: .64rem;
+    letter-spacing: .22em;
+    margin-bottom: 10px;
+  }
+
+  .dress__item h3::after{
+    width: 28px;
+    margin-top: 8px;
+  }
+
+  .dress__item p{
+    font-size: .92rem;
+    line-height: 1.25;
+  }
+
+  .dress__note{
+    margin-top: 22px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 17px 14px;
+    border-radius: 18px;
+  }
+
+  .dress__leaf{
+    font-size: 1.25rem;
+  }
+
+  .dress__note p{
+    font-size: 1rem;
+    line-height: 1.36;
+    letter-spacing: .06em;
+  }
+
+  .dress__brand{
+    font-size: 1.02rem;
+    margin-top: 12px;
   }
 }
 
