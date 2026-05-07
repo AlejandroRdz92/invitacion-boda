@@ -3051,3 +3051,247 @@ body{
     line-height: .9;
   }
 }
+
+/* =========================
+   AJUSTE V2 - BENDICIÓN COMO DISEÑO ORIGINAL
+   Mantiene dos columnas también en celular y agrega detalles gráficos.
+   ========================= */
+
+.blessing__card{
+  padding-top: clamp(42px, 5vw, 72px);
+  padding-bottom: clamp(42px, 5vw, 72px);
+}
+
+.blessing__ornament{
+  width: min(380px, 70vw);
+  gap: 12px;
+}
+
+.blessing__ornament i{
+  position: relative;
+  color: transparent;
+  width: 34px;
+  height: 20px;
+}
+
+.blessing__ornament i::before{
+  content: "❧";
+  position: absolute;
+  inset: auto 0 -2px 0;
+  color: #b58443;
+  font-size: 1.35rem;
+  transform: rotate(90deg);
+  line-height: 1;
+}
+
+.blessing__eyebrow{
+  margin-bottom: 18px;
+  color: rgba(58,47,32,.78);
+}
+
+.blessing__title{
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blessing__photo{
+  position: relative;
+  width: min(760px, 100%);
+  margin-bottom: clamp(38px, 4vw, 52px);
+}
+
+.blessing__photo::before,
+.blessing__photo::after{
+  content:"";
+  position:absolute;
+  bottom: 0;
+  width: clamp(76px, 12vw, 132px);
+  height: clamp(150px, 22vw, 250px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+  opacity: .88;
+  pointer-events:none;
+  z-index: 2;
+}
+
+.blessing__photo::before{
+  left: clamp(-68px, -5vw, -24px);
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='240' viewBox='0 0 120 240' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M94 222C45 167 36 105 48 18' stroke='%23B58443' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M49 65C24 45 21 25 44 2C61 27 62 48 49 65Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M55 93C28 78 17 58 29 31C53 49 64 70 55 93Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M62 121C35 107 23 87 36 60C60 77 71 98 62 121Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M70 151C43 136 32 116 44 90C68 107 79 128 70 151Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M81 184C54 169 42 150 55 123C79 140 90 161 81 184Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M47 82C75 67 90 47 83 21C57 34 43 57 47 82Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M56 113C84 98 100 78 92 52C66 65 52 88 56 113Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M66 146C94 131 109 111 102 85C76 98 62 121 66 146Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M78 183C105 168 113 148 107 126C83 139 70 160 78 183Z' stroke='%23B58443' stroke-width='1.2'/%3E%3C/svg%3E");
+}
+
+.blessing__photo::after{
+  right: clamp(-68px, -5vw, -24px);
+  transform: scaleX(-1);
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='240' viewBox='0 0 120 240' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M94 222C45 167 36 105 48 18' stroke='%23B58443' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M49 65C24 45 21 25 44 2C61 27 62 48 49 65Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M55 93C28 78 17 58 29 31C53 49 64 70 55 93Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M62 121C35 107 23 87 36 60C60 77 71 98 62 121Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M70 151C43 136 32 116 44 90C68 107 79 128 70 151Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M81 184C54 169 42 150 55 123C79 140 90 161 81 184Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M47 82C75 67 90 47 83 21C57 34 43 57 47 82Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M56 113C84 98 100 78 92 52C66 65 52 88 56 113Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M66 146C94 131 109 111 102 85C76 98 62 121 66 146Z' stroke='%23B58443' stroke-width='1.2'/%3E%3Cpath d='M78 183C105 168 113 148 107 126C83 139 70 160 78 183Z' stroke='%23B58443' stroke-width='1.2'/%3E%3C/svg%3E");
+}
+
+.blessing__parents{
+  grid-template-columns: minmax(0,1fr) 48px minmax(0,1fr);
+  align-items: stretch;
+  gap: clamp(22px, 4vw, 46px);
+}
+
+.blessing__parent h3{
+  white-space: normal;
+}
+
+@media (max-width: 720px){
+  .blessing{
+    padding: 30px 10px 38px;
+  }
+
+  .blessing__card{
+    padding: 34px 14px 38px;
+    border-radius: 26px;
+  }
+
+  .blessing__card::after{
+    inset: 10px;
+    border-radius: 20px;
+  }
+
+  .blessing__ornament{
+    width: min(250px, 72vw);
+    margin-bottom: 20px;
+  }
+
+  .blessing__eyebrow{
+    font-size: .68rem;
+    letter-spacing: .30em;
+    margin-bottom: 12px;
+  }
+
+  .blessing__title{
+    font-size: clamp(2.15rem, 10.6vw, 3.25rem);
+    line-height: .96;
+    letter-spacing: .055em;
+  }
+
+  .blessing__divider{
+    margin: 18px auto 24px;
+    width: min(150px, 42vw);
+  }
+
+  .blessing__photo{
+    width: min(100%, 620px);
+    margin-bottom: 34px;
+  }
+
+  .blessing__photo img{
+    aspect-ratio: 16 / 10;
+    object-position: center;
+    border-radius: 20px;
+  }
+
+  .blessing__photo::before,
+  .blessing__photo::after{
+    width: clamp(42px, 14vw, 76px);
+    height: clamp(92px, 28vw, 150px);
+    bottom: 0;
+    opacity: .85;
+  }
+
+  .blessing__photo::before{
+    left: -22px;
+  }
+
+  .blessing__photo::after{
+    right: -22px;
+  }
+
+  .blessing__parents{
+    width: 100%;
+    grid-template-columns: minmax(0,1fr) 20px minmax(0,1fr);
+    gap: clamp(8px, 2.4vw, 14px);
+  }
+
+  .blessing__side{
+    padding: 0;
+  }
+
+  .blessing__centerLine{
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+
+  .blessing__centerLine::before{
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(to bottom, transparent, rgba(181,132,67,.58), transparent);
+  }
+
+  .blessing__centerLine i{
+    width: 22px;
+    height: 22px;
+    font-size: .68rem;
+  }
+
+  .blessing__role{
+    margin-bottom: 10px;
+    font-size: .64rem;
+    letter-spacing: .24em;
+  }
+
+  .blessing__role::before,
+  .blessing__role::after{
+    margin: 0 5px;
+  }
+
+  .blessing__miniLeaf{
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .blessing__parent h3{
+    font-size: clamp(1.12rem, 5.2vw, 1.55rem);
+    line-height: 1.04;
+  }
+
+  .blessing__parent p{
+    margin-top: 7px;
+    font-size: .58rem;
+    letter-spacing: .24em;
+  }
+
+  .blessing__smallDivider{
+    width: min(76px, 62%);
+    margin: 16px auto 18px;
+  }
+
+  .blessing__ornament--bottom{
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 390px){
+  .blessing__card{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .blessing__parents{
+    grid-template-columns: minmax(0,1fr) 16px minmax(0,1fr);
+    gap: 6px;
+  }
+
+  .blessing__parent h3{
+    font-size: clamp(1.02rem, 5vw, 1.34rem);
+  }
+
+  .blessing__role{
+    font-size: .58rem;
+    letter-spacing: .20em;
+  }
+
+  .blessing__parent p{
+    font-size: .53rem;
+    letter-spacing: .20em;
+  }
+}
