@@ -32,8 +32,11 @@
   <section id="lobby" class="lobby" aria-label="Portada invitación">
 
       <header class="lobby__top">
-        <h1 class="lobby__names">Sarahi &amp; Alejandro</h1>
-        <p class="lobby__date">03 / 10 / 26</p>
+        <h1 class="lobby__names" aria-label="Sarahi y Alejandro">
+          <span>Sarahi</span>
+          <span class="lobby__amp">&amp;</span>
+          <span>Alejandro</span>
+        </h1>
       </header>
 
       <main class="lobby__center">
@@ -159,91 +162,6 @@
   <span class="sep__badge">A&amp;S</span>
   <span class="sep__line"></span>
 </div>
-
-<!-- ========== GALERÍA CARRUSEL (PREMIUM) ========== -->
-<section class="gallery gallery--carousel" id="gallery">
-  <div class="gallery__container">
-
-    <header class="gallery__header reveal" data-reveal>
-      <h2 class="gallery__title">Nuestra historia en fotos</h2>
-      <p class="gallery__subtitle">Desliza para ver nuestros momentos ✨</p>
-    </header>
-
-    <div class="gallery__shell reveal" data-reveal>
-      <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Anterior" data-gprev>‹</button>
-
-      <div class="gallery__track" data-gtrack>
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 1">
-          <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">01</span>
-        </button>
-
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria02.jpg" aria-label="Abrir foto 2">
-          <img src="Imagenes/galeria02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">02</span>
-        </button>
-
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria03.jpg" aria-label="Abrir foto 3">
-          <img src="Imagenes/galeria03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">03</span>
-        </button>
-
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria04.jpg" aria-label="Abrir foto 4">
-          <img src="Imagenes/galeria04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">04</span>
-        </button>
-
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria05.jpg" aria-label="Abrir foto 5">
-          <img src="Imagenes/galeria05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">05</span>
-        </button>
-
-        <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 6">
-          <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
-          <span class="gallery__veil" aria-hidden="true"></span>
-          <span class="gallery__chip" aria-hidden="true">06</span>
-        </button>
-      </div>
-
-      <button class="gallery__nav gallery__nav--next" type="button" aria-label="Siguiente" data-gnext>›</button>
-    </div>
-
-    <div class="gallery__footer reveal" data-reveal>
-      <div class="gallery__progress">
-        <span class="gallery__bar" data-gbar></span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-<!-- ========== LIGHTBOX (MODAL PREMIUM) ========== -->
-<div id="lightbox" class="lightbox is-hidden" aria-hidden="true">
-  <div class="lightbox__backdrop" data-lb-close></div>
-
-  <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Vista de foto">
-    <button class="lightbox__close" type="button" aria-label="Cerrar" data-lb-close>✕</button>
-
-    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Anterior" data-lb-prev>‹</button>
-    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Siguiente" data-lb-next>›</button>
-
-    <div class="lightbox__frame">
-      <img id="lightboxImg" class="lightbox__img" src="" alt="">
-    </div>
-
-    <div class="lightbox__meta">
-      <span id="lightboxCount" class="lightbox__count">1 / 1</span>
-    </div>
-  </div>
-</div>
-
 
 <!-- ========== SEPARATOR ========== -->
 <div class="sep reveal" data-reveal aria-hidden="true">
@@ -521,6 +439,91 @@
         </div>
       </div>
     </section>
+
+    <!-- ========== GALERÍA FINAL ========== -->
+<!-- ========== GALERÍA CARRUSEL (PREMIUM) ========== -->
+<section class="gallery gallery--carousel" id="gallery">
+  <div class="gallery__container">
+
+    <header class="gallery__header reveal" data-reveal>
+      <h2 class="gallery__title">Nuestra historia en fotos</h2>
+      <p class="gallery__subtitle">Desliza para ver nuestros momentos ✨</p>
+    </header>
+
+    <div class="gallery__shell reveal" data-reveal>
+      <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Anterior" data-gprev>‹</button>
+
+      <div class="gallery__track" data-gtrack>
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 1">
+          <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">01</span>
+        </button>
+
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria02.jpg" aria-label="Abrir foto 2">
+          <img src="Imagenes/galeria02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">02</span>
+        </button>
+
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria03.jpg" aria-label="Abrir foto 3">
+          <img src="Imagenes/galeria03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">03</span>
+        </button>
+
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria04.jpg" aria-label="Abrir foto 4">
+          <img src="Imagenes/galeria04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">04</span>
+        </button>
+
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria05.jpg" aria-label="Abrir foto 5">
+          <img src="Imagenes/galeria05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">05</span>
+        </button>
+
+        <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 6">
+          <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
+          <span class="gallery__veil" aria-hidden="true"></span>
+          <span class="gallery__chip" aria-hidden="true">06</span>
+        </button>
+      </div>
+
+      <button class="gallery__nav gallery__nav--next" type="button" aria-label="Siguiente" data-gnext>›</button>
+    </div>
+
+    <div class="gallery__footer reveal" data-reveal>
+      <div class="gallery__progress">
+        <span class="gallery__bar" data-gbar></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ========== LIGHTBOX (MODAL PREMIUM) ========== -->
+<div id="lightbox" class="lightbox is-hidden" aria-hidden="true">
+  <div class="lightbox__backdrop" data-lb-close></div>
+
+  <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Vista de foto">
+    <button class="lightbox__close" type="button" aria-label="Cerrar" data-lb-close>✕</button>
+
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Anterior" data-lb-prev>‹</button>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Siguiente" data-lb-next>›</button>
+
+    <div class="lightbox__frame">
+      <img id="lightboxImg" class="lightbox__img" src="" alt="">
+    </div>
+
+    <div class="lightbox__meta">
+      <span id="lightboxCount" class="lightbox__count">1 / 1</span>
+    </div>
+  </div>
+</div>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer reveal" data-reveal>
