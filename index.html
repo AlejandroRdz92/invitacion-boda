@@ -941,12 +941,13 @@
       openInvite.addEventListener('click', async () => {
         lobby.classList.add('lobby--open');
 
-        try {
-          if (bgMusic) {
-            bgMusic.volume = 0.50;
-            await bgMusic.play();
-          }
-        } catch (e) {}
+       try {
+  if (bgMusic) {
+    bgMusic.volume = 0.50;
+    bgMusic.currentTime = 8;
+    await bgMusic.play();
+  }
+} catch (e) {}
 
         setTimeout(() => {
           lobby.classList.add('is-hidden');
@@ -1434,19 +1435,6 @@
     })();
   </script>
 
-<script>
-  const bgMusic = document.getElementById("bgMusic");
-
-  bgMusic.addEventListener("loadedmetadata", function () {
-    bgMusic.currentTime = 2;
-  });
-
-  bgMusic.addEventListener("play", function () {
-    if (bgMusic.currentTime < 8) {
-      bgMusic.currentTime = 8 ;
-    }
-  });
-</script>
 
 
   
