@@ -16,21 +16,6 @@
   <meta name="twitter:image" content="https://alejandrorrdz92.github.io/invitacion-boda/Imagenes/preview.jpg" />
   <link rel="stylesheet" href="estilos.css" />
 </head>
-
-<script>
-  const bgMusic = document.getElementById("bgMusic");
-
-  bgMusic.addEventListener("loadedmetadata", function () {
-    bgMusic.currentTime = 2;
-  });
-
-  bgMusic.addEventListener("play", function () {
-    if (bgMusic.currentTime < 2) {
-      bgMusic.currentTime = 2;
-    }
-  });
-</script>
-
   
 <body>
 
@@ -1449,5 +1434,21 @@
     })();
   </script>
 
+<script>
+  const bgMusic = document.getElementById("bgMusic");
+
+  bgMusic.addEventListener("loadedmetadata", function () {
+    bgMusic.currentTime = 2;
+  });
+
+  bgMusic.addEventListener("play", function () {
+    if (bgMusic.currentTime < 2) {
+      bgMusic.currentTime = 2;
+    }
+  });
+</script>
+
+
+  
 </body>
 </html>
