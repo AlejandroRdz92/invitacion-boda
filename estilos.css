@@ -58,7 +58,7 @@ body{
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: clamp(44px, 7vh, 86px) 16px clamp(4px, 1vh, 12px);
+  padding: clamp(80px, 10vh, 120px) 16px clamp(4px, 1vh, 12px);
 }
 
 /* Nombres portada estilo elegante */
