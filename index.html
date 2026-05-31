@@ -718,64 +718,81 @@
       </div>
     </section>
 
-    <!-- ========== GALERÍA CARRUSEL ========== -->
-    <section class="gallery gallery--carousel" id="gallery">
-      <div class="gallery__container">
+    <!-- ========== NUESTRA HISTORIA EN FOTOS / POLAROIDS ========== -->
+    <section class="polaroid-story reveal" data-reveal id="gallery">
+      <div class="polaroid-story__wrap">
 
-        <header class="gallery__header reveal" data-reveal>
-          <h2 class="gallery__title">Nuestra historia en fotos</h2>
-          <p class="gallery__subtitle">Desliza para ver nuestros momentos ✨</p>
+        <header class="polaroid-story__header reveal" data-reveal>
+          <p class="polaroid-story__eyebrow">Recuerdos</p>
+          <h2 class="polaroid-story__title">Nuestra historia en fotos</h2>
+
+          <div class="polaroid-story__divider" aria-hidden="true">
+            <span></span>
+            <i>♡</i>
+            <span></span>
+          </div>
+
+          <p class="polaroid-story__subtitle">
+            Cada momento, un recuerdo inolvidable ✨
+          </p>
         </header>
 
-        <div class="gallery__shell reveal" data-reveal>
-          <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Anterior" data-gprev>‹</button>
+        <div class="polaroid-story__board reveal" data-reveal>
 
-          <div class="gallery__track" data-gtrack>
-            <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 1">
-              <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 1" loading="lazy">
-              <span class="gallery__veil" aria-hidden="true"></span>
-              <span class="gallery__chip" aria-hidden="true">01</span>
-            </button>
+          <span class="polaroid-story__heart polaroid-story__heart--top" aria-hidden="true">♡</span>
 
-            <button class="gallery__card" type="button" data-full="Imagenes/galeria02.jpg" aria-label="Abrir foto 2">
-              <img src="Imagenes/galeria02.jpg" alt="Alejandro y Sarahi — Foto 2" loading="lazy">
-              <span class="gallery__veil" aria-hidden="true"></span>
-              <span class="gallery__chip" aria-hidden="true">02</span>
-            </button>
+          <span class="polaroid-story__sprig polaroid-story__sprig--left" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+          </span>
 
-            <button class="gallery__card" type="button" data-full="Imagenes/galeria03.jpg" aria-label="Abrir foto 3">
-              <img src="Imagenes/galeria03.jpg" alt="Alejandro y Sarahi — Foto 3" loading="lazy">
-              <span class="gallery__veil" aria-hidden="true"></span>
-              <span class="gallery__chip" aria-hidden="true">03</span>
-            </button>
+          <span class="polaroid-story__sprig polaroid-story__sprig--right" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+          </span>
 
-            <button class="gallery__card" type="button" data-full="Imagenes/galeria04.jpg" aria-label="Abrir foto 4">
-              <img src="Imagenes/galeria04.jpg" alt="Alejandro y Sarahi — Foto 4" loading="lazy">
-              <span class="gallery__veil" aria-hidden="true"></span>
-              <span class="gallery__chip" aria-hidden="true">04</span>
-            </button>
+          <article class="polaroid polaroid--one">
+            <span class="polaroid__tape" aria-hidden="true"></span>
+            <img src="Imagenes/galeria01.jpg" alt="Sarahi y Alejandro — Así comenzó todo" loading="lazy">
+            <div class="polaroid__caption">
+              <p>Así comenzó todo <span>♡</span></p>
+              <small>2021</small>
+            </div>
+          </article>
 
-            <button class="gallery__card" type="button" data-full="Imagenes/galeria05.jpg" aria-label="Abrir foto 5">
-              <img src="Imagenes/galeria05.jpg" alt="Alejandro y Sarahi — Foto 5" loading="lazy">
-              <span class="gallery__veil" aria-hidden="true"></span>
-              <span class="gallery__chip" aria-hidden="true">05</span>
-            </button>
+          <article class="polaroid polaroid--two">
+            <span class="polaroid__tape" aria-hidden="true"></span>
+            <img src="Imagenes/galeria02.jpg" alt="Sarahi y Alejandro — Nuestro primer viaje" loading="lazy">
+            <div class="polaroid__caption">
+              <p>Nuestro primer viaje <span>♡</span></p>
+              <small>2022</small>
+            </div>
+          </article>
 
-            <button class="gallery__card" type="button" data-full="Imagenes/galeria01.jpg" aria-label="Abrir foto 6">
-              <img src="Imagenes/galeria01.jpg" alt="Alejandro y Sarahi — Foto 6" loading="lazy">
-              <span class="gallery__veil" aria-hidden="true"></span>
-              <span class="gallery__chip" aria-hidden="true">06</span>
-            </button>
-          </div>
+          <article class="polaroid polaroid--three">
+            <span class="polaroid__tape" aria-hidden="true"></span>
+            <img src="Imagenes/galeria03.jpg" alt="Sarahi y Alejandro — Momentos favoritos" loading="lazy">
+            <div class="polaroid__caption">
+              <p>Momentos que se volvieron<br>nuestros favoritos <span>♡</span></p>
+              <small>2023</small>
+            </div>
+          </article>
 
-          <button class="gallery__nav gallery__nav--next" type="button" aria-label="Siguiente" data-gnext>›</button>
+          <article class="polaroid polaroid--four">
+            <span class="polaroid__tape" aria-hidden="true"></span>
+            <img src="Imagenes/galeria04.jpg" alt="Sarahi y Alejandro — El mejor sí" loading="lazy">
+            <div class="polaroid__caption">
+              <p>El mejor sí de mi vida <span>♡</span></p>
+              <small>2024</small>
+            </div>
+          </article>
+
         </div>
 
-        <div class="gallery__footer reveal" data-reveal>
-          <div class="gallery__progress">
-            <span class="gallery__bar" data-gbar></span>
+        <footer class="polaroid-story__footer reveal" data-reveal>
+          <div class="polaroid-story__footerLine" aria-hidden="true">
+            <span></span><i>♡</i><span></span>
           </div>
-        </div>
+          <p>Y lo mejor está por venir ♡</p>
+        </footer>
 
       </div>
     </section>
