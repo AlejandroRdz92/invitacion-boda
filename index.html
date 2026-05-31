@@ -35,11 +35,21 @@
   <section id="lobby" class="lobby" aria-label="Portada invitación">
 
     <header class="lobby__top">
-      <h1 class="lobby__names" aria-label="Sarahi y Alejandro">
-        <span>Sarahi</span>
-        <span class="lobby__amp">&amp;</span>
-        <span>Alejandro</span>
-      </h1>
+      <div class="lobby__names-wrap" aria-label="Sarahi y Alejandro">
+        <div class="lobby__name">Sarahi</div>
+
+        <div class="lobby__middle" aria-hidden="true">
+          <div class="lobby__heart">♡</div>
+
+          <div class="lobby__amp-line">
+            <span></span>
+            <div class="lobby__amp">&amp;</div>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="lobby__name">Alejandro</div>
+      </div>
     </header>
 
     <main class="lobby__center">
@@ -66,7 +76,15 @@
     </main>
 
     <footer class="lobby__bottom">
-      <p class="lobby__hint">Toca el sello para abrir</p>
+      <div class="lobby__hint-wrap">
+        <div class="lobby__hint-decoration" aria-hidden="true">
+          <span></span>
+          <span class="heart">♡</span>
+          <span></span>
+        </div>
+
+        <p class="lobby__hint">Toca el sello para abrir</p>
+      </div>
     </footer>
 
   </section>
