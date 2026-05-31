@@ -749,41 +749,29 @@
             <i></i><i></i><i></i><i></i><i></i><i></i>
           </span>
 
-          <article class="polaroid polaroid--one">
+          <button class="polaroid polaroid--one" type="button" data-full="Imagenes/galeria01.jpg" data-caption="Así comenzó todo ♡" aria-label="Abrir foto: Así comenzó todo">
             <span class="polaroid__tape" aria-hidden="true"></span>
             <img src="Imagenes/galeria01.jpg" alt="Sarahi y Alejandro — Así comenzó todo" loading="lazy">
-            <div class="polaroid__caption">
-              <p>Así comenzó todo <span>♡</span></p>
-              <small>2021</small>
-            </div>
-          </article>
+            <span class="polaroid__caption">Así comenzó todo <span>♡</span></span>
+          </button>
 
-          <article class="polaroid polaroid--two">
+          <button class="polaroid polaroid--two" type="button" data-full="Imagenes/galeria02.jpg" data-caption="Nuestro primer viaje ♡" aria-label="Abrir foto: Nuestro primer viaje">
             <span class="polaroid__tape" aria-hidden="true"></span>
             <img src="Imagenes/galeria02.jpg" alt="Sarahi y Alejandro — Nuestro primer viaje" loading="lazy">
-            <div class="polaroid__caption">
-              <p>Nuestro primer viaje <span>♡</span></p>
-              <small>2022</small>
-            </div>
-          </article>
+            <span class="polaroid__caption">Nuestro primer viaje <span>♡</span></span>
+          </button>
 
-          <article class="polaroid polaroid--three">
+          <button class="polaroid polaroid--three" type="button" data-full="Imagenes/galeria03.jpg" data-caption="Momentos favoritos ♡" aria-label="Abrir foto: Momentos favoritos">
             <span class="polaroid__tape" aria-hidden="true"></span>
             <img src="Imagenes/galeria03.jpg" alt="Sarahi y Alejandro — Momentos favoritos" loading="lazy">
-            <div class="polaroid__caption">
-              <p>Momentos que se volvieron<br>nuestros favoritos <span>♡</span></p>
-              <small>2023</small>
-            </div>
-          </article>
+            <span class="polaroid__caption">Momentos favoritos <span>♡</span></span>
+          </button>
 
-          <article class="polaroid polaroid--four">
+          <button class="polaroid polaroid--four" type="button" data-full="Imagenes/galeria04.jpg" data-caption="El mejor sí de mi vida ♡" aria-label="Abrir foto: El mejor sí de mi vida">
             <span class="polaroid__tape" aria-hidden="true"></span>
             <img src="Imagenes/galeria04.jpg" alt="Sarahi y Alejandro — El mejor sí" loading="lazy">
-            <div class="polaroid__caption">
-              <p>El mejor sí de mi vida <span>♡</span></p>
-              <small>2024</small>
-            </div>
-          </article>
+            <span class="polaroid__caption">El mejor sí de mi vida <span>♡</span></span>
+          </button>
 
         </div>
 
@@ -797,8 +785,8 @@
       </div>
     </section>
 
-    <!-- ========== LIGHTBOX ========== -->
-    <div id="lightbox" class="lightbox is-hidden" aria-hidden="true">
+    <!-- ========== LIGHTBOX POLAROID ========== -->
+    <div id="lightbox" class="lightbox lightbox--polaroid is-hidden" aria-hidden="true">
       <div class="lightbox__backdrop" data-lb-close></div>
 
       <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Vista de foto">
@@ -807,12 +795,12 @@
         <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Anterior" data-lb-prev>‹</button>
         <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Siguiente" data-lb-next>›</button>
 
-        <div class="lightbox__frame">
-          <img id="lightboxImg" class="lightbox__img" src="" alt="">
-        </div>
-
-        <div class="lightbox__meta">
-          <span id="lightboxCount" class="lightbox__count">1 / 1</span>
+        <div class="lightbox__polaroid">
+          <span class="lightbox__tape" aria-hidden="true"></span>
+          <div class="lightbox__frame">
+            <img id="lightboxImg" class="lightbox__img" src="" alt="">
+          </div>
+          <p id="lightboxCaption" class="lightbox__caption">Nuestra historia ♡</p>
         </div>
       </div>
     </div>
@@ -1342,9 +1330,9 @@
     (function initGalleryLightbox() {
       const lb = document.getElementById('lightbox');
       const lbImg = document.getElementById('lightboxImg');
-      const lbCount = document.getElementById('lightboxCount');
+      const lbCaption = document.getElementById('lightboxCaption');
 
-      const items = Array.from(document.querySelectorAll('.gallery__card[data-full]'));
+      const items = Array.from(document.querySelectorAll('.polaroid[data-full]'));
       if (!lb || !lbImg || items.length === 0) return;
 
       let index = 0;
@@ -1355,12 +1343,14 @@
 
       function openAt(i) {
         index = (i + items.length) % items.length;
-        const full = items[index].getAttribute('data-full');
-        const alt = items[index].querySelector('img')?.getAttribute('alt') || 'Foto';
+        const item = items[index];
+        const full = item.getAttribute('data-full');
+        const caption = item.getAttribute('data-caption') || 'Nuestra historia ♡';
+        const alt = item.querySelector('img')?.getAttribute('alt') || 'Foto';
 
         lbImg.src = full;
         lbImg.alt = alt;
-        lbCount.textContent = `${index + 1} / ${items.length}`;
+        if (lbCaption) lbCaption.textContent = caption;
 
         lb.classList.remove('is-hidden');
         lb.setAttribute('aria-hidden', 'false');
