@@ -70,6 +70,7 @@ body{
   gap: clamp(6px, 1.2vh, 12px);
   color:#3a2f20;
   text-align:center;
+  transform: translateY(35px);
 }
 
 .lobby__name{
