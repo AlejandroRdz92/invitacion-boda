@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Sarahi &amp; Alejandro — Nuestra Boda</title>
   <meta name="description" content="Acompáñanos a celebrar nuestra boda el 03 de octubre de 2026 en Santa Catarina, Nuevo León." />
+
+  <!-- Preview WhatsApp / Facebook -->
   <meta property="og:title" content="Sarahi &amp; Alejandro" />
   <meta property="og:description" content="Nuestra boda — 03 de octubre de 2026" />
-<meta property="og:image" content="https://alejandrordz92.github.io/invitacion-boda/Imagenes/preview_1200x630.jpg" />
-<meta property="og:image:secure_url" content="https://alejandrordz92.github.io/invitacion-boda/Imagenes/preview_1200x630.jpg" />
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+  <meta property="og:image" content="https://sarahiyalejandro.com/Imagenes/preview_1200x630.jpg" />
+  <meta property="og:image:secure_url" content="https://sarahiyalejandro.com/Imagenes/preview_1200x630.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
-<meta property="og:url" content="https://alejandrordz92.github.io/invitacion-boda/" />
+  <meta property="og:url" content="https://sarahiyalejandro.com/" />
+
+  <!-- Preview Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Alejandro &amp; Sarahi" />
+  <meta name="twitter:title" content="Sarahi &amp; Alejandro" />
   <meta name="twitter:description" content="Nuestra boda — 03 de octubre de 2026" />
-<meta name="twitter:image" content="https://alejandrordz92.github.io/invitacion-boda/Imagenes/preview_1200x630.jpg" />
+  <meta name="twitter:image" content="https://sarahiyalejandro.com/Imagenes/preview_1200x630.jpg" />
+
   <link rel="stylesheet" href="estilos.css" />
 </head>
   
@@ -1014,36 +1020,37 @@
     const $btn = document.getElementById("rsvpBtn");
     const $status = document.getElementById("rsvpStatus");
 
-    function getTokenFromUrl() {
-
-  // 1) URL bonita AWS:
-  // sarahiylejandro.com/ALEX01
-  let path = window.location.pathname
-    .replace("/invitacion-boda/", "")
-    .replace(/^\/|\/$/g, "");
-
-  if (path && path !== "index.html") {
-    return path.trim().toUpperCase();
-  }
-
-  // 2) Compatibilidad GitHub:
-  // invitacion-boda/#/ALEX01
-  if (window.location.hash.startsWith("#/")) {
-    return window.location.hash
-      .replace("#/", "")
-      .trim()
-      .toUpperCase();
-  }
-
-  // 3) Compatibilidad con links actuales:
-  // ?t=ALEX01
+   function getTokenFromUrl() {
   const params = new URLSearchParams(window.location.search);
 
-  return (
+  const queryToken = (
     params.get("t") ||
     params.get("token") ||
     ""
-  ).trim().toUpperCase();
+  ).trim();
+
+  if (queryToken) return queryToken;
+
+  const path = window.location.pathname
+    .replace("/invitacion-boda/", "")
+    .replace(/^\/|\/$/g, "")
+    .trim();
+
+  if (
+    path &&
+    path !== "index.html" &&
+    path !== "invitacion-boda"
+  ) {
+    return decodeURIComponent(path);
+  }
+
+  if (window.location.hash.startsWith("#/")) {
+    return decodeURIComponent(
+      window.location.hash.replace("#/", "").trim()
+    );
+  }
+
+  return "";
 }
 
     function setStatus(text, type = "info") {
