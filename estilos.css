@@ -4897,36 +4897,55 @@ body{
   }
 }
 
-/* Iconos premium Dress Code */
+/* FIX Dress Code Mobile - iconos centrados y sin encimarse */
 
-.dc5__icon--photo{
-    width: 132px;
-    height: 132px;
-    margin: 0 auto 24px;
-    border-radius: 50%;
-    border: 1px solid rgba(198,161,107,.75);
+@media (max-width: 720px){
+  .dc5__guide{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 
+  .dc5__divider{
+    display: none;
+  }
+
+  .dc5__item{
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  .dc5__icon,
+  .dc5__icon--photo,
+  .dc5__icon--colors{
+    width: 138px;
+    height: 138px;
+    margin: 0 auto 18px;
+  }
+
+  .dc5__icon--photo img{
+    width: 58%;
+    height: 58%;
+    object-fit: contain;
+  }
+
+  .dc5__icon--colors{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+  }
 
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(255,255,255,.95),
-            rgba(255,248,240,.82)
-        );
+  .dc5__item h3{
+    margin-top: 0;
+  }
 
-    box-shadow:
-        0 12px 28px rgba(58,47,32,.06),
-        inset 0 1px 0 rgba(255,255,255,.8);
-
-    overflow: hidden;
-}
-
-.dc5__icon--photo img{
-    width: 62%;
-    height: 62%;
-    object-fit: contain;
-    display: block;
+  .dc5__item p{
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
