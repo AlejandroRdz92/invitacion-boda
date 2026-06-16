@@ -4965,10 +4965,10 @@ body{
 
 .dc5__icon--photo img{
   display: block;
-  width: 50px;
-  height: 50px;
-  max-width: 58%;
-  max-height: 58%;
+  width: 62px;
+  height: 62px;
+  max-width: 68%;
+  max-height: 68%;
   object-fit: contain;
 }
 
