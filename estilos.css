@@ -5067,3 +5067,40 @@ body{
   }
 }
 
+/* Hojitas nuevas PNG - sección Bendición */
+.blessing__leaf{
+  position: absolute;
+  width: 120px;
+  height: auto;
+  opacity: .92;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.blessing__leaf--left{
+  left: 6%;
+  bottom: 245px;
+}
+
+.blessing__leaf--right{
+  right: 6%;
+  bottom: 245px;
+}
+
+/* Ajuste móvil */
+@media (max-width: 720px){
+  .blessing__leaf{
+    width: 72px;
+    opacity: .88;
+  }
+
+  .blessing__leaf--left{
+    left: 4px;
+    bottom: 360px;
+  }
+
+  .blessing__leaf--right{
+    right: 4px;
+    bottom: 360px;
+  }
+}
