@@ -5067,62 +5067,8 @@ body{
   }
 }
 
-
-
-/* FIX definitivo hojitas nuevas en foto de bendición */
-
-.blessing__photo{
-  position: relative;
-  overflow: visible;
-}
-
-.blessing__photoLeaf{
-  position: absolute;
-  width: 105px;
-  height: auto;
-  bottom: -18px;
-  z-index: 4;
-  pointer-events: none;
-  opacity: .95;
-  filter: sepia(1) saturate(2.4) hue-rotate(355deg) brightness(1.18) contrast(1.05);
-}
-
-.blessing__photoLeaf--left{
-  left: -42px;
-}
-
-.blessing__photoLeaf--right{
-  right: -42px;
-}
-
-/* Evita que estilos viejos afecten las nuevas hojitas */
-.blessing__leaf{
-  position: static;
-  width: auto;
-  height: auto;
-}
-
-/* Celular */
-@media (max-width: 720px){
-  .blessing__photoLeaf{
-    width: 74px;
-    bottom: -14px;
-  }
-
-  .blessing__photoLeaf--left{
-    left: -24px;
-  }
-
-  .blessing__photoLeaf--right{
-    right: -24px;
-  }
-}
-
 /* =========================================================
-   FIX FINAL - Hojitas nuevas PNG en Bendición
-   - Apaga las hojitas SVG viejas (::before / ::after).
-   - Evita que el estilo de la foto afecte las PNG nuevas.
-   - Mantiene las hojas pequeñas, doradas y en las esquinas.
+   FIX FINAL DEFINITIVO - Hojitas nuevas PNG en Bendición
    ========================================================= */
 
 .blessing__photo{
@@ -5130,7 +5076,7 @@ body{
   overflow: visible !important;
 }
 
-/* Apagar completamente las ramas viejas embebidas */
+/* Apagar ramas antiguas que venían como ::before / ::after */
 .blessing__photo::before,
 .blessing__photo::after{
   content: none !important;
@@ -5154,45 +5100,12 @@ body{
     0 8px 18px rgba(58,47,32,.06);
 }
 
-/* Hojitas PNG nuevas - FIX final
-   Apaga las ramas SVG viejas y controla solamente las PNG nuevas
-   Imagenes/Hoja Izquierda.png y Imagenes/Hoja Derecha.png
-*/
-
-.blessing__photo{
-  position: relative !important;
-  overflow: visible !important;
-}
-
-/* Apagar ramas antiguas que venían como ::before / ::after */
-.blessing__photo::before,
-.blessing__photo::after{
-  content: none !important;
-  display: none !important;
-  background-image: none !important;
-}
-
-/* Mantener la foto principal normal */
-.blessing__photo > img:not(.blessing__photoLeaf){
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 28px;
-  filter: grayscale(1) contrast(.96) brightness(1.06);
-  box-shadow:
-    0 28px 58px rgba(58,47,32,.14),
-    0 8px 18px rgba(58,47,32,.06);
-}
-
-/* Hojitas PNG */
+/* Hojitas PNG nuevas */
 .blessing__photo > img.blessing__photoLeaf{
   position: absolute !important;
   display: block !important;
 
-  width: 150px !important;
+  width: 210px !important;
   height: auto !important;
   max-width: none !important;
   max-height: none !important;
@@ -5220,14 +5133,14 @@ body{
 
 /* Izquierda espejeada */
 .blessing__photo > img.blessing__photoLeaf--left{
-  left: -55px !important;
+  left: -78px !important;
   right: auto !important;
   transform: scaleX(-1) !important;
 }
 
 /* Derecha normal */
 .blessing__photo > img.blessing__photoLeaf--right{
-  right: -55px !important;
+  right: -78px !important;
   left: auto !important;
   transform: scaleX(1) !important;
 }
@@ -5240,22 +5153,21 @@ body{
   }
 
   .blessing__photo > img.blessing__photoLeaf{
-    width: 95px !important;
+    width: 125px !important;
     height: auto !important;
     bottom: -8px !important;
     opacity: .94 !important;
   }
 
   .blessing__photo > img.blessing__photoLeaf--left{
-    left: -36px !important;
+    left: -46px !important;
     right: auto !important;
     transform: scaleX(-1) !important;
   }
 
   .blessing__photo > img.blessing__photoLeaf--right{
-    right: -36px !important;
+    right: -46px !important;
     left: auto !important;
     transform: scaleX(1) !important;
   }
 }
-
