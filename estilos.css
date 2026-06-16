@@ -5154,13 +5154,46 @@ body{
     0 8px 18px rgba(58,47,32,.06);
 }
 
-/* Hojitas PNG nuevas */
-.blessing__photo img.blessing__photoLeaf{
+/* Hojitas PNG nuevas - FIX final
+   Apaga las ramas SVG viejas y controla solamente las PNG nuevas
+   Imagenes/Hoja Izquierda.png y Imagenes/Hoja Derecha.png
+*/
+
+.blessing__photo{
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Apagar ramas antiguas que venían como ::before / ::after */
+.blessing__photo::before,
+.blessing__photo::after{
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+}
+
+/* Mantener la foto principal normal */
+.blessing__photo > img:not(.blessing__photoLeaf){
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
+  filter: grayscale(1) contrast(.96) brightness(1.06);
+  box-shadow:
+    0 28px 58px rgba(58,47,32,.14),
+    0 8px 18px rgba(58,47,32,.06);
+}
+
+/* Hojitas PNG */
+.blessing__photo > img.blessing__photoLeaf{
   position: absolute !important;
   display: block !important;
 
-  width: auto !important;
-  height: 142px !important;
+  width: 150px !important;
+  height: auto !important;
   max-width: none !important;
   max-height: none !important;
   aspect-ratio: auto !important;
@@ -5171,12 +5204,11 @@ body{
   border-radius: 0 !important;
   box-shadow: none !important;
 
-  bottom: -8px !important;
+  bottom: -10px !important;
   z-index: 5 !important;
   pointer-events: none !important;
-  opacity: .96 !important;
+  opacity: .92 !important;
 
-  /* Si el PNG viene gris, este filtro lo acerca al dorado */
   filter:
     sepia(1)
     saturate(2.2)
@@ -5186,12 +5218,18 @@ body{
     drop-shadow(0 2px 3px rgba(181,132,67,.12)) !important;
 }
 
-.blessing__photo img.blessing__photoLeaf--left{
-  left: -34px !important;
+/* Izquierda espejeada */
+.blessing__photo > img.blessing__photoLeaf--left{
+  left: -55px !important;
+  right: auto !important;
+  transform: scaleX(-1) !important;
 }
 
-.blessing__photo img.blessing__photoLeaf--right{
-  right: -34px !important;
+/* Derecha normal */
+.blessing__photo > img.blessing__photoLeaf--right{
+  right: -55px !important;
+  left: auto !important;
+  transform: scaleX(1) !important;
 }
 
 /* Celular */
@@ -5201,17 +5239,23 @@ body{
     border-radius: 22px;
   }
 
-  .blessing__photo img.blessing__photoLeaf{
-    height: 108px !important;
-    bottom: -6px !important;
+  .blessing__photo > img.blessing__photoLeaf{
+    width: 95px !important;
+    height: auto !important;
+    bottom: -8px !important;
     opacity: .94 !important;
   }
 
-  .blessing__photo img.blessing__photoLeaf--left{
-    left: -22px !important;
+  .blessing__photo > img.blessing__photoLeaf--left{
+    left: -36px !important;
+    right: auto !important;
+    transform: scaleX(-1) !important;
   }
 
-  .blessing__photo img.blessing__photoLeaf--right{
-    right: -22px !important;
+  .blessing__photo > img.blessing__photoLeaf--right{
+    right: -36px !important;
+    left: auto !important;
+    transform: scaleX(1) !important;
   }
 }
+
