@@ -4432,6 +4432,9 @@ body{
 .dc5__swatch--ivory{ background:#fffaf1; }
 .dc5__swatch--navy{ background:#233d64; border-color:rgba(35,61,100,.45); }
 .dc5__swatch--blue{ background:#9fb7ce; border-color:rgba(90,113,135,.38); }
+.dc5__swatch--red{
+    background: #8B1E2D;
+}
 
 .dc5__item h3{
   margin:0;
