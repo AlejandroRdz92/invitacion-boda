@@ -773,7 +773,7 @@ body{
   display:block;
   width:100%;
   height:auto;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 8;
   object-fit: cover;
   object-position: center;
   border-radius: 28px;
