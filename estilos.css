@@ -5067,40 +5067,53 @@ body{
   }
 }
 
-/* Hojitas nuevas PNG - sección Bendición */
-.blessing__leaf{
+
+
+/* FIX definitivo hojitas nuevas en foto de bendición */
+
+.blessing__photo{
+  position: relative;
+  overflow: visible;
+}
+
+.blessing__photoLeaf{
   position: absolute;
-  width: 120px;
+  width: 105px;
   height: auto;
-  opacity: .92;
+  bottom: -18px;
+  z-index: 4;
   pointer-events: none;
-  z-index: 2;
+  opacity: .95;
+  filter: sepia(1) saturate(2.4) hue-rotate(355deg) brightness(1.18) contrast(1.05);
 }
 
-.blessing__leaf--left{
-  left: 6%;
-  bottom: 245px;
+.blessing__photoLeaf--left{
+  left: -42px;
 }
 
-.blessing__leaf--right{
-  right: 6%;
-  bottom: 245px;
+.blessing__photoLeaf--right{
+  right: -42px;
 }
 
-/* Ajuste móvil */
+/* Evita que estilos viejos afecten las nuevas hojitas */
+.blessing__leaf{
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+/* Celular */
 @media (max-width: 720px){
-  .blessing__leaf{
-    width: 72px;
-    opacity: .88;
+  .blessing__photoLeaf{
+    width: 74px;
+    bottom: -14px;
   }
 
-  .blessing__leaf--left{
-    left: 4px;
-    bottom: 360px;
+  .blessing__photoLeaf--left{
+    left: -24px;
   }
 
-  .blessing__leaf--right{
-    right: 4px;
-    bottom: 360px;
+  .blessing__photoLeaf--right{
+    right: -24px;
   }
 }
