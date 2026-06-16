@@ -5680,3 +5680,17 @@ object-position: center 60% !important;
     font-size: .79rem !important;
   }
 }
+
+.blessing__dedication{
+    max-width: 420px;
+    margin: 0 auto 38px;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    line-height: 1.6;
+
+    color: rgba(107, 90, 72, 0.82);
+}
