@@ -5117,3 +5117,101 @@ body{
     right: -24px;
   }
 }
+
+/* =========================================================
+   FIX FINAL - Hojitas nuevas PNG en Bendición
+   - Apaga las hojitas SVG viejas (::before / ::after).
+   - Evita que el estilo de la foto afecte las PNG nuevas.
+   - Mantiene las hojas pequeñas, doradas y en las esquinas.
+   ========================================================= */
+
+.blessing__photo{
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Apagar completamente las ramas viejas embebidas */
+.blessing__photo::before,
+.blessing__photo::after{
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Mantener la foto principal normal */
+.blessing__photo > img:not(.blessing__photoLeaf){
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
+  filter: grayscale(1) contrast(.96) brightness(1.06);
+  box-shadow:
+    0 28px 58px rgba(58,47,32,.14),
+    0 8px 18px rgba(58,47,32,.06);
+}
+
+/* Hojitas PNG nuevas */
+.blessing__photo img.blessing__photoLeaf{
+  position: absolute !important;
+  display: block !important;
+
+  width: auto !important;
+  height: 142px !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  bottom: -8px !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  opacity: .96 !important;
+
+  /* Si el PNG viene gris, este filtro lo acerca al dorado */
+  filter:
+    sepia(1)
+    saturate(2.2)
+    hue-rotate(350deg)
+    brightness(1.08)
+    contrast(1.04)
+    drop-shadow(0 2px 3px rgba(181,132,67,.12)) !important;
+}
+
+.blessing__photo img.blessing__photoLeaf--left{
+  left: -34px !important;
+}
+
+.blessing__photo img.blessing__photoLeaf--right{
+  right: -34px !important;
+}
+
+/* Celular */
+@media (max-width: 720px){
+  .blessing__photo > img:not(.blessing__photoLeaf){
+    aspect-ratio: 4 / 5;
+    border-radius: 22px;
+  }
+
+  .blessing__photo img.blessing__photoLeaf{
+    height: 108px !important;
+    bottom: -6px !important;
+    opacity: .94 !important;
+  }
+
+  .blessing__photo img.blessing__photoLeaf--left{
+    left: -22px !important;
+  }
+
+  .blessing__photo img.blessing__photoLeaf--right{
+    right: -22px !important;
+  }
+}
