@@ -1011,9 +1011,36 @@
     const $status = document.getElementById("rsvpStatus");
 
     function getTokenFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      return (params.get("t") || "").trim();
-    }
+
+  // 1) URL bonita AWS:
+  // sarahiylejandro.com/ALEX01
+  let path = window.location.pathname
+    .replace("/invitacion-boda/", "")
+    .replace(/^\/|\/$/g, "");
+
+  if (path && path !== "index.html") {
+    return path.trim().toUpperCase();
+  }
+
+  // 2) Compatibilidad GitHub:
+  // invitacion-boda/#/ALEX01
+  if (window.location.hash.startsWith("#/")) {
+    return window.location.hash
+      .replace("#/", "")
+      .trim()
+      .toUpperCase();
+  }
+
+  // 3) Compatibilidad con links actuales:
+  // ?t=ALEX01
+  const params = new URLSearchParams(window.location.search);
+
+  return (
+    params.get("t") ||
+    params.get("token") ||
+    ""
+  ).trim().toUpperCase();
+}
 
     function setStatus(text, type = "info") {
       if (!$status) return;
