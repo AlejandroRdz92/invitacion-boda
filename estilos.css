@@ -936,9 +936,10 @@ body{
   }
 
   .blessing__photo img{
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 10 !important;
+    object-position: center 58% !important;
     border-radius: 22px;
-  }
+}
 
   .blessing__parents{
     grid-template-columns: 1fr;
@@ -5174,7 +5175,8 @@ body{
   }
 
   .blessing__photo > img:not(.blessing__photoLeaf){
-    aspect-ratio: 4 / 5 !important;
+    aspect-ratio: 16 / 10 !important;
+object-position: center 60% !important;
     object-position: center 58% !important;
     border-radius: 22px !important;
   }
