@@ -736,93 +736,73 @@
         </div>
       </div>
     </section>
+    <!-- ========== NUESTRA HISTORIA EN FOTOS / REEL HORIZONTAL ========== -->
+    <section class="photo-reel reveal" data-reveal id="gallery">
+      <div class="photo-reel__wrap">
 
-    <!-- ========== NUESTRA HISTORIA EN FOTOS / POLAROIDS ========== -->
-    <section class="polaroid-story reveal" data-reveal id="gallery">
-      <div class="polaroid-story__wrap">
+        <div class="photo-reel__topLine" aria-hidden="true">
+          <span></span>
+          <i>A&amp;S</i>
+          <span></span>
+        </div>
 
-        <header class="polaroid-story__header reveal" data-reveal>
-          <p class="polaroid-story__eyebrow">Recuerdos</p>
-          <h2 class="polaroid-story__title">Nuestra historia en fotos</h2>
+        <header class="photo-reel__header reveal" data-reveal>
+          <div class="photo-reel__heart" aria-hidden="true">♡</div>
+          <p class="photo-reel__eyebrow">Recuerdos</p>
+          <h2 class="photo-reel__title">
+            Nuestra historia<br>
+            <em>en fotos</em>
+          </h2>
 
-          <div class="polaroid-story__divider" aria-hidden="true">
+          <div class="photo-reel__divider" aria-hidden="true">
             <span></span>
             <i>♡</i>
             <span></span>
           </div>
-
-          <p class="polaroid-story__subtitle">
-            Cada momento, un recuerdo inolvidable ✨
-          </p>
         </header>
 
-        <div class="polaroid-story__board reveal" data-reveal>
+        <div class="photo-reel__viewport reveal" data-reveal>
+          <div class="photo-reel__track" aria-label="Galería de fotos">
 
-          <span class="polaroid-story__heart polaroid-story__heart--top" aria-hidden="true">♡</span>
+            <button class="photo-reel__card" type="button">
+              <img src="Imagenes/galeria01.jpg" alt="Sarahi y Alejandro" loading="lazy">
+            </button>
 
-          <span class="polaroid-story__sprig polaroid-story__sprig--left" aria-hidden="true">
-            <i></i><i></i><i></i><i></i><i></i><i></i>
-          </span>
+            <button class="photo-reel__card photo-reel__card--active" type="button">
+              <img src="Imagenes/galeria02.jpg" alt="Sarahi y Alejandro" loading="lazy">
+            </button>
 
-          <span class="polaroid-story__sprig polaroid-story__sprig--right" aria-hidden="true">
-            <i></i><i></i><i></i><i></i><i></i><i></i>
-          </span>
+            <button class="photo-reel__card" type="button">
+              <img src="Imagenes/galeria03.jpg" alt="Sarahi y Alejandro" loading="lazy">
+            </button>
 
-          <button class="polaroid polaroid--one" type="button" data-full="Imagenes/galeria01.jpg" data-caption="Así comenzó todo ♡" aria-label="Abrir foto: Así comenzó todo">
-            <span class="polaroid__tape" aria-hidden="true"></span>
-            <img src="Imagenes/galeria01.jpg" alt="Sarahi y Alejandro — Así comenzó todo" loading="lazy">
-            <span class="polaroid__caption">Así comenzó todo <span>♡</span></span>
-          </button>
+            <button class="photo-reel__card" type="button">
+              <img src="Imagenes/galeria04.jpg" alt="Sarahi y Alejandro" loading="lazy">
+            </button>
 
-          <button class="polaroid polaroid--two" type="button" data-full="Imagenes/galeria02.jpg" data-caption="Nuestro primer viaje ♡" aria-label="Abrir foto: Nuestro primer viaje">
-            <span class="polaroid__tape" aria-hidden="true"></span>
-            <img src="Imagenes/galeria02.jpg" alt="Sarahi y Alejandro — Nuestro primer viaje" loading="lazy">
-            <span class="polaroid__caption">Nuestro primer viaje <span>♡</span></span>
-          </button>
+            <button class="photo-reel__card" type="button">
+              <img src="Imagenes/galeria05.jpg" alt="Sarahi y Alejandro" loading="lazy">
+            </button>
 
-          <button class="polaroid polaroid--three" type="button" data-full="Imagenes/galeria03.jpg" data-caption="Momentos favoritos ♡" aria-label="Abrir foto: Momentos favoritos">
-            <span class="polaroid__tape" aria-hidden="true"></span>
-            <img src="Imagenes/galeria03.jpg" alt="Sarahi y Alejandro — Momentos favoritos" loading="lazy">
-            <span class="polaroid__caption">Momentos favoritos <span>♡</span></span>
-          </button>
-
-          <button class="polaroid polaroid--four" type="button" data-full="Imagenes/galeria04.jpg" data-caption="El mejor sí de mi vida ♡" aria-label="Abrir foto: El mejor sí de mi vida">
-            <span class="polaroid__tape" aria-hidden="true"></span>
-            <img src="Imagenes/galeria04.jpg" alt="Sarahi y Alejandro — El mejor sí" loading="lazy">
-            <span class="polaroid__caption">El mejor sí de mi vida <span>♡</span></span>
-          </button>
-
+          </div>
         </div>
 
-        <footer class="polaroid-story__footer reveal" data-reveal>
-          <div class="polaroid-story__footerLine" aria-hidden="true">
-            <span></span><i>♡</i><span></span>
-          </div>
-          <p>Y lo mejor está por venir ♡</p>
-        </footer>
+        <div class="photo-reel__dots" aria-hidden="true">
+          <span class="is-active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="photo-reel__bottomHeart" aria-hidden="true">
+          <span></span>
+          <i>♡</i>
+          <span></span>
+        </div>
 
       </div>
     </section>
-
-    <!-- ========== LIGHTBOX POLAROID ========== -->
-    <div id="lightbox" class="lightbox lightbox--polaroid is-hidden" aria-hidden="true">
-      <div class="lightbox__backdrop" data-lb-close></div>
-
-      <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Vista de foto">
-        <button class="lightbox__close" type="button" aria-label="Cerrar" data-lb-close>✕</button>
-
-        <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Anterior" data-lb-prev>‹</button>
-        <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Siguiente" data-lb-next>›</button>
-
-        <div class="lightbox__polaroid">
-          <span class="lightbox__tape" aria-hidden="true"></span>
-          <div class="lightbox__frame">
-            <img id="lightboxImg" class="lightbox__img" src="" alt="">
-          </div>
-          <p id="lightboxCaption" class="lightbox__caption">Nuestra historia ♡</p>
-        </div>
-      </div>
-    </div>
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer reveal" data-reveal>
@@ -1341,139 +1321,6 @@
       });
 
       els.forEach(el => io.observe(el));
-    })();
-
-    // =========================
-    // GALERÍA LIGHTBOX
-    // =========================
-    (function initGalleryLightbox() {
-      const lb = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lightboxImg');
-      const lbCaption = document.getElementById('lightboxCaption');
-
-      const items = Array.from(document.querySelectorAll('.polaroid[data-full]'));
-      if (!lb || !lbImg || items.length === 0) return;
-
-      let index = 0;
-
-      function setNoScroll(on) {
-        document.body.classList.toggle('no-scroll', !!on);
-      }
-
-      function openAt(i) {
-        index = (i + items.length) % items.length;
-        const item = items[index];
-        const full = item.getAttribute('data-full');
-        const caption = item.getAttribute('data-caption') || 'Nuestra historia ♡';
-        const alt = item.querySelector('img')?.getAttribute('alt') || 'Foto';
-
-        lbImg.src = full;
-        lbImg.alt = alt;
-        if (lbCaption) lbCaption.textContent = caption;
-
-        lb.classList.remove('is-hidden');
-        lb.setAttribute('aria-hidden', 'false');
-        setNoScroll(true);
-      }
-
-      function close() {
-        lb.classList.add('is-hidden');
-        lb.setAttribute('aria-hidden', 'true');
-        setNoScroll(false);
-        lbImg.src = '';
-      }
-
-      function next() {
-        openAt(index + 1);
-      }
-
-      function prev() {
-        openAt(index - 1);
-      }
-
-      items.forEach((btn, i) => {
-        btn.addEventListener('click', () => openAt(i));
-      });
-
-      document.addEventListener('click', (e) => {
-        if (e.target.matches('[data-lb-close]')) close();
-        if (e.target.matches('[data-lb-next]')) next();
-        if (e.target.matches('[data-lb-prev]')) prev();
-      });
-
-      window.addEventListener('keydown', (e) => {
-        if (lb.classList.contains('is-hidden')) return;
-
-        if (e.key === 'Escape') close();
-        if (e.key === 'ArrowRight') next();
-        if (e.key === 'ArrowLeft') prev();
-      });
-    })();
-
-    // =========================
-    // GALERÍA CARRUSEL
-    // =========================
-    (function initGalleryCarousel() {
-      const track = document.querySelector('[data-gtrack]');
-      const btnPrev = document.querySelector('[data-gprev]');
-      const btnNext = document.querySelector('[data-gnext]');
-      const bar = document.querySelector('[data-gbar]');
-
-      if (!track) return;
-
-      function clamp(n, a, b) {
-        return Math.max(a, Math.min(b, n));
-      }
-
-      function updateProgress() {
-        const max = track.scrollWidth - track.clientWidth;
-        const pct = max <= 0 ? 0 : (track.scrollLeft / max) * 100;
-
-        if (bar) bar.style.width = `${clamp(pct, 0, 100)}%`;
-
-        if (btnPrev) btnPrev.disabled = track.scrollLeft <= 2;
-        if (btnNext) btnNext.disabled = track.scrollLeft >= (max - 2);
-      }
-
-      function scrollByCard(dir) {
-        const amt = Math.max(260, track.clientWidth * 0.8);
-        track.scrollBy({ left: dir * amt, behavior: 'smooth' });
-      }
-
-      if (btnPrev) btnPrev.addEventListener('click', () => scrollByCard(-1));
-      if (btnNext) btnNext.addEventListener('click', () => scrollByCard(1));
-
-      track.addEventListener('scroll', updateProgress, { passive: true });
-      window.addEventListener('resize', updateProgress);
-
-      let isDown = false;
-      let startX = 0;
-      let startLeft = 0;
-
-      track.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startX = e.pageX;
-        startLeft = track.scrollLeft;
-        track.style.scrollBehavior = 'auto';
-        track.classList.add('is-dragging');
-      });
-
-      window.addEventListener('mouseup', () => {
-        if (!isDown) return;
-
-        isDown = false;
-        track.style.scrollBehavior = '';
-        track.classList.remove('is-dragging');
-      });
-
-      window.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-
-        const dx = e.pageX - startX;
-        track.scrollLeft = startLeft - dx;
-      });
-
-      updateProgress();
     })();
   </script>
 
