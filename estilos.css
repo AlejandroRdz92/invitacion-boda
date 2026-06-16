@@ -5139,7 +5139,7 @@ body{
   border-radius: 0 !important;
   box-shadow: none !important;
 
-  bottom: -12px !important;
+  bottom: -35px !important;
   z-index: 5 !important;
   pointer-events: none !important;
   opacity: .94 !important;
@@ -5184,7 +5184,7 @@ object-position: center 60% !important;
   .blessing__photo > img.blessing__photoLeaf{
     width: 150px !important;
     height: auto !important;
-    bottom: -8px !important;
+    bottom: -25px !important;
     opacity: .94 !important;
   }
 
