@@ -3990,7 +3990,7 @@ body{
   }
 
   .blessing__photo img{
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 8;
     object-position: center;
     border-radius: 20px;
   }
@@ -5085,19 +5085,40 @@ body{
   background-image: none !important;
 }
 
-/* Mantener la foto principal normal */
+/* =========================================================
+   FIX FINAL DEFINITIVO - Bendición / Padres
+   Foto más elegante + hojitas PNG nuevas
+   ========================================================= */
+
+.blessing__photo{
+  position: relative !important;
+  overflow: visible !important;
+  width: min(820px, 100%) !important;
+  margin: 0 auto 42px !important;
+}
+
+/* Apaga ramas antiguas que venían como pseudo-elementos */
+.blessing__photo::before,
+.blessing__photo::after{
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Foto principal */
 .blessing__photo > img:not(.blessing__photoLeaf){
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 28px;
-  filter: grayscale(1) contrast(.96) brightness(1.06);
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 10 !important;
+  object-fit: cover !important;
+  object-position: center 60% !important;
+  border-radius: 28px !important;
+  filter: grayscale(1) contrast(.96) brightness(1.06) !important;
   box-shadow:
     0 28px 58px rgba(58,47,32,.14),
-    0 8px 18px rgba(58,47,32,.06);
+    0 8px 18px rgba(58,47,32,.06) !important;
 }
 
 /* Hojitas PNG nuevas */
@@ -5105,7 +5126,7 @@ body{
   position: absolute !important;
   display: block !important;
 
-  width: 210px !important;
+  width: 205px !important;
   height: auto !important;
   max-width: none !important;
   max-height: none !important;
@@ -5117,10 +5138,10 @@ body{
   border-radius: 0 !important;
   box-shadow: none !important;
 
-  bottom: 20px !important;
+  bottom: 8px !important;
   z-index: 5 !important;
   pointer-events: none !important;
-  opacity: .92 !important;
+  opacity: .94 !important;
 
   filter:
     sepia(1)
@@ -5133,41 +5154,48 @@ body{
 
 /* Izquierda espejeada */
 .blessing__photo > img.blessing__photoLeaf--left{
-  left: -78px !important;
+  left: -62px !important;
   right: auto !important;
   transform: scaleX(-1) !important;
 }
 
 /* Derecha normal */
 .blessing__photo > img.blessing__photoLeaf--right{
-  right: -78px !important;
+  right: -62px !important;
   left: auto !important;
   transform: scaleX(1) !important;
 }
 
 /* Celular */
 @media (max-width: 720px){
+  .blessing__photo{
+    width: 100% !important;
+    margin: 0 auto 34px !important;
+  }
+
   .blessing__photo > img:not(.blessing__photoLeaf){
-    aspect-ratio: 4 / 5;
-    border-radius: 22px;
+    aspect-ratio: 4 / 5 !important;
+    object-position: center 58% !important;
+    border-radius: 22px !important;
   }
 
   .blessing__photo > img.blessing__photoLeaf{
-    width: 125px !important;
+    width: 150px !important;
     height: auto !important;
-    bottom: -8px !important;
+    bottom: 18px !important;
     opacity: .94 !important;
   }
 
   .blessing__photo > img.blessing__photoLeaf--left{
-    left: -46px !important;
+    left: -54px !important;
     right: auto !important;
     transform: scaleX(-1) !important;
   }
 
   .blessing__photo > img.blessing__photoLeaf--right{
-    right: -46px !important;
+    right: -54px !important;
     left: auto !important;
     transform: scaleX(1) !important;
   }
 }
+
