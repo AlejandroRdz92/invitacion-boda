@@ -1590,7 +1590,13 @@ body{
   opacity:.88;
 }
 
+.rsvp__required{
+  color:#b58443;
+  font-weight:500;
+}
+
 .rsvp__select,
+.rsvp__input,
 .rsvp__textarea{
   display:block;
   width:100% !important;
@@ -1621,6 +1627,7 @@ body{
 }
 
 .rsvp__select:focus,
+.rsvp__input:focus,
 .rsvp__textarea:focus{
   border-color: rgba(58,47,32,.28);
   box-shadow: 0 0 0 6px rgba(58,47,32,.08);
@@ -4038,10 +4045,11 @@ body{
     border-radius: 18px;
   }
 
-  .rsvp__select,
-  .rsvp__textarea{
-    font-size: 16px;
-  }
+.rsvp__select,
+.rsvp__input,
+.rsvp__textarea{
+  font-size: 16px;
+}
 
   .rsvp__actions{
     align-items: stretch;
