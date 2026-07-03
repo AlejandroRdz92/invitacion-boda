@@ -715,6 +715,21 @@
             <select id="rsvpCount" class="rsvp__select" disabled></select>
           </div>
 
+          
+<div class="rsvp__row">
+  <label class="rsvp__label" for="rsvpPhone">Teléfono de contacto <span class="rsvp__required">*</span></label>
+  <input
+    id="rsvpPhone"
+    class="rsvp__input"
+    type="tel"
+    inputmode="numeric"
+    autocomplete="tel"
+    maxlength="14"
+    placeholder="Ej. 8112345678"
+    required
+  />
+</div>
+          
           <div class="rsvp__row">
             <label class="rsvp__label" for="rsvpMsg">Mensaje para los novios (opcional)</label>
             <textarea id="rsvpMsg" class="rsvp__textarea" rows="3" placeholder="Ej. ¡Nos vemos ese día! Qué emoción celebrar con ustedes."></textarea>
@@ -1016,6 +1031,7 @@
     // =========================
     const $guest = document.getElementById("rsvpGuest");
     const $count = document.getElementById("rsvpCount");
+    const $phone = document.getElementById("rsvpPhone");
     const $msg = document.getElementById("rsvpMsg");
     const $btn = document.getElementById("rsvpBtn");
     const $status = document.getElementById("rsvpStatus");
@@ -1142,17 +1158,30 @@
     async function submitRsvp(token) {
       if (!token || !$count) return;
 
-      const personas_confirmadas = Number($count.value || 0);
-      const mensaje = ($msg?.value || "").trim();
+    const personas_confirmadas = Number($count.value || 0);
+const telefono = ($phone?.value || "").trim();
+const telefonoSoloNumeros = telefono.replace(/\D/g, "");
+const mensaje = ($msg?.value || "").trim();
 
-      setButtonLoading(true);
-      setStatus("Enviando confirmación…", "loading");
+if (!telefonoSoloNumeros || telefonoSoloNumeros.length < 10) {
+  setStatus("Por favor agrega un teléfono válido de 10 dígitos.", "error");
+  if ($phone) $phone.focus();
+  return;
+}
+
+setButtonLoading(true);
+setStatus("Enviando confirmación…", "loading");
 
       try {
         const res = await fetch(RSVP_API, {
           method: "POST",
           headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify({ token, personas_confirmadas, mensaje })
+          body: JSON.stringify({
+  token,
+  personas_confirmadas,
+  telefono: telefonoSoloNumeros,
+  mensaje
+})
         });
 
         const text = await res.text();
