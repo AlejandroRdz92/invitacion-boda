@@ -5395,7 +5395,7 @@ body{
   object-fit: fill !important;
   object-position: center !important;
 
-  transform: scale(1.035) !important;
+  transform: scale(1.08, 1.24) !important;
   transform-origin: center !important;
 
   border-radius: 28px !important;
@@ -5426,7 +5426,8 @@ body{
     inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    transform: scale(1.035) !important;
+    transform: scale(1.08, 1.24) !important;
+    transform-origin: center !important;
     border-radius: 22px !important;
   }
 }
