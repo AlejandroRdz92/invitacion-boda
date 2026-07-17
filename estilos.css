@@ -5383,20 +5383,24 @@ body{
 /* Marco PNG transparente encima de la fotografía */
 .blessing__photo > img.blessing__photoFrame{
   position: absolute !important;
-  inset: 0 !important;
+  inset: -10px !important;
   z-index: 5 !important;
+
   display: block !important;
-  width: 100% !important;
-  height: 100% !important;
+  width: calc(100% + 20px) !important;
+  height: calc(100% + 20px) !important;
+
   max-width: none !important;
   max-height: none !important;
-  aspect-ratio: auto !important;
-  object-fit: fill !important;
+
+  object-fit: cover !important;
   object-position: center !important;
+
   border-radius: 28px !important;
   filter: none !important;
   box-shadow: none !important;
   opacity: 1 !important;
+
   pointer-events: none !important;
   user-select: none !important;
   -webkit-user-drag: none !important;
@@ -5417,8 +5421,11 @@ body{
   }
 
   .blessing__photo > img.blessing__photoFrame{
-    border-radius: 22px !important;
-  }
+  inset: -7px !important;
+  width: calc(100% + 14px) !important;
+  height: calc(100% + 14px) !important;
+  border-radius: 22px !important;
+}
 }
 
 /* =========================================================
