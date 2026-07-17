@@ -5358,14 +5358,15 @@ body{
 
 /* =========================================================
    FIX FINAL DEFINITIVO - Bendición / Padres
-   Foto más elegante + hojitas PNG nuevas
+   Foto principal + ilustraciones botánicas nuevas
    ========================================================= */
 
 .blessing__photo{
   position: relative !important;
-  overflow: visible !important;
+  overflow: hidden !important;
   width: min(820px, 100%) !important;
   margin: 0 auto 42px !important;
+  border-radius: 28px !important;
 }
 
 /* Apaga ramas antiguas que venían como pseudo-elementos */
@@ -5392,49 +5393,38 @@ body{
     0 8px 18px rgba(58,47,32,.06) !important;
 }
 
-/* Hojitas PNG nuevas */
+/* Configuración general de ambos florales */
 .blessing__photo > img.blessing__photoLeaf{
   position: absolute !important;
   display: block !important;
-
-  width: 205px !important;
+  width: clamp(145px, 25%, 205px) !important;
   height: auto !important;
   max-width: none !important;
   max-height: none !important;
   aspect-ratio: auto !important;
-
   object-fit: contain !important;
   object-position: center !important;
-
   border-radius: 0 !important;
   box-shadow: none !important;
-
-  bottom: -35px !important;
+  bottom: -18px !important;
   z-index: 5 !important;
   pointer-events: none !important;
-  opacity: .94 !important;
-
-  filter:
-    sepia(1)
-    saturate(2.2)
-    hue-rotate(350deg)
-    brightness(1.08)
-    contrast(1.04)
-    drop-shadow(0 2px 3px rgba(181,132,67,.12)) !important;
+  opacity: .82 !important;
+  filter: drop-shadow(0 3px 5px rgba(58,47,32,.10)) !important;
 }
 
-/* Izquierda espejeada */
+/* Floral izquierdo: la imagen ya viene orientada correctamente */
 .blessing__photo > img.blessing__photoLeaf--left{
-  left: -62px !important;
+  left: -34px !important;
   right: auto !important;
-  transform: scaleX(-1) !important;
+  transform: none !important;
 }
 
-/* Derecha normal */
+/* Floral derecho: la imagen ya viene orientada correctamente */
 .blessing__photo > img.blessing__photoLeaf--right{
-  right: -62px !important;
+  right: -34px !important;
   left: auto !important;
-  transform: scaleX(1) !important;
+  transform: none !important;
 }
 
 /* Celular */
@@ -5442,32 +5432,32 @@ body{
   .blessing__photo{
     width: 100% !important;
     margin: 0 auto 34px !important;
+    border-radius: 22px !important;
   }
 
   .blessing__photo > img:not(.blessing__photoLeaf){
     aspect-ratio: 16 / 10 !important;
-object-position: center 60% !important;
     object-position: center 58% !important;
     border-radius: 22px !important;
   }
 
   .blessing__photo > img.blessing__photoLeaf{
-    width: 150px !important;
+    width: 125px !important;
     height: auto !important;
-    bottom: -25px !important;
-    opacity: .94 !important;
+    bottom: -12px !important;
+    opacity: .78 !important;
   }
 
   .blessing__photo > img.blessing__photoLeaf--left{
-    left: -54px !important;
+    left: -35px !important;
     right: auto !important;
-    transform: scaleX(-1) !important;
+    transform: none !important;
   }
 
   .blessing__photo > img.blessing__photoLeaf--right{
-    right: -54px !important;
+    right: -35px !important;
     left: auto !important;
-    transform: scaleX(1) !important;
+    transform: none !important;
   }
 }
 
