@@ -5339,37 +5339,22 @@ body{
 }
 
 /* =========================================================
-   FIX FINAL DEFINITIVO - Hojitas nuevas PNG en Bendición
+   FIX FINAL DEFINITIVO - MARCO FLORAL EN FOTO DE BENDICIÓN
    ========================================================= */
 
 .blessing__photo{
   position: relative !important;
-  overflow: visible !important;
-}
-
-/* Apagar ramas antiguas que venían como ::before / ::after */
-.blessing__photo::before,
-.blessing__photo::after{
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  background-image: none !important;
-}
-
-/* =========================================================
-   FIX FINAL DEFINITIVO - Bendición / Padres
-   Foto principal + ilustraciones botánicas nuevas
-   ========================================================= */
-
-.blessing__photo{
-  position: relative !important;
-  overflow: hidden !important;
   width: min(820px, 100%) !important;
   margin: 0 auto 42px !important;
+  aspect-ratio: 16 / 10 !important;
+  overflow: hidden !important;
   border-radius: 28px !important;
+  box-shadow:
+    0 28px 58px rgba(58,47,32,.14),
+    0 8px 18px rgba(58,47,32,.06) !important;
 }
 
-/* Apaga ramas antiguas que venían como pseudo-elementos */
+/* Desactiva adornos anteriores */
 .blessing__photo::before,
 .blessing__photo::after{
   content: none !important;
@@ -5379,52 +5364,42 @@ body{
 }
 
 /* Foto principal */
-.blessing__photo > img:not(.blessing__photoLeaf){
+.blessing__photo > img:first-child{
+  position: relative !important;
+  z-index: 1 !important;
   display: block !important;
   width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 16 / 10 !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
   object-fit: cover !important;
   object-position: center 60% !important;
   border-radius: 28px !important;
   filter: grayscale(1) contrast(.96) brightness(1.06) !important;
-  box-shadow:
-    0 28px 58px rgba(58,47,32,.14),
-    0 8px 18px rgba(58,47,32,.06) !important;
+  box-shadow: none !important;
 }
 
-/* Configuración general de ambos florales */
-.blessing__photo > img.blessing__photoLeaf{
+/* Marco PNG transparente encima de la fotografía */
+.blessing__photo > img.blessing__photoFrame{
   position: absolute !important;
+  inset: 0 !important;
+  z-index: 5 !important;
   display: block !important;
-  width: clamp(145px, 25%, 205px) !important;
-  height: auto !important;
+  width: 100% !important;
+  height: 100% !important;
   max-width: none !important;
   max-height: none !important;
   aspect-ratio: auto !important;
-  object-fit: contain !important;
+  object-fit: fill !important;
   object-position: center !important;
-  border-radius: 0 !important;
+  border-radius: 28px !important;
+  filter: none !important;
   box-shadow: none !important;
-  bottom: -18px !important;
-  z-index: 5 !important;
+  opacity: 1 !important;
   pointer-events: none !important;
-  opacity: .82 !important;
-  filter: drop-shadow(0 3px 5px rgba(58,47,32,.10)) !important;
-}
-
-/* Floral izquierdo: la imagen ya viene orientada correctamente */
-.blessing__photo > img.blessing__photoLeaf--left{
-  left: -34px !important;
-  right: auto !important;
-  transform: none !important;
-}
-
-/* Floral derecho: la imagen ya viene orientada correctamente */
-.blessing__photo > img.blessing__photoLeaf--right{
-  right: -34px !important;
-  left: auto !important;
-  transform: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
 }
 
 /* Celular */
@@ -5432,32 +5407,17 @@ body{
   .blessing__photo{
     width: 100% !important;
     margin: 0 auto 34px !important;
+    aspect-ratio: 16 / 10 !important;
     border-radius: 22px !important;
   }
 
-  .blessing__photo > img:not(.blessing__photoLeaf){
-    aspect-ratio: 16 / 10 !important;
+  .blessing__photo > img:first-child{
     object-position: center 58% !important;
     border-radius: 22px !important;
   }
 
-  .blessing__photo > img.blessing__photoLeaf{
-    width: 125px !important;
-    height: auto !important;
-    bottom: -12px !important;
-    opacity: .78 !important;
-  }
-
-  .blessing__photo > img.blessing__photoLeaf--left{
-    left: -35px !important;
-    right: auto !important;
-    transform: none !important;
-  }
-
-  .blessing__photo > img.blessing__photoLeaf--right{
-    right: -35px !important;
-    left: auto !important;
-    transform: none !important;
+  .blessing__photo > img.blessing__photoFrame{
+    border-radius: 22px !important;
   }
 }
 
