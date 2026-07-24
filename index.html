@@ -972,6 +972,61 @@
     </div>
   </div>
 
+
+  <!-- =========================
+       LIGHTBOX DE FOTOGRAFÍAS
+       ========================= -->
+  <div id="photoLightbox" class="lightbox is-hidden" aria-hidden="true">
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+
+    <div
+      class="lightbox__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Fotografía ampliada"
+    >
+      <button
+        class="lightbox__close"
+        type="button"
+        aria-label="Cerrar fotografía"
+        data-lightbox-close
+      >
+        ✕
+      </button>
+
+      <button
+        id="lightboxPrev"
+        class="lightbox__nav lightbox__nav--prev"
+        type="button"
+        aria-label="Fotografía anterior"
+      >
+        ‹
+      </button>
+
+      <div class="lightbox__frame">
+        <img
+          id="lightboxImage"
+          class="lightbox__img"
+          src=""
+          alt="Sarahi y Alejandro"
+        />
+      </div>
+
+      <button
+        id="lightboxNext"
+        class="lightbox__nav lightbox__nav--next"
+        type="button"
+        aria-label="Fotografía siguiente"
+      >
+        ›
+      </button>
+
+      <div class="lightbox__meta">
+        <span id="lightboxCount" class="lightbox__count"></span>
+      </div>
+    </div>
+  </div>
+
   <script>
     // =========================
     // CONFIG
@@ -1409,6 +1464,122 @@ setStatus("Enviando confirmación…", "loading");
         closeGiftModal();
       }
     });
+
+
+    // =========================
+    // PHOTO REEL LIGHTBOX
+    // =========================
+    (function initPhotoLightbox() {
+      const cards = Array.from(
+        document.querySelectorAll('.photo-reel__card')
+      );
+
+      const lightbox = document.getElementById('photoLightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const lightboxCount = document.getElementById('lightboxCount');
+      const prevButton = document.getElementById('lightboxPrev');
+      const nextButton = document.getElementById('lightboxNext');
+
+      if (!cards.length || !lightbox || !lightboxImage) return;
+
+      let currentIndex = 0;
+      let touchStartX = 0;
+
+      function updateLightbox() {
+        const currentCard = cards[currentIndex];
+        const currentImage = currentCard.querySelector('img');
+
+        if (!currentImage) return;
+
+        lightboxImage.src = currentImage.currentSrc || currentImage.src;
+        lightboxImage.alt = currentImage.alt || 'Sarahi y Alejandro';
+
+        if (lightboxCount) {
+          lightboxCount.textContent =
+            `${currentIndex + 1} / ${cards.length}`;
+        }
+      }
+
+      function openLightbox(index) {
+        currentIndex = index;
+        updateLightbox();
+
+        lightbox.classList.remove('is-hidden');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add('is-hidden');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('no-scroll');
+        lightboxImage.src = '';
+      }
+
+      function showPrevious() {
+        currentIndex =
+          (currentIndex - 1 + cards.length) % cards.length;
+
+        updateLightbox();
+      }
+
+      function showNext() {
+        currentIndex =
+          (currentIndex + 1) % cards.length;
+
+        updateLightbox();
+      }
+
+      cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+          openLightbox(index);
+        });
+      });
+
+      if (prevButton) {
+        prevButton.addEventListener('click', showPrevious);
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener('click', showNext);
+      }
+
+      document.addEventListener('click', (event) => {
+        if (event.target.matches('[data-lightbox-close]')) {
+          event.preventDefault();
+          closeLightbox();
+        }
+      });
+
+      window.addEventListener('keydown', (event) => {
+        if (lightbox.classList.contains('is-hidden')) return;
+
+        if (event.key === 'Escape') {
+          closeLightbox();
+        } else if (event.key === 'ArrowLeft') {
+          showPrevious();
+        } else if (event.key === 'ArrowRight') {
+          showNext();
+        }
+      });
+
+      lightbox.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+      }, { passive: true });
+
+      lightbox.addEventListener('touchend', (event) => {
+        const touchEndX = event.changedTouches[0].clientX;
+        const difference = touchEndX - touchStartX;
+
+        if (Math.abs(difference) < 50) return;
+
+        if (difference > 0) {
+          showPrevious();
+        } else {
+          showNext();
+        }
+      }, { passive: true });
+    })();
 
     // =========================
     // REVEAL ON SCROLL
