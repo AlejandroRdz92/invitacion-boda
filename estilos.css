@@ -322,7 +322,7 @@ body{
   inset:0;
   background:
     linear-gradient(180deg, rgba(7,15,25,.04), rgba(7,15,25,.10)),
-    url("Imagenes/GAF_112-32.jpg") center 42% / cover no-repeat;
+    url("Imagenes/FotoFinal6.jpg") center 42% / cover no-repeat;
   transform:scale(1.03);
   filter: saturate(.98) contrast(1);
 }
