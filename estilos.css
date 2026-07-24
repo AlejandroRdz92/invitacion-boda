@@ -2235,7 +2235,7 @@ body{
 .gallery__card img{
   width:100%;
   height:100%;
-  object-fit: cover;
+ object-fit: contain;
   object-position: center;
   display:block;
   transform: scale(1);
@@ -2272,7 +2272,7 @@ body{
   box-shadow: 0 24px 56px rgba(0,0,0,.14);
 }
 
-.gallery__card:hover img{ transform: scale(1.03); }
+.gallery__card:hover img{ transform: scale(1); }
 .gallery__card:hover .gallery__veil{ opacity: .08; }
 
 .gallery__card:focus-visible{
